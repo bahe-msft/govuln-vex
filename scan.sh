@@ -102,7 +102,7 @@ run_govulncheck() {
   local git_ref="$2"
   local output_dir="$3"
   
-  echo "Running govulncheck on ${git_ref}..."
+  echo "[${output_dir}] Running govulncheck on ${git_ref}..."
   
   # Checkout the specific reference
   git -C "$repo_dir" checkout -q "$git_ref"
@@ -148,19 +148,29 @@ process_repository() {
   
   # Step 1: Clone/update repository
   clone_repository "$repo_url" "$repo_dir"
+
+  # Step 2: Dump govulncheck version
+  govulncheck -version > "${output_dir}/govulncheck-version.txt"
+
+  # Step 3: Get refs from config or latest tags
+  local refs
+  refs=$(yq ".targets[] | select(.repo == \"$repo_url\") | .refs[]" "$config_file" 2>/dev/null || true)
   
-  # Step 2: Get latest tags
-  mapfile -t latest_tags < <(get_latest_tags "$repo_dir")
-  
-  # Step 3: Run govulncheck on latest commit and tags
+  if [[ -z "$refs" ]]; then
+    mapfile -t refs < <(get_latest_tags "$repo_dir")
+  else
+    mapfile -t refs <<< "$refs"
+  fi
+
+  # Step 4: Run govulncheck on latest commit and refs
   mkdir -p "$output_dir"
   
   # Check latest commit first
   run_govulncheck "$repo_dir" "HEAD" "$output_dir"
   
-  # Then check each recent tag
-  for tag in "${latest_tags[@]}"; do
-    run_govulncheck "$repo_dir" "$tag" "$output_dir"
+  # Then check each ref
+  for ref in "${refs[@]}"; do
+    run_govulncheck "$repo_dir" "$ref" "$output_dir"
   done
   
   # Return to main branch/default branch
@@ -168,7 +178,6 @@ process_repository() {
   
   echo "Completed analysis of ${org_name}/${repo_name}"
   echo "Results saved in ${output_dir}"
-  echo "----------------------------------------"
 }
 
 ###############################################################################

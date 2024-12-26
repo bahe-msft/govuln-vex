@@ -1,0 +1,44 @@
+name: Run govulncheck
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  govulncheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Restore stage caches
+        id: stage-cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            stage/
+          key: ${{ runner.os }}-stage
+
+      - name: Prepare Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+
+      - name: Install govulncheck
+        run: go install golang.org/x/vuln/cmd/govulncheck@latest
+
+      - name: Run scan.sh
+        run: ./scan.sh targets.yaml
+
+      - name: Save stage caches
+        id: stage-cache-save
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            stage/
+          key: ${{ steps.stage-cache-restore.outputs.cache-primary-key }}
