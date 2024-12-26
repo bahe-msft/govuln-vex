@@ -10,7 +10,7 @@ generate_report_for_json() {
   local git_ref="$3"
   
   local impacted_entries
-  impacted_entries=$(jq -r '.statements[] | select(.status == "affected") | "| `\(.vulnerability.name)` | \(.vulnerability["@id"]) | `\(.status)` | \(.impact_statement // "N/A") |"' "$json_file")
+  impacted_entries=$(jq -r '.statements? // [] | map(select(.status == "affected")) | .[] | "| \(.vulnerability.name) | \(.vulnerability["@id"]) | \(.status) | \(.impact_statement // "N/A") |"' "$json_file")
   
   if [[ -n "$impacted_entries" ]]; then
     echo "### ⚠️ ${git_ref}"
@@ -49,12 +49,10 @@ generate_report() {
     
     for json_file in "$module_dir"/*/govulncheck-openvex.json; do
       git_ref=$(basename "$(dirname "$json_file")")
-      cat "$json_file"
       generate_report_for_json "$json_file" "$module_name" "$git_ref" >> "$output_file"
     done
   done
 }
 
 # Execute the main function
-jq --version
 generate_report
