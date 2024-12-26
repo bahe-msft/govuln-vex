@@ -1,12 +1,10 @@
 name: Run govulncheck
 
+# triggers: manual and daily
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   govulncheck:
