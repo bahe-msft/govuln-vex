@@ -49,10 +49,12 @@ generate_report() {
     
     for json_file in "$module_dir"/*/govulncheck-openvex.json; do
       git_ref=$(basename "$(dirname "$json_file")")
+      cat "$json_file"
       generate_report_for_json "$json_file" "$module_name" "$git_ref" >> "$output_file"
     done
   done
 }
 
 # Execute the main function
+jq --version
 generate_report
