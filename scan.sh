@@ -150,6 +150,7 @@ process_repository() {
   clone_repository "$repo_url" "$repo_dir"
 
   # Step 2: Dump govulncheck version
+  mkdir -p "$output_dir"
   govulncheck -version > "${output_dir}/govulncheck-version.txt"
 
   # Step 3: Get refs from config or latest tags
