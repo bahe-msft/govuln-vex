@@ -9,6 +9,8 @@ on:
 jobs:
   govulncheck:
     runs-on: ubuntu-latest
+    outputs:
+      git_diff_patch: ${{ steps.dump-changes.outputs.git_diff_patch }}
 
     steps:
       - name: Checkout repository
@@ -33,6 +35,16 @@ jobs:
       - name: Run scan.sh
         run: ./scan.sh targets.yaml
 
+      - name: Generate report
+        run: ./report.sh
+
+      - name: Dump changes to GITHUB_OUTPUT
+        run: |
+          git add results/
+          git add report.md/
+          git diff --cached > git-diff.patch
+          echo "git_diff_patch=$(cat git-diff.patch)" >> $GITHUB_OUTPUT
+
       - name: Save stage caches
         id: stage-cache-save
         uses: actions/cache/save@v4
@@ -40,3 +52,24 @@ jobs:
           path: |
             stage/
           key: ${{ steps.stage-cache-restore.outputs.cache-primary-key }}
+
+  commit:
+    runs-on: ubuntu-latest
+
+    needs: govulncheck
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Apply changes
+        run: |
+          echo ${{ needs.govulncheck.outputs.git_diff_patch }} > git-diff.patch
+          git apply git-diff.patch
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: "report.md results/*"
