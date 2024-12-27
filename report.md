@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Fri Dec 27 18:28:04 UTC 2024
+Last updated time: Fri Dec 27 19:55:33 UTC 2024
 
 ## Azure/azure-container-networking
 
@@ -201,4 +201,45 @@ Reports: [kubernetes-sigs/cloud-provider-azure/v1.31.0](results/kubernetes-sigs/
 No active affected vulnerabilities found in v1.31.1
 
 Reports: [kubernetes-sigs/cloud-provider-azure/v1.31.1](results/kubernetes-sigs/cloud-provider-azure/v1.31.1)
+
+## kubernetes/kubernetes
+
+### ✅ master
+
+No active affected vulnerabilities found in master
+
+Reports: [kubernetes/kubernetes/master](results/kubernetes/kubernetes/master)
+
+### ⚠️ release-1.30
+
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2023-2331 | https://pkg.go.dev/vuln/GO-2023-2331 | affected | N/A |
+| GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
+| GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
+
+Reports: [kubernetes/kubernetes/release-1.30](results/kubernetes/kubernetes/release-1.30)
+
+### ⚠️ release-1.31
+
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
+| GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
+
+Reports: [kubernetes/kubernetes/release-1.31](results/kubernetes/kubernetes/release-1.31)
+
+### ⚠️ release-1.32
+
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
+
+Reports: [kubernetes/kubernetes/release-1.32](results/kubernetes/kubernetes/release-1.32)
 

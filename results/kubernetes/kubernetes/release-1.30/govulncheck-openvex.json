@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:200e913b50c323b2623f1e463b6e16010e8ab32cbb3437e6a8529d1c0fd3b532",
+  "@id": "govulncheck/vex:0d0ec96c2ff2d91a388c842d250d9300aa3414463e3ec6bd02518028f8475801",
   "author": "Unknown Author",
-  "timestamp": "2024-12-27T19:10:10.642550447Z",
+  "timestamp": "2024-12-27T19:23:17.067054682Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -22,7 +22,7 @@
         }
       ],
       "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
+      "justification": "vulnerable_code_not_present",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
     },
     {
@@ -33,23 +33,6 @@
         "aliases": [
           "CVE-2023-47108",
           "GHSA-8pgv-569h-w5rw"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product"
-        }
-      ],
-      "status": "affected"
-    },
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2024-2491",
-        "name": "GO-2024-2491",
-        "description": "Container breakout through process.cwd trickery and leaked fds in github.com/opencontainers/runc",
-        "aliases": [
-          "CVE-2024-21626",
-          "GHSA-xr7r-f8xq-vfvv"
         ]
       },
       "products": [

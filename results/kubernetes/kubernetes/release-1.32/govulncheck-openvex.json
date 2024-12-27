@@ -1,11 +1,49 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:9f7b05fc5e174ce9980bd7db7ad0178fb90aec8d1997b82fcdfafe9dc0ea52f1",
+  "@id": "govulncheck/vex:dac2ffd98edb46b6ce8ea57f14badeeeec36fe4cc3c67ad74aa178693af66929",
   "author": "Unknown Author",
-  "timestamp": "2024-12-27T18:59:57.569726317Z",
+  "timestamp": "2024-12-27T19:28:00.604966643Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2023-2113",
+        "name": "GO-2023-2113",
+        "description": "Memory exhaustion in go.opentelemetry.io/contrib/instrumentation",
+        "aliases": [
+          "CVE-2023-45142",
+          "GHSA-rcjv-mgp8-qvmr"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product"
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_present",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2024-2631",
+        "name": "GO-2024-2631",
+        "description": "Decompression bomb vulnerability in github.com/go-jose/go-jose",
+        "aliases": [
+          "CVE-2024-28180",
+          "GHSA-c5q2-7r4c-mv6g"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product"
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
     {
       "vulnerability": {
         "@id": "https://pkg.go.dev/vuln/GO-2024-3250",
@@ -21,9 +59,7 @@
           "@id": "Unknown Product"
         }
       ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+      "status": "affected"
     },
     {
       "vulnerability": {
@@ -41,7 +77,7 @@
         }
       ],
       "status": "not_affected",
-      "justification": "vulnerable_code_not_present",
+      "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
     },
     {
@@ -60,7 +96,7 @@
         }
       ],
       "status": "not_affected",
-      "justification": "vulnerable_code_not_present",
+      "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
     }
   ]
