@@ -40,8 +40,7 @@ jobs:
 
       - name: Dump changes to GITHUB_OUTPUT
         run: |
-          git add results/
-          git add report.md/
+          git add report.md results/
           git diff --cached > git-diff.patch
           echo "git_diff_patch=$(cat git-diff.patch)" >> $GITHUB_OUTPUT
 
