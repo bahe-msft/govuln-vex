@@ -203,20 +203,11 @@ main() {
   mkdir -p "$STAGE_DIR"
   
   # Use yq to extract repository URLs and process each one
-  # declare -a pids
   while IFS= read -r repo_url; do
     echo "Processing repository: $repo_url"
+    # NOTE: govulncheck is a CPU intensive tool, so we cannot run it in parallel
     process_repository "$repo_url"
-    # pids+=($!)
   done < <(yq '.targets[] | .repo' "$config_file")
-
-  # Wait for all background processes to complete and check their exit status
-  # for pid in "${pids[@]}"; do
-  #   if ! wait "$pid"; then
-  #     echo "Error: A subprocess failed."
-  #     exit 1
-  #   fi
-  # done
   
   echo "All repositories processed successfully!"
 }
