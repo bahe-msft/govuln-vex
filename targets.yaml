@@ -1,10 +1,10 @@
 targets:
   - repo: "https://github.com/Azure/kubelogin"
-  # - repo: "https://github.com/Azure/azure-container-networking"
-  # - repo: "https://github.com/aks-lts/kubernetes"
-  #   refs:
-  #     - release-1.27-lts
-  #     - release-1.28-lts
-  #     - release-1.29
-  #     - release-1.30
-  #     - release-1.31
+  - repo: "https://github.com/Azure/azure-container-networking"
+  - repo: "https://github.com/aks-lts/kubernetes"
+    refs:
+      - release-1.27-lts
+      - release-1.28-lts
+      - release-1.29
+      - release-1.30
+      - release-1.31
