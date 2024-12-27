@@ -18,4 +18,4 @@ This project aims to automate this process in a set of selected repositories and
 
 ## Reports
 
-You can find the generated report in [report.md][].
+You can find the generated report in [report.md](report.md).
