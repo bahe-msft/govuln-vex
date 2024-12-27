@@ -9,8 +9,6 @@ on:
 jobs:
   govulncheck:
     runs-on: ubuntu-latest
-    outputs:
-      git_diff_patch: ${{ steps.dump-changes.outputs.git_diff_patch }}
 
     steps:
       - name: Checkout repository
@@ -38,11 +36,14 @@ jobs:
       - name: Generate report
         run: ./report.sh
 
-      - name: Dump changes to GITHUB_OUTPUT
+      - name: Dump changes to git-diff.patch
         run: |
           git add report.md results/
           git diff --cached > git-diff.patch
-          echo "git_diff_patch=$(cat git-diff.patch)" >> $GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v4
+        with:
+          name: git-diff-patch
+          path: git-diff.patch
 
       - name: Save stage caches
         id: stage-cache-save
@@ -64,9 +65,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Download git-diff.patch
+        uses: actions/download-artifact@v4
+        with:
+          name: git-diff-patch
       - name: Apply changes
         run: |
-          echo ${{ needs.govulncheck.outputs.git_diff_patch }} > git-diff.patch
           git apply git-diff.patch
 
       - uses: stefanzweifel/git-auto-commit-action@v5
