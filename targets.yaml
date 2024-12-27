@@ -8,3 +8,8 @@ targets:
       - release-1.29
       - release-1.30
       - release-1.31
+  - repo: "https://github.com/kubernetes/kubernetes"
+    refs:
+      - release-1.30
+      - release-1.31
+      - release-1.32
