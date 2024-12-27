@@ -114,7 +114,7 @@ run_govulncheck() {
   git -C "$repo_dir" rev-parse HEAD > "${output_dir}/${git_ref}/commit-hash.txt"
   
   # Run govulncheck and save output
-  if govulncheck -C "$repo_dir" -version -show verbose ./... > "${output_dir}/${git_ref}/govulncheck.txt" 2>&1; then
+  if govulncheck -C "$repo_dir" -show verbose ./... > "${output_dir}/${git_ref}/govulncheck.txt" 2>&1; then
     echo "✓ Completed govulncheck for ${output_dir}/${git_ref}"
   else
     echo "⚠ govulncheck completed with issues for ${output_dir}/${git_ref}"
@@ -149,7 +149,11 @@ process_repository() {
   # Step 1: Clone/update repository
   clone_repository "$repo_url" "$repo_dir"
 
-  # Step 2: Get refs from config or latest tags
+  # Step 2: Dump govulncheck version
+  mkdir -p "$output_dir"
+  govulncheck -version > "${output_dir}/govulncheck-version.txt"
+
+  # Step 3: Get refs from config or latest tags
   local refs
   refs=$(yq ".targets[] | select(.repo == \"$repo_url\") | .refs[]" "$config_file" 2>/dev/null || true)
   
@@ -159,11 +163,10 @@ process_repository() {
     mapfile -t refs <<< "$refs"
   fi
 
-  # Step 3: Run govulncheck on latest commit and refs
-  mkdir -p "$output_dir"
-  
-  # Check latest commit first
-  run_govulncheck "$repo_dir" "HEAD" "$output_dir"
+  # Step 4: Run govulncheck on main branch and refs
+  local main_branch
+  main_branch=$(git -C "$repo_dir" symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+  run_govulncheck "$repo_dir" "$main_branch" "$output_dir"
   
   # Then check each ref
   for ref in "${refs[@]}"; do
@@ -171,7 +174,7 @@ process_repository() {
   done
   
   # Return to main branch/default branch
-  git -C "$repo_dir" checkout -q @{-1}
+  git -C "$repo_dir" checkout -q "$main_branch"
   
   echo "Completed analysis of ${org_name}/${repo_name}"
   echo "Results saved in ${output_dir}"
