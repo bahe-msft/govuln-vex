@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: "0 0 * * *"
 
+env:
+  GOCACHE: /tmp/.cache/go-build
+
 jobs:
   govulncheck:
     runs-on: ubuntu-latest
@@ -21,6 +24,14 @@ jobs:
           path: |
             stage/
           key: ${{ runner.os }}-stage
+
+      - name: Restore Go build cache
+        id: go-cache-restore
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ env.GOCACHE }}
+          key: ${{ runner.os }}-go-build-cache
 
       - name: Prepare Go
         uses: actions/setup-go@v5
@@ -44,6 +55,14 @@ jobs:
         with:
           name: git-diff-patch
           path: git-diff.patch
+
+      - name: Save Go build cache
+        id: go-cache-save
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ${{ env.GOCACHE }}
+          key: ${{ steps.go-cache-restore.outputs.cache-key }}
 
       - name: Save stage caches
         id: stage-cache-save
