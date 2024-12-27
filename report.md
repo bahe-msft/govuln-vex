@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Fri Dec 27 00:32:43 UTC 2024
+Last updated time: Fri Dec 27 18:28:04 UTC 2024
 
 ## Azure/azure-container-networking
 
@@ -27,6 +27,32 @@ Reports: [Azure/azure-container-networking/v1.6.17](results/Azure/azure-containe
 No active affected vulnerabilities found in v1.6.18
 
 Reports: [Azure/azure-container-networking/v1.6.18](results/Azure/azure-container-networking/v1.6.18)
+
+## Azure/karpenter-provider-azure
+
+### ✅ main
+
+No active affected vulnerabilities found in main
+
+Reports: [Azure/karpenter-provider-azure/main](results/Azure/karpenter-provider-azure/main)
+
+### ✅ v0.7.0-rc.1
+
+No active affected vulnerabilities found in v0.7.0-rc.1
+
+Reports: [Azure/karpenter-provider-azure/v0.7.0-rc.1](results/Azure/karpenter-provider-azure/v0.7.0-rc.1)
+
+### ✅ v0.7.0-rc.2
+
+No active affected vulnerabilities found in v0.7.0-rc.2
+
+Reports: [Azure/karpenter-provider-azure/v0.7.0-rc.2](results/Azure/karpenter-provider-azure/v0.7.0-rc.2)
+
+### ✅ v0.7.0
+
+No active affected vulnerabilities found in v0.7.0
+
+Reports: [Azure/karpenter-provider-azure/v0.7.0](results/Azure/karpenter-provider-azure/v0.7.0)
 
 ## Azure/kubelogin
 
@@ -123,4 +149,56 @@ Active affected vulnerabilities:
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/release-1.31](results/aks-lts/kubernetes/release-1.31)
+
+## cilium/cilium
+
+### ✅ main
+
+No active affected vulnerabilities found in main
+
+Reports: [cilium/cilium/main](results/cilium/cilium/main)
+
+### ✅ v1.17.0-pre.2
+
+No active affected vulnerabilities found in v1.17.0-pre.2
+
+Reports: [cilium/cilium/v1.17.0-pre.2](results/cilium/cilium/v1.17.0-pre.2)
+
+### ✅ v1.17.0-pre.3
+
+No active affected vulnerabilities found in v1.17.0-pre.3
+
+Reports: [cilium/cilium/v1.17.0-pre.3](results/cilium/cilium/v1.17.0-pre.3)
+
+### ✅ v1.17.0-rc.0
+
+No active affected vulnerabilities found in v1.17.0-rc.0
+
+Reports: [cilium/cilium/v1.17.0-rc.0](results/cilium/cilium/v1.17.0-rc.0)
+
+## kubernetes-sigs/cloud-provider-azure
+
+### ✅ master
+
+No active affected vulnerabilities found in master
+
+Reports: [kubernetes-sigs/cloud-provider-azure/master](results/kubernetes-sigs/cloud-provider-azure/master)
+
+### ✅ v1.30.7
+
+No active affected vulnerabilities found in v1.30.7
+
+Reports: [kubernetes-sigs/cloud-provider-azure/v1.30.7](results/kubernetes-sigs/cloud-provider-azure/v1.30.7)
+
+### ✅ v1.31.0
+
+No active affected vulnerabilities found in v1.31.0
+
+Reports: [kubernetes-sigs/cloud-provider-azure/v1.31.0](results/kubernetes-sigs/cloud-provider-azure/v1.31.0)
+
+### ✅ v1.31.1
+
+No active affected vulnerabilities found in v1.31.1
+
+Reports: [kubernetes-sigs/cloud-provider-azure/v1.31.1](results/kubernetes-sigs/cloud-provider-azure/v1.31.1)
 
