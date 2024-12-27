@@ -13,3 +13,4 @@ targets:
       - release-1.30
       - release-1.31
       - release-1.32
+  - repo: "https://github.com/cilium/cilium"
