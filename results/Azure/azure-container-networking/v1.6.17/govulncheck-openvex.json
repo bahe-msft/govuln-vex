@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:65eb6daafc6ed8910cacd3dc0c8c37e54f06b82b912a89696be3916aba3a973c",
+  "@id": "govulncheck/vex:f65f62bbdf8223ccafa2e4ce2cc5eb0173bdf377982eacc2f8b22512d776168f",
   "author": "Unknown Author",
-  "timestamp": "2024-12-27T00:17:52.252670664Z",
+  "timestamp": "2024-12-27T00:19:47.669662909Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -41,7 +41,7 @@
         }
       ],
       "status": "not_affected",
-      "justification": "vulnerable_code_not_present",
+      "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
     }
   ]
