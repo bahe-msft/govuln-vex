@@ -43,8 +43,8 @@ Vulnerability #2: GO-2024-3110
       #17: pkg/kubelet/kuberuntime/kuberuntime_container_linux.go:261:60: kuberuntime.GetHugepageLimitsFromResources calls cgroups.HugePageSizes
       #18: pkg/kubelet/metrics/metrics.go:917:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
       #19: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
-      #20: pkg/kubelet/metrics/metrics.go:917:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2UnifiedMode
-      #21: pkg/kubelet/cm/cgroup_manager_linux.go:550:45: cm.cgroupManagerImpl.MemoryUsage calls cgroups.IsCgroup2UnifiedMode
+      #20: pkg/kubelet/cm/cgroup_manager_linux.go:550:45: cm.cgroupManagerImpl.MemoryUsage calls cgroups.IsCgroup2UnifiedMode
+      #21: pkg/kubelet/metrics/metrics.go:917:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2UnifiedMode
       #22: pkg/kubelet/cm/cgroup_manager_linux.go:458:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls cgroups.IsNotFound
       #23: pkg/kubelet/cm/container_manager_linux.go:773:39: cm.getContainer calls cgroups.NewNotFoundError
       #24: pkg/kubelet/cadvisor/cadvisor_linux.go:128:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls cgroups.NewStats
