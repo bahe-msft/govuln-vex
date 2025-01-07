@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:176c637841d8d854568aea03a8c5b8552006ce5b7b2ead8d51ae7e0929cc5e1b",
+  "@id": "govulncheck/vex:80494cf080c9b7d7500af9e267d907bcd82dfae995ee1fa7023f372361cf4a73",
   "author": "Unknown Author",
-  "timestamp": "2025-01-06T02:02:08.440322299Z",
+  "timestamp": "2025-01-07T01:58:09.921875832Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -33,25 +33,6 @@
         "aliases": [
           "CVE-2024-28180",
           "GHSA-c5q2-7r4c-mv6g"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product"
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
-    },
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2024-3333",
-        "name": "GO-2024-3333",
-        "description": "Non-linear parsing of case-insensitive content in golang.org/x/net/html",
-        "aliases": [
-          "CVE-2024-45338",
-          "GHSA-w32m-9786-jp63"
         ]
       },
       "products": [
