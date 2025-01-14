@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:d3fe7ab6cc50c09f59ff476735279cef0b901c7635fa2277918ae1165fe419e3",
+  "@id": "govulncheck/vex:f1bbac28b06a75651063d3d457bde36b755ad5129f7cb10bd1984e61ed1a18f0",
   "author": "Unknown Author",
-  "timestamp": "2025-01-13T02:06:24.929645208Z",
+  "timestamp": "2025-01-14T01:47:05.577460785Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -18,7 +18,12 @@
       },
       "products": [
         {
-          "@id": "Unknown Product"
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/go.opentelemetry.io%2Fcontrib%2Finstrumentation%2Fgithub.com%2Femicklei%2Fgo-restful%2Fotelrestful@v0.42.0"
+            }
+          ]
         }
       ],
       "status": "not_affected",
@@ -37,7 +42,12 @@
       },
       "products": [
         {
-          "@id": "Unknown Product"
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/gopkg.in%2Fsquare%2Fgo-jose.v2@v2.6.0"
+            }
+          ]
         }
       ],
       "status": "not_affected",
@@ -56,7 +66,12 @@
       },
       "products": [
         {
-          "@id": "Unknown Product"
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.1.13"
+            }
+          ]
         }
       ],
       "status": "affected"
@@ -73,7 +88,12 @@
       },
       "products": [
         {
-          "@id": "Unknown Product"
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.0"
+            }
+          ]
         }
       ],
       "status": "affected"
@@ -90,7 +110,12 @@
       },
       "products": [
         {
-          "@id": "Unknown Product"
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.24.0"
+            }
+          ]
         }
       ],
       "status": "not_affected",
@@ -109,7 +134,12 @@
       },
       "products": [
         {
-          "@id": "Unknown Product"
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.26.0"
+            }
+          ]
         }
       ],
       "status": "not_affected",

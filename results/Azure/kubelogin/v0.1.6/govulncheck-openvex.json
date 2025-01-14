@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:3ceb81ab1c643b905208cd7286cb43bd2d57b400c76446d1976276efc749ada7",
+  "@id": "govulncheck/vex:73de131564f994c9173e8ea7354a37a367d05eca1e99c98a6399486f34a76de5",
   "author": "Unknown Author",
-  "timestamp": "2025-01-13T01:41:42.708963338Z",
+  "timestamp": "2025-01-14T01:26:01.294588683Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -18,7 +18,12 @@
       },
       "products": [
         {
-          "@id": "Unknown Product"
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.29.0"
+            }
+          ]
         }
       ],
       "status": "not_affected",

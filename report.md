@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Mon Jan 13 02:32:07 UTC 2025
+Last updated time: Tue Jan 14 02:12:30 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -9,6 +9,12 @@ Last updated time: Mon Jan 13 02:32:07 UTC 2025
 No active affected vulnerabilities found in master
 
 Reports: [Azure/azure-container-networking/master](results/Azure/azure-container-networking/master)
+
+### ✅ v1.16.16
+
+No active affected vulnerabilities found in v1.16.16
+
+Reports: [Azure/azure-container-networking/v1.16.16](results/Azure/azure-container-networking/v1.16.16)
 
 ### ✅ v1.6.16
 
