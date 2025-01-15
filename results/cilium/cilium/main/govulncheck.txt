@@ -92,6 +92,7 @@ The package pattern matched the following 699 root packages:
   github.com/cilium/cilium/bpf/tests/bpftest
   github.com/cilium/cilium/clustermesh-apiserver/option
   github.com/cilium/cilium/operator/option
+  github.com/cilium/cilium/pkg/cmdref
   github.com/cilium/cilium/pkg/components
   github.com/cilium/cilium/pkg/mountinfo
   github.com/cilium/cilium/pkg/safeio
@@ -365,7 +366,6 @@ The package pattern matched the following 699 root packages:
   github.com/cilium/cilium/pkg/pprof
   github.com/cilium/cilium/clustermesh-apiserver/clustermesh
   github.com/cilium/cilium/clustermesh-apiserver/clustermesh-dbg
-  github.com/cilium/cilium/clustermesh-apiserver/cmdref
   github.com/cilium/cilium/pkg/kvstore/etcdinit
   github.com/cilium/cilium/clustermesh-apiserver/etcdinit
   github.com/cilium/cilium/pkg/clustermesh/kvstoremesh
@@ -702,7 +702,7 @@ The package pattern matched the following 699 root packages:
   github.com/cilium/cilium/tools/mount
   github.com/cilium/cilium/tools/spdxconv
   github.com/cilium/cilium/tools/sysctlfix
-Govulncheck scanned the following 283 modules and the go1.23.4 standard library:
+Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   github.com/cilium/cilium
   cel.dev/expr@v0.18.0
   dario.cat/mergo@v1.0.1
@@ -810,7 +810,9 @@ Govulncheck scanned the following 283 modules and the go1.23.4 standard library:
   github.com/google/certificate-transparency-go@v1.1.7
   github.com/google/gnostic-models@v0.6.8
   github.com/google/go-cmp@v0.6.0
+  github.com/google/go-github/v68@v68.0.0
   github.com/google/go-licenses@v1.6.1-0.20230903011517-706b9c60edd4
+  github.com/google/go-querystring@v1.1.0
   github.com/google/gofuzz@v1.2.0
   github.com/google/gops@v0.3.28
   github.com/google/licenseclassifier/v2@v2.0.0
