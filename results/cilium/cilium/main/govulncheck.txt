@@ -705,33 +705,33 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   cel.dev/expr@v0.18.0
   dario.cat/mergo@v1.0.1
   github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.17.0
-  github.com/Azure/azure-sdk-for-go/sdk/azidentity@v1.8.0
+  github.com/Azure/azure-sdk-for-go/sdk/azidentity@v1.8.1
   github.com/Azure/azure-sdk-for-go/sdk/internal@v1.10.0
   github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/compute/armcompute/v6@v6.2.0
   github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/network/armnetwork/v6@v6.2.0
-  github.com/AzureAD/microsoft-authentication-library-for-go@v1.2.2
-  github.com/BurntSushi/toml@v1.3.2
+  github.com/AzureAD/microsoft-authentication-library-for-go@v1.3.2
+  github.com/BurntSushi/toml@v1.4.0
   github.com/MakeNowJust/heredoc@v1.0.0
   github.com/Masterminds/goutils@v1.1.1
   github.com/Masterminds/semver/v3@v3.3.0
   github.com/Masterminds/sprig/v3@v3.3.0
   github.com/Masterminds/squirrel@v1.5.4
-  github.com/aliyun/alibaba-cloud-sdk-go@v1.63.79
+  github.com/aliyun/alibaba-cloud-sdk-go@v1.63.84
   github.com/antlr4-go/antlr/v4@v4.13.0
   github.com/asaskevich/govalidator@v0.0.0-20230301143203-a9d515a09cc2
-  github.com/aws/aws-sdk-go-v2@v1.32.8
-  github.com/aws/aws-sdk-go-v2/config@v1.28.10
-  github.com/aws/aws-sdk-go-v2/credentials@v1.17.51
-  github.com/aws/aws-sdk-go-v2/feature/ec2/imds@v1.16.23
-  github.com/aws/aws-sdk-go-v2/internal/configsources@v1.3.27
-  github.com/aws/aws-sdk-go-v2/internal/endpoints/v2@v2.6.27
+  github.com/aws/aws-sdk-go-v2@v1.33.0
+  github.com/aws/aws-sdk-go-v2/config@v1.29.1
+  github.com/aws/aws-sdk-go-v2/credentials@v1.17.54
+  github.com/aws/aws-sdk-go-v2/feature/ec2/imds@v1.16.24
+  github.com/aws/aws-sdk-go-v2/internal/configsources@v1.3.28
+  github.com/aws/aws-sdk-go-v2/internal/endpoints/v2@v2.6.28
   github.com/aws/aws-sdk-go-v2/internal/ini@v1.8.1
-  github.com/aws/aws-sdk-go-v2/service/ec2@v1.198.3
+  github.com/aws/aws-sdk-go-v2/service/ec2@v1.200.0
   github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding@v1.12.1
-  github.com/aws/aws-sdk-go-v2/service/internal/presigned-url@v1.12.8
-  github.com/aws/aws-sdk-go-v2/service/sso@v1.24.9
-  github.com/aws/aws-sdk-go-v2/service/ssooidc@v1.28.8
-  github.com/aws/aws-sdk-go-v2/service/sts@v1.33.6
+  github.com/aws/aws-sdk-go-v2/service/internal/presigned-url@v1.12.9
+  github.com/aws/aws-sdk-go-v2/service/sso@v1.24.11
+  github.com/aws/aws-sdk-go-v2/service/ssooidc@v1.28.10
+  github.com/aws/aws-sdk-go-v2/service/sts@v1.33.9
   github.com/aws/smithy-go@v1.22.1
   github.com/beorn7/perks@v1.0.1
   github.com/blang/semver/v4@v4.0.0
@@ -751,7 +751,7 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   github.com/cilium/workerpool@v1.2.0
   github.com/cloudflare/cfssl@v1.6.5
   github.com/cncf/xds/go@v0.0.0-20241213214725-57cfbe6fad57
-  github.com/containerd/containerd@v1.7.23
+  github.com/containerd/containerd@v1.7.24
   github.com/containerd/errdefs@v0.3.0
   github.com/containerd/log@v0.1.0
   github.com/containerd/platforms@v0.2.1
@@ -759,13 +759,13 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   github.com/coreos/go-semver@v0.3.1
   github.com/coreos/go-systemd/v22@v22.5.0
   github.com/cpuguy83/go-md2man/v2@v2.0.4
-  github.com/cyphar/filepath-securejoin@v0.3.4
+  github.com/cyphar/filepath-securejoin@v0.3.6
   github.com/davecgh/go-spew@v1.1.2-0.20180830191138-d8f796af33cc
   github.com/dgryski/go-farm@v0.0.0-20200201041132-a6ae2369ad13
   github.com/distribution/reference@v0.6.0
   github.com/docker/cli@v25.0.1+incompatible
   github.com/docker/distribution@v2.8.3+incompatible
-  github.com/docker/docker@v27.4.1+incompatible
+  github.com/docker/docker@v27.5.0+incompatible
   github.com/docker/docker-credential-helpers@v0.7.0
   github.com/docker/go-connections@v0.5.0
   github.com/docker/go-metrics@v0.0.1
@@ -892,10 +892,10 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   github.com/prometheus-community/pro-bing@v0.5.0
   github.com/prometheus/client_golang@v1.20.5
   github.com/prometheus/client_model@v0.6.1
-  github.com/prometheus/common@v0.61.0
+  github.com/prometheus/common@v0.62.0
   github.com/prometheus/procfs@v0.15.1
   github.com/rivo/uniseg@v0.4.4
-  github.com/rubenv/sql-migrate@v1.7.0
+  github.com/rubenv/sql-migrate@v1.7.1
   github.com/russross/blackfriday/v2@v2.1.0
   github.com/sagikazarmark/slog-shim@v0.1.0
   github.com/sasha-s/go-deadlock@v0.3.5
@@ -916,7 +916,7 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   github.com/tidwall/match@v1.1.1
   github.com/tidwall/pretty@v1.2.0
   github.com/tidwall/sjson@v1.2.5
-  github.com/vishvananda/netlink@v1.3.1-0.20250110035100-391c8505129e
+  github.com/vishvananda/netlink@v1.3.1-0.20250116195641-68cf136ebe02
   github.com/vishvananda/netns@v0.0.5
   github.com/weppos/publicsuffix-go@v0.30.0
   github.com/x448/float16@v0.8.4
@@ -956,26 +956,26 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   golang.zx2c4.com/wireguard/wgctrl@v0.0.0-20241231184526-a9ab2273dd10
   gomodules.xyz/jsonpatch/v2@v2.4.0
   google.golang.org/genproto/googleapis/api@v0.0.0-20241216192217-9240e9c98484
-  google.golang.org/genproto/googleapis/rpc@v0.0.0-20250106144421-5f5ef82da422
-  google.golang.org/grpc@v1.69.2
-  google.golang.org/protobuf@v1.36.2
+  google.golang.org/genproto/googleapis/rpc@v0.0.0-20250115164207-1a7da9e5054f
+  google.golang.org/grpc@v1.69.4
+  google.golang.org/protobuf@v1.36.3
   gopkg.in/evanphx/json-patch.v4@v4.12.0
   gopkg.in/inf.v0@v0.9.1
   gopkg.in/ini.v1@v1.67.0
   gopkg.in/tomb.v1@v1.0.0-20141024135613-dd632973f1e7
   gopkg.in/yaml.v3@v3.0.1
-  helm.sh/helm/v3@v3.16.4
-  k8s.io/api@v0.32.0
-  k8s.io/apiextensions-apiserver@v0.32.0
-  k8s.io/apimachinery@v0.32.0
-  k8s.io/apiserver@v0.32.0
-  k8s.io/cli-runtime@v0.32.0
-  k8s.io/client-go@v0.32.0
-  k8s.io/component-base@v0.32.0
-  k8s.io/endpointslice@v0.32.0
+  helm.sh/helm/v3@v3.17.0
+  k8s.io/api@v0.32.1
+  k8s.io/apiextensions-apiserver@v0.32.1
+  k8s.io/apimachinery@v0.32.1
+  k8s.io/apiserver@v0.32.1
+  k8s.io/cli-runtime@v0.32.1
+  k8s.io/client-go@v0.32.1
+  k8s.io/component-base@v0.32.1
+  k8s.io/endpointslice@v0.32.1
   k8s.io/klog/v2@v2.130.1
   k8s.io/kube-openapi@v0.0.0-20241105132330-32ad38e42d3f
-  k8s.io/kubectl@v0.32.0
+  k8s.io/kubectl@v0.32.1
   k8s.io/utils@v0.0.0-20241210054802-24370beab758
   oras.land/oras-go@v1.2.5
   sigs.k8s.io/controller-runtime@v0.19.4
@@ -983,7 +983,7 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   sigs.k8s.io/json@v0.0.0-20241010143419-9aa6b5e7a4b3
   sigs.k8s.io/kustomize/api@v0.18.0
   sigs.k8s.io/kustomize/kyaml@v0.18.1
-  sigs.k8s.io/mcs-api@v0.1.1-0.20250109091032-a0594610c49f
+  sigs.k8s.io/mcs-api@v0.1.1-0.20250116162235-62ede9a032dc
   sigs.k8s.io/structured-merge-diff/v4@v4.4.2
   sigs.k8s.io/yaml@v1.4.0
 
