@@ -2,7 +2,7 @@ Fetching vulnerabilities from the database...
 
 Checking the code against the vulnerabilities...
 
-The package pattern matched the following 697 root packages:
+The package pattern matched the following 696 root packages:
   github.com/cilium/cilium/api/v1/models
   github.com/cilium/cilium/api/v1/client/bgp
   github.com/cilium/cilium/api/v1/client/daemon
@@ -316,7 +316,6 @@ The package pattern matched the following 697 root packages:
   github.com/cilium/cilium/cilium-health/cmd
   github.com/cilium/cilium/cilium-health
   github.com/cilium/cilium/pkg/datapath/connector
-  github.com/cilium/cilium/pkg/math
   github.com/cilium/cilium/pkg/datapath/linux/bigtcp
   github.com/cilium/cilium/plugins/cilium-cni/types
   github.com/cilium/cilium/daemon/cmd/cni
@@ -700,14 +699,14 @@ The package pattern matched the following 697 root packages:
   github.com/cilium/cilium/tools/mount
   github.com/cilium/cilium/tools/spdxconv
   github.com/cilium/cilium/tools/sysctlfix
-Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
+Govulncheck scanned the following 285 modules and the go1.23.5 standard library:
   github.com/cilium/cilium
   cel.dev/expr@v0.18.0
   dario.cat/mergo@v1.0.1
   github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.17.0
   github.com/Azure/azure-sdk-for-go/sdk/azidentity@v1.8.1
   github.com/Azure/azure-sdk-for-go/sdk/internal@v1.10.0
-  github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/compute/armcompute/v6@v6.2.0
+  github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/compute/armcompute/v6@v6.3.0
   github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/network/armnetwork/v6@v6.2.0
   github.com/AzureAD/microsoft-authentication-library-for-go@v1.3.2
   github.com/BurntSushi/toml@v1.4.0
@@ -732,18 +731,18 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   github.com/aws/aws-sdk-go-v2/service/sso@v1.24.11
   github.com/aws/aws-sdk-go-v2/service/ssooidc@v1.28.10
   github.com/aws/aws-sdk-go-v2/service/sts@v1.33.9
-  github.com/aws/smithy-go@v1.22.1
+  github.com/aws/smithy-go@v1.22.2
   github.com/beorn7/perks@v1.0.1
   github.com/blang/semver/v4@v4.0.0
   github.com/census-instrumentation/opencensus-proto@v0.4.1
   github.com/cespare/xxhash/v2@v2.3.0
   github.com/chai2010/gettext-go@v1.0.2
-  github.com/cilium/charts@v0.0.0-20250110220142-9bf6739d212c
+  github.com/cilium/charts@v0.0.0-20250122005123-9aa3c2db578d
   github.com/cilium/dns@v1.1.51-0.20240603182237-af788769786a
   github.com/cilium/ebpf@v0.17.1
   github.com/cilium/endpointslice@v0.29.4-0.20240409195643-982ad68ab7ba
   github.com/cilium/endpointslice-controller@v0.0.0-20240409203012-75cb5d61db1b
-  github.com/cilium/hive@v0.0.0-20241213121623-605c1412b9b3
+  github.com/cilium/hive@v0.0.0-20250121145729-e67f66eb0375
   github.com/cilium/lumberjack/v2@v2.4.1
   github.com/cilium/proxy@v0.0.0-20241219105110-b2e1bb5839df
   github.com/cilium/statedb@v0.3.5
@@ -765,7 +764,7 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   github.com/distribution/reference@v0.6.0
   github.com/docker/cli@v25.0.1+incompatible
   github.com/docker/distribution@v2.8.3+incompatible
-  github.com/docker/docker@v27.5.0+incompatible
+  github.com/docker/docker@v27.5.1+incompatible
   github.com/docker/docker-credential-helpers@v0.7.0
   github.com/docker/go-connections@v0.5.0
   github.com/docker/go-metrics@v0.0.1
@@ -889,7 +888,7 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   github.com/pkg/browser@v0.0.0-20240102092130-5ac0b6a4141c
   github.com/pkg/errors@v0.9.1
   github.com/pmezard/go-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2
-  github.com/prometheus-community/pro-bing@v0.5.0
+  github.com/prometheus-community/pro-bing@v0.6.0
   github.com/prometheus/client_golang@v1.20.5
   github.com/prometheus/client_model@v0.6.1
   github.com/prometheus/common@v0.62.0
@@ -916,7 +915,7 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   github.com/tidwall/match@v1.1.1
   github.com/tidwall/pretty@v1.2.0
   github.com/tidwall/sjson@v1.2.5
-  github.com/vishvananda/netlink@v1.3.1-0.20250116195641-68cf136ebe02
+  github.com/vishvananda/netlink@v1.3.1-0.20250121061148-364253875734
   github.com/vishvananda/netns@v0.0.5
   github.com/weppos/publicsuffix-go@v0.30.0
   github.com/x448/float16@v0.8.4
@@ -934,9 +933,9 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   go.opencensus.io@v0.24.0
   go.opentelemetry.io/auto/sdk@v1.1.0
   go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.54.0
-  go.opentelemetry.io/otel@v1.33.0
-  go.opentelemetry.io/otel/metric@v1.33.0
-  go.opentelemetry.io/otel/trace@v1.33.0
+  go.opentelemetry.io/otel@v1.34.0
+  go.opentelemetry.io/otel/metric@v1.34.0
+  go.opentelemetry.io/otel/trace@v1.34.0
   go.opentelemetry.io/proto/otlp@v1.4.0
   go.uber.org/dig@v1.17.1
   go.uber.org/multierr@v1.11.0
@@ -956,7 +955,7 @@ Govulncheck scanned the following 285 modules and the go1.23.4 standard library:
   golang.zx2c4.com/wireguard/wgctrl@v0.0.0-20241231184526-a9ab2273dd10
   gomodules.xyz/jsonpatch/v2@v2.4.0
   google.golang.org/genproto/googleapis/api@v0.0.0-20241216192217-9240e9c98484
-  google.golang.org/genproto/googleapis/rpc@v0.0.0-20250115164207-1a7da9e5054f
+  google.golang.org/genproto/googleapis/rpc@v0.0.0-20250122153221-138b5a5a4fd4
   google.golang.org/grpc@v1.69.4
   google.golang.org/protobuf@v1.36.3
   gopkg.in/evanphx/json-patch.v4@v4.12.0

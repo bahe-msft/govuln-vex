@@ -112,7 +112,7 @@ The package pattern matched the following 109 root packages:
   sigs.k8s.io/cloud-provider-azure/tests/e2e/autoscaling
   sigs.k8s.io/cloud-provider-azure/tests/e2e/network
   sigs.k8s.io/cloud-provider-azure/tests/e2e/node
-Govulncheck scanned the following 145 modules and the go1.23.4 standard library:
+Govulncheck scanned the following 145 modules and the go1.23.5 standard library:
   sigs.k8s.io/cloud-provider-azure
   github.com/Azure/azure-kusto-go@v0.16.1
   github.com/Azure/azure-pipeline-go@v0.2.3

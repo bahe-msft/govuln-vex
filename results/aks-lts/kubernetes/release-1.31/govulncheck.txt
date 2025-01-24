@@ -1258,7 +1258,7 @@ The package pattern matched the following 1255 root packages:
   k8s.io/kubernetes/test/utils/ktesting/examples/without_ktesting
   k8s.io/kubernetes/test/utils/oidc/handlers
   k8s.io/kubernetes/test/utils/oidc
-Govulncheck scanned the following 199 modules and the go1.23.4 standard library:
+Govulncheck scanned the following 199 modules and the go1.23.5 standard library:
   k8s.io/kubernetes
   bitbucket.org/bertimus9/systemstat@v0.5.0
   github.com/MakeNowJust/heredoc@v1.0.0
@@ -1480,8 +1480,8 @@ Vulnerability #2: GO-2024-3110
     Fixed in: github.com/opencontainers/runc@v1.1.14
     Example traces found:
       #1: pkg/security/apparmor/validate.go:24:2: apparmor.init calls apparmor.init
-      #2: pkg/security/apparmor/validate.go:96:24: apparmor.validateHost calls apparmor.isEnabled
-      #3: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls apparmor.isEnabled
+      #2: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls apparmor.isEnabled
+      #3: pkg/security/apparmor/validate.go:96:24: apparmor.validateHost calls apparmor.isEnabled
       #4: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls capabilities.init
       #5: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls fs2.manager.Set, which eventually calls cgroups.ConvertBlkIOToIOWeightValue
       #6: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls systemd.unifiedManager.Set, which eventually calls cgroups.ConvertMemorySwapToCgroupV2Value
@@ -1536,8 +1536,8 @@ Vulnerability #2: GO-2024-3110
       #55: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls systemd.unifiedManager.Set, which eventually calls devices.Permissions.Union
       #56: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls systemd.legacyManager.Set, which eventually calls devices.Rule.CgroupString
       #57: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls systemd.unifiedManager.Set, which eventually calls devices.Type.CanCgroup
-      #58: pkg/kubelet/cm/cgroup_manager_linux.go:32:2: cm.init calls systemd.init, which calls devices.init
-      #59: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls configs.init, which calls devices.init
+      #58: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls configs.init, which calls devices.init
+      #59: pkg/kubelet/cm/cgroup_manager_linux.go:32:2: cm.init calls systemd.init, which calls devices.init
       #60: pkg/kubelet/kubelet.go:2067:13: kubelet.Kubelet.SyncTerminatingPod calls sort.Slice, which eventually calls devices.orderedEntries
       #61: pkg/volume/testing/testing.go:1293:52: testing.FindEmptyDirectoryUsageOnTmpfs calls strings.Fields, which eventually calls devices.parseLine
       #62: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls fs2.manager.Set, which eventually calls ebpf.LoadAttachCgroupDeviceFilter
