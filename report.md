@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Fri Jan 24 02:29:30 UTC 2025
+Last updated time: Sun Jan 26 02:16:58 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -199,6 +199,12 @@ Reports: [cilium/cilium/v1.17.0-rc.0](results/cilium/cilium/v1.17.0-rc.0)
 No active affected vulnerabilities found in v1.17.0-rc.1
 
 Reports: [cilium/cilium/v1.17.0-rc.1](results/cilium/cilium/v1.17.0-rc.1)
+
+### ✅ v1.17.0-rc.2
+
+No active affected vulnerabilities found in v1.17.0-rc.2
+
+Reports: [cilium/cilium/v1.17.0-rc.2](results/cilium/cilium/v1.17.0-rc.2)
 
 ## kubernetes-sigs/cloud-provider-azure
 
