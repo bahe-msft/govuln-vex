@@ -2,7 +2,7 @@ Fetching vulnerabilities from the database...
 
 Checking the code against the vulnerabilities...
 
-The package pattern matched the following 696 root packages:
+The package pattern matched the following 697 root packages:
   github.com/cilium/cilium/api/v1/models
   github.com/cilium/cilium/api/v1/client/bgp
   github.com/cilium/cilium/api/v1/client/daemon
@@ -56,7 +56,6 @@ The package pattern matched the following 696 root packages:
   github.com/cilium/cilium/pkg/metrics
   github.com/cilium/cilium/pkg/rate
   github.com/cilium/cilium/pkg/hive/health
-  github.com/cilium/cilium/pkg/hubble
   github.com/cilium/cilium/pkg/hive
   github.com/cilium/cilium/api/v1/health/server
   github.com/cilium/cilium/api/v1/kvstoremesh/client/cluster
@@ -471,6 +470,7 @@ The package pattern matched the following 696 root packages:
   github.com/cilium/cilium/pkg/hubble/dropeventemitter
   github.com/cilium/cilium/pkg/hubble/parser/fieldmask
   github.com/cilium/cilium/pkg/hubble/exporter
+  github.com/cilium/cilium/pkg/hubble
   github.com/cilium/cilium/pkg/hubble/exporter/cell
   github.com/cilium/cilium/pkg/bufuuid
   github.com/cilium/cilium/pkg/hubble/observer/types
@@ -658,6 +658,7 @@ The package pattern matched the following 696 root packages:
   github.com/cilium/cilium/pkg/testutils/netns
   github.com/cilium/cilium/pkg/testutils/policy
   github.com/cilium/cilium/pkg/testutils/sockets
+  github.com/cilium/cilium/pkg/xds/experimental/client
   github.com/cilium/cilium/plugins/cilium-cni/lib
   github.com/cilium/cilium/plugins/cilium-cni/chaining/api
   github.com/cilium/cilium/plugins/cilium-cni/chaining/generic-veth
@@ -725,7 +726,7 @@ Govulncheck scanned the following 285 modules and the go1.23.5 standard library:
   github.com/aws/aws-sdk-go-v2/internal/configsources@v1.3.28
   github.com/aws/aws-sdk-go-v2/internal/endpoints/v2@v2.6.28
   github.com/aws/aws-sdk-go-v2/internal/ini@v1.8.1
-  github.com/aws/aws-sdk-go-v2/service/ec2@v1.200.0
+  github.com/aws/aws-sdk-go-v2/service/ec2@v1.201.0
   github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding@v1.12.1
   github.com/aws/aws-sdk-go-v2/service/internal/presigned-url@v1.12.9
   github.com/aws/aws-sdk-go-v2/service/sso@v1.24.11
