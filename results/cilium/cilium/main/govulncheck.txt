@@ -2,7 +2,7 @@ Fetching vulnerabilities from the database...
 
 Checking the code against the vulnerabilities...
 
-The package pattern matched the following 697 root packages:
+The package pattern matched the following 698 root packages:
   github.com/cilium/cilium/api/v1/models
   github.com/cilium/cilium/api/v1/client/bgp
   github.com/cilium/cilium/api/v1/client/daemon
@@ -233,14 +233,15 @@ The package pattern matched the following 697 root packages:
   github.com/cilium/cilium/cilium-cli/logging
   github.com/cilium/cilium/cilium-cli/cmd/cilium
   github.com/cilium/cilium/cilium-cli/utils/junit
+  github.com/cilium/cilium/pkg/clustermesh/utils
+  github.com/cilium/cilium/pkg/dial
+  github.com/cilium/cilium/pkg/clustermesh/common
+  github.com/cilium/cilium/cilium-dbg/cmd/troubleshoot
   github.com/cilium/cilium/pkg/container
   github.com/cilium/cilium/pkg/maps/callsmap
   github.com/cilium/cilium/pkg/counter
   github.com/cilium/cilium/pkg/types
   github.com/cilium/cilium/pkg/bpf
-  github.com/cilium/cilium/pkg/clustermesh/utils
-  github.com/cilium/cilium/pkg/dial
-  github.com/cilium/cilium/pkg/clustermesh/common
   github.com/cilium/cilium/pkg/datapath/linux/linux_defaults
   github.com/cilium/cilium/pkg/common/ipsec
   github.com/cilium/cilium/pkg/datapath/link
@@ -283,7 +284,6 @@ The package pattern matched the following 697 root packages:
   github.com/cilium/cilium/pkg/cgroups
   github.com/cilium/cilium/pkg/socketlb
   github.com/cilium/cilium/pkg/datapath/loader
-  github.com/cilium/cilium/pkg/datapath/option
   github.com/cilium/cilium/pkg/datapath/linux/netdevice
   github.com/cilium/cilium/pkg/k8s/identitybackend
   github.com/cilium/cilium/pkg/kvstore/allocator
@@ -316,6 +316,7 @@ The package pattern matched the following 697 root packages:
   github.com/cilium/cilium/cilium-health
   github.com/cilium/cilium/pkg/datapath/connector
   github.com/cilium/cilium/pkg/datapath/linux/bigtcp
+  github.com/cilium/cilium/pkg/datapath/option
   github.com/cilium/cilium/plugins/cilium-cni/types
   github.com/cilium/cilium/daemon/cmd/cni
   github.com/cilium/cilium/pkg/clustermesh/wait
