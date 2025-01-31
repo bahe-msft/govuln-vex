@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Thu Jan 30 02:03:58 UTC 2025
+Last updated time: Fri Jan 31 02:08:23 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -103,6 +103,12 @@ Reports: [Azure/kubelogin/v0.1.5](results/Azure/kubelogin/v0.1.5)
 No active affected vulnerabilities found in v0.1.6
 
 Reports: [Azure/kubelogin/v0.1.6](results/Azure/kubelogin/v0.1.6)
+
+### ✅ v0.1.7
+
+No active affected vulnerabilities found in v0.1.7
+
+Reports: [Azure/kubelogin/v0.1.7](results/Azure/kubelogin/v0.1.7)
 
 ## aks-lts/kubernetes
 

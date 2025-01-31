@@ -167,9 +167,9 @@ The package pattern matched the following 698 root packages:
   github.com/cilium/cilium/pkg/k8s/testutils
   github.com/cilium/cilium/pkg/k8s/version
   github.com/cilium/cilium/pkg/k8s/client
+  github.com/cilium/cilium/pkg/k8s/watchers/resources
   github.com/cilium/cilium/pkg/k8s/informer
   github.com/cilium/cilium/pkg/k8s/synced
-  github.com/cilium/cilium/pkg/k8s/watchers/resources
   github.com/cilium/cilium/pkg/k8s/resource
   github.com/cilium/cilium/pkg/byteorder
   github.com/cilium/cilium/pkg/common
