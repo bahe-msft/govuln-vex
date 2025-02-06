@@ -1258,7 +1258,7 @@ The package pattern matched the following 1255 root packages:
   k8s.io/kubernetes/test/utils/ktesting/examples/without_ktesting
   k8s.io/kubernetes/test/utils/oidc/handlers
   k8s.io/kubernetes/test/utils/oidc
-Govulncheck scanned the following 199 modules and the go1.23.5 standard library:
+Govulncheck scanned the following 199 modules and the go1.23.6 standard library:
   k8s.io/kubernetes
   bitbucket.org/bertimus9/systemstat@v0.5.0
   github.com/MakeNowJust/heredoc@v1.0.0
@@ -1536,8 +1536,8 @@ Vulnerability #2: GO-2024-3110
       #55: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls systemd.unifiedManager.Set, which eventually calls devices.Permissions.Union
       #56: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls systemd.legacyManager.Set, which eventually calls devices.Rule.CgroupString
       #57: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls systemd.unifiedManager.Set, which eventually calls devices.Type.CanCgroup
-      #58: pkg/kubelet/cm/cgroup_manager_linux.go:32:2: cm.init calls systemd.init, which calls devices.init
-      #59: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls configs.init, which calls devices.init
+      #58: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls configs.init, which calls devices.init
+      #59: pkg/kubelet/cm/cgroup_manager_linux.go:32:2: cm.init calls systemd.init, which calls devices.init
       #60: pkg/kubelet/kubelet.go:2067:13: kubelet.Kubelet.SyncTerminatingPod calls sort.Slice, which eventually calls devices.orderedEntries
       #61: pkg/volume/testing/testing.go:1293:52: testing.FindEmptyDirectoryUsageOnTmpfs calls strings.Fields, which eventually calls devices.parseLine
       #62: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls fs2.manager.Set, which eventually calls ebpf.LoadAttachCgroupDeviceFilter
@@ -1624,8 +1624,8 @@ Vulnerability #2: GO-2024-3110
       #143: pkg/registry/apps/deployment/storage/storage.go:457:32: storage.scaleUpdatedObjectInfo.UpdatedObject calls errors.NewInvalid, which eventually calls system.State.String
       #144: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls system.init
       #145: pkg/kubelet/cm/cgroup_manager_linux.go:93:42: cm.CgroupName.ToSystemd calls systemd.ExpandSlice
-      #146: pkg/kubelet/cm/cgroup_manager_linux.go:377:29: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
-      #147: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
+      #146: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
+      #147: pkg/kubelet/cm/cgroup_manager_linux.go:377:29: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
       #148: pkg/kubelet/cm/cgroup_manager_linux.go:377:29: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.NewLegacyManager
       #149: pkg/kubelet/cm/cgroup_manager_linux.go:377:29: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.NewUnifiedManager
       #150: pkg/kubelet/cm/cgroup_manager_linux.go:32:2: cm.init calls systemd.init
@@ -1642,8 +1642,8 @@ Vulnerability #2: GO-2024-3110
       #161: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls user.CurrentProcessUIDMap
       #162: pkg/kubelet/userns/inuserns/inuserns_linux.go:19:8: inuserns.init calls userns.init, which calls user.init
       #163: pkg/kubelet/userns/inuserns/inuserns_linux.go:19:8: inuserns.init calls userns.init
-      #164: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls userns.runningInUserNS
-      #165: pkg/kubelet/userns/inuserns/inuserns_linux.go:23:43: inuserns.RunningInUserNS calls userns.runningInUserNS
+      #164: pkg/kubelet/userns/inuserns/inuserns_linux.go:23:43: inuserns.RunningInUserNS calls userns.runningInUserNS
+      #165: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls userns.runningInUserNS
       #166: pkg/kubelet/cm/util/cgroups_linux.go:55:42: util.getCgroupV1Path calls utils.CleanPath
       #167: pkg/kubelet/cm/util/cgroups_linux.go:23:2: util.init calls utils.init
       #168: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls validate.init
