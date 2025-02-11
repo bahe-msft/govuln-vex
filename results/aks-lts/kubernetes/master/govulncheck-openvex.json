@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:047344d6263f12b381903ef45598cd030500442a33853d25f7cb5ecf336255ab",
+  "@id": "govulncheck/vex:e9b1be91fed8c366d5884cf514d65a417c9c96ff804fa684f0db15aaada8aacb",
   "author": "Unknown Author",
-  "timestamp": "2025-02-08T01:30:00.494312746Z",
+  "timestamp": "2025-02-11T01:39:04.020142579Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -28,54 +28,6 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_not_present",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
-    },
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2024-2631",
-        "name": "GO-2024-2631",
-        "description": "Decompression bomb vulnerability in github.com/go-jose/go-jose",
-        "aliases": [
-          "CVE-2024-28180",
-          "GHSA-c5q2-7r4c-mv6g"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product",
-          "subcomponents": [
-            {
-              "@id": "pkg:golang/gopkg.in%2Fsquare%2Fgo-jose.v2@v2.6.0"
-            }
-          ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
-    },
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2024-3333",
-        "name": "GO-2024-3333",
-        "description": "Non-linear parsing of case-insensitive content in golang.org/x/net/html",
-        "aliases": [
-          "CVE-2024-45338",
-          "GHSA-w32m-9786-jp63"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product",
-          "subcomponents": [
-            {
-              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.30.0"
-            }
-          ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
     }
   ]

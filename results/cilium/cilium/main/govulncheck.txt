@@ -2,7 +2,7 @@ Fetching vulnerabilities from the database...
 
 Checking the code against the vulnerabilities...
 
-The package pattern matched the following 697 root packages:
+The package pattern matched the following 698 root packages:
   github.com/cilium/cilium/api/v1/models
   github.com/cilium/cilium/api/v1/client/bgp
   github.com/cilium/cilium/api/v1/client/daemon
@@ -88,6 +88,7 @@ The package pattern matched the following 697 root packages:
   github.com/cilium/cilium/api/v1/server/restapi/service
   github.com/cilium/cilium/api/v1/server/restapi
   github.com/cilium/cilium/api/v1/server
+  github.com/cilium/cilium/api/v1/standalone-dns-proxy
   github.com/cilium/cilium/bpf/tests/bpftest
   github.com/cilium/cilium/clustermesh-apiserver/option
   github.com/cilium/cilium/operator/option
