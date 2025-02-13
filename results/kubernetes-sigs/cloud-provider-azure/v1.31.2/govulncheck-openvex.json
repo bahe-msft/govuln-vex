@@ -1,19 +1,19 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:6c88094be30ef47f861e7ae2391300da4de00f0b1357e8274c869fe1d99c4bea",
+  "@id": "govulncheck/vex:48b9aef0817c7495e6806e16f273ed13a6db439efcb1572cc2616a855da06594",
   "author": "Unknown Author",
-  "timestamp": "2025-02-13T02:01:23.92602989Z",
+  "timestamp": "2025-02-13T02:05:03.108765647Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
     {
       "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2024-3333",
-        "name": "GO-2024-3333",
-        "description": "Non-linear parsing of case-insensitive content in golang.org/x/net/html",
+        "@id": "https://pkg.go.dev/vuln/GO-2024-3250",
+        "name": "GO-2024-3250",
+        "description": "Improper error handling in ParseWithClaims and bad documentation may cause dangerous situations in github.com/golang-jwt/jwt",
         "aliases": [
-          "CVE-2024-45338",
-          "GHSA-w32m-9786-jp63"
+          "CVE-2024-51744",
+          "GHSA-29wx-vh33-7x7r"
         ]
       },
       "products": [
@@ -21,7 +21,7 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.32.0"
+              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.0"
             }
           ]
         }

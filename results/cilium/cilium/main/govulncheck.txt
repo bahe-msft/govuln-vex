@@ -701,7 +701,7 @@ The package pattern matched the following 698 root packages:
   github.com/cilium/cilium/tools/mount
   github.com/cilium/cilium/tools/spdxconv
   github.com/cilium/cilium/tools/sysctlfix
-Govulncheck scanned the following 285 modules and the go1.23.6 standard library:
+Govulncheck scanned the following 285 modules and the go1.24.0 standard library:
   github.com/cilium/cilium
   cel.dev/expr@v0.18.0
   dario.cat/mergo@v1.0.1
