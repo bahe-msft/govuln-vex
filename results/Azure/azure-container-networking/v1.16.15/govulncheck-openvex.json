@@ -1,35 +1,11 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:4a7a65684d43b729f77f2421d22724a16ca5fffcbc42f1b60177cc3f3db91575",
+  "@id": "govulncheck/vex:0cbef5ba14eaa0d8dd302dbfaa85e45b41a31a86d002aca37e1467c6fcab5c48",
   "author": "Unknown Author",
-  "timestamp": "2025-02-16T02:09:59.059997785Z",
+  "timestamp": "2025-02-16T01:44:58.753403345Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2024-3250",
-        "name": "GO-2024-3250",
-        "description": "Improper error handling in ParseWithClaims and bad documentation may cause dangerous situations in github.com/golang-jwt/jwt",
-        "aliases": [
-          "CVE-2024-51744",
-          "GHSA-29wx-vh33-7x7r"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product",
-          "subcomponents": [
-            {
-              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.0"
-            }
-          ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
-    },
     {
       "vulnerability": {
         "@id": "https://pkg.go.dev/vuln/GO-2024-3321",
@@ -45,7 +21,7 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.27.0"
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.28.0"
             }
           ]
         }
@@ -69,7 +45,7 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.29.0"
+              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.30.0"
             }
           ]
         }
