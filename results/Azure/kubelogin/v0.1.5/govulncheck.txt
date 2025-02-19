@@ -106,7 +106,7 @@ Vulnerability #1: GO-2024-3333
     Fixed in: golang.org/x/net@v0.33.0
 
 Vulnerability #2: GO-2024-3321
-    Misuse of ServerConfig.PublicKeyCallback may cause authorization bypass in
+    Misuse of connection.serverAuthenticate may cause authorization bypass in
     golang.org/x/crypto
   More info: https://pkg.go.dev/vuln/GO-2024-3321
   Module: golang.org/x/crypto

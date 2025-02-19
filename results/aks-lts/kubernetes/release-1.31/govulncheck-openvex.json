@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:f1bbac28b06a75651063d3d457bde36b755ad5129f7cb10bd1984e61ed1a18f0",
+  "@id": "govulncheck/vex:022897e6322278d51f60a9cc72b94b824d294136acce3b15a01b74ffcbe4d4dd",
   "author": "Unknown Author",
-  "timestamp": "2025-02-18T01:48:36.67242362Z",
+  "timestamp": "2025-02-19T01:49:19.648827424Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -102,7 +102,7 @@
       "vulnerability": {
         "@id": "https://pkg.go.dev/vuln/GO-2024-3321",
         "name": "GO-2024-3321",
-        "description": "Misuse of ServerConfig.PublicKeyCallback may cause authorization bypass in golang.org/x/crypto",
+        "description": "Misuse of connection.serverAuthenticate may cause authorization bypass in golang.org/x/crypto",
         "aliases": [
           "CVE-2024-45337",
           "GHSA-v778-237x-gjrc"
