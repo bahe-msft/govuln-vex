@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Mon Feb 24 02:09:50 UTC 2025
+Last updated time: Tue Feb 25 02:07:21 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -285,6 +285,12 @@ Reports: [kubernetes-sigs/cloud-provider-azure/v1.31.2](results/kubernetes-sigs/
 No active affected vulnerabilities found in v1.32.0
 
 Reports: [kubernetes-sigs/cloud-provider-azure/v1.32.0](results/kubernetes-sigs/cloud-provider-azure/v1.32.0)
+
+### ✅ v1.32.1
+
+No active affected vulnerabilities found in v1.32.1
+
+Reports: [kubernetes-sigs/cloud-provider-azure/v1.32.1](results/kubernetes-sigs/cloud-provider-azure/v1.32.1)
 
 ## kubernetes/kubernetes
 
