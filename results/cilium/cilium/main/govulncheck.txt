@@ -988,4 +988,40 @@ Govulncheck scanned the following 285 modules and the go1.24.0 standard library:
   sigs.k8s.io/structured-merge-diff/v4@v4.4.2
   sigs.k8s.io/yaml@v1.4.0
 
-No vulnerabilities found.
+=== Symbol Results ===
+
+Vulnerability #1: GO-2025-3487
+    Potential denial of service in golang.org/x/crypto
+  More info: https://pkg.go.dev/vuln/GO-2025-3487
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.32.0
+    Fixed in: golang.org/x/crypto@v0.35.0
+    Example traces found:
+      #1: test/helpers/ssh_command.go:311:39: helpers.SSHClient.newSession calls ssh.Client.NewSession
+      #2: test/helpers/ssh_command.go:300:29: helpers.SSHClient.newSession calls ssh.Dial
+      #3: test/helpers/ssh_command.go:283:32: helpers.SSHClient.RunCommandContext calls ssh.Session.Close
+      #4: test/helpers/ssh_command.go:211:20: helpers.SSHClient.RunCommandInBackground calls ssh.Session.RequestPty
+      #5: test/helpers/ssh_command.go:164:22: helpers.runCommand calls ssh.Session.Run
+      #6: test/helpers/ssh_command.go:280:28: helpers.SSHClient.RunCommandContext calls ssh.Session.Signal
+      #7: clustermesh-apiserver/etcdinit/root.go:148:21: etcdinit.InitEtcdLocal calls exec.Cmd.Start, which eventually calls ssh.channel.CloseWrite
+      #8: cilium-cli/k8s/client.go:981:18: k8s.Client.GetLogs calls io.Copy, which eventually calls ssh.channel.Read
+      #9: pkg/datapath/linux/sysctl/sysctl.go:217:29: sysctl.directSysctl.Write calls io.WriteString, which calls ssh.channel.Write
+      #10: cilium-cli/k8s/client.go:981:18: k8s.Client.GetLogs calls io.Copy, which eventually calls ssh.extChannel.Read
+
+=== Package Results ===
+
+No other vulnerabilities found.
+
+=== Module Results ===
+
+Vulnerability #1: GO-2025-3488
+    Unexpected memory consumption during token parsing in golang.org/x/oauth2
+  More info: https://pkg.go.dev/vuln/GO-2025-3488
+  Module: golang.org/x/oauth2
+    Found in: golang.org/x/oauth2@v0.25.0
+    Fixed in: golang.org/x/oauth2@v0.27.0
+
+Your code is affected by 1 vulnerability from 1 module.
+This scan also found 0 vulnerabilities in packages you import and 1
+vulnerability in modules you require, but your code doesn't appear to call these
+vulnerabilities.

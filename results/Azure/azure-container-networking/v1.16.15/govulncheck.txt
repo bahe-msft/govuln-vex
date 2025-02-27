@@ -303,7 +303,21 @@ Vulnerability #1: GO-2024-3333
 
 === Module Results ===
 
-Vulnerability #1: GO-2024-3321
+Vulnerability #1: GO-2025-3488
+    Unexpected memory consumption during token parsing in golang.org/x/oauth2
+  More info: https://pkg.go.dev/vuln/GO-2025-3488
+  Module: golang.org/x/oauth2
+    Found in: golang.org/x/oauth2@v0.23.0
+    Fixed in: golang.org/x/oauth2@v0.27.0
+
+Vulnerability #2: GO-2025-3487
+    Potential denial of service in golang.org/x/crypto
+  More info: https://pkg.go.dev/vuln/GO-2025-3487
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.28.0
+    Fixed in: golang.org/x/crypto@v0.35.0
+
+Vulnerability #3: GO-2024-3321
     Misuse of connection.serverAuthenticate may cause authorization bypass in
     golang.org/x/crypto
   More info: https://pkg.go.dev/vuln/GO-2024-3321
@@ -312,6 +326,6 @@ Vulnerability #1: GO-2024-3321
     Fixed in: golang.org/x/crypto@v0.31.0
 
 Your code is affected by 0 vulnerabilities.
-This scan also found 1 vulnerability in packages you import and 1 vulnerability
-in modules you require, but your code doesn't appear to call these
-vulnerabilities.
+This scan also found 1 vulnerability in packages you import and 3
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.

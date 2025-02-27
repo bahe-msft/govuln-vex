@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:8b0b85a97958a5f724e19f5804758bcf0c57b46d133708cd15384d3b98673ab3",
+  "@id": "govulncheck/vex:ba6132e8be1db11e1119bf2e3f42d6806ba7d2d897f28235fd5465112ef71cd9",
   "author": "Unknown Author",
-  "timestamp": "2025-02-26T01:53:15.195562412Z",
+  "timestamp": "2025-02-27T01:57:21.397363842Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -160,6 +160,50 @@
           "subcomponents": [
             {
               "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.23.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3487",
+        "name": "GO-2025-3487",
+        "description": "Potential denial of service in golang.org/x/crypto",
+        "aliases": [
+          "CVE-2025-22869"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.21.0"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3488",
+        "name": "GO-2025-3488",
+        "description": "Unexpected memory consumption during token parsing in golang.org/x/oauth2",
+        "aliases": [
+          "CVE-2025-22868"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Foauth2@v0.10.0"
             }
           ]
         }

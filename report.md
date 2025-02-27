@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Wed Feb 26 02:06:10 UTC 2025
+Last updated time: Thu Feb 27 02:25:02 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -136,9 +136,13 @@ Reports: [Azure/kubelogin/v0.1.7](results/Azure/kubelogin/v0.1.7)
 
 ## aks-lts/kubernetes
 
-### ✅ master
+### ⚠️ master
 
-No active affected vulnerabilities found in master
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/master](results/aks-lts/kubernetes/master)
 
@@ -152,6 +156,7 @@ Active affected vulnerabilities:
 | GO-2024-2491 | https://pkg.go.dev/vuln/GO-2024-2491 | affected | N/A |
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/release-1.27-lts](results/aks-lts/kubernetes/release-1.27-lts)
 
@@ -165,6 +170,7 @@ Active affected vulnerabilities:
 | GO-2024-2491 | https://pkg.go.dev/vuln/GO-2024-2491 | affected | N/A |
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/release-1.28-lts](results/aks-lts/kubernetes/release-1.28-lts)
 
@@ -178,6 +184,7 @@ Active affected vulnerabilities:
 | GO-2024-2491 | https://pkg.go.dev/vuln/GO-2024-2491 | affected | N/A |
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/release-1.29](results/aks-lts/kubernetes/release-1.29)
 
@@ -190,6 +197,7 @@ Active affected vulnerabilities:
 | GO-2023-2331 | https://pkg.go.dev/vuln/GO-2023-2331 | affected | N/A |
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/release-1.30](results/aks-lts/kubernetes/release-1.30)
 
@@ -201,14 +209,19 @@ Active affected vulnerabilities:
 |------|-----|--------|------------------|
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/release-1.31](results/aks-lts/kubernetes/release-1.31)
 
 ## cilium/cilium
 
-### ✅ main
+### ⚠️ main
 
-No active affected vulnerabilities found in main
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [cilium/cilium/main](results/cilium/cilium/main)
 
@@ -230,21 +243,33 @@ No active affected vulnerabilities found in v1.17.0-rc.0
 
 Reports: [cilium/cilium/v1.17.0-rc.0](results/cilium/cilium/v1.17.0-rc.0)
 
-### ✅ v1.17.0-rc.1
+### ⚠️ v1.17.0-rc.1
 
-No active affected vulnerabilities found in v1.17.0-rc.1
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [cilium/cilium/v1.17.0-rc.1](results/cilium/cilium/v1.17.0-rc.1)
 
-### ✅ v1.17.0-rc.2
+### ⚠️ v1.17.0-rc.2
 
-No active affected vulnerabilities found in v1.17.0-rc.2
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [cilium/cilium/v1.17.0-rc.2](results/cilium/cilium/v1.17.0-rc.2)
 
-### ✅ v1.17.1
+### ⚠️ v1.17.1
 
-No active affected vulnerabilities found in v1.17.1
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [cilium/cilium/v1.17.1](results/cilium/cilium/v1.17.1)
 
@@ -294,9 +319,13 @@ Reports: [kubernetes-sigs/cloud-provider-azure/v1.32.1](results/kubernetes-sigs/
 
 ## kubernetes/kubernetes
 
-### ✅ master
+### ⚠️ master
 
-No active affected vulnerabilities found in master
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [kubernetes/kubernetes/master](results/kubernetes/kubernetes/master)
 
@@ -309,6 +338,7 @@ Active affected vulnerabilities:
 | GO-2023-2331 | https://pkg.go.dev/vuln/GO-2023-2331 | affected | N/A |
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [kubernetes/kubernetes/release-1.30](results/kubernetes/kubernetes/release-1.30)
 
@@ -320,6 +350,7 @@ Active affected vulnerabilities:
 |------|-----|--------|------------------|
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [kubernetes/kubernetes/release-1.31](results/kubernetes/kubernetes/release-1.31)
 
@@ -330,6 +361,7 @@ Active affected vulnerabilities:
 | name | @id | status | impact statement |
 |------|-----|--------|------------------|
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 
 Reports: [kubernetes/kubernetes/release-1.32](results/kubernetes/kubernetes/release-1.32)
 

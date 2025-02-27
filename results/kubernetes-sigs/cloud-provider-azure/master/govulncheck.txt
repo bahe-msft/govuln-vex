@@ -188,4 +188,31 @@ Govulncheck scanned the following 127 modules and the go1.24.0 standard library:
   sigs.k8s.io/structured-merge-diff/v4@v4.4.2
   sigs.k8s.io/yaml@v1.4.0
 
+=== Symbol Results ===
+
 No vulnerabilities found.
+
+=== Package Results ===
+
+No other vulnerabilities found.
+
+=== Module Results ===
+
+Vulnerability #1: GO-2025-3488
+    Unexpected memory consumption during token parsing in golang.org/x/oauth2
+  More info: https://pkg.go.dev/vuln/GO-2025-3488
+  Module: golang.org/x/oauth2
+    Found in: golang.org/x/oauth2@v0.24.0
+    Fixed in: golang.org/x/oauth2@v0.27.0
+
+Vulnerability #2: GO-2025-3487
+    Potential denial of service in golang.org/x/crypto
+  More info: https://pkg.go.dev/vuln/GO-2025-3487
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.32.0
+    Fixed in: golang.org/x/crypto@v0.35.0
+
+Your code is affected by 0 vulnerabilities.
+This scan also found 0 vulnerabilities in packages you import and 2
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.

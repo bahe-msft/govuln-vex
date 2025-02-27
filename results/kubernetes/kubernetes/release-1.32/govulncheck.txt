@@ -1485,7 +1485,27 @@ Govulncheck scanned the following 195 modules and the go1.24.0 standard library:
 
 === Symbol Results ===
 
-Vulnerability #1: GO-2024-3250
+Vulnerability #1: GO-2025-3487
+    Potential denial of service in golang.org/x/crypto
+  More info: https://pkg.go.dev/vuln/GO-2025-3487
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.28.0
+    Fixed in: golang.org/x/crypto@v0.35.0
+    Example traces found:
+      #1: test/e2e/framework/ssh/ssh.go:319:33: ssh.runSSHCommandViaBastion calls ssh.Client.Dial
+      #2: test/e2e/framework/ssh/ssh.go:332:35: ssh.runSSHCommandViaBastion calls ssh.Client.NewSession
+      #3: test/e2e/framework/ssh/ssh.go:304:32: ssh.runSSHCommandViaBastion calls ssh.Dial
+      #4: test/e2e/framework/ssh/ssh.go:329:25: ssh.runSSHCommandViaBastion calls ssh.NewClient
+      #5: test/e2e/framework/ssh/ssh.go:325:44: ssh.runSSHCommandViaBastion calls ssh.NewClientConn
+      #6: test/e2e/framework/ssh/ssh.go:336:2: ssh.runSSHCommandViaBastion calls ssh.Session.Close
+      #7: test/e2e/framework/ssh/ssh.go:342:22: ssh.runSSHCommandViaBastion calls ssh.Session.Run
+      #8: test/e2e/framework/ssh/ssh.go:323:2: ssh.runSSHCommandViaBastion calls ssh.channel.Close
+      #9: test/utils/harness/harness.go:54:14: harness.Harness.Close calls ssh.stdin, which calls ssh.channel.CloseWrite
+      #10: cmd/kubeadm/app/preflight/checks.go:337:18: preflight.FileContentCheck.Check calls io.Copy, which eventually calls ssh.channel.Read
+      #11: cmd/kubeadm/app/preflight/checks.go:542:13: preflight.SystemVerificationCheck.Check calls bufio.Writer.Flush, which calls ssh.channel.Write
+      #12: cmd/kubeadm/app/preflight/checks.go:337:18: preflight.FileContentCheck.Check calls io.Copy, which eventually calls ssh.extChannel.Read
+
+Vulnerability #2: GO-2024-3250
     Improper error handling in ParseWithClaims and bad documentation may cause
     dangerous situations in github.com/golang-jwt/jwt
   More info: https://pkg.go.dev/vuln/GO-2024-3250
@@ -1521,14 +1541,21 @@ Vulnerability #3: GO-2024-2631
 
 === Module Results ===
 
-Vulnerability #1: GO-2023-2113
+Vulnerability #1: GO-2025-3488
+    Unexpected memory consumption during token parsing in golang.org/x/oauth2
+  More info: https://pkg.go.dev/vuln/GO-2025-3488
+  Module: golang.org/x/oauth2
+    Found in: golang.org/x/oauth2@v0.23.0
+    Fixed in: golang.org/x/oauth2@v0.27.0
+
+Vulnerability #2: GO-2023-2113
     Memory exhaustion in go.opentelemetry.io/contrib/instrumentation
   More info: https://pkg.go.dev/vuln/GO-2023-2113
   Module: go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful
     Found in: go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful@v0.42.0
     Fixed in: go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful@v0.44.0
 
-Your code is affected by 1 vulnerability from 1 module.
-This scan also found 3 vulnerabilities in packages you import and 1
-vulnerability in modules you require, but your code doesn't appear to call these
-vulnerabilities.
+Your code is affected by 2 vulnerabilities from 2 modules.
+This scan also found 3 vulnerabilities in packages you import and 2
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.
