@@ -669,7 +669,7 @@ The package pattern matched the following 666 root packages:
   github.com/cilium/cilium/tools/mount
   github.com/cilium/cilium/tools/spdxconv
   github.com/cilium/cilium/tools/sysctlfix
-Govulncheck scanned the following 239 modules and the go1.24.0 standard library:
+Govulncheck scanned the following 239 modules and the go1.24.1 standard library:
   github.com/cilium/cilium
   cel.dev/expr@v0.18.0
   github.com/Azure/azure-sdk-for-go@v68.0.0+incompatible
@@ -932,7 +932,12 @@ Vulnerability #1: GO-2025-3487
 
 === Package Results ===
 
-No other vulnerabilities found.
+Vulnerability #1: GO-2025-3485
+    DoS in go-jose Parsing in github.com/go-jose/go-jose
+  More info: https://pkg.go.dev/vuln/GO-2025-3485
+  Module: github.com/go-jose/go-jose/v4
+    Found in: github.com/go-jose/go-jose/v4@v4.0.4
+    Fixed in: github.com/go-jose/go-jose/v4@v4.0.5
 
 === Module Results ===
 
@@ -944,6 +949,6 @@ Vulnerability #1: GO-2025-3488
     Fixed in: golang.org/x/oauth2@v0.27.0
 
 Your code is affected by 1 vulnerability from 1 module.
-This scan also found 0 vulnerabilities in packages you import and 1
-vulnerability in modules you require, but your code doesn't appear to call these
+This scan also found 1 vulnerability in packages you import and 1 vulnerability
+in modules you require, but your code doesn't appear to call these
 vulnerabilities.

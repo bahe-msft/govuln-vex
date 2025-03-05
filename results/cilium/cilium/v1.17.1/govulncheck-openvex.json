@@ -1,11 +1,35 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:09e97a342e9d705c8250d6b0ba87b69c17444238cf5e4d81efb3b381129493ed",
+  "@id": "govulncheck/vex:38d3cb61e94c89e9dd01a9d00b8fcca781fd775736ebe901d8924d6737656a92",
   "author": "Unknown Author",
-  "timestamp": "2025-02-27T02:11:35.778153466Z",
+  "timestamp": "2025-03-05T21:08:23.895038949Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3485",
+        "name": "GO-2025-3485",
+        "description": "DoS in go-jose Parsing in github.com/go-jose/go-jose",
+        "aliases": [
+          "CVE-2025-27144",
+          "GHSA-c6gw-w398-hv78"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fgo-jose%2Fgo-jose%2Fv4@v4.0.4"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
     {
       "vulnerability": {
         "@id": "https://pkg.go.dev/vuln/GO-2025-3487",

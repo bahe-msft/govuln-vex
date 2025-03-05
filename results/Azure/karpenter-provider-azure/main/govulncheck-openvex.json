@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:95d6b021fb2f276a2629fcb98f0e2af81716842c2553a24ff7adab21834916df",
+  "@id": "govulncheck/vex:29c3b5f06f4ef92d25c1177724db403a4c097586f4b258fbab6615cf90b123bd",
   "author": "Unknown Author",
-  "timestamp": "2025-02-27T02:22:27.354632389Z",
+  "timestamp": "2025-03-05T21:14:45.674625957Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -20,7 +20,7 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.32.0"
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.33.0"
             }
           ]
         }
@@ -43,7 +43,7 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/golang.org%2Fx%2Foauth2@v0.22.0"
+              "@id": "pkg:golang/golang.org%2Fx%2Foauth2@v0.24.0"
             }
           ]
         }

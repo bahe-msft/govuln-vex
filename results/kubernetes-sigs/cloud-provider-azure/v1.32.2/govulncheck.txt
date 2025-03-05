@@ -172,7 +172,7 @@ Govulncheck scanned the following 143 modules and the go1.24.1 standard library:
   go.uber.org/mock@v0.5.0
   go.uber.org/multierr@v1.11.0
   go.uber.org/zap@v1.27.0
-  golang.org/x/crypto@v0.33.0
+  golang.org/x/crypto@v0.34.0
   golang.org/x/exp@v0.0.0-20240719175910-8a7402abbf56
   golang.org/x/net@v0.35.0
   golang.org/x/oauth2@v0.24.0
@@ -203,7 +203,7 @@ Govulncheck scanned the following 143 modules and the go1.24.1 standard library:
   k8s.io/kubelet@v0.32.2
   k8s.io/utils@v0.0.0-20241210054802-24370beab758
   sigs.k8s.io/apiserver-network-proxy/konnectivity-client@v0.31.0
-  sigs.k8s.io/cloud-provider-azure/pkg/azclient@v0.5.1
+  sigs.k8s.io/cloud-provider-azure/pkg/azclient@v0.5.2
   sigs.k8s.io/cloud-provider-azure/pkg/azclient/cache@v0.4.0
   sigs.k8s.io/cloud-provider-azure/pkg/azclient/configloader@v0.4.0
   sigs.k8s.io/json@v0.0.0-20241010143419-9aa6b5e7a4b3
@@ -231,7 +231,7 @@ Vulnerability #2: GO-2025-3487
     Potential denial of service in golang.org/x/crypto
   More info: https://pkg.go.dev/vuln/GO-2025-3487
   Module: golang.org/x/crypto
-    Found in: golang.org/x/crypto@v0.33.0
+    Found in: golang.org/x/crypto@v0.34.0
     Fixed in: golang.org/x/crypto@v0.35.0
 
 Your code is affected by 0 vulnerabilities.

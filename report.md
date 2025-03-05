@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Thu Feb 27 02:25:02 UTC 2025
+Last updated time: Wed Mar  5 21:16:27 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -136,13 +136,9 @@ Reports: [Azure/kubelogin/v0.1.7](results/Azure/kubelogin/v0.1.7)
 
 ## aks-lts/kubernetes
 
-### ⚠️ master
+### ✅ master
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
+No active affected vulnerabilities found in master
 
 Reports: [aks-lts/kubernetes/master](results/aks-lts/kubernetes/master)
 
@@ -273,6 +269,16 @@ Active affected vulnerabilities:
 
 Reports: [cilium/cilium/v1.17.1](results/cilium/cilium/v1.17.1)
 
+### ⚠️ v1.18.0-pre.0
+
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
+
+Reports: [cilium/cilium/v1.18.0-pre.0](results/cilium/cilium/v1.18.0-pre.0)
+
 ## kubernetes-sigs/cloud-provider-azure
 
 ### ✅ master
@@ -317,15 +323,17 @@ No active affected vulnerabilities found in v1.32.1
 
 Reports: [kubernetes-sigs/cloud-provider-azure/v1.32.1](results/kubernetes-sigs/cloud-provider-azure/v1.32.1)
 
+### ✅ v1.32.2
+
+No active affected vulnerabilities found in v1.32.2
+
+Reports: [kubernetes-sigs/cloud-provider-azure/v1.32.2](results/kubernetes-sigs/cloud-provider-azure/v1.32.2)
+
 ## kubernetes/kubernetes
 
-### ⚠️ master
+### ✅ master
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
+No active affected vulnerabilities found in master
 
 Reports: [kubernetes/kubernetes/master](results/kubernetes/kubernetes/master)
 
