@@ -1,6 +1,6 @@
 Go: go1.24.1
 Scanner: govulncheck@v1.1.4
 DB: https://vuln.go.dev
-DB updated: 2025-03-10 20:41:22 +0000 UTC
+DB updated: 2025-03-12 18:17:07 +0000 UTC
 
 No vulnerabilities found.

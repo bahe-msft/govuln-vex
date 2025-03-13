@@ -1492,8 +1492,8 @@ Vulnerability #3: GO-2024-3110
     Fixed in: github.com/opencontainers/runc@v1.1.14
     Example traces found:
       #1: pkg/security/apparmor/validate.go:24:2: apparmor.init calls apparmor.init
-      #2: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls apparmor.isEnabled
-      #3: pkg/security/apparmor/validate.go:104:24: apparmor.validateHost calls apparmor.isEnabled
+      #2: pkg/security/apparmor/validate.go:104:24: apparmor.validateHost calls apparmor.isEnabled
+      #3: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls apparmor.isEnabled
       #4: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls capabilities.init
       #5: pkg/kubelet/cm/cgroup_manager_linux.go:474:23: cm.cgroupManagerImpl.Create calls fs2.manager.Set, which eventually calls cgroups.ConvertBlkIOToIOWeightValue
       #6: pkg/kubelet/cm/cgroup_manager_linux.go:474:23: cm.cgroupManagerImpl.Create calls systemd.unifiedManager.Set, which eventually calls cgroups.ConvertMemorySwapToCgroupV2Value
@@ -1635,8 +1635,8 @@ Vulnerability #3: GO-2024-3110
       #142: pkg/registry/apps/deployment/storage/storage.go:457:32: storage.scaleUpdatedObjectInfo.UpdatedObject calls errors.NewInvalid, which eventually calls system.State.String
       #143: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls system.init
       #144: pkg/kubelet/cm/cgroup_manager_linux.go:95:42: cm.CgroupName.ToSystemd calls systemd.ExpandSlice
-      #145: pkg/kubelet/cm/cgroup_manager_linux.go:457:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
-      #146: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
+      #145: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
+      #146: pkg/kubelet/cm/cgroup_manager_linux.go:457:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
       #147: pkg/kubelet/cm/cgroup_manager_linux.go:457:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls systemd.NewLegacyManager
       #148: pkg/kubelet/cm/cgroup_manager_linux.go:457:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls systemd.NewUnifiedManager
       #149: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls systemd.init
@@ -1653,8 +1653,8 @@ Vulnerability #3: GO-2024-3110
       #160: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls user.CurrentProcessUIDMap
       #161: pkg/kubelet/cm/container_manager_linux.go:39:2: cm.init calls userns.init, which calls user.init
       #162: pkg/kubelet/cm/container_manager_linux.go:39:2: cm.init calls userns.init
-      #163: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls userns.runningInUserNS
-      #164: pkg/kubelet/kubelet.go:478:40: kubelet.NewMainKubelet calls userns.runningInUserNS
+      #163: pkg/kubelet/kubelet.go:478:40: kubelet.NewMainKubelet calls userns.runningInUserNS
+      #164: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls userns.runningInUserNS
       #165: pkg/kubelet/cm/util/cgroups_linux.go:55:42: util.getCgroupV1Path calls utils.CleanPath
       #166: pkg/kubelet/cm/util/cgroups_linux.go:23:2: util.init calls utils.init
       #167: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls validate.init
@@ -1685,21 +1685,28 @@ Vulnerability #5: GO-2023-2331
 
 === Package Results ===
 
-Vulnerability #1: GO-2025-3488
+Vulnerability #1: GO-2025-3503
+    HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net
+  More info: https://pkg.go.dev/vuln/GO-2025-3503
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.23.0
+    Fixed in: golang.org/x/net@v0.36.0
+
+Vulnerability #2: GO-2025-3488
     Unexpected memory consumption during token parsing in golang.org/x/oauth2
   More info: https://pkg.go.dev/vuln/GO-2025-3488
   Module: golang.org/x/oauth2
     Found in: golang.org/x/oauth2@v0.7.0
     Fixed in: golang.org/x/oauth2@v0.27.0
 
-Vulnerability #2: GO-2024-3333
+Vulnerability #3: GO-2024-3333
     Non-linear parsing of case-insensitive content in golang.org/x/net/html
   More info: https://pkg.go.dev/vuln/GO-2024-3333
   Module: golang.org/x/net
     Found in: golang.org/x/net@v0.23.0
     Fixed in: golang.org/x/net@v0.33.0
 
-Vulnerability #3: GO-2024-3321
+Vulnerability #4: GO-2024-3321
     Misuse of connection.serverAuthenticate may cause authorization bypass in
     golang.org/x/crypto
   More info: https://pkg.go.dev/vuln/GO-2024-3321
@@ -1707,14 +1714,14 @@ Vulnerability #3: GO-2024-3321
     Found in: golang.org/x/crypto@v0.21.0
     Fixed in: golang.org/x/crypto@v0.31.0
 
-Vulnerability #4: GO-2024-2631
+Vulnerability #5: GO-2024-2631
     Decompression bomb vulnerability in github.com/go-jose/go-jose
   More info: https://pkg.go.dev/vuln/GO-2024-2631
   Module: gopkg.in/square/go-jose.v2
     Found in: gopkg.in/square/go-jose.v2@v2.6.0
     Fixed in: N/A
 
-Vulnerability #5: GO-2023-2113
+Vulnerability #6: GO-2023-2113
     Memory exhaustion in go.opentelemetry.io/contrib/instrumentation
   More info: https://pkg.go.dev/vuln/GO-2023-2113
   Module: go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful
@@ -1730,6 +1737,6 @@ Vulnerability #5: GO-2023-2113
 No other vulnerabilities found.
 
 Your code is affected by 5 vulnerabilities from 4 modules.
-This scan also found 5 vulnerabilities in packages you import and 0
+This scan also found 6 vulnerabilities in packages you import and 0
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.

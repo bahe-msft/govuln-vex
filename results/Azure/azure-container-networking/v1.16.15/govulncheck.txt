@@ -294,7 +294,14 @@ No vulnerabilities found.
 
 === Package Results ===
 
-Vulnerability #1: GO-2024-3333
+Vulnerability #1: GO-2025-3503
+    HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net
+  More info: https://pkg.go.dev/vuln/GO-2025-3503
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.30.0
+    Fixed in: golang.org/x/net@v0.36.0
+
+Vulnerability #2: GO-2024-3333
     Non-linear parsing of case-insensitive content in golang.org/x/net/html
   More info: https://pkg.go.dev/vuln/GO-2024-3333
   Module: golang.org/x/net
@@ -326,6 +333,6 @@ Vulnerability #3: GO-2024-3321
     Fixed in: golang.org/x/crypto@v0.31.0
 
 Your code is affected by 0 vulnerabilities.
-This scan also found 1 vulnerability in packages you import and 3
+This scan also found 2 vulnerabilities in packages you import and 3
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.

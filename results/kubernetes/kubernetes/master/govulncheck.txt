@@ -1490,7 +1490,12 @@ No vulnerabilities found.
 
 === Package Results ===
 
-No other vulnerabilities found.
+Vulnerability #1: GO-2025-3503
+    HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net
+  More info: https://pkg.go.dev/vuln/GO-2025-3503
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.33.0
+    Fixed in: golang.org/x/net@v0.36.0
 
 === Module Results ===
 
@@ -1502,6 +1507,6 @@ Vulnerability #1: GO-2023-2113
     Fixed in: go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful@v0.44.0
 
 Your code is affected by 0 vulnerabilities.
-This scan also found 0 vulnerabilities in packages you import and 1
-vulnerability in modules you require, but your code doesn't appear to call these
+This scan also found 1 vulnerability in packages you import and 1 vulnerability
+in modules you require, but your code doesn't appear to call these
 vulnerabilities.
