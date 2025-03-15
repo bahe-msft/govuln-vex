@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:5cfd7d292105e6ec3cbbb3ed1f78c1f8ef82ebb2005b0d203501a8dba323fe03",
+  "@id": "govulncheck/vex:b84db0d777519473381cc11b8fc30290103ff7ac31941c60ad74218a155c5d38",
   "author": "Unknown Author",
-  "timestamp": "2025-03-15T02:22:33.638002003Z",
+  "timestamp": "2025-03-15T02:17:27.651360361Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -20,14 +20,12 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.33.0"
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.32.0"
             }
           ]
         }
       ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_present",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+      "status": "affected"
     },
     {
       "vulnerability": {
@@ -66,13 +64,13 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.35.0"
+              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.33.0"
             }
           ]
         }
       ],
       "status": "not_affected",
-      "justification": "vulnerable_code_not_present",
+      "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
     }
   ]
