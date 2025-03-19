@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Tue Mar 18 02:29:30 UTC 2025
+Last updated time: Wed Mar 19 02:28:34 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -170,6 +170,12 @@ No active affected vulnerabilities found in v0.2.2
 
 Reports: [Azure/kubelogin/v0.2.2](results/Azure/kubelogin/v0.2.2)
 
+### ✅ v0.2.3
+
+No active affected vulnerabilities found in v0.2.3
+
+Reports: [Azure/kubelogin/v0.2.3](results/Azure/kubelogin/v0.2.3)
+
 ## aks-lts/kubernetes
 
 ### ✅ master
@@ -254,6 +260,7 @@ Active affected vulnerabilities:
 | name | @id | status | impact statement |
 |------|-----|--------|------------------|
 | GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
+| GO-2025-3528 | https://pkg.go.dev/vuln/GO-2025-3528 | affected | N/A |
 
 Reports: [cilium/cilium/main](results/cilium/cilium/main)
 
@@ -322,6 +329,7 @@ Active affected vulnerabilities:
 | name | @id | status | impact statement |
 |------|-----|--------|------------------|
 | GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
+| GO-2025-3528 | https://pkg.go.dev/vuln/GO-2025-3528 | affected | N/A |
 
 Reports: [cilium/cilium/v1.18.0-pre.0](results/cilium/cilium/v1.18.0-pre.0)
 

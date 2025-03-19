@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:b4ffdc0428668d1e917e8770f0059cf93407d213defdb35cdd03abf86701a218",
+  "@id": "govulncheck/vex:07e293f9270eaca6274a18362a0ca2632dbff74302a94b43190e30e97f99a6ce",
   "author": "Unknown Author",
-  "timestamp": "2025-03-18T02:18:12.742058638Z",
+  "timestamp": "2025-03-19T02:17:20.444176703Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -72,6 +72,28 @@
       "status": "not_affected",
       "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3528",
+        "name": "GO-2025-3528",
+        "description": "containerd has an integer overflow in User ID handling in github.com/containerd/containerd",
+        "aliases": [
+          "CVE-2024-40635",
+          "GHSA-265r-hfxg-fhmg"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fcontainerd%2Fcontainerd@v1.7.24"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
     }
   ]
 }
