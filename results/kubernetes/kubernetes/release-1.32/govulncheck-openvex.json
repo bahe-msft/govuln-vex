@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:b372048ac5f069f99806f4622cc11692fe0f07c2e0f2c72ce716e386b75bfc80",
+  "@id": "govulncheck/vex:ec29c034b17902988f2f1ba6d59576c2f0fb8d27830079818ca0b26279e4f562",
   "author": "Unknown Author",
-  "timestamp": "2025-03-25T02:07:55.032113496Z",
+  "timestamp": "2025-03-26T02:06:37.41494452Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -190,6 +190,27 @@
       "status": "not_affected",
       "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3543",
+        "name": "GO-2025-3543",
+        "description": "Libcontainer is affected by capabilities elevation in github.com/opencontainers/runc",
+        "aliases": [
+          "CVE-2025-27612"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.2.1"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
     }
   ]
 }
