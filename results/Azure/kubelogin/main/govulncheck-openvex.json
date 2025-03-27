@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:3d222ca49adc7e66ee294d14ce1a12886415ab3dc08437cba6e559190a308ad0",
+  "@id": "govulncheck/vex:d8c98d57a62fa753d9ef5aca5da9eb0bf05f494f8010a4724745cbd4a17a580a",
   "author": "Unknown Author",
-  "timestamp": "2025-03-26T01:44:29.69129814Z",
+  "timestamp": "2025-03-27T01:43:55.0269292Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -73,6 +73,33 @@
       ],
       "status": "not_affected",
       "justification": "vulnerable_code_not_present",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3553",
+        "name": "GO-2025-3553",
+        "description": "Excessive memory allocation during header parsing in github.com/golang-jwt/jwt",
+        "aliases": [
+          "CVE-2025-30204",
+          "GHSA-mh63-6h87-95cp"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv5@v5.2.1"
+            },
+            {
+              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.1"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
     }
   ]

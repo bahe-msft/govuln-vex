@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Wed Mar 26 02:29:33 UTC 2025
+Last updated time: Thu Mar 27 02:35:27 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -202,13 +202,9 @@ Reports: [Azure/kubelogin/v0.2.7](results/Azure/kubelogin/v0.2.7)
 
 ## aks-lts/kubernetes
 
-### ⚠️ master
+### ✅ master
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2025-3543 | https://pkg.go.dev/vuln/GO-2025-3543 | affected | N/A |
+No active affected vulnerabilities found in master
 
 Reports: [aks-lts/kubernetes/master](results/aks-lts/kubernetes/master)
 
@@ -223,7 +219,6 @@ Active affected vulnerabilities:
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
 | GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3543 | https://pkg.go.dev/vuln/GO-2025-3543 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/release-1.27-lts](results/aks-lts/kubernetes/release-1.27-lts)
 
@@ -238,7 +233,6 @@ Active affected vulnerabilities:
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
 | GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3543 | https://pkg.go.dev/vuln/GO-2025-3543 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/release-1.28-lts](results/aks-lts/kubernetes/release-1.28-lts)
 
@@ -253,7 +247,6 @@ Active affected vulnerabilities:
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
 | GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3543 | https://pkg.go.dev/vuln/GO-2025-3543 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/release-1.29](results/aks-lts/kubernetes/release-1.29)
 
@@ -267,7 +260,6 @@ Active affected vulnerabilities:
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
 | GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3543 | https://pkg.go.dev/vuln/GO-2025-3543 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/release-1.30](results/aks-lts/kubernetes/release-1.30)
 
@@ -280,7 +272,6 @@ Active affected vulnerabilities:
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
 | GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3543 | https://pkg.go.dev/vuln/GO-2025-3543 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/release-1.31](results/aks-lts/kubernetes/release-1.31)
 
@@ -424,13 +415,9 @@ Reports: [kubernetes-sigs/cloud-provider-azure/v1.32.3](results/kubernetes-sigs/
 
 ## kubernetes/kubernetes
 
-### ⚠️ master
+### ✅ master
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2025-3543 | https://pkg.go.dev/vuln/GO-2025-3543 | affected | N/A |
+No active affected vulnerabilities found in master
 
 Reports: [kubernetes/kubernetes/master](results/kubernetes/kubernetes/master)
 
@@ -444,7 +431,6 @@ Active affected vulnerabilities:
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
 | GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3543 | https://pkg.go.dev/vuln/GO-2025-3543 | affected | N/A |
 
 Reports: [kubernetes/kubernetes/release-1.30](results/kubernetes/kubernetes/release-1.30)
 
@@ -457,7 +443,6 @@ Active affected vulnerabilities:
 | GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
 | GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3543 | https://pkg.go.dev/vuln/GO-2025-3543 | affected | N/A |
 
 Reports: [kubernetes/kubernetes/release-1.31](results/kubernetes/kubernetes/release-1.31)
 
@@ -469,7 +454,6 @@ Active affected vulnerabilities:
 |------|-----|--------|------------------|
 | GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
 | GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3543 | https://pkg.go.dev/vuln/GO-2025-3543 | affected | N/A |
 
 Reports: [kubernetes/kubernetes/release-1.32](results/kubernetes/kubernetes/release-1.32)
 

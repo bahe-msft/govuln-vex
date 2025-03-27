@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:bcd1e47e4d46691179e8741f40dc2be13ae9c39a0226e243d6ef64bd06be1918",
+  "@id": "govulncheck/vex:2022d3b6e06e3f4318f0e21c8fbdf1f425b2bc3c38b3d002b8041827f5da906f",
   "author": "Unknown Author",
-  "timestamp": "2025-03-26T01:49:22.04601783Z",
+  "timestamp": "2025-03-27T01:49:30.344231488Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -55,11 +55,12 @@
     },
     {
       "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2025-3543",
-        "name": "GO-2025-3543",
-        "description": "Libcontainer is affected by capabilities elevation in github.com/opencontainers/runc",
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3553",
+        "name": "GO-2025-3553",
+        "description": "Excessive memory allocation during header parsing in github.com/golang-jwt/jwt",
         "aliases": [
-          "CVE-2025-27612"
+          "CVE-2025-30204",
+          "GHSA-mh63-6h87-95cp"
         ]
       },
       "products": [
@@ -67,12 +68,14 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.2.1"
+              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.1"
             }
           ]
         }
       ],
-      "status": "affected"
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
     }
   ]
 }

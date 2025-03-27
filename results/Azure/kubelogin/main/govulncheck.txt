@@ -94,7 +94,17 @@ No vulnerabilities found.
 
 === Package Results ===
 
-No other vulnerabilities found.
+Vulnerability #1: GO-2025-3553
+    Excessive memory allocation during header parsing in
+    github.com/golang-jwt/jwt
+  More info: https://pkg.go.dev/vuln/GO-2025-3553
+  Module: github.com/golang-jwt/jwt/v4
+    Found in: github.com/golang-jwt/jwt/v4@v4.5.1
+    Fixed in: github.com/golang-jwt/jwt/v4@v4.5.2
+
+  Module: github.com/golang-jwt/jwt/v5
+    Found in: github.com/golang-jwt/jwt/v5@v5.2.1
+    Fixed in: github.com/golang-jwt/jwt/v5@v5.2.2
 
 === Module Results ===
 
@@ -120,6 +130,6 @@ Vulnerability #3: GO-2025-3487
     Fixed in: golang.org/x/crypto@v0.35.0
 
 Your code is affected by 0 vulnerabilities.
-This scan also found 0 vulnerabilities in packages you import and 3
+This scan also found 1 vulnerability in packages you import and 3
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.
