@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Mon Mar 31 02:40:23 UTC 2025
+Last updated time: Tue Apr  1 02:45:55 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -356,6 +356,12 @@ Active affected vulnerabilities:
 | GO-2025-3528 | https://pkg.go.dev/vuln/GO-2025-3528 | affected | N/A |
 
 Reports: [cilium/cilium/v1.18.0-pre.0](results/cilium/cilium/v1.18.0-pre.0)
+
+### ✅ v1.18.0-pre.1
+
+No active affected vulnerabilities found in v1.18.0-pre.1
+
+Reports: [cilium/cilium/v1.18.0-pre.1](results/cilium/cilium/v1.18.0-pre.1)
 
 ## kubernetes-sigs/cloud-provider-azure
 
