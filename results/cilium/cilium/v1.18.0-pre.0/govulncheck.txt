@@ -1018,15 +1018,15 @@ Vulnerability #1: GO-2025-3528
       #8: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls auth.init
       #9: pkg/hubble/exporter/config.go:37:27: exporter.exporterConfigParser.Parse calls bytes.Buffer.ReadFrom, which calls compression.bufferedReader.Read
       #10: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls compression.gzipDecompress
-      #11: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls compression.init
-      #12: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
+      #11: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
+      #12: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls compression.init
       #13: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.Copy
       #14: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.ReadBlob
       #15: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.WithDescriptor
       #16: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.WithDescriptor
       #17: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.WithRef
-      #18: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
-      #19: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls content.init
+      #18: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls content.init
+      #19: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
       #20: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls docker.Close
       #21: pkg/loadbalancer/experimental/healthserver.go:371:26: experimental.httpHealthServer.ServeHTTP calls docker.ErrorCode.Error
       #22: pkg/datapath/linux/ipsec/ipsec_linux.go:1142:16: ipsec.DeleteIPsecEncryptRoute calls slog.Logger.With, which eventually calls docker.ErrorCode.MarshalText
@@ -1073,8 +1073,8 @@ Vulnerability #1: GO-2025-3528
       #63: pkg/datapath/linux/sysctl/sysctl.go:217:29: sysctl.directSysctl.Write calls io.WriteString, which calls schema1.blobStateCalculator.Write
       #64: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls schema1.init
       #65: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.Name
-      #66: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
-      #67: cilium-cli/features/summary.go:176:56: features.downloadArtifacts calls github.ActionsService.DownloadArtifact, which eventually calls tracing.UpdateHTTPClient
+      #66: cilium-cli/features/summary.go:176:56: features.downloadArtifacts calls github.ActionsService.DownloadArtifact, which eventually calls tracing.UpdateHTTPClient
+      #67: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
       #68: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls tracing.init
       #69: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls version.init
 
