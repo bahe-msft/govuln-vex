@@ -56,7 +56,7 @@ The package pattern matched the following 53 root packages:
   github.com/Azure/karpenter-provider-azure/test/suites/integration
   github.com/Azure/karpenter-provider-azure/test/suites/nodeclaim
   github.com/Azure/karpenter-provider-azure/test/suites/utilization
-Govulncheck scanned the following 157 modules and the go1.24.1 standard library:
+Govulncheck scanned the following 157 modules and the go1.24.2 standard library:
   github.com/Azure/karpenter-provider-azure
   contrib.go.opencensus.io/exporter/ocagent@v0.7.1-0.20200907061046-05415f1de66d
   contrib.go.opencensus.io/exporter/prometheus@v0.4.2
