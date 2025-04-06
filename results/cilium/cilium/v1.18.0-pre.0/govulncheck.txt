@@ -1053,8 +1053,8 @@ Vulnerability #1: GO-2025-3528
       #43: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls errors.init
       #44: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls filters.init
       #45: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.ChildrenHandler
-      #46: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
-      #47: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Dispatch
+      #46: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Dispatch
+      #47: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
       #48: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Handlers
       #49: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls images.init
       #50: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls labels.init
