@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:dce5e57705b563aeba316e8071fe0e319fc36a21be74038559767049a7358482",
+  "@id": "govulncheck/vex:44bf16fb8631b6031de33b9276b80e8a3d227556750c23adbd9a07ba32efdfba",
   "author": "Unknown Author",
-  "timestamp": "2025-04-06T02:31:40.574798165Z",
+  "timestamp": "2025-04-07T02:27:28.658564397Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -90,10 +90,10 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv5@v5.2.1"
+              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.1"
             },
             {
-              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.1"
+              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv5@v5.2.1"
             }
           ]
         }
