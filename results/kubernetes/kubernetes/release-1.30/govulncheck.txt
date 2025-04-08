@@ -1506,15 +1506,15 @@ Vulnerability #3: GO-2024-3110
     Fixed in: github.com/opencontainers/runc@v1.1.14
     Example traces found:
       #1: pkg/security/apparmor/validate.go:24:2: apparmor.init calls apparmor.init
-      #2: pkg/security/apparmor/validate.go:103:24: apparmor.validateHost calls apparmor.isEnabled
-      #3: pkg/kubelet/metrics/metrics.go:917:20: metrics.Register calls sync.Once.Do, which eventually calls apparmor.isEnabled
+      #2: pkg/kubelet/metrics/metrics.go:917:20: metrics.Register calls sync.Once.Do, which eventually calls apparmor.isEnabled
+      #3: pkg/security/apparmor/validate.go:103:24: apparmor.validateHost calls apparmor.isEnabled
       #4: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls capabilities.init
       #5: pkg/kubelet/cm/cgroup_manager_linux.go:475:23: cm.cgroupManagerImpl.Create calls fs2.manager.Set, which eventually calls cgroups.ConvertBlkIOToIOWeightValue
       #6: pkg/kubelet/cm/cgroup_manager_linux.go:475:23: cm.cgroupManagerImpl.Create calls systemd.unifiedManager.Set, which eventually calls cgroups.ConvertMemorySwapToCgroupV2Value
       #7: pkg/kubelet/cm/cgroup_manager_linux.go:458:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls cgroups.FindCgroupMountpoint
       #8: pkg/kubelet/cm/util/cgroups_linux.go:57:67: util.getCgroupV1Path calls cgroups.FindCgroupMountpointAndRoot
-      #9: pkg/kubelet/cadvisor/cadvisor_linux.go:128:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls cgroups.GetAllPids
-      #10: cmd/kubeadm/app/util/users/users_linux.go:652:25: users.UpdatePathOwner calls filepath.WalkDir, which calls cgroups.GetAllPids
+      #9: cmd/kubeadm/app/util/users/users_linux.go:652:25: users.UpdatePathOwner calls filepath.WalkDir, which calls cgroups.GetAllPids
+      #10: pkg/kubelet/cadvisor/cadvisor_linux.go:128:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls cgroups.GetAllPids
       #11: pkg/kubelet/cm/helpers_linux.go:239:58: cm.getCgroupSubsystemsV2 calls cgroups.GetAllSubsystems
       #12: pkg/kubelet/cm/helpers_linux.go:210:56: cm.getCgroupSubsystemsV1 calls cgroups.GetCgroupMounts
       #13: pkg/kubelet/cadvisor/cadvisor_linux.go:105:23: cadvisor.New calls manager.New, which calls cgroups.GetOwnCgroup
@@ -1562,8 +1562,8 @@ Vulnerability #3: GO-2024-3110
       #55: pkg/kubelet/cm/cgroup_manager_linux.go:475:23: cm.cgroupManagerImpl.Create calls systemd.unifiedManager.Set, which eventually calls devices.Permissions.Union
       #56: pkg/kubelet/cm/cgroup_manager_linux.go:475:23: cm.cgroupManagerImpl.Create calls systemd.legacyManager.Set, which eventually calls devices.Rule.CgroupString
       #57: pkg/kubelet/cm/cgroup_manager_linux.go:475:23: cm.cgroupManagerImpl.Create calls systemd.unifiedManager.Set, which eventually calls devices.Type.CanCgroup
-      #58: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls systemd.init, which calls devices.init
-      #59: pkg/kubelet/cm/cgroup_manager_linux.go:34:2: cm.init calls configs.init, which calls devices.init
+      #58: pkg/kubelet/cm/cgroup_manager_linux.go:34:2: cm.init calls configs.init, which calls devices.init
+      #59: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls systemd.init, which calls devices.init
       #60: pkg/kubelet/kubelet.go:2089:13: kubelet.Kubelet.SyncTerminatingPod calls sort.Slice, which eventually calls devices.orderedEntries
       #61: pkg/volume/testing/testing.go:1299:52: testing.FindEmptyDirectoryUsageOnTmpfs calls strings.Fields, which eventually calls devices.parseLine
       #62: pkg/kubelet/cm/cgroup_manager_linux.go:475:23: cm.cgroupManagerImpl.Create calls fs2.manager.Set, which eventually calls ebpf.LoadAttachCgroupDeviceFilter
@@ -1635,8 +1635,8 @@ Vulnerability #3: GO-2024-3110
       #128: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls fscommon.init
       #129: pkg/kubelet/cadvisor/cadvisor_linux.go:105:23: cadvisor.New calls manager.New, which eventually calls intelrdt.IsCMTEnabled
       #130: pkg/kubelet/cadvisor/cadvisor_linux.go:105:23: cadvisor.New calls manager.New, which eventually calls intelrdt.IsMBMEnabled
-      #131: pkg/kubelet/cadvisor/cadvisor_linux.go:105:23: cadvisor.New calls manager.New, which eventually calls intelrdt.Root
-      #132: pkg/kubelet/metrics/metrics.go:917:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.Root
+      #131: pkg/kubelet/metrics/metrics.go:917:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.Root
+      #132: pkg/kubelet/cadvisor/cadvisor_linux.go:105:23: cadvisor.New calls manager.New, which eventually calls intelrdt.Root
       #133: pkg/kubelet/cadvisor/cadvisor_linux.go:128:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls intelrdt.WriteIntelRdtTasks
       #134: pkg/kubelet/metrics/metrics.go:917:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.featuresInit
       #135: pkg/kubelet/cadvisor/cadvisor_linux.go:105:23: cadvisor.New calls manager.New, which eventually calls intelrdt.findIntelRdtMountpointDir
@@ -1650,8 +1650,8 @@ Vulnerability #3: GO-2024-3110
       #143: pkg/registry/apps/deployment/storage/storage.go:457:32: storage.scaleUpdatedObjectInfo.UpdatedObject calls errors.NewInvalid, which eventually calls system.State.String
       #144: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls system.init
       #145: pkg/kubelet/cm/cgroup_manager_linux.go:96:42: cm.CgroupName.ToSystemd calls systemd.ExpandSlice
-      #146: pkg/kubelet/cm/cgroup_manager_linux.go:458:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
-      #147: pkg/kubelet/metrics/metrics.go:917:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
+      #146: pkg/kubelet/metrics/metrics.go:917:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
+      #147: pkg/kubelet/cm/cgroup_manager_linux.go:458:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
       #148: pkg/kubelet/cm/cgroup_manager_linux.go:458:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls systemd.NewLegacyManager
       #149: pkg/kubelet/cm/cgroup_manager_linux.go:458:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls systemd.NewUnifiedManager
       #150: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls systemd.init
