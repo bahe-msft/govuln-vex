@@ -1451,7 +1451,17 @@ Govulncheck scanned the following 244 modules and the go1.24.2 standard library:
 
 === Symbol Results ===
 
-Vulnerability #1: GO-2025-3487
+Vulnerability #1: GO-2025-3553
+    Excessive memory allocation during header parsing in
+    github.com/golang-jwt/jwt
+  More info: https://pkg.go.dev/vuln/GO-2025-3553
+  Module: github.com/golang-jwt/jwt/v4
+    Found in: github.com/golang-jwt/jwt/v4@v4.4.2
+    Fixed in: github.com/golang-jwt/jwt/v4@v4.5.2
+    Example traces found:
+      #1: pkg/kubelet/cri/streaming/server.go:257:21: streaming.server.ServeHTTP calls restful.Container.ServeHTTP, which eventually calls jwt.Parser.ParseUnverified
+
+Vulnerability #2: GO-2025-3487
     Potential denial of service in golang.org/x/crypto
   More info: https://pkg.go.dev/vuln/GO-2025-3487
   Module: golang.org/x/crypto
@@ -1473,7 +1483,7 @@ Vulnerability #1: GO-2025-3487
       #13: cmd/kubeadm/app/preflight/checks.go:339:18: preflight.FileContentCheck.Check calls io.Copy, which eventually calls ssh.extChannel.Read
       #14: test/e2e/cloud/gcp/addon_update.go:512:2: gcp.writeRemoteFile calls ssh.sessionStdin.Close
 
-Vulnerability #2: GO-2024-3250
+Vulnerability #3: GO-2024-3250
     Improper error handling in ParseWithClaims and bad documentation may cause
     dangerous situations in github.com/golang-jwt/jwt
   More info: https://pkg.go.dev/vuln/GO-2024-3250
@@ -1483,7 +1493,7 @@ Vulnerability #2: GO-2024-3250
     Example traces found:
       #1: pkg/kubelet/cri/streaming/server.go:257:21: streaming.server.ServeHTTP calls restful.Container.ServeHTTP, which eventually calls jwt.Parse
 
-Vulnerability #3: GO-2024-3110
+Vulnerability #4: GO-2024-3110
     runc can be confused to create empty files/directories on the host in
     github.com/opencontainers/runc
   More info: https://pkg.go.dev/vuln/GO-2024-3110
@@ -1499,8 +1509,8 @@ Vulnerability #3: GO-2024-3110
       #6: pkg/kubelet/cm/cgroup_manager_linux.go:474:23: cm.cgroupManagerImpl.Create calls systemd.unifiedManager.Set, which eventually calls cgroups.ConvertMemorySwapToCgroupV2Value
       #7: pkg/kubelet/cm/cgroup_manager_linux.go:457:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls cgroups.FindCgroupMountpoint
       #8: pkg/kubelet/cm/util/cgroups_linux.go:57:67: util.getCgroupV1Path calls cgroups.FindCgroupMountpointAndRoot
-      #9: pkg/kubelet/cadvisor/cadvisor_linux.go:129:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls cgroups.GetAllPids
-      #10: cmd/kubeadm/app/util/users/users_linux.go:652:25: users.UpdatePathOwner calls filepath.WalkDir, which calls cgroups.GetAllPids
+      #9: cmd/kubeadm/app/util/users/users_linux.go:652:25: users.UpdatePathOwner calls filepath.WalkDir, which calls cgroups.GetAllPids
+      #10: pkg/kubelet/cadvisor/cadvisor_linux.go:129:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls cgroups.GetAllPids
       #11: pkg/kubelet/cm/helpers_linux.go:239:58: cm.getCgroupSubsystemsV2 calls cgroups.GetAllSubsystems
       #12: pkg/kubelet/cm/helpers_linux.go:210:56: cm.getCgroupSubsystemsV1 calls cgroups.GetCgroupMounts
       #13: pkg/kubelet/cadvisor/cadvisor_linux.go:106:23: cadvisor.New calls manager.New, which calls cgroups.GetOwnCgroup
@@ -1508,8 +1518,8 @@ Vulnerability #3: GO-2024-3110
       #15: pkg/kubelet/cm/util/cgroups_linux.go:49:36: util.GetPids calls cgroups.GetPids
       #16: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.HugePageSizes
       #17: pkg/kubelet/kuberuntime/kuberuntime_container_linux.go:226:60: kuberuntime.GetHugepageLimitsFromResources calls cgroups.HugePageSizes
-      #18: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
-      #19: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
+      #18: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
+      #19: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
       #20: pkg/kubelet/cm/cgroup_manager_linux.go:549:45: cm.cgroupManagerImpl.MemoryUsage calls cgroups.IsCgroup2UnifiedMode
       #21: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2UnifiedMode
       #22: pkg/kubelet/cm/cgroup_manager_linux.go:457:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls cgroups.IsNotFound
@@ -1653,13 +1663,13 @@ Vulnerability #3: GO-2024-3110
       #160: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls user.CurrentProcessUIDMap
       #161: pkg/kubelet/cm/container_manager_linux.go:39:2: cm.init calls userns.init, which calls user.init
       #162: pkg/kubelet/cm/container_manager_linux.go:39:2: cm.init calls userns.init
-      #163: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls userns.runningInUserNS
-      #164: pkg/kubelet/kubelet.go:478:40: kubelet.NewMainKubelet calls userns.runningInUserNS
+      #163: pkg/kubelet/kubelet.go:478:40: kubelet.NewMainKubelet calls userns.runningInUserNS
+      #164: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls userns.runningInUserNS
       #165: pkg/kubelet/cm/util/cgroups_linux.go:55:42: util.getCgroupV1Path calls utils.CleanPath
       #166: pkg/kubelet/cm/util/cgroups_linux.go:23:2: util.init calls utils.init
       #167: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls validate.init
 
-Vulnerability #4: GO-2024-2491
+Vulnerability #5: GO-2024-2491
     Container breakout through process.cwd trickery and leaked fds in
     github.com/opencontainers/runc
   More info: https://pkg.go.dev/vuln/GO-2024-2491
@@ -1669,7 +1679,7 @@ Vulnerability #4: GO-2024-2491
     Example traces found:
       #1: pkg/kubelet/cm/util/cgroups_linux.go:49:36: util.GetPids calls cgroups.GetPids, which eventually calls cgroups.openFile
 
-Vulnerability #5: GO-2023-2331
+Vulnerability #6: GO-2023-2331
     Denial of service in
     go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc
   More info: https://pkg.go.dev/vuln/GO-2023-2331
@@ -1685,36 +1695,28 @@ Vulnerability #5: GO-2023-2331
 
 === Package Results ===
 
-Vulnerability #1: GO-2025-3553
-    Excessive memory allocation during header parsing in
-    github.com/golang-jwt/jwt
-  More info: https://pkg.go.dev/vuln/GO-2025-3553
-  Module: github.com/golang-jwt/jwt/v4
-    Found in: github.com/golang-jwt/jwt/v4@v4.4.2
-    Fixed in: github.com/golang-jwt/jwt/v4@v4.5.2
-
-Vulnerability #2: GO-2025-3503
+Vulnerability #1: GO-2025-3503
     HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net
   More info: https://pkg.go.dev/vuln/GO-2025-3503
   Module: golang.org/x/net
     Found in: golang.org/x/net@v0.23.0
     Fixed in: golang.org/x/net@v0.36.0
 
-Vulnerability #3: GO-2025-3488
+Vulnerability #2: GO-2025-3488
     Unexpected memory consumption during token parsing in golang.org/x/oauth2
   More info: https://pkg.go.dev/vuln/GO-2025-3488
   Module: golang.org/x/oauth2
     Found in: golang.org/x/oauth2@v0.7.0
     Fixed in: golang.org/x/oauth2@v0.27.0
 
-Vulnerability #4: GO-2024-3333
+Vulnerability #3: GO-2024-3333
     Non-linear parsing of case-insensitive content in golang.org/x/net/html
   More info: https://pkg.go.dev/vuln/GO-2024-3333
   Module: golang.org/x/net
     Found in: golang.org/x/net@v0.23.0
     Fixed in: golang.org/x/net@v0.33.0
 
-Vulnerability #5: GO-2024-3321
+Vulnerability #4: GO-2024-3321
     Misuse of connection.serverAuthenticate may cause authorization bypass in
     golang.org/x/crypto
   More info: https://pkg.go.dev/vuln/GO-2024-3321
@@ -1722,14 +1724,14 @@ Vulnerability #5: GO-2024-3321
     Found in: golang.org/x/crypto@v0.21.0
     Fixed in: golang.org/x/crypto@v0.31.0
 
-Vulnerability #6: GO-2024-2631
+Vulnerability #5: GO-2024-2631
     Decompression bomb vulnerability in github.com/go-jose/go-jose
   More info: https://pkg.go.dev/vuln/GO-2024-2631
   Module: gopkg.in/square/go-jose.v2
     Found in: gopkg.in/square/go-jose.v2@v2.6.0
     Fixed in: N/A
 
-Vulnerability #7: GO-2023-2113
+Vulnerability #6: GO-2023-2113
     Memory exhaustion in go.opentelemetry.io/contrib/instrumentation
   More info: https://pkg.go.dev/vuln/GO-2023-2113
   Module: go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful
@@ -1744,7 +1746,7 @@ Vulnerability #7: GO-2023-2113
 
 No other vulnerabilities found.
 
-Your code is affected by 5 vulnerabilities from 4 modules.
-This scan also found 7 vulnerabilities in packages you import and 0
+Your code is affected by 6 vulnerabilities from 4 modules.
+This scan also found 6 vulnerabilities in packages you import and 0
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.
