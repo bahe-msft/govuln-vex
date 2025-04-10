@@ -1566,8 +1566,8 @@ Vulnerability #4: GO-2024-3110
       #55: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls systemd.unifiedManager.Set, which eventually calls devices.Permissions.Union
       #56: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls systemd.legacyManager.Set, which eventually calls devices.Rule.CgroupString
       #57: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls systemd.unifiedManager.Set, which eventually calls devices.Type.CanCgroup
-      #58: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls configs.init, which calls devices.init
-      #59: pkg/kubelet/cm/cgroup_manager_linux.go:32:2: cm.init calls systemd.init, which calls devices.init
+      #58: pkg/kubelet/cm/cgroup_manager_linux.go:32:2: cm.init calls systemd.init, which calls devices.init
+      #59: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls configs.init, which calls devices.init
       #60: pkg/kubelet/kubelet.go:2067:13: kubelet.Kubelet.SyncTerminatingPod calls sort.Slice, which eventually calls devices.orderedEntries
       #61: pkg/volume/testing/testing.go:1293:52: testing.FindEmptyDirectoryUsageOnTmpfs calls strings.Fields, which eventually calls devices.parseLine
       #62: pkg/kubelet/cm/cgroup_manager_linux.go:394:23: cm.cgroupCommon.Create calls fs2.manager.Set, which eventually calls ebpf.LoadAttachCgroupDeviceFilter
@@ -1639,8 +1639,8 @@ Vulnerability #4: GO-2024-3110
       #128: pkg/kubelet/cm/cgroup_manager_linux.go:30:2: cm.init calls fscommon.init
       #129: pkg/kubelet/cadvisor/cadvisor_linux.go:105:23: cadvisor.New calls manager.New, which eventually calls intelrdt.IsCMTEnabled
       #130: pkg/kubelet/cadvisor/cadvisor_linux.go:105:23: cadvisor.New calls manager.New, which eventually calls intelrdt.IsMBMEnabled
-      #131: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.Root
-      #132: pkg/kubelet/cadvisor/cadvisor_linux.go:105:23: cadvisor.New calls manager.New, which eventually calls intelrdt.Root
+      #131: pkg/kubelet/cadvisor/cadvisor_linux.go:105:23: cadvisor.New calls manager.New, which eventually calls intelrdt.Root
+      #132: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.Root
       #133: pkg/kubelet/cadvisor/cadvisor_linux.go:128:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls intelrdt.WriteIntelRdtTasks
       #134: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.featuresInit
       #135: pkg/kubelet/cadvisor/cadvisor_linux.go:105:23: cadvisor.New calls manager.New, which eventually calls intelrdt.findIntelRdtMountpointDir
@@ -1672,8 +1672,8 @@ Vulnerability #4: GO-2024-3110
       #161: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls user.CurrentProcessUIDMap
       #162: pkg/kubelet/userns/inuserns/inuserns_linux.go:19:8: inuserns.init calls userns.init, which calls user.init
       #163: pkg/kubelet/userns/inuserns/inuserns_linux.go:19:8: inuserns.init calls userns.init
-      #164: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls userns.runningInUserNS
-      #165: pkg/kubelet/userns/inuserns/inuserns_linux.go:23:43: inuserns.RunningInUserNS calls userns.runningInUserNS
+      #164: pkg/kubelet/userns/inuserns/inuserns_linux.go:23:43: inuserns.RunningInUserNS calls userns.runningInUserNS
+      #165: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls userns.runningInUserNS
       #166: pkg/kubelet/cm/util/cgroups_linux.go:55:42: util.getCgroupV1Path calls utils.CleanPath
       #167: pkg/kubelet/cm/util/cgroups_linux.go:23:2: util.init calls utils.init
       #168: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls validate.init
