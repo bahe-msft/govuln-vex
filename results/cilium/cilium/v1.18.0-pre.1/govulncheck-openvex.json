@@ -1,8 +1,54 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:dbe7160a7e784903e7018529dca9791796885b4a0bad84a321cecbf1dc0473a5",
+  "@id": "govulncheck/vex:7834a1fad8d20690bb961923990659e40d4bddd02f5a9bd09863f6ec89beb4c2",
   "author": "Unknown Author",
-  "timestamp": "2025-04-10T02:13:58.084298186Z",
+  "timestamp": "2025-04-11T02:20:06.316288687Z",
   "version": 1,
-  "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck"
+  "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
+  "statements": [
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3601",
+        "name": "GO-2025-3601",
+        "description": "Helm Allows A Specially Crafted Chart Archive To Cause Out Of Memory Termination in helm.sh/helm",
+        "aliases": [
+          "CVE-2025-32386",
+          "GHSA-4hfp-h4cw-hj8p"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/helm.sh%2Fhelm%2Fv3@v3.17.2"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3602",
+        "name": "GO-2025-3602",
+        "description": "Helm Allows A Specially Crafted JSON Schema To Cause A Stack Overflow in helm.sh/helm",
+        "aliases": [
+          "CVE-2025-32387",
+          "GHSA-5xqw-8hwv-wg92"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/helm.sh%2Fhelm%2Fv3@v3.17.2"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    }
+  ]
 }
