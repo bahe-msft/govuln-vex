@@ -1,34 +1,11 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:f3c5190e8dd2a258148a2fc75d4d24b22484758894438878ed960638cc8dba72",
+  "@id": "govulncheck/vex:f35ffd79e69af9838ddd264be2900421e8e1a507a986715946163d0aab6e7632",
   "author": "Unknown Author",
-  "timestamp": "2025-04-15T01:49:28.000430941Z",
+  "timestamp": "2025-04-15T02:32:30.03022872Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2025-3488",
-        "name": "GO-2025-3488",
-        "description": "Unexpected memory consumption during token parsing in golang.org/x/oauth2",
-        "aliases": [
-          "CVE-2025-22868"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product",
-          "subcomponents": [
-            {
-              "@id": "pkg:golang/golang.org%2Fx%2Foauth2@v0.10.0"
-            }
-          ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_present",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
-    },
     {
       "vulnerability": {
         "@id": "https://pkg.go.dev/vuln/GO-2025-3553",
