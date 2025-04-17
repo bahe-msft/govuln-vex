@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:602343679bfd7ea4bc207d6f6c934783b1e79393f04d507d999c42d70dd11848",
+  "@id": "govulncheck/vex:5e78d08b5be93cd4806ae5f821df94451bbd853c9541c48c37ec5814baed63aa",
   "author": "Unknown Author",
-  "timestamp": "2025-04-16T02:38:44.338095327Z",
+  "timestamp": "2025-04-17T02:36:20.773027968Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -94,6 +94,29 @@
             },
             {
               "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.1"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3595",
+        "name": "GO-2025-3595",
+        "description": "Incorrect Neutralization of Input During Web Page Generation in x/net in golang.org/x/net",
+        "aliases": [
+          "CVE-2025-22872"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.35.0"
             }
           ]
         }

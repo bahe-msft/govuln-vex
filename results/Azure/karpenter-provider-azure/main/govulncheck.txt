@@ -218,7 +218,15 @@ Govulncheck scanned the following 158 modules and the go1.24.2 standard library:
 
 === Symbol Results ===
 
-No vulnerabilities found.
+Vulnerability #1: GO-2025-3595
+    Incorrect Neutralization of Input During Web Page Generation in x/net in
+    golang.org/x/net
+  More info: https://pkg.go.dev/vuln/GO-2025-3595
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.35.0
+    Fixed in: golang.org/x/net@v0.38.0
+    Example traces found:
+      #1: pkg/operator/options/options_validation.go:40:18: options.Options.Validate calls validator.Validate.Struct, which eventually calls html.Tokenizer.Next
 
 === Package Results ===
 
@@ -257,7 +265,7 @@ Vulnerability #3: GO-2025-3487
     Found in: golang.org/x/crypto@v0.33.0
     Fixed in: golang.org/x/crypto@v0.35.0
 
-Your code is affected by 0 vulnerabilities.
+Your code is affected by 1 vulnerability from 1 module.
 This scan also found 1 vulnerability in packages you import and 3
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.
