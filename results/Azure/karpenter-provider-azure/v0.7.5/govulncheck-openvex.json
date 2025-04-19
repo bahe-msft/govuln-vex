@@ -1,19 +1,18 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:f35ffd79e69af9838ddd264be2900421e8e1a507a986715946163d0aab6e7632",
+  "@id": "govulncheck/vex:f3b128f5b28a25d155a1574d46372f167d9d35d6edecb010aacbc3df89e8418e",
   "author": "Unknown Author",
-  "timestamp": "2025-04-19T02:22:23.273184935Z",
+  "timestamp": "2025-04-19T02:23:50.155213525Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
     {
       "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2025-3553",
-        "name": "GO-2025-3553",
-        "description": "Excessive memory allocation during header parsing in github.com/golang-jwt/jwt",
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3488",
+        "name": "GO-2025-3488",
+        "description": "Unexpected memory consumption during token parsing in golang.org/x/oauth2",
         "aliases": [
-          "CVE-2025-30204",
-          "GHSA-mh63-6h87-95cp"
+          "CVE-2025-22868"
         ]
       },
       "products": [
@@ -21,13 +20,13 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv4@v4.5.1"
+              "@id": "pkg:golang/golang.org%2Fx%2Foauth2@v0.24.0"
             }
           ]
         }
       ],
       "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
+      "justification": "vulnerable_code_not_present",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
     }
   ]
