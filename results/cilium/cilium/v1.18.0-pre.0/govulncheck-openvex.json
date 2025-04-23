@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:7411f20116934dabd8cc79bc18488bca47c143af50c8257791b8684be82f62cf",
+  "@id": "govulncheck/vex:9843d9ce851930ca1ecb3954bff07acd05e4db87fe228bc940a5d46682f17664",
   "author": "Unknown Author",
-  "timestamp": "2025-04-22T02:27:17.023465877Z",
+  "timestamp": "2025-04-23T02:28:46.613819834Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -180,6 +180,96 @@
           "subcomponents": [
             {
               "@id": "pkg:golang/helm.sh%2Fhelm%2Fv3@v3.17.0"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3630",
+        "name": "GO-2025-3630",
+        "description": "GoBGP does not properly check the input length in github.com/osrg/gobgp",
+        "aliases": [
+          "CVE-2025-43970",
+          "GHSA-hqhq-hp5x-xp3w"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fosrg%2Fgobgp%2Fv3@v3.34.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3631",
+        "name": "GO-2025-3631",
+        "description": "GoBGP panics due to a zero value for softwareVersionLen in github.com/osrg/gobgp",
+        "aliases": [
+          "CVE-2025-43971",
+          "GHSA-7m35-vw2c-696v"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fosrg%2Fgobgp%2Fv3@v3.34.0"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3632",
+        "name": "GO-2025-3632",
+        "description": "GoBGP crashes in the flowspec parser in github.com/osrg/gobgp",
+        "aliases": [
+          "CVE-2025-43972",
+          "GHSA-mfvv-mgf6-q25r"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fosrg%2Fgobgp%2Fv3@v3.34.0"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3633",
+        "name": "GO-2025-3633",
+        "description": "GoBGP does not verify that the input length in github.com/osrg/gobgp",
+        "aliases": [
+          "CVE-2025-43973",
+          "GHSA-c5jg-wr5v-2wp2"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fosrg%2Fgobgp%2Fv3@v3.34.0"
             }
           ]
         }

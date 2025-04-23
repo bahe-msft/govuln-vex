@@ -1000,7 +1000,35 @@ Govulncheck scanned the following 287 modules and the go1.24.2 standard library:
 
 === Symbol Results ===
 
-Vulnerability #1: GO-2025-3602
+Vulnerability #1: GO-2025-3633
+    GoBGP does not verify that the input length in github.com/osrg/gobgp
+  More info: https://pkg.go.dev/vuln/GO-2025-3633
+  Module: github.com/osrg/gobgp/v3
+    Found in: github.com/osrg/gobgp/v3@v3.34.0
+    Fixed in: github.com/osrg/gobgp/v3@v3.35.0
+    Example traces found:
+      #1: pkg/bgpv1/gobgp/server.go:100:2: gobgp.NewGoBGPServer calls server.BgpServer.Serve, which eventually calls rtr.ParseRTR
+
+Vulnerability #2: GO-2025-3632
+    GoBGP crashes in the flowspec parser in github.com/osrg/gobgp
+  More info: https://pkg.go.dev/vuln/GO-2025-3632
+  Module: github.com/osrg/gobgp/v3
+    Found in: github.com/osrg/gobgp/v3@v3.34.0
+    Fixed in: github.com/osrg/gobgp/v3@v3.35.0
+    Example traces found:
+      #1: pkg/bgpv1/api/conversions.go:182:29: api.ToAgentPath calls bgp.PathAttributeExtendedCommunities.DecodeFromBytes, which eventually calls bgp.parseGenericTransitiveExperimentalExtended
+
+Vulnerability #3: GO-2025-3631
+    GoBGP panics due to a zero value for softwareVersionLen in
+    github.com/osrg/gobgp
+  More info: https://pkg.go.dev/vuln/GO-2025-3631
+  Module: github.com/osrg/gobgp/v3
+    Found in: github.com/osrg/gobgp/v3@v3.34.0
+    Fixed in: github.com/osrg/gobgp/v3@v3.35.0
+    Example traces found:
+      #1: pkg/bgpv1/gobgp/server.go:100:2: gobgp.NewGoBGPServer calls server.BgpServer.Serve, which eventually calls bgp.CapSoftwareVersion.DecodeFromBytes
+
+Vulnerability #4: GO-2025-3602
     Helm Allows A Specially Crafted JSON Schema To Cause A Stack Overflow in
     helm.sh/helm
   More info: https://pkg.go.dev/vuln/GO-2025-3602
@@ -1028,8 +1056,8 @@ Vulnerability #1: GO-2025-3602
       #18: operator/pkg/model/translation/envoy_virtual_host.go:141:13: translation.cecTranslator.desiredVirtualHost calls sort.Stable, which calls action.hookByWeight.Len
       #19: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Less
       #20: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Swap
-      #21: cilium-cli/status/k8s.go:20:2: status.init calls action.init
-      #22: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
+      #21: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
+      #22: cilium-cli/status/k8s.go:20:2: status.init calls action.init
       #23: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls action.secretClient.List
       #24: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which eventually calls chart.Chart.AddDependency
       #25: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chart.Chart.CRDObjects
@@ -1057,9 +1085,9 @@ Vulnerability #1: GO-2025-3602
       #47: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.Values.Table
       #48: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls chartutil.init
       #49: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls cli.EnvSettings.EnvVars
-      #50: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
-      #51: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
-      #52: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
+      #50: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
+      #51: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
+      #52: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
       #53: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init
       #54: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls ctime.init
       #55: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls downloader.ChartDownloader.DownloadTo
@@ -1262,7 +1290,7 @@ Vulnerability #1: GO-2025-3602
       #252: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which calls version.init
       #253: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls xdg.init
 
-Vulnerability #2: GO-2025-3601
+Vulnerability #5: GO-2025-3601
     Helm Allows A Specially Crafted Chart Archive To Cause Out Of Memory
     Termination in helm.sh/helm
   More info: https://pkg.go.dev/vuln/GO-2025-3601
@@ -1319,9 +1347,9 @@ Vulnerability #2: GO-2025-3601
       #47: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.Values.Table
       #48: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls chartutil.init
       #49: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls cli.EnvSettings.EnvVars
-      #50: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
-      #51: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
-      #52: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
+      #50: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
+      #51: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
+      #52: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
       #53: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init
       #54: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls ctime.init
       #55: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls downloader.ChartDownloader.DownloadTo
@@ -1524,7 +1552,7 @@ Vulnerability #2: GO-2025-3601
       #252: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which calls version.init
       #253: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls xdg.init
 
-Vulnerability #3: GO-2025-3528
+Vulnerability #6: GO-2025-3528
     containerd has an integer overflow in User ID handling in
     github.com/containerd/containerd
   More info: https://pkg.go.dev/vuln/GO-2025-3528
@@ -1577,8 +1605,8 @@ Vulnerability #3: GO-2025-3528
       #43: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls errors.init
       #44: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls filters.init
       #45: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.ChildrenHandler
-      #46: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Dispatch
-      #47: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
+      #46: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
+      #47: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Dispatch
       #48: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Handlers
       #49: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls images.init
       #50: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls labels.init
@@ -1597,12 +1625,12 @@ Vulnerability #3: GO-2025-3528
       #63: pkg/datapath/linux/sysctl/sysctl.go:217:29: sysctl.directSysctl.Write calls io.WriteString, which calls schema1.blobStateCalculator.Write
       #64: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls schema1.init
       #65: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.Name
-      #66: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
-      #67: cilium-cli/features/summary.go:176:56: features.downloadArtifacts calls github.ActionsService.DownloadArtifact, which eventually calls tracing.UpdateHTTPClient
+      #66: cilium-cli/features/summary.go:176:56: features.downloadArtifacts calls github.ActionsService.DownloadArtifact, which eventually calls tracing.UpdateHTTPClient
+      #67: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
       #68: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls tracing.init
       #69: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls version.init
 
-Vulnerability #4: GO-2025-3487
+Vulnerability #7: GO-2025-3487
     Potential denial of service in golang.org/x/crypto
   More info: https://pkg.go.dev/vuln/GO-2025-3487
   Module: golang.org/x/crypto
@@ -1622,7 +1650,14 @@ Vulnerability #4: GO-2025-3487
 
 === Package Results ===
 
-Vulnerability #1: GO-2025-3595
+Vulnerability #1: GO-2025-3630
+    GoBGP does not properly check the input length in github.com/osrg/gobgp
+  More info: https://pkg.go.dev/vuln/GO-2025-3630
+  Module: github.com/osrg/gobgp/v3
+    Found in: github.com/osrg/gobgp/v3@v3.34.0
+    Fixed in: github.com/osrg/gobgp/v3@v3.35.0
+
+Vulnerability #2: GO-2025-3595
     Incorrect Neutralization of Input During Web Page Generation in x/net in
     golang.org/x/net
   More info: https://pkg.go.dev/vuln/GO-2025-3595
@@ -1630,7 +1665,7 @@ Vulnerability #1: GO-2025-3595
     Found in: golang.org/x/net@v0.35.0
     Fixed in: golang.org/x/net@v0.38.0
 
-Vulnerability #2: GO-2025-3553
+Vulnerability #3: GO-2025-3553
     Excessive memory allocation during header parsing in
     github.com/golang-jwt/jwt
   More info: https://pkg.go.dev/vuln/GO-2025-3553
@@ -1638,7 +1673,7 @@ Vulnerability #2: GO-2025-3553
     Found in: github.com/golang-jwt/jwt/v5@v5.2.1
     Fixed in: github.com/golang-jwt/jwt/v5@v5.2.2
 
-Vulnerability #3: GO-2025-3503
+Vulnerability #4: GO-2025-3503
     HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net
   More info: https://pkg.go.dev/vuln/GO-2025-3503
   Module: golang.org/x/net
@@ -1654,7 +1689,7 @@ Vulnerability #1: GO-2025-3488
     Found in: golang.org/x/oauth2@v0.26.0
     Fixed in: golang.org/x/oauth2@v0.27.0
 
-Your code is affected by 4 vulnerabilities from 3 modules.
-This scan also found 3 vulnerabilities in packages you import and 1
+Your code is affected by 7 vulnerabilities from 4 modules.
+This scan also found 4 vulnerabilities in packages you import and 1
 vulnerability in modules you require, but your code doesn't appear to call these
 vulnerabilities.
