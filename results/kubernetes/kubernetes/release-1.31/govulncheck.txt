@@ -1664,8 +1664,8 @@ Vulnerability #5: GO-2024-3110
       #143: pkg/registry/apps/deployment/storage/storage.go:457:32: storage.scaleUpdatedObjectInfo.UpdatedObject calls errors.NewInvalid, which eventually calls system.State.String
       #144: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls system.init
       #145: pkg/kubelet/cm/cgroup_manager_linux.go:93:42: cm.CgroupName.ToSystemd calls systemd.ExpandSlice
-      #146: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
-      #147: pkg/kubelet/cm/cgroup_manager_linux.go:377:29: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
+      #146: pkg/kubelet/cm/cgroup_manager_linux.go:377:29: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
+      #147: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
       #148: pkg/kubelet/cm/cgroup_manager_linux.go:377:29: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.NewLegacyManager
       #149: pkg/kubelet/cm/cgroup_manager_linux.go:377:29: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.NewUnifiedManager
       #150: pkg/kubelet/cm/cgroup_manager_linux.go:32:2: cm.init calls systemd.init
@@ -1682,8 +1682,8 @@ Vulnerability #5: GO-2024-3110
       #161: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls user.CurrentProcessUIDMap
       #162: pkg/kubelet/userns/inuserns/inuserns_linux.go:19:8: inuserns.init calls userns.init, which calls user.init
       #163: pkg/kubelet/userns/inuserns/inuserns_linux.go:19:8: inuserns.init calls userns.init
-      #164: pkg/kubelet/userns/inuserns/inuserns_linux.go:23:43: inuserns.RunningInUserNS calls userns.runningInUserNS
-      #165: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls userns.runningInUserNS
+      #164: pkg/kubelet/metrics/metrics.go:927:20: metrics.Register calls sync.Once.Do, which eventually calls userns.runningInUserNS
+      #165: pkg/kubelet/userns/inuserns/inuserns_linux.go:23:43: inuserns.RunningInUserNS calls userns.runningInUserNS
       #166: pkg/kubelet/cm/util/cgroups_linux.go:55:42: util.getCgroupV1Path calls utils.CleanPath
       #167: pkg/kubelet/cm/util/cgroups_linux.go:23:2: util.init calls utils.init
       #168: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls validate.init
