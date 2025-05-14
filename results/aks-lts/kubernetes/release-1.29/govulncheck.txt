@@ -1553,8 +1553,8 @@ Vulnerability #5: GO-2024-3110
       #13: pkg/kubelet/cadvisor/cadvisor_linux.go:106:23: cadvisor.New calls manager.New, which calls cgroups.GetOwnCgroup
       #14: pkg/kubelet/cm/cgroup_manager_linux.go:458:29: cm.cgroupManagerImpl.Create calls manager.New, which eventually calls cgroups.GetOwnCgroupPath
       #15: pkg/kubelet/cm/util/cgroups_linux.go:49:36: util.GetPids calls cgroups.GetPids
-      #16: pkg/kubelet/metrics/metrics.go:832:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.HugePageSizes
-      #17: pkg/kubelet/kuberuntime/kuberuntime_container_linux.go:253:60: kuberuntime.GetHugepageLimitsFromResources calls cgroups.HugePageSizes
+      #16: pkg/kubelet/kuberuntime/kuberuntime_container_linux.go:253:60: kuberuntime.GetHugepageLimitsFromResources calls cgroups.HugePageSizes
+      #17: pkg/kubelet/metrics/metrics.go:832:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.HugePageSizes
       #18: pkg/kubelet/cm/cgroup_manager_linux.go:33:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
       #19: pkg/kubelet/metrics/metrics.go:832:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
       #20: pkg/kubelet/metrics/metrics.go:832:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2UnifiedMode
@@ -1668,8 +1668,8 @@ Vulnerability #5: GO-2024-3110
       #128: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls fscommon.init
       #129: pkg/kubelet/cadvisor/cadvisor_linux.go:106:23: cadvisor.New calls manager.New, which eventually calls intelrdt.IsCMTEnabled
       #130: pkg/kubelet/cadvisor/cadvisor_linux.go:106:23: cadvisor.New calls manager.New, which eventually calls intelrdt.IsMBMEnabled
-      #131: pkg/kubelet/metrics/metrics.go:832:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.Root
-      #132: pkg/kubelet/cadvisor/cadvisor_linux.go:106:23: cadvisor.New calls manager.New, which eventually calls intelrdt.Root
+      #131: pkg/kubelet/cadvisor/cadvisor_linux.go:106:23: cadvisor.New calls manager.New, which eventually calls intelrdt.Root
+      #132: pkg/kubelet/metrics/metrics.go:832:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.Root
       #133: pkg/kubelet/cadvisor/cadvisor_linux.go:129:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls intelrdt.WriteIntelRdtTasks
       #134: pkg/kubelet/metrics/metrics.go:832:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.featuresInit
       #135: pkg/kubelet/cadvisor/cadvisor_linux.go:106:23: cadvisor.New calls manager.New, which eventually calls intelrdt.findIntelRdtMountpointDir
