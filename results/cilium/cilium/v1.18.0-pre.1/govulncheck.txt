@@ -1037,8 +1037,8 @@ Vulnerability #1: GO-2025-3602
       #18: operator/pkg/model/translation/envoy_virtual_host.go:141:13: translation.cecTranslator.desiredVirtualHost calls sort.Stable, which calls action.hookByWeight.Len
       #19: pkg/k8s/slim/k8s/apis/labels/selector.go:937:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Less
       #20: pkg/k8s/slim/k8s/apis/labels/selector.go:937:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Swap
-      #21: pkg/endpoint/bpf.go:1614:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
-      #22: cilium-cli/status/k8s.go:20:2: status.init calls action.init
+      #21: cilium-cli/status/k8s.go:20:2: status.init calls action.init
+      #22: pkg/endpoint/bpf.go:1614:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
       #23: cilium-cli/internal/helm/helm.go:313:52: helm.Upgrade calls storage.Storage.Last, which eventually calls action.secretClient.List
       #24: cilium-cli/internal/helm/helm.go:68:23: helm.newChartFromDirectory calls loader.LoadDir, which eventually calls chart.Chart.AddDependency
       #25: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chart.Chart.CRDObjects
@@ -1066,8 +1066,8 @@ Vulnerability #1: GO-2025-3602
       #47: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.Values.Table
       #48: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls chartutil.init
       #49: cilium-cli/internal/helm/helm.go:164:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls cli.EnvSettings.EnvVars
-      #50: pkg/k8s/portforward/portforward.go:76:53: portforward.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
-      #51: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
+      #50: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
+      #51: pkg/k8s/portforward/portforward.go:76:53: portforward.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
       #52: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
       #53: cilium-cli/internal/helm/helm.go:27:2: helm.init calls cli.init
       #54: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls ctime.init
@@ -1328,8 +1328,8 @@ Vulnerability #2: GO-2025-3601
       #47: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.Values.Table
       #48: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls chartutil.init
       #49: cilium-cli/internal/helm/helm.go:164:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls cli.EnvSettings.EnvVars
-      #50: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
-      #51: pkg/k8s/portforward/portforward.go:76:53: portforward.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
+      #50: pkg/k8s/portforward/portforward.go:76:53: portforward.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
+      #51: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
       #52: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
       #53: cilium-cli/internal/helm/helm.go:27:2: helm.init calls cli.init
       #54: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls ctime.init
