@@ -1086,8 +1086,8 @@ Vulnerability #4: GO-2025-3602
       #48: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls chartutil.init
       #49: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls cli.EnvSettings.EnvVars
       #50: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
-      #51: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
-      #52: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
+      #51: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
+      #52: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
       #53: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init
       #54: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls ctime.init
       #55: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls downloader.ChartDownloader.DownloadTo
@@ -1347,9 +1347,9 @@ Vulnerability #5: GO-2025-3601
       #47: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.Values.Table
       #48: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls chartutil.init
       #49: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls cli.EnvSettings.EnvVars
-      #50: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
-      #51: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
-      #52: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
+      #50: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
+      #51: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
+      #52: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
       #53: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init
       #54: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls ctime.init
       #55: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls downloader.ChartDownloader.DownloadTo
@@ -1570,8 +1570,8 @@ Vulnerability #6: GO-2025-3528
       #8: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls auth.init
       #9: pkg/hubble/exporter/config.go:37:27: exporter.exporterConfigParser.Parse calls bytes.Buffer.ReadFrom, which calls compression.bufferedReader.Read
       #10: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls compression.gzipDecompress
-      #11: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
-      #12: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls compression.init
+      #11: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls compression.init
+      #12: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
       #13: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.Copy
       #14: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.ReadBlob
       #15: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.WithDescriptor
