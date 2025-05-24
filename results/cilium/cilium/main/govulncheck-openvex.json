@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:9843d9ce851930ca1ecb3954bff07acd05e4db87fe228bc940a5d46682f17664",
+  "@id": "govulncheck/vex:c72aa90b7a706162fbe0c6fabbed645c9e92fefe81c42b4383a7632a86fafa2d",
   "author": "Unknown Author",
-  "timestamp": "2025-05-22T02:19:59.53231791Z",
+  "timestamp": "2025-05-24T02:18:15.848228346Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -270,6 +270,50 @@
           "subcomponents": [
             {
               "@id": "pkg:golang/github.com%2Fosrg%2Fgobgp%2Fv3@v3.34.0"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3699",
+        "name": "GO-2025-3699",
+        "description": "containerd allows host filesystem access on pull in github.com/containerd/containerd",
+        "aliases": [
+          "CVE-2025-47290",
+          "GHSA-cm76-qm8v-3j95"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fcontainerd%2Fcontainerd@v1.7.24"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3701",
+        "name": "GO-2025-3701",
+        "description": "containerd CRI plugin: Incorrect cgroup hierarchy assignment for containers running in usernamespaced Kubernetes pods. in github.com/containerd/containerd",
+        "aliases": [
+          "CVE-2025-47291",
+          "GHSA-cxfp-7pvr-95ff"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fcontainerd%2Fcontainerd@v1.7.24"
             }
           ]
         }

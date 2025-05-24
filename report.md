@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Thu May 22 02:33:36 UTC 2025
+Last updated time: Sat May 24 02:39:32 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -351,6 +351,8 @@ Active affected vulnerabilities:
 | GO-2025-3631 | https://pkg.go.dev/vuln/GO-2025-3631 | affected | N/A |
 | GO-2025-3632 | https://pkg.go.dev/vuln/GO-2025-3632 | affected | N/A |
 | GO-2025-3633 | https://pkg.go.dev/vuln/GO-2025-3633 | affected | N/A |
+| GO-2025-3699 | https://pkg.go.dev/vuln/GO-2025-3699 | affected | N/A |
+| GO-2025-3701 | https://pkg.go.dev/vuln/GO-2025-3701 | affected | N/A |
 
 Reports: [cilium/cilium/main](results/cilium/cilium/main)
 
@@ -431,6 +433,8 @@ Active affected vulnerabilities:
 | GO-2025-3631 | https://pkg.go.dev/vuln/GO-2025-3631 | affected | N/A |
 | GO-2025-3632 | https://pkg.go.dev/vuln/GO-2025-3632 | affected | N/A |
 | GO-2025-3633 | https://pkg.go.dev/vuln/GO-2025-3633 | affected | N/A |
+| GO-2025-3699 | https://pkg.go.dev/vuln/GO-2025-3699 | affected | N/A |
+| GO-2025-3701 | https://pkg.go.dev/vuln/GO-2025-3701 | affected | N/A |
 
 Reports: [cilium/cilium/v1.18.0-pre.0](results/cilium/cilium/v1.18.0-pre.0)
 
@@ -442,12 +446,19 @@ Active affected vulnerabilities:
 |------|-----|--------|------------------|
 | GO-2025-3601 | https://pkg.go.dev/vuln/GO-2025-3601 | affected | N/A |
 | GO-2025-3602 | https://pkg.go.dev/vuln/GO-2025-3602 | affected | N/A |
+| GO-2025-3699 | https://pkg.go.dev/vuln/GO-2025-3699 | affected | N/A |
+| GO-2025-3701 | https://pkg.go.dev/vuln/GO-2025-3701 | affected | N/A |
 
 Reports: [cilium/cilium/v1.18.0-pre.1](results/cilium/cilium/v1.18.0-pre.1)
 
-### ✅ v1.18.0-pre.2
+### ⚠️ v1.18.0-pre.2
 
-No active affected vulnerabilities found in v1.18.0-pre.2
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-3699 | https://pkg.go.dev/vuln/GO-2025-3699 | affected | N/A |
+| GO-2025-3701 | https://pkg.go.dev/vuln/GO-2025-3701 | affected | N/A |
 
 Reports: [cilium/cilium/v1.18.0-pre.2](results/cilium/cilium/v1.18.0-pre.2)
 
