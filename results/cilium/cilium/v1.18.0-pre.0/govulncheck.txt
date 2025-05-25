@@ -1026,8 +1026,8 @@ Vulnerability #1: GO-2025-3701
       #15: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.WithDescriptor
       #16: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.WithDescriptor
       #17: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.WithRef
-      #18: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
-      #19: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls content.init
+      #18: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls content.init
+      #19: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
       #20: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls docker.Close
       #21: pkg/loadbalancer/experimental/healthserver.go:371:26: experimental.httpHealthServer.ServeHTTP calls docker.ErrorCode.Error
       #22: pkg/datapath/linux/ipsec/ipsec_linux.go:1142:16: ipsec.DeleteIPsecEncryptRoute calls slog.Logger.With, which eventually calls docker.ErrorCode.MarshalText
@@ -1054,13 +1054,13 @@ Vulnerability #1: GO-2025-3701
       #43: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls errors.init
       #44: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls filters.init
       #45: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.ChildrenHandler
-      #46: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
-      #47: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Dispatch
+      #46: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Dispatch
+      #47: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
       #48: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Handlers
       #49: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls images.init
       #50: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls labels.init
-      #51: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls local.init
-      #52: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls local.init
+      #51: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls local.init
+      #52: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls local.init
       #53: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls log.GetLogger
       #54: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls log.WithLogger
       #55: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls log.init
@@ -1074,8 +1074,8 @@ Vulnerability #1: GO-2025-3701
       #63: pkg/datapath/linux/sysctl/sysctl.go:217:29: sysctl.directSysctl.Write calls io.WriteString, which calls schema1.blobStateCalculator.Write
       #64: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls schema1.init
       #65: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.Name
-      #66: cilium-cli/features/summary.go:176:56: features.downloadArtifacts calls github.ActionsService.DownloadArtifact, which eventually calls tracing.UpdateHTTPClient
-      #67: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
+      #66: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
+      #67: cilium-cli/features/summary.go:176:56: features.downloadArtifacts calls github.ActionsService.DownloadArtifact, which eventually calls tracing.UpdateHTTPClient
       #68: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls tracing.init
       #69: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls version.init
 
@@ -1132,13 +1132,13 @@ Vulnerability #2: GO-2025-3699
       #43: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls errors.init
       #44: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls filters.init
       #45: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.ChildrenHandler
-      #46: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Dispatch
-      #47: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
+      #46: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
+      #47: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Dispatch
       #48: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Handlers
       #49: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls images.init
       #50: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls labels.init
-      #51: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls local.init
-      #52: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls local.init
+      #51: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls local.init
+      #52: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls local.init
       #53: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls log.GetLogger
       #54: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls log.WithLogger
       #55: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls log.init
@@ -1213,8 +1213,8 @@ Vulnerability #6: GO-2025-3602
       #18: operator/pkg/model/translation/envoy_virtual_host.go:141:13: translation.cecTranslator.desiredVirtualHost calls sort.Stable, which calls action.hookByWeight.Len
       #19: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Less
       #20: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Swap
-      #21: cilium-cli/status/k8s.go:20:2: status.init calls action.init
-      #22: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
+      #21: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
+      #22: cilium-cli/status/k8s.go:20:2: status.init calls action.init
       #23: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls action.secretClient.List
       #24: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which eventually calls chart.Chart.AddDependency
       #25: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chart.Chart.CRDObjects
@@ -1242,8 +1242,8 @@ Vulnerability #6: GO-2025-3602
       #47: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.Values.Table
       #48: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls chartutil.init
       #49: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls cli.EnvSettings.EnvVars
-      #50: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
-      #51: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
+      #50: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
+      #51: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
       #52: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
       #53: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init
       #54: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls ctime.init
@@ -1475,8 +1475,8 @@ Vulnerability #7: GO-2025-3601
       #18: operator/pkg/model/translation/envoy_virtual_host.go:141:13: translation.cecTranslator.desiredVirtualHost calls sort.Stable, which calls action.hookByWeight.Len
       #19: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Less
       #20: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Swap
-      #21: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
-      #22: cilium-cli/status/k8s.go:20:2: status.init calls action.init
+      #21: cilium-cli/status/k8s.go:20:2: status.init calls action.init
+      #22: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
       #23: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls action.secretClient.List
       #24: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which eventually calls chart.Chart.AddDependency
       #25: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chart.Chart.CRDObjects
@@ -1504,9 +1504,9 @@ Vulnerability #7: GO-2025-3601
       #47: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.Values.Table
       #48: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls chartutil.init
       #49: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls cli.EnvSettings.EnvVars
-      #50: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
+      #50: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
       #51: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
-      #52: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
+      #52: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
       #53: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init
       #54: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls ctime.init
       #55: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls downloader.ChartDownloader.DownloadTo
@@ -1762,8 +1762,8 @@ Vulnerability #8: GO-2025-3528
       #43: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls errors.init
       #44: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls filters.init
       #45: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.ChildrenHandler
-      #46: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Dispatch
-      #47: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
+      #46: test/helpers/kubectl.go:2034:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
+      #47: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Dispatch
       #48: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Handlers
       #49: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls images.init
       #50: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls labels.init
@@ -1782,8 +1782,8 @@ Vulnerability #8: GO-2025-3528
       #63: pkg/datapath/linux/sysctl/sysctl.go:217:29: sysctl.directSysctl.Write calls io.WriteString, which calls schema1.blobStateCalculator.Write
       #64: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls schema1.init
       #65: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.Name
-      #66: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
-      #67: cilium-cli/features/summary.go:176:56: features.downloadArtifacts calls github.ActionsService.DownloadArtifact, which eventually calls tracing.UpdateHTTPClient
+      #66: cilium-cli/features/summary.go:176:56: features.downloadArtifacts calls github.ActionsService.DownloadArtifact, which eventually calls tracing.UpdateHTTPClient
+      #67: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
       #68: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls tracing.init
       #69: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls version.init
 
