@@ -1086,8 +1086,8 @@ Vulnerability #1: GO-2025-3701
       #48: cilium-cli/internal/helm/helm.go:164:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Handlers
       #49: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls images.init
       #50: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls labels.init
-      #51: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls local.init
-      #52: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls local.init
+      #51: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls local.init
+      #52: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls local.init
       #53: cilium-cli/internal/helm/helm.go:164:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls log.GetLogger
       #54: cilium-cli/internal/helm/helm.go:164:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls log.WithLogger
       #55: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls log.init
@@ -1179,8 +1179,8 @@ Vulnerability #2: GO-2025-3699
       #63: pkg/datapath/linux/sysctl/sysctl.go:217:29: sysctl.directSysctl.Write calls io.WriteString, which calls schema1.blobStateCalculator.Write
       #64: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls schema1.init
       #65: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.Name
-      #66: pkg/azure/api/api.go:72:30: api.httpClient.Do calls http.Client.Do, which eventually calls tracing.UpdateHTTPClient
-      #67: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
+      #66: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
+      #67: pkg/azure/api/api.go:72:30: api.httpClient.Do calls http.Client.Do, which eventually calls tracing.UpdateHTTPClient
       #68: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls tracing.init
       #69: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls version.init
 
