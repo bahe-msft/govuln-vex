@@ -1,54 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:a9a1d1e54720f0de0cf1a665dab5851c0332f71f4bfcc132fc00b255861abac6",
+  "@id": "govulncheck/vex:dbe7160a7e784903e7018529dca9791796885b4a0bad84a321cecbf1dc0473a5",
   "author": "Unknown Author",
-  "timestamp": "2025-05-27T02:26:08.962404743Z",
+  "timestamp": "2025-05-28T02:28:42.366523246Z",
   "version": 1,
-  "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
-  "statements": [
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2025-3699",
-        "name": "GO-2025-3699",
-        "description": "containerd allows host filesystem access on pull in github.com/containerd/containerd",
-        "aliases": [
-          "CVE-2025-47290",
-          "GHSA-cm76-qm8v-3j95"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product",
-          "subcomponents": [
-            {
-              "@id": "pkg:golang/github.com%2Fcontainerd%2Fcontainerd@v1.7.27"
-            }
-          ]
-        }
-      ],
-      "status": "affected"
-    },
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2025-3701",
-        "name": "GO-2025-3701",
-        "description": "containerd CRI plugin: Incorrect cgroup hierarchy assignment for containers running in usernamespaced Kubernetes pods. in github.com/containerd/containerd",
-        "aliases": [
-          "CVE-2025-47291",
-          "GHSA-cxfp-7pvr-95ff"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product",
-          "subcomponents": [
-            {
-              "@id": "pkg:golang/github.com%2Fcontainerd%2Fcontainerd@v1.7.27"
-            }
-          ]
-        }
-      ],
-      "status": "affected"
-    }
-  ]
+  "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck"
 }
