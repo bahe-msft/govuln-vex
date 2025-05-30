@@ -1056,270 +1056,8 @@ Vulnerability #4: GO-2025-3602
       #18: operator/pkg/model/translation/envoy_virtual_host.go:141:13: translation.cecTranslator.desiredVirtualHost calls sort.Stable, which calls action.hookByWeight.Len
       #19: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Less
       #20: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Swap
-      #21: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
-      #22: cilium-cli/status/k8s.go:20:2: status.init calls action.init
-      #23: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls action.secretClient.List
-      #24: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which eventually calls chart.Chart.AddDependency
-      #25: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chart.Chart.CRDObjects
-      #26: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chart.Chart.ChartFullPath
-      #27: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chart.Chart.Dependencies
-      #28: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chart.Chart.IsRoot
-      #29: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chart.Chart.Name
-      #30: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chart.Chart.SetDependencies
-      #31: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which eventually calls chart.Chart.Validate
-      #32: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls chart.Metadata.Validate
-      #33: pkg/loadbalancer/experimental/healthserver.go:371:26: experimental.httpHealthServer.ServeHTTP calls chart.ValidationError.Error
-      #34: cilium-cli/internal/helm/helm.go:24:2: helm.init calls chart.init
-      #35: test/helpers/kubectl.go:4117:31: helpers.Kubectl.CiliumServiceAdd calls strings.Title, which eventually calls chart.sanitizeString
-      #36: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chartutil.Capabilities.Copy
-      #37: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls chartutil.CoalesceTables
-      #38: cilium-cli/k8s/client.go:1085:36: k8s.Client.GetHelmValues calls action.GetValues.Run, which calls chartutil.CoalesceValues
-      #39: pkg/loadbalancer/experimental/healthserver.go:371:26: experimental.httpHealthServer.ServeHTTP calls chartutil.ErrNoTable.Error
-      #40: pkg/loadbalancer/experimental/healthserver.go:371:26: experimental.httpHealthServer.ServeHTTP calls chartutil.ErrNoValue.Error
-      #41: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls chartutil.ExpandFile
-      #42: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.IsCompatibleRange
-      #43: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.KubeVersion.String
-      #44: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chartutil.ProcessDependenciesWithMerge
-      #45: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chartutil.ToRenderValuesWithSchemaValidation
-      #46: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which calls chartutil.ValidateReleaseName
-      #47: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.Values.Table
-      #48: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls chartutil.init
-      #49: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls cli.EnvSettings.EnvVars
-      #50: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
-      #51: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
-      #52: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
-      #53: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init
-      #54: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls ctime.init
-      #55: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls downloader.ChartDownloader.DownloadTo
-      #56: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls downloader.init
-      #57: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls driver.ConfigMaps.Create
-      #58: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.ConfigMaps.Delete
-      #59: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.ConfigMaps.Get
-      #60: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls driver.ConfigMaps.Query
-      #61: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls driver.ConfigMaps.Update
-      #62: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls driver.ContainsSystemLabels
-      #63: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls driver.GetSystemLabels
-      #64: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls driver.Memory.Create
-      #65: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.Memory.Delete
-      #66: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.Memory.Get
-      #67: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls driver.Memory.Query
-      #68: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls driver.Memory.SetNamespace
-      #69: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls driver.Memory.Update
-      #70: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls driver.NewConfigMaps
-      #71: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls driver.NewErrNoDeployedReleases
-      #72: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls driver.NewMemory
-      #73: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls driver.NewSQL
-      #74: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls driver.NewSecrets
-      #75: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls driver.SQL.Create
-      #76: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.SQL.Delete
-      #77: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.SQL.Get
-      #78: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls driver.SQL.Query
-      #79: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls driver.SQL.Update
-      #80: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls driver.Secrets.Create
-      #81: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.Secrets.Delete
-      #82: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.Secrets.Get
-      #83: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls driver.Secrets.Query
-      #84: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls driver.Secrets.Update
-      #85: pkg/loadbalancer/experimental/healthserver.go:371:26: experimental.httpHealthServer.ServeHTTP calls driver.StorageDriverError.Error
-      #86: pkg/endpoint/bpf.go:1611:14: endpoint.CheckHealth calls errors.As, which eventually calls driver.StorageDriverError.Unwrap
-      #87: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls driver.init
-      #88: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls driver.records.Len
-      #89: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls driver.records.Less
-      #90: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls driver.records.Swap
-      #91: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls engine.Engine.Render
-      #92: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls engine.New
-      #93: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls engine.byPathLen.Len
-      #94: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls engine.byPathLen.Less
-      #95: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls engine.byPathLen.Swap
-      #96: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls engine.init
-      #97: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls fake.PrintingKubeClient.Build
-      #98: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls fake.PrintingKubeClient.Create
-      #99: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls fake.PrintingKubeClient.Delete
-      #100: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls fake.PrintingKubeClient.DeleteWithPropagationPolicy
-      #101: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls fake.PrintingKubeClient.IsReachable
-      #102: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls fake.PrintingKubeClient.Update
-      #103: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls fake.PrintingKubeClient.Wait
-      #104: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which calls fake.PrintingKubeClient.WaitForDelete
-      #105: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls fake.PrintingKubeClient.WaitWithJobs
-      #106: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls fake.PrintingKubeClient.WatchUntilReady
-      #107: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls fake.init
-      #108: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls fileutil.AtomicWriteFile
-      #109: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls fileutil.init
-      #110: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls fs.RenameWithFallback
-      #111: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls fs.init
-      #112: cilium-cli/internal/helm/helm.go:165:17: helm.MergeVals calls getter.All
-      #113: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls getter.HTTPGetter.Get
-      #114: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls getter.OCIGetter.Get
-      #115: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls getter.Providers.ByScheme
-      #116: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls getter.WithAcceptHeader
-      #117: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithBasicAuth
-      #118: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithInsecureSkipVerifyTLS
-      #119: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithPassCredentialsAll
-      #120: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithPlainHTTP
-      #121: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithRegistryClient
-      #122: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithTLSClientConfig
-      #123: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls getter.WithURL
-      #124: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls getter.httpClient
-      #125: cilium-cli/internal/helm/helm.go:28:2: helm.init calls getter.init
-      #126: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls getter.newRegistryClient
-      #127: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls getter.pluginGetter.Get
-      #128: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls helmpath.CacheChartsFile
-      #129: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls helmpath.CacheIndexFile
-      #130: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New, which calls helmpath.CachePath
-      #131: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New, which calls helmpath.ConfigPath
-      #132: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New, which calls helmpath.DataPath
-      #133: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which calls helmpath.init
-      #134: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which calls ignore.Empty
-      #135: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which calls ignore.ParseFile
-      #136: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which calls ignore.Rules.AddDefaults
-      #137: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which eventually calls ignore.Rules.Ignore
-      #138: cilium-cli/internal/helm/helm.go:25:2: helm.init calls loader.init, which calls ignore.init
-      #139: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls kube.AsVersioned
-      #140: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls kube.Client.Build
-      #141: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls kube.Client.Create
-      #142: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls kube.Client.Delete
-      #143: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls kube.Client.DeleteWithPropagationPolicy
-      #144: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls kube.Client.IsReachable
-      #145: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls kube.Client.Update
-      #146: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls kube.Client.Wait
-      #147: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which calls kube.Client.WaitForDelete
-      #148: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls kube.Client.WaitWithJobs
-      #149: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls kube.Client.WatchUntilReady
-      #150: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls kube.New
-      #151: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls kube.ResourceList.Visit
-      #152: cilium-cli/k8s/client.go:862:33: k8s.Client.ProxyTCP calls portforward.tunnelingDialer.Dial, which eventually calls kube.RetryingRoundTripper.RoundTrip
-      #153: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls kube.SelectorsForObject
-      #154: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init, which calls kube.init
-      #155: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls kube.kubernetesNativeScheme
-      #156: cilium-cli/k8s/client.go:937:47: k8s.Client.ListUnstructured calls dynamic.dynamicResourceClient.List, which eventually calls kube.waitForDeletedResources
-      #157: cilium-cli/k8s/client.go:937:47: k8s.Client.ListUnstructured calls dynamic.dynamicResourceClient.List, which eventually calls kube.waitForResources
-      #158: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls lint.init
-      #159: cilium-cli/internal/helm/helm.go:66:27: helm.newChartFromEmbeddedFile calls loader.LoadArchive
-      #160: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls loader.LoadArchiveFiles
-      #161: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir
-      #162: cilium-cli/internal/helm/helm.go:25:2: helm.init calls loader.init
-      #163: cilium-cli/k8s/client.go:1116:28: k8s.Client.GetHelmMetadata calls output.EncodeYAML
-      #164: cilium-cli/k8s/client.go:22:2: k8s.init calls output.init
-      #165: cilium-cli/internal/helm/helm.go:165:17: helm.MergeVals calls getter.All, which eventually calls plugin.FindPlugins
-      #166: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls plugin.SetupPluginEnv
-      #167: cilium-cli/internal/helm/helm.go:28:2: helm.init calls getter.init, which calls plugin.init
-      #168: test/helpers/kubectl.go:4117:31: helpers.Kubectl.CiliumServiceAdd calls strings.Title, which eventually calls plugin.sanitizeString
-      #169: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls postrender.init
-      #170: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls provenance.NewFromKeyring
-      #171: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls provenance.Signatory.Verify
-      #172: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls provenance.init
-      #173: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls pusher.init
-      #174: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls registry.Client.Pull
-      #175: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls registry.Client.ValidateReference
-      #176: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls registry.ClientOptHTTPClient
-      #177: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls registry.ClientOptPlainHTTP
-      #178: cilium-cli/internal/helm/helm.go:95:20: helm.newChartFromRemoteWithCache calls registry.IsOCI
-      #179: cilium-cli/internal/helm/helm.go:100:45: helm.newChartFromRemoteWithCache calls registry.NewClient
-      #180: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls registry.PullOptWithChart
-      #181: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls registry.PullOptWithProv
-      #182: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init
-      #183: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls release.HookEvent.String
-      #184: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls release.Release.SetStatus
-      #185: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls release.Status.IsPending
-      #186: cilium-cli/k8s/client.go:1110:25: k8s.Client.GetHelmMetadata calls action.GetMetadata.Run, which calls release.Status.String
-      #187: cilium-cli/internal/helm/helm.go:30:2: helm.init calls release.init
-      #188: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls releaseutil.ByRevision.Less
-      #189: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls releaseutil.BySplitManifestsOrder.Len
-      #190: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls releaseutil.BySplitManifestsOrder.Less
-      #191: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls releaseutil.BySplitManifestsOrder.Swap
-      #192: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls releaseutil.FilterFunc.Filter
-      #193: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which calls releaseutil.Reverse
-      #194: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which calls releaseutil.SortByRevision
-      #195: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls releaseutil.SortManifests
-      #196: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls releaseutil.SplitManifests
-      #197: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls releaseutil.init
-      #198: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls releaseutil.list.Len
-      #199: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls releaseutil.list.Swap
-      #200: pkg/fqdn/cache.go:682:12: fqdn.DNSCache.Dump calls sort.Slice, which eventually calls releaseutil.sortHooksByKind
-      #201: pkg/fqdn/cache.go:682:12: fqdn.DNSCache.Dump calls sort.Slice, which eventually calls releaseutil.sortManifestsByKind
-      #202: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls repo.ChartVersions.Len
-      #203: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls repo.ChartVersions.Less
-      #204: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls repo.ChartVersions.Swap
-      #205: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls repo.FindChartInAuthAndTLSAndPassRepoURL
-      #206: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.IndexFile.Get
-      #207: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.LoadFile
-      #208: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.LoadIndexFile
-      #209: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.NewChartRepository
-      #210: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.ResolveReferenceURL
-      #211: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls repo.init
-      #212: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls resolver.init
-      #213: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls rules.init
-      #214: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls storage.Init
-      #215: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls storage.Storage.Create
-      #216: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls storage.Storage.Delete
-      #217: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls storage.Storage.Deployed
-      #218: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls storage.Storage.DeployedAll
-      #219: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls storage.Storage.Get
-      #220: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which calls storage.Storage.History
-      #221: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last
-      #222: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which calls storage.Storage.Update
-      #223: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls storage.init
-      #224: cilium-cli/internal/helm/helm.go:182:26: helm.ParseVals calls strvals.ParseInto
-      #225: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which calls strvals.ParseIntoFile
-      #226: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which calls strvals.ParseIntoString
-      #227: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which calls strvals.ParseJSON
-      #228: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which calls strvals.ParseLiteralInto
-      #229: cilium-cli/internal/helm/helm.go:31:2: helm.init calls strvals.init
-      #230: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls support.init
-      #231: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which calls sympath.Walk
-      #232: cilium-cli/internal/helm/helm.go:25:2: helm.init calls loader.init, which calls sympath.init
-      #233: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which calls time.Now
-      #234: cilium-cli/internal/helm/helm.go:30:2: helm.init calls release.init, which calls time.init
-      #235: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls tlsutil.NewClientTLS
-      #236: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which calls tlsutil.init
-      #237: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls uploader.init
-      #238: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls urlutil.Equal
-      #239: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls urlutil.ExtractHostname
-      #240: cilium-cli/internal/helm/helm.go:28:2: helm.init calls getter.init, which calls urlutil.init
-      #241: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls util.GetNewReplicaSet
-      #242: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls util.MaxUnavailable
-      #243: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls util.ReplicaSetsByCreationTimestamp.Len
-      #244: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls util.ReplicaSetsByCreationTimestamp.Less
-      #245: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls util.ReplicaSetsByCreationTimestamp.Swap
-      #246: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init, which eventually calls util.init
-      #247: cilium-cli/internal/helm/helm.go:182:26: helm.ParseVals calls strvals.ParseInto, which eventually calls values.MergeValues
-      #248: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues
-      #249: cilium-cli/internal/helm/helm.go:27:2: helm.init calls values.init
-      #250: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls version.Get
-      #251: cilium-cli/internal/helm/helm.go:100:45: helm.newChartFromRemoteWithCache calls registry.NewClient, which calls version.GetUserAgent
-      #252: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which calls version.init
-      #253: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls xdg.init
-
-Vulnerability #5: GO-2025-3601
-    Helm Allows A Specially Crafted Chart Archive To Cause Out Of Memory
-    Termination in helm.sh/helm
-  More info: https://pkg.go.dev/vuln/GO-2025-3601
-  Module: helm.sh/helm/v3
-    Found in: helm.sh/helm/v3@v3.17.0
-    Fixed in: helm.sh/helm/v3@v3.17.3
-    Example traces found:
-      #1: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init
-      #2: cilium-cli/k8s/client.go:1025:55: k8s.Client.GetRunningCiliumVersion calls action.Get.Run
-      #3: cilium-cli/k8s/client.go:1110:25: k8s.Client.GetHelmMetadata calls action.GetMetadata.Run
-      #4: cilium-cli/k8s/client.go:1085:36: k8s.Client.GetHelmValues calls action.GetValues.Run
-      #5: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext
-      #6: cilium-cli/k8s/client.go:1025:31: k8s.Client.GetRunningCiliumVersion calls action.NewGet
-      #7: cilium-cli/k8s/client.go:1109:33: k8s.Client.GetHelmMetadata calls action.NewGetMetadata
-      #8: cilium-cli/k8s/client.go:1084:42: k8s.Client.GetHelmValues calls action.NewGetValues
-      #9: cilium-cli/install/install.go:258:33: install.K8sInstaller.InstallWithHelm calls action.NewInstall
-      #10: cilium-cli/internal/helm/helm.go:90:33: helm.newChartFromRemoteWithCache calls action.NewPullWithOpts
-      #11: cilium-cli/install/uninstall.go:77:35: install.K8sUninstaller.UninstallWithHelm calls action.NewUninstall
-      #12: cilium-cli/internal/helm/helm.go:322:33: helm.Upgrade calls action.NewUpgrade
-      #13: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run
-      #14: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run
-      #15: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext
-      #16: cilium-cli/internal/helm/helm.go:90:51: helm.newChartFromRemoteWithCache calls action.WithConfig
-      #17: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls action.configMapClient.List
-      #18: operator/pkg/model/translation/envoy_virtual_host.go:141:13: translation.cecTranslator.desiredVirtualHost calls sort.Stable, which calls action.hookByWeight.Len
-      #19: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Less
-      #20: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Swap
-      #21: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
-      #22: cilium-cli/status/k8s.go:20:2: status.init calls action.init
+      #21: cilium-cli/status/k8s.go:20:2: status.init calls action.init
+      #22: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
       #23: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls action.secretClient.List
       #24: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which eventually calls chart.Chart.AddDependency
       #25: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chart.Chart.CRDObjects
@@ -1552,6 +1290,268 @@ Vulnerability #5: GO-2025-3601
       #252: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which calls version.init
       #253: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls xdg.init
 
+Vulnerability #5: GO-2025-3601
+    Helm Allows A Specially Crafted Chart Archive To Cause Out Of Memory
+    Termination in helm.sh/helm
+  More info: https://pkg.go.dev/vuln/GO-2025-3601
+  Module: helm.sh/helm/v3
+    Found in: helm.sh/helm/v3@v3.17.0
+    Fixed in: helm.sh/helm/v3@v3.17.3
+    Example traces found:
+      #1: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init
+      #2: cilium-cli/k8s/client.go:1025:55: k8s.Client.GetRunningCiliumVersion calls action.Get.Run
+      #3: cilium-cli/k8s/client.go:1110:25: k8s.Client.GetHelmMetadata calls action.GetMetadata.Run
+      #4: cilium-cli/k8s/client.go:1085:36: k8s.Client.GetHelmValues calls action.GetValues.Run
+      #5: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext
+      #6: cilium-cli/k8s/client.go:1025:31: k8s.Client.GetRunningCiliumVersion calls action.NewGet
+      #7: cilium-cli/k8s/client.go:1109:33: k8s.Client.GetHelmMetadata calls action.NewGetMetadata
+      #8: cilium-cli/k8s/client.go:1084:42: k8s.Client.GetHelmValues calls action.NewGetValues
+      #9: cilium-cli/install/install.go:258:33: install.K8sInstaller.InstallWithHelm calls action.NewInstall
+      #10: cilium-cli/internal/helm/helm.go:90:33: helm.newChartFromRemoteWithCache calls action.NewPullWithOpts
+      #11: cilium-cli/install/uninstall.go:77:35: install.K8sUninstaller.UninstallWithHelm calls action.NewUninstall
+      #12: cilium-cli/internal/helm/helm.go:322:33: helm.Upgrade calls action.NewUpgrade
+      #13: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run
+      #14: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run
+      #15: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext
+      #16: cilium-cli/internal/helm/helm.go:90:51: helm.newChartFromRemoteWithCache calls action.WithConfig
+      #17: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls action.configMapClient.List
+      #18: operator/pkg/model/translation/envoy_virtual_host.go:141:13: translation.cecTranslator.desiredVirtualHost calls sort.Stable, which calls action.hookByWeight.Len
+      #19: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Less
+      #20: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls action.hookByWeight.Swap
+      #21: cilium-cli/status/k8s.go:20:2: status.init calls action.init
+      #22: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls action.init
+      #23: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls action.secretClient.List
+      #24: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which eventually calls chart.Chart.AddDependency
+      #25: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chart.Chart.CRDObjects
+      #26: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chart.Chart.ChartFullPath
+      #27: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chart.Chart.Dependencies
+      #28: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chart.Chart.IsRoot
+      #29: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chart.Chart.Name
+      #30: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chart.Chart.SetDependencies
+      #31: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which eventually calls chart.Chart.Validate
+      #32: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls chart.Metadata.Validate
+      #33: pkg/loadbalancer/experimental/healthserver.go:371:26: experimental.httpHealthServer.ServeHTTP calls chart.ValidationError.Error
+      #34: cilium-cli/internal/helm/helm.go:24:2: helm.init calls chart.init
+      #35: test/helpers/kubectl.go:4117:31: helpers.Kubectl.CiliumServiceAdd calls strings.Title, which eventually calls chart.sanitizeString
+      #36: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chartutil.Capabilities.Copy
+      #37: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls chartutil.CoalesceTables
+      #38: cilium-cli/k8s/client.go:1085:36: k8s.Client.GetHelmValues calls action.GetValues.Run, which calls chartutil.CoalesceValues
+      #39: pkg/loadbalancer/experimental/healthserver.go:371:26: experimental.httpHealthServer.ServeHTTP calls chartutil.ErrNoTable.Error
+      #40: pkg/loadbalancer/experimental/healthserver.go:371:26: experimental.httpHealthServer.ServeHTTP calls chartutil.ErrNoValue.Error
+      #41: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls chartutil.ExpandFile
+      #42: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.IsCompatibleRange
+      #43: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.KubeVersion.String
+      #44: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chartutil.ProcessDependenciesWithMerge
+      #45: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls chartutil.ToRenderValuesWithSchemaValidation
+      #46: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which calls chartutil.ValidateReleaseName
+      #47: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.Values.Table
+      #48: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls chartutil.init
+      #49: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls cli.EnvSettings.EnvVars
+      #50: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls cli.New
+      #51: pkg/k8s/portforward.go:76:53: k8s.PortForwarder.PortForward calls spdy.RoundTripperFor, which eventually calls cli.New
+      #52: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New
+      #53: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init
+      #54: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls ctime.init
+      #55: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls downloader.ChartDownloader.DownloadTo
+      #56: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls downloader.init
+      #57: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls driver.ConfigMaps.Create
+      #58: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.ConfigMaps.Delete
+      #59: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.ConfigMaps.Get
+      #60: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls driver.ConfigMaps.Query
+      #61: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls driver.ConfigMaps.Update
+      #62: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls driver.ContainsSystemLabels
+      #63: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls driver.GetSystemLabels
+      #64: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls driver.Memory.Create
+      #65: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.Memory.Delete
+      #66: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.Memory.Get
+      #67: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls driver.Memory.Query
+      #68: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls driver.Memory.SetNamespace
+      #69: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls driver.Memory.Update
+      #70: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls driver.NewConfigMaps
+      #71: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls driver.NewErrNoDeployedReleases
+      #72: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls driver.NewMemory
+      #73: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls driver.NewSQL
+      #74: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls driver.NewSecrets
+      #75: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls driver.SQL.Create
+      #76: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.SQL.Delete
+      #77: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.SQL.Get
+      #78: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls driver.SQL.Query
+      #79: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls driver.SQL.Update
+      #80: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls driver.Secrets.Create
+      #81: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.Secrets.Delete
+      #82: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls driver.Secrets.Get
+      #83: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which eventually calls driver.Secrets.Query
+      #84: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls driver.Secrets.Update
+      #85: pkg/loadbalancer/experimental/healthserver.go:371:26: experimental.httpHealthServer.ServeHTTP calls driver.StorageDriverError.Error
+      #86: pkg/endpoint/bpf.go:1611:14: endpoint.CheckHealth calls errors.As, which eventually calls driver.StorageDriverError.Unwrap
+      #87: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls driver.init
+      #88: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls driver.records.Len
+      #89: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls driver.records.Less
+      #90: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls driver.records.Swap
+      #91: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls engine.Engine.Render
+      #92: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls engine.New
+      #93: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls engine.byPathLen.Len
+      #94: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls engine.byPathLen.Less
+      #95: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls engine.byPathLen.Swap
+      #96: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls engine.init
+      #97: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls fake.PrintingKubeClient.Build
+      #98: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls fake.PrintingKubeClient.Create
+      #99: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls fake.PrintingKubeClient.Delete
+      #100: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls fake.PrintingKubeClient.DeleteWithPropagationPolicy
+      #101: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls fake.PrintingKubeClient.IsReachable
+      #102: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls fake.PrintingKubeClient.Update
+      #103: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls fake.PrintingKubeClient.Wait
+      #104: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which calls fake.PrintingKubeClient.WaitForDelete
+      #105: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls fake.PrintingKubeClient.WaitWithJobs
+      #106: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls fake.PrintingKubeClient.WatchUntilReady
+      #107: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls fake.init
+      #108: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls fileutil.AtomicWriteFile
+      #109: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls fileutil.init
+      #110: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls fs.RenameWithFallback
+      #111: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls fs.init
+      #112: cilium-cli/internal/helm/helm.go:165:17: helm.MergeVals calls getter.All
+      #113: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls getter.HTTPGetter.Get
+      #114: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls getter.OCIGetter.Get
+      #115: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls getter.Providers.ByScheme
+      #116: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls getter.WithAcceptHeader
+      #117: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithBasicAuth
+      #118: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithInsecureSkipVerifyTLS
+      #119: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithPassCredentialsAll
+      #120: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithPlainHTTP
+      #121: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithRegistryClient
+      #122: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls getter.WithTLSClientConfig
+      #123: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls getter.WithURL
+      #124: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls getter.httpClient
+      #125: cilium-cli/internal/helm/helm.go:28:2: helm.init calls getter.init
+      #126: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls getter.newRegistryClient
+      #127: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls getter.pluginGetter.Get
+      #128: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls helmpath.CacheChartsFile
+      #129: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls helmpath.CacheIndexFile
+      #130: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New, which calls helmpath.CachePath
+      #131: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New, which calls helmpath.ConfigPath
+      #132: cilium-cli/install/upgrade.go:26:63: install.K8sInstaller.UpgradeWithHelm calls cli.New, which calls helmpath.DataPath
+      #133: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which calls helmpath.init
+      #134: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which calls ignore.Empty
+      #135: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which calls ignore.ParseFile
+      #136: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which calls ignore.Rules.AddDefaults
+      #137: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which eventually calls ignore.Rules.Ignore
+      #138: cilium-cli/internal/helm/helm.go:25:2: helm.init calls loader.init, which calls ignore.init
+      #139: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls kube.AsVersioned
+      #140: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls kube.Client.Build
+      #141: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls kube.Client.Create
+      #142: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls kube.Client.Delete
+      #143: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls kube.Client.DeleteWithPropagationPolicy
+      #144: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls kube.Client.IsReachable
+      #145: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls kube.Client.Update
+      #146: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls kube.Client.Wait
+      #147: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which calls kube.Client.WaitForDelete
+      #148: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls kube.Client.WaitWithJobs
+      #149: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls kube.Client.WatchUntilReady
+      #150: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls kube.New
+      #151: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls kube.ResourceList.Visit
+      #152: cilium-cli/k8s/client.go:862:33: k8s.Client.ProxyTCP calls portforward.tunnelingDialer.Dial, which eventually calls kube.RetryingRoundTripper.RoundTrip
+      #153: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls kube.SelectorsForObject
+      #154: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init, which calls kube.init
+      #155: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls kube.kubernetesNativeScheme
+      #156: cilium-cli/k8s/client.go:937:47: k8s.Client.ListUnstructured calls dynamic.dynamicResourceClient.List, which eventually calls kube.waitForDeletedResources
+      #157: cilium-cli/k8s/client.go:937:47: k8s.Client.ListUnstructured calls dynamic.dynamicResourceClient.List, which eventually calls kube.waitForResources
+      #158: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls lint.init
+      #159: cilium-cli/internal/helm/helm.go:66:27: helm.newChartFromEmbeddedFile calls loader.LoadArchive
+      #160: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls loader.LoadArchiveFiles
+      #161: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir
+      #162: cilium-cli/internal/helm/helm.go:25:2: helm.init calls loader.init
+      #163: cilium-cli/k8s/client.go:1116:28: k8s.Client.GetHelmMetadata calls output.EncodeYAML
+      #164: cilium-cli/k8s/client.go:22:2: k8s.init calls output.init
+      #165: cilium-cli/internal/helm/helm.go:165:17: helm.MergeVals calls getter.All, which eventually calls plugin.FindPlugins
+      #166: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls plugin.SetupPluginEnv
+      #167: cilium-cli/internal/helm/helm.go:28:2: helm.init calls getter.init, which calls plugin.init
+      #168: test/helpers/kubectl.go:4117:31: helpers.Kubectl.CiliumServiceAdd calls strings.Title, which eventually calls plugin.sanitizeString
+      #169: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls postrender.init
+      #170: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls provenance.NewFromKeyring
+      #171: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls provenance.Signatory.Verify
+      #172: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls provenance.init
+      #173: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls pusher.init
+      #174: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls registry.Client.Pull
+      #175: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls registry.Client.ValidateReference
+      #176: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls registry.ClientOptHTTPClient
+      #177: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls registry.ClientOptPlainHTTP
+      #178: cilium-cli/internal/helm/helm.go:95:20: helm.newChartFromRemoteWithCache calls registry.IsOCI
+      #179: cilium-cli/internal/helm/helm.go:100:45: helm.newChartFromRemoteWithCache calls registry.NewClient
+      #180: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls registry.PullOptWithChart
+      #181: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls registry.PullOptWithProv
+      #182: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init
+      #183: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls release.HookEvent.String
+      #184: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls release.Release.SetStatus
+      #185: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls release.Status.IsPending
+      #186: cilium-cli/k8s/client.go:1110:25: k8s.Client.GetHelmMetadata calls action.GetMetadata.Run, which calls release.Status.String
+      #187: cilium-cli/internal/helm/helm.go:30:2: helm.init calls release.init
+      #188: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls releaseutil.ByRevision.Less
+      #189: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls releaseutil.BySplitManifestsOrder.Len
+      #190: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls releaseutil.BySplitManifestsOrder.Less
+      #191: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls releaseutil.BySplitManifestsOrder.Swap
+      #192: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls releaseutil.FilterFunc.Filter
+      #193: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last, which calls releaseutil.Reverse
+      #194: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which calls releaseutil.SortByRevision
+      #195: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls releaseutil.SortManifests
+      #196: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls releaseutil.SplitManifests
+      #197: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls releaseutil.init
+      #198: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls releaseutil.list.Len
+      #199: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls releaseutil.list.Swap
+      #200: pkg/fqdn/cache.go:682:12: fqdn.DNSCache.Dump calls sort.Slice, which eventually calls releaseutil.sortHooksByKind
+      #201: pkg/fqdn/cache.go:682:12: fqdn.DNSCache.Dump calls sort.Slice, which eventually calls releaseutil.sortManifestsByKind
+      #202: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls repo.ChartVersions.Len
+      #203: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls repo.ChartVersions.Less
+      #204: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls repo.ChartVersions.Swap
+      #205: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which calls repo.FindChartInAuthAndTLSAndPassRepoURL
+      #206: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.IndexFile.Get
+      #207: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.LoadFile
+      #208: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.LoadIndexFile
+      #209: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.NewChartRepository
+      #210: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.ResolveReferenceURL
+      #211: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls repo.init
+      #212: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls resolver.init
+      #213: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls rules.init
+      #214: cilium-cli/k8s/client.go:1105:29: k8s.Client.GetHelmMetadata calls action.Configuration.Init, which calls storage.Init
+      #215: cilium-cli/install/install.go:264:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which calls storage.Storage.Create
+      #216: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls storage.Storage.Delete
+      #217: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls storage.Storage.Deployed
+      #218: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which eventually calls storage.Storage.DeployedAll
+      #219: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls storage.Storage.Get
+      #220: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which calls storage.Storage.History
+      #221: cilium-cli/internal/helm/helm.go:315:52: helm.Upgrade calls storage.Storage.Last
+      #222: cilium-cli/internal/helm/helm.go:332:34: helm.Upgrade calls action.Upgrade.RunWithContext, which calls storage.Storage.Update
+      #223: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls storage.init
+      #224: cilium-cli/internal/helm/helm.go:182:26: helm.ParseVals calls strvals.ParseInto
+      #225: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which calls strvals.ParseIntoFile
+      #226: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which calls strvals.ParseIntoString
+      #227: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which calls strvals.ParseJSON
+      #228: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which calls strvals.ParseLiteralInto
+      #229: cilium-cli/internal/helm/helm.go:31:2: helm.init calls strvals.init
+      #230: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls support.init
+      #231: cilium-cli/internal/helm/helm.go:70:23: helm.newChartFromDirectory calls loader.LoadDir, which calls sympath.Walk
+      #232: cilium-cli/internal/helm/helm.go:25:2: helm.init calls loader.init, which calls sympath.init
+      #233: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which calls time.Now
+      #234: cilium-cli/internal/helm/helm.go:30:2: helm.init calls release.init, which calls time.init
+      #235: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls tlsutil.NewClientTLS
+      #236: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which calls tlsutil.init
+      #237: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which calls uploader.init
+      #238: cilium-cli/internal/helm/helm.go:108:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls urlutil.Equal
+      #239: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls urlutil.ExtractHostname
+      #240: cilium-cli/internal/helm/helm.go:28:2: helm.init calls getter.init, which calls urlutil.init
+      #241: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls util.GetNewReplicaSet
+      #242: cilium-cli/install/uninstall.go:83:29: install.K8sUninstaller.UninstallWithHelm calls action.Uninstall.Run, which eventually calls util.MaxUnavailable
+      #243: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which calls util.ReplicaSetsByCreationTimestamp.Len
+      #244: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls util.ReplicaSetsByCreationTimestamp.Less
+      #245: pkg/k8s/slim/k8s/apis/labels/selector.go:941:11: labels.SelectorFromValidatedSet calls sort.Sort, which eventually calls util.ReplicaSetsByCreationTimestamp.Swap
+      #246: cilium-cli/internal/helm/helm.go:26:2: helm.init calls cli.init, which eventually calls util.init
+      #247: cilium-cli/internal/helm/helm.go:182:26: helm.ParseVals calls strvals.ParseInto, which eventually calls values.MergeValues
+      #248: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues
+      #249: cilium-cli/internal/helm/helm.go:27:2: helm.init calls values.init
+      #250: cilium-cli/status/k8s.go:20:2: status.init calls action.init, which eventually calls version.Get
+      #251: cilium-cli/internal/helm/helm.go:100:45: helm.newChartFromRemoteWithCache calls registry.NewClient, which calls version.GetUserAgent
+      #252: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which calls version.init
+      #253: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls xdg.init
+
 Vulnerability #6: GO-2025-3528
     containerd has an integer overflow in User ID handling in
     github.com/containerd/containerd
@@ -1570,15 +1570,15 @@ Vulnerability #6: GO-2025-3528
       #8: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls auth.init
       #9: pkg/hubble/exporter/config.go:37:27: exporter.exporterConfigParser.Parse calls bytes.Buffer.ReadFrom, which calls compression.bufferedReader.Read
       #10: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls compression.gzipDecompress
-      #11: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls compression.init
-      #12: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
+      #11: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
+      #12: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls compression.init
       #13: test/helpers/kubectl.go:2003:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.Copy
       #14: test/helpers/kubectl.go:2003:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.ReadBlob
       #15: test/helpers/kubectl.go:2003:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.WithDescriptor
       #16: test/helpers/kubectl.go:2003:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.WithDescriptor
       #17: test/helpers/kubectl.go:2003:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls content.WithRef
-      #18: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
-      #19: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls content.init
+      #18: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls content.init
+      #19: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
       #20: pkg/endpoint/bpf.go:1601:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls docker.Close
       #21: pkg/loadbalancer/experimental/healthserver.go:371:26: experimental.httpHealthServer.ServeHTTP calls docker.ErrorCode.Error
       #22: pkg/datapath/linux/ipsec/ipsec_linux.go:1142:16: ipsec.DeleteIPsecEncryptRoute calls slog.Logger.With, which eventually calls docker.ErrorCode.MarshalText
@@ -1610,8 +1610,8 @@ Vulnerability #6: GO-2025-3528
       #48: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls images.Handlers
       #49: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls images.init
       #50: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls labels.init
-      #51: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls local.init
-      #52: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls local.init
+      #51: pkg/fqdn/dnsproxy/udp.go:157:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls local.init
+      #52: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls local.init
       #53: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls log.GetLogger
       #54: cilium-cli/internal/helm/helm.go:166:43: helm.MergeVals calls values.Options.MergeValues, which eventually calls log.WithLogger
       #55: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls log.init
@@ -1625,8 +1625,8 @@ Vulnerability #6: GO-2025-3528
       #63: pkg/datapath/linux/sysctl/sysctl.go:217:29: sysctl.directSysctl.Write calls io.WriteString, which calls schema1.blobStateCalculator.Write
       #64: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls schema1.init
       #65: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.Name
-      #66: cilium-cli/features/summary.go:176:56: features.downloadArtifacts calls github.ActionsService.DownloadArtifact, which eventually calls tracing.UpdateHTTPClient
-      #67: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
+      #66: pkg/bufuuid/uuid.go:70:23: bufuuid.Generator.NewInto calls io.ReadFull, which eventually calls tracing.UpdateHTTPClient
+      #67: cilium-cli/features/summary.go:176:56: features.downloadArtifacts calls github.ActionsService.DownloadArtifact, which eventually calls tracing.UpdateHTTPClient
       #68: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls tracing.init
       #69: cilium-cli/internal/helm/helm.go:29:2: helm.init calls registry.init, which eventually calls version.init
 
