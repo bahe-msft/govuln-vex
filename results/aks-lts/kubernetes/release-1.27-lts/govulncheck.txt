@@ -1512,8 +1512,8 @@ Vulnerability #5: GO-2024-3110
     Fixed in: github.com/opencontainers/runc@v1.1.14
     Example traces found:
       #1: pkg/security/apparmor/validate.go:24:2: apparmor.init calls apparmor.init
-      #2: pkg/security/apparmor/validate.go:104:24: apparmor.validateHost calls apparmor.isEnabled
-      #3: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls apparmor.isEnabled
+      #2: pkg/kubelet/metrics/metrics.go:746:20: metrics.Register calls sync.Once.Do, which eventually calls apparmor.isEnabled
+      #3: pkg/security/apparmor/validate.go:104:24: apparmor.validateHost calls apparmor.isEnabled
       #4: cmd/kubelet/app/options/globalflags_linux.go:31:2: options.init calls raw.init, which eventually calls capabilities.init
       #5: pkg/kubelet/cm/cgroup_manager_linux.go:474:23: cm.cgroupManagerImpl.Create calls fs2.manager.Set, which eventually calls cgroups.ConvertBlkIOToIOWeightValue
       #6: pkg/kubelet/cm/cgroup_manager_linux.go:474:23: cm.cgroupManagerImpl.Create calls systemd.unifiedManager.Set, which eventually calls cgroups.ConvertMemorySwapToCgroupV2Value
