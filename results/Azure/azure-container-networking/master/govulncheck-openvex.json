@@ -1,18 +1,19 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:f3916855ea52c65362a873c649f8876d6d272891391dc4cfd4e93455a2168d31",
+  "@id": "govulncheck/vex:0d9d3c2a265e06598ea3175ef6779794d3c43a2295c0f3a4c3f381b45827dc39",
   "author": "Unknown Author",
-  "timestamp": "2025-06-02T02:00:02.879020062Z",
+  "timestamp": "2025-06-09T00:51:46.121255705Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
     {
       "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2025-3487",
-        "name": "GO-2025-3487",
-        "description": "Potential denial of service in golang.org/x/crypto",
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3635",
+        "name": "GO-2025-3635",
+        "description": "In Cilium, packets from terminating endpoints may not be encrypted in Wireguard-enabled clusters in github.com/cilium/cilium",
         "aliases": [
-          "CVE-2025-22869"
+          "CVE-2025-32793",
+          "GHSA-5vxx-c285-pcq4"
         ]
       },
       "products": [
@@ -20,107 +21,12 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.33.0"
+              "@id": "pkg:golang/github.com%2Fcilium%2Fcilium@v1.15.15"
             }
           ]
         }
       ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_present",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
-    },
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2025-3488",
-        "name": "GO-2025-3488",
-        "description": "Unexpected memory consumption during token parsing in golang.org/x/oauth2",
-        "aliases": [
-          "CVE-2025-22868"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product",
-          "subcomponents": [
-            {
-              "@id": "pkg:golang/golang.org%2Fx%2Foauth2@v0.24.0"
-            }
-          ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_present",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
-    },
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2025-3503",
-        "name": "GO-2025-3503",
-        "description": "HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net",
-        "aliases": [
-          "CVE-2025-22870"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product",
-          "subcomponents": [
-            {
-              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.35.0"
-            }
-          ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
-    },
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2025-3553",
-        "name": "GO-2025-3553",
-        "description": "Excessive memory allocation during header parsing in github.com/golang-jwt/jwt",
-        "aliases": [
-          "CVE-2025-30204",
-          "GHSA-mh63-6h87-95cp"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product",
-          "subcomponents": [
-            {
-              "@id": "pkg:golang/github.com%2Fgolang-jwt%2Fjwt%2Fv5@v5.2.1"
-            }
-          ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
-    },
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2025-3595",
-        "name": "GO-2025-3595",
-        "description": "Incorrect Neutralization of Input During Web Page Generation in x/net in golang.org/x/net",
-        "aliases": [
-          "CVE-2025-22872"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product",
-          "subcomponents": [
-            {
-              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.35.0"
-            }
-          ]
-        }
-      ],
-      "status": "not_affected",
-      "justification": "vulnerable_code_not_in_execute_path",
-      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+      "status": "affected"
     }
   ]
 }

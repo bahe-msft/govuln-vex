@@ -1286,7 +1286,7 @@ The package pattern matched the following 1283 root packages:
   k8s.io/kubernetes/test/utils/ktesting/examples/without_ktesting
   k8s.io/kubernetes/test/utils/oidc/handlers
   k8s.io/kubernetes/test/utils/oidc
-Govulncheck scanned the following 195 modules and the go1.24.3 standard library:
+Govulncheck scanned the following 195 modules and the go1.24.4 standard library:
   k8s.io/kubernetes
   bitbucket.org/bertimus9/systemstat@v0.5.0
   cel.dev/expr@v0.18.0
@@ -1493,7 +1493,7 @@ Vulnerability #1: GO-2025-3595
     Found in: golang.org/x/net@v0.30.0
     Fixed in: golang.org/x/net@v0.38.0
     Example traces found:
-      #1: pkg/kubelet/kubelet_pods.go:2428:24: kubelet.Kubelet.ServeLogs calls http.HandlerFunc.ServeHTTP, which eventually calls html.Tokenizer.Next
+      #1: pkg/kubelet/kubelet_pods.go:2421:24: kubelet.Kubelet.ServeLogs calls http.HandlerFunc.ServeHTTP, which eventually calls html.Tokenizer.Next
 
 Vulnerability #2: GO-2025-3553
     Excessive memory allocation during header parsing in
@@ -1503,7 +1503,7 @@ Vulnerability #2: GO-2025-3553
     Found in: github.com/golang-jwt/jwt/v4@v4.5.0
     Fixed in: github.com/golang-jwt/jwt/v4@v4.5.2
     Example traces found:
-      #1: pkg/kubelet/kubelet_pods.go:2428:24: kubelet.Kubelet.ServeLogs calls http.HandlerFunc.ServeHTTP, which eventually calls jwt.Parser.ParseUnverified
+      #1: pkg/kubelet/kubelet_pods.go:2421:24: kubelet.Kubelet.ServeLogs calls http.HandlerFunc.ServeHTTP, which eventually calls jwt.Parser.ParseUnverified
 
 Vulnerability #3: GO-2025-3487
     Potential denial of service in golang.org/x/crypto
@@ -1533,7 +1533,7 @@ Vulnerability #4: GO-2024-3250
     Found in: github.com/golang-jwt/jwt/v4@v4.5.0
     Fixed in: github.com/golang-jwt/jwt/v4@v4.5.1
     Example traces found:
-      #1: pkg/kubelet/kubelet_pods.go:2428:24: kubelet.Kubelet.ServeLogs calls http.HandlerFunc.ServeHTTP, which eventually calls jwt.Parse
+      #1: pkg/kubelet/kubelet_pods.go:2421:24: kubelet.Kubelet.ServeLogs calls http.HandlerFunc.ServeHTTP, which eventually calls jwt.Parse
 
 === Package Results ===
 
