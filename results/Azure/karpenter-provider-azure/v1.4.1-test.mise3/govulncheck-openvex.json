@@ -1,0 +1,12 @@
+govulncheck: loading packages: 
+There are errors with the provided package patterns:
+
+/home/runner/work/govuln-vex/govuln-vex/stage/Azure/karpenter-provider-azure/pkg/test/environment.go:123:167: not enough arguments in call to imagefamily.NewProvider
+	have (kubernetes.Interface, *"github.com/patrickmn/go-cache".Cache, *"github.com/Azure/karpenter-provider-azure/pkg/fake".CommunityGalleryImageVersionsAPI, string, string, *"github.com/Azure/karpenter-provider-azure/pkg/fake".NodeImageVersionsAPI)
+	want (kubernetes.Interface, *"github.com/patrickmn/go-cache".Cache, imagefamily.CommunityGalleryImageVersionsAPI, string, string, imagefamily.NodeImageVersionsAPI, imagefamily.NodeBootstrappingAPI)
+/home/runner/work/govuln-vex/govuln-vex/stage/Azure/karpenter-provider-azure/pkg/test/environment.go:160:2: not enough arguments in call to instance.NewAZClientFromAPI
+	have (*"github.com/Azure/karpenter-provider-azure/pkg/fake".VirtualMachinesAPI, *"github.com/Azure/karpenter-provider-azure/pkg/fake".AzureResourceGraphAPI, *"github.com/Azure/karpenter-provider-azure/pkg/fake".VirtualMachineExtensionsAPI, *"github.com/Azure/karpenter-provider-azure/pkg/fake".NetworkInterfacesAPI, *"github.com/Azure/karpenter-provider-azure/pkg/fake".LoadBalancersAPI, *"github.com/Azure/karpenter-provider-azure/pkg/fake".NetworkSecurityGroupAPI, *"github.com/Azure/karpenter-provider-azure/pkg/fake".CommunityGalleryImageVersionsAPI, *"github.com/Azure/karpenter-provider-azure/pkg/fake".NodeImageVersionsAPI, *"github.com/Azure/karpenter-provider-azure/pkg/fake".MockSkuClientSingleton)
+	want (instance.VirtualMachinesAPI, instance.AzureResourceGraphAPI, instance.VirtualMachineExtensionsAPI, instance.NetworkInterfacesAPI, "github.com/Azure/karpenter-provider-azure/pkg/providers/loadbalancer".LoadBalancersAPI, networksecuritygroup.API, imagefamily.CommunityGalleryImageVersionsAPI, imagefamily.NodeImageVersionsAPI, imagefamily.NodeBootstrappingAPI, skuclient.SkuClient)
+
+For details on package patterns, see https://pkg.go.dev/cmd/go#hdr-Package_lists_and_patterns.
+

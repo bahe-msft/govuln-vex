@@ -1,12 +1,16 @@
 # OpenVEX Report
 
-Last updated time: Mon Jun  2 02:42:49 UTC 2025
+Last updated time: Mon Jun  9 01:23:35 UTC 2025
 
 ## Azure/azure-container-networking
 
-### ✅ master
+### ⚠️ master
 
-No active affected vulnerabilities found in master
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-3635 | https://pkg.go.dev/vuln/GO-2025-3635 | affected | N/A |
 
 Reports: [Azure/azure-container-networking/master](results/Azure/azure-container-networking/master)
 
@@ -60,13 +64,9 @@ Reports: [Azure/azure-container-networking/v1.6.20](results/Azure/azure-containe
 
 ## Azure/karpenter-provider-azure
 
-### ⚠️ main
+### ✅ main
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2025-3595 | https://pkg.go.dev/vuln/GO-2025-3595 | affected | N/A |
+No active affected vulnerabilities found in main
 
 Reports: [Azure/karpenter-provider-azure/main](results/Azure/karpenter-provider-azure/main)
 
@@ -147,6 +147,24 @@ Reports: [Azure/karpenter-provider-azure/v1.4.0-rc.2](results/Azure/karpenter-pr
 No active affected vulnerabilities found in v1.4.0-rc.3
 
 Reports: [Azure/karpenter-provider-azure/v1.4.0-rc.3](results/Azure/karpenter-provider-azure/v1.4.0-rc.3)
+
+### ⚠️ v1.4.1-test.mise2 (Skipped - Invalid JSON)
+
+Unable to process JSON file: `results/Azure/karpenter-provider-azure/v1.4.1-test.mise2/govulncheck-openvex.json`
+
+Reports: [Azure/karpenter-provider-azure/v1.4.1-test.mise2](results/Azure/karpenter-provider-azure/v1.4.1-test.mise2)
+
+### ⚠️ v1.4.1-test.mise3 (Skipped - Invalid JSON)
+
+Unable to process JSON file: `results/Azure/karpenter-provider-azure/v1.4.1-test.mise3/govulncheck-openvex.json`
+
+Reports: [Azure/karpenter-provider-azure/v1.4.1-test.mise3](results/Azure/karpenter-provider-azure/v1.4.1-test.mise3)
+
+### ✅ v1.4.1-test.mise4
+
+No active affected vulnerabilities found in v1.4.1-test.mise4
+
+Reports: [Azure/karpenter-provider-azure/v1.4.1-test.mise4](results/Azure/karpenter-provider-azure/v1.4.1-test.mise4)
 
 ## Azure/kubelogin
 
@@ -248,14 +266,9 @@ Reports: [Azure/kubelogin/v0.2.8](results/Azure/kubelogin/v0.2.8)
 
 ## aks-lts/kubernetes
 
-### ⚠️ master
+### ✅ master
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2025-3553 | https://pkg.go.dev/vuln/GO-2025-3553 | affected | N/A |
-| GO-2025-3595 | https://pkg.go.dev/vuln/GO-2025-3595 | affected | N/A |
+No active affected vulnerabilities found in master
 
 Reports: [aks-lts/kubernetes/master](results/aks-lts/kubernetes/master)
 
@@ -338,19 +351,9 @@ Reports: [aks-lts/kubernetes/release-1.31](results/aks-lts/kubernetes/release-1.
 
 ## cilium/cilium
 
-### ⚠️ main
+### ✅ main
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3528 | https://pkg.go.dev/vuln/GO-2025-3528 | affected | N/A |
-| GO-2025-3601 | https://pkg.go.dev/vuln/GO-2025-3601 | affected | N/A |
-| GO-2025-3602 | https://pkg.go.dev/vuln/GO-2025-3602 | affected | N/A |
-| GO-2025-3631 | https://pkg.go.dev/vuln/GO-2025-3631 | affected | N/A |
-| GO-2025-3632 | https://pkg.go.dev/vuln/GO-2025-3632 | affected | N/A |
-| GO-2025-3633 | https://pkg.go.dev/vuln/GO-2025-3633 | affected | N/A |
+No active affected vulnerabilities found in main
 
 Reports: [cilium/cilium/main](results/cilium/cilium/main)
 
@@ -451,6 +454,12 @@ No active affected vulnerabilities found in v1.18.0-pre.2
 
 Reports: [cilium/cilium/v1.18.0-pre.2](results/cilium/cilium/v1.18.0-pre.2)
 
+### ✅ v1.18.0-pre.3
+
+No active affected vulnerabilities found in v1.18.0-pre.3
+
+Reports: [cilium/cilium/v1.18.0-pre.3](results/cilium/cilium/v1.18.0-pre.3)
+
 ## kubernetes-sigs/cloud-provider-azure
 
 ### ✅ master
@@ -527,14 +536,9 @@ Reports: [kubernetes-sigs/cloud-provider-azure/v1.33.0](results/kubernetes-sigs/
 
 ## kubernetes/kubernetes
 
-### ⚠️ master
+### ✅ master
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2025-3553 | https://pkg.go.dev/vuln/GO-2025-3553 | affected | N/A |
-| GO-2025-3595 | https://pkg.go.dev/vuln/GO-2025-3595 | affected | N/A |
+No active affected vulnerabilities found in master
 
 Reports: [kubernetes/kubernetes/master](results/kubernetes/kubernetes/master)
 

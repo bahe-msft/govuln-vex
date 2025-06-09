@@ -2,7 +2,7 @@ Fetching vulnerabilities from the database...
 
 Checking the code against the vulnerabilities...
 
-The package pattern matched the following 166 root packages:
+The package pattern matched the following 167 root packages:
   github.com/Azure/azure-container-networking/log
   github.com/Azure/azure-container-networking/platform
   github.com/Azure/azure-container-networking/internal/lockedfile/internal/filelock
@@ -156,6 +156,7 @@ The package pattern matched the following 166 root packages:
   github.com/Azure/azure-container-networking/test/e2e/scenarios/hubble/flow
   github.com/Azure/azure-container-networking/test/integration/cilium-nodesubnet
   github.com/Azure/azure-container-networking/test/integration/npm
+  github.com/Azure/azure-container-networking/test/integration/prometheus
   github.com/Azure/azure-container-networking/test/internal/kubernetes
   github.com/Azure/azure-container-networking/test/internal/datapath
   github.com/Azure/azure-container-networking/test/nnsmockserver
@@ -169,13 +170,13 @@ The package pattern matched the following 166 root packages:
   github.com/Azure/azure-container-networking/tools/acncli/cmd/npm
   github.com/Azure/azure-container-networking/tools/acncli/cmd
   github.com/Azure/azure-container-networking/tools/acncli
-Govulncheck scanned the following 122 modules and the go1.24.3 standard library:
+Govulncheck scanned the following 150 modules and the go1.24.4 standard library:
   github.com/Azure/azure-container-networking
   code.cloudfoundry.org/clock@v1.0.0
   github.com/Azure/azure-container-networking/zapai@v0.0.3
-  github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.17.0
-  github.com/Azure/azure-sdk-for-go/sdk/azidentity@v1.8.2
-  github.com/Azure/azure-sdk-for-go/sdk/internal@v1.10.0
+  github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.18.0
+  github.com/Azure/azure-sdk-for-go/sdk/azidentity@v1.10.0
+  github.com/Azure/azure-sdk-for-go/sdk/internal@v1.11.1
   github.com/Azure/azure-sdk-for-go/sdk/keyvault/azsecrets@v0.12.0
   github.com/Azure/azure-sdk-for-go/sdk/keyvault/internal@v0.7.1
   github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/containerservice/armcontainerservice/v4@v4.7.0-beta.1
@@ -183,47 +184,62 @@ Govulncheck scanned the following 122 modules and the go1.24.3 standard library:
   github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/monitor/armmonitor@v0.11.0
   github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/network/armnetwork/v5@v5.2.0
   github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/resources/armresources@v1.2.0
-  github.com/AzureAD/microsoft-authentication-library-for-go@v1.3.3
+  github.com/AzureAD/microsoft-authentication-library-for-go@v1.4.2
   github.com/Masterminds/semver@v1.5.0
+  github.com/asaskevich/govalidator@v0.0.0-20230301143203-a9d515a09cc2
   github.com/avast/retry-go/v3@v3.1.1
   github.com/avast/retry-go/v4@v4.6.1
   github.com/beorn7/perks@v1.0.1
+  github.com/blang/semver/v4@v4.0.0
   github.com/cespare/xxhash/v2@v2.3.0
-  github.com/containernetworking/cni@v1.2.2
+  github.com/cilium/cilium@v1.15.15
+  github.com/cilium/ebpf@v0.12.3
+  github.com/cilium/proxy@v0.0.0-20231202123106-38b645b854f3
+  github.com/containernetworking/cni@v1.3.0
   github.com/coreos/go-iptables@v0.8.0
   github.com/davecgh/go-spew@v1.1.2-0.20180830191138-d8f796af33cc
-  github.com/emicklei/go-restful/v3@v3.11.0
-  github.com/evanphx/json-patch@v5.6.0+incompatible
+  github.com/emicklei/go-restful/v3@v3.11.2
+  github.com/evanphx/json-patch@v5.7.0+incompatible
   github.com/evanphx/json-patch/v5@v5.9.0
-  github.com/fsnotify/fsnotify@v1.8.0
+  github.com/fsnotify/fsnotify@v1.9.0
   github.com/go-logr/logr@v1.4.2
+  github.com/go-logr/stdr@v1.2.2
   github.com/go-logr/zapr@v1.3.0
-  github.com/go-openapi/jsonpointer@v0.20.0
-  github.com/go-openapi/jsonreference@v0.20.2
-  github.com/go-openapi/swag@v0.22.4
+  github.com/go-openapi/analysis@v0.21.4
+  github.com/go-openapi/errors@v0.20.4
+  github.com/go-openapi/jsonpointer@v0.20.2
+  github.com/go-openapi/jsonreference@v0.20.4
+  github.com/go-openapi/loads@v0.21.2
+  github.com/go-openapi/runtime@v0.26.2
+  github.com/go-openapi/spec@v0.20.11
+  github.com/go-openapi/strfmt@v0.21.9
+  github.com/go-openapi/swag@v0.22.7
+  github.com/go-openapi/validate@v0.22.3
+  github.com/go-viper/mapstructure/v2@v2.2.1
   github.com/gofrs/uuid@v4.2.0+incompatible
   github.com/gogo/protobuf@v1.3.2
-  github.com/golang-jwt/jwt/v5@v5.2.1
+  github.com/golang-jwt/jwt/v5@v5.2.2
   github.com/golang/groupcache@v0.0.0-20210331224755-41bb18bfe9da
   github.com/golang/mock@v1.6.0
   github.com/golang/protobuf@v1.5.4
   github.com/google/gnostic-models@v0.6.8
   github.com/google/go-cmp@v0.7.0
   github.com/google/gofuzz@v1.2.0
+  github.com/google/gopacket@v1.1.19
   github.com/google/uuid@v1.6.0
   github.com/gorilla/mux@v1.8.1
-  github.com/gorilla/websocket@v1.5.0
+  github.com/gorilla/websocket@v1.5.1
   github.com/hashicorp/go-version@v1.7.0
-  github.com/hashicorp/hcl@v1.0.0
+  github.com/hashicorp/golang-lru/v2@v2.0.7
   github.com/imdario/mergo@v0.3.16
   github.com/josharian/intern@v1.0.0
   github.com/json-iterator/go@v1.1.12
   github.com/jsternberg/zap-logfmt@v1.3.0
-  github.com/klauspost/compress@v1.17.11
+  github.com/kr/pretty@v0.3.1
+  github.com/kr/text@v0.2.0
   github.com/kylelemons/godebug@v1.1.0
   github.com/labstack/echo/v4@v4.13.3
   github.com/labstack/gommon@v0.4.2
-  github.com/magiconair/properties@v1.8.7
   github.com/mailru/easyjson@v0.7.7
   github.com/mattn/go-colorable@v0.1.13
   github.com/mattn/go-isatty@v0.0.20
@@ -235,45 +251,58 @@ Govulncheck scanned the following 122 modules and the go1.24.3 standard library:
   github.com/munnerz/goautoneg@v0.0.0-20191010083416-a7dc8b61c822
   github.com/mxk/go-flowrate@v0.0.0-20140419014527-cca7078d478f
   github.com/nxadm/tail@v1.4.11
+  github.com/oklog/ulid@v1.3.1
+  github.com/opentracing/opentracing-go@v1.2.1-0.20220228012449-10b1cf09e00b
   github.com/patrickmn/go-cache@v2.1.0+incompatible
-  github.com/pelletier/go-toml/v2@v2.2.2
+  github.com/pelletier/go-toml/v2@v2.2.3
+  github.com/petermattis/goid@v0.0.0-20180202154549-b0b1615b78e5
   github.com/pkg/browser@v0.0.0-20240102092130-5ac0b6a4141c
   github.com/pkg/errors@v0.9.1
   github.com/pmezard/go-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2
-  github.com/prometheus/client_golang@v1.21.0
-  github.com/prometheus/client_model@v0.6.1
-  github.com/prometheus/common@v0.62.0
+  github.com/prometheus/client_golang@v1.22.0
+  github.com/prometheus/client_model@v0.6.2
+  github.com/prometheus/common@v0.64.0
   github.com/prometheus/procfs@v0.15.1
-  github.com/sagikazarmark/slog-shim@v0.1.0
+  github.com/rogpeppe/go-internal@v1.13.1
+  github.com/sagikazarmark/locafero@v0.7.0
+  github.com/sasha-s/go-deadlock@v0.3.1
+  github.com/shirou/gopsutil/v3@v3.23.5
   github.com/sirupsen/logrus@v1.9.3
-  github.com/spf13/afero@v1.11.0
-  github.com/spf13/cast@v1.6.0
+  github.com/sourcegraph/conc@v0.3.0
+  github.com/spf13/afero@v1.12.0
+  github.com/spf13/cast@v1.7.1
   github.com/spf13/cobra@v1.9.1
   github.com/spf13/pflag@v1.0.6
-  github.com/spf13/viper@v1.19.0
+  github.com/spf13/viper@v1.20.1
   github.com/stretchr/testify@v1.10.0
   github.com/subosito/gotenv@v1.6.0
   github.com/valyala/bytebufferpool@v1.0.0
   github.com/valyala/fasttemplate@v1.2.2
-  github.com/vishvananda/netlink@v1.3.0
+  github.com/vishvananda/netlink@v1.3.1
   github.com/vishvananda/netns@v0.0.5
+  go.mongodb.org/mongo-driver@v1.13.1
+  go.opentelemetry.io/auto/sdk@v1.1.0
+  go.opentelemetry.io/otel@v1.34.0
+  go.opentelemetry.io/otel/metric@v1.34.0
+  go.opentelemetry.io/otel/trace@v1.34.0
+  go.uber.org/dig@v1.17.1
   go.uber.org/multierr@v1.11.0
   go.uber.org/zap@v1.27.0
-  golang.org/x/crypto@v0.33.0
-  golang.org/x/exp@v0.0.0-20231006140011-7918f672742d
-  golang.org/x/net@v0.35.0
-  golang.org/x/oauth2@v0.24.0
-  golang.org/x/sync@v0.11.0
-  golang.org/x/sys@v0.30.0
-  golang.org/x/term@v0.29.0
-  golang.org/x/text@v0.22.0
-  golang.org/x/time@v0.10.0
+  go4.org/netipx@v0.0.0-20231129151722-fdeea329fbba
+  golang.org/x/crypto@v0.38.0
+  golang.org/x/exp@v0.0.0-20240719175910-8a7402abbf56
+  golang.org/x/net@v0.40.0
+  golang.org/x/oauth2@v0.30.0
+  golang.org/x/sync@v0.14.0
+  golang.org/x/sys@v0.33.0
+  golang.org/x/term@v0.32.0
+  golang.org/x/text@v0.25.0
+  golang.org/x/time@v0.11.0
   gomodules.xyz/jsonpatch/v2@v2.4.0
-  google.golang.org/genproto/googleapis/rpc@v0.0.0-20241202173237-19429a94021a
-  google.golang.org/grpc@v1.70.0
-  google.golang.org/protobuf@v1.36.5
+  google.golang.org/genproto/googleapis/rpc@v0.0.0-20250218202821-56aae31c358a
+  google.golang.org/grpc@v1.72.2
+  google.golang.org/protobuf@v1.36.6
   gopkg.in/inf.v0@v0.9.1
-  gopkg.in/ini.v1@v1.67.0
   gopkg.in/natefinch/lumberjack.v2@v2.2.1
   gopkg.in/tomb.v1@v1.0.0-20141024135613-dd632973f1e7
   gopkg.in/yaml.v2@v2.4.0
@@ -287,7 +316,7 @@ Govulncheck scanned the following 122 modules and the go1.24.3 standard library:
   k8s.io/kube-openapi@v0.0.0-20240228011516-70dd3763d340
   k8s.io/kubectl@v0.28.5
   k8s.io/kubelet@v0.30.7
-  k8s.io/utils@v0.0.0-20230726121419-3b25d923346b
+  k8s.io/utils@v0.0.0-20240310230437-4693a0247e57
   sigs.k8s.io/controller-runtime@v0.18.4
   sigs.k8s.io/json@v0.0.0-20221116044647-bc3834ca7abd
   sigs.k8s.io/structured-merge-diff/v4@v4.4.1
@@ -295,50 +324,496 @@ Govulncheck scanned the following 122 modules and the go1.24.3 standard library:
 
 === Symbol Results ===
 
-No vulnerabilities found.
+Vulnerability #1: GO-2025-3635
+    In Cilium, packets from terminating endpoints may not be encrypted in
+    Wireguard-enabled clusters in github.com/cilium/cilium
+  More info: https://pkg.go.dev/vuln/GO-2025-3635
+  Module: github.com/cilium/cilium
+    Found in: github.com/cilium/cilium@v1.15.15
+    Fixed in: github.com/cilium/cilium@v1.15.16
+    Example traces found:
+      #1: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls addressing.init
+      #2: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls api.Rule.DeepCopyInto
+      #3: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls api.Rule.MarshalJSON
+      #4: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls api.Rules.String
+      #5: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls api.init
+      #6: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls api.init
+      #7: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls bgp.New
+      #8: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls bgp.init
+      #9: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls cell.Config[github.com/cilium/cilium/pkg/metrics.RegistryConfig]
+      #10: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls cell.Invoke
+      #11: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls cell.Metric[*github.com/cilium/cilium/pkg/hive/metrics.HealthMetrics]
+      #12: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls cell.Metric[*github.com/cilium/cilium/pkg/metrics.LegacyMetrics]
+      #13: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls cell.Module
+      #14: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls cell.Provide
+      #15: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls cell.init
+      #16: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls cidr.init
+      #17: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumClusterwideEnvoyConfig.DeepCopyObject
+      #18: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumClusterwideEnvoyConfigList.DeepCopyObject
+      #19: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumClusterwideNetworkPolicy.DeepCopyObject
+      #20: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumClusterwideNetworkPolicyList.DeepCopyObject
+      #21: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumEgressGatewayPolicy.DeepCopyObject
+      #22: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumEgressGatewayPolicyList.DeepCopyObject
+      #23: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumEndpoint.DeepCopyObject
+      #24: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumEndpointList.DeepCopyObject
+      #25: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumEnvoyConfig.DeepCopyObject
+      #26: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumEnvoyConfigList.DeepCopyObject
+      #27: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumExternalWorkload.DeepCopyObject
+      #28: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumExternalWorkloadList.DeepCopyObject
+      #29: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumIdentity.DeepCopyObject
+      #30: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumIdentityList.DeepCopyObject
+      #31: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumLocalRedirectPolicy.DeepCopyObject
+      #32: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumLocalRedirectPolicyList.DeepCopyObject
+      #33: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumNetworkPolicy.DeepCopyObject
+      #34: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls cilium.CiliumNetworkPolicy.String
+      #35: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumNetworkPolicyList.DeepCopyObject
+      #36: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumNode.DeepCopyObject
+      #37: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.CiliumNodeList.DeepCopyObject
+      #38: test/internal/kubernetes/utils.go:254:63: kubernetes.MustSetupLRP calls cilium.CiliumV2Client.CiliumLocalRedirectPolicies
+      #39: test/internal/kubernetes/utils.go:263:57: kubernetes.MustSetupCNP calls cilium.CiliumV2Client.CiliumNetworkPolicies
+      #40: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls cilium.EndpointNetworking.DeepCopyInto
+      #41: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:55:38: multitenantoperator.New calls runtime.SchemeBuilder.AddToScheme, which calls cilium.addKnownTypes
+      #42: test/internal/kubernetes/utils_create.go:182:31: kubernetes.mustCreateCiliumLocalRedirectPolicy calls cilium.ciliumLocalRedirectPolicies.Create
+      #43: test/internal/kubernetes/utils_delete.go:78:28: kubernetes.MustDeleteCiliumLocalRedirectPolicy calls cilium.ciliumLocalRedirectPolicies.Delete
+      #44: test/internal/kubernetes/utils_create.go:190:31: kubernetes.mustCreateCiliumNetworkPolicy calls cilium.ciliumNetworkPolicies.Create
+      #45: test/internal/kubernetes/utils_delete.go:86:28: kubernetes.MustDeleteCiliumNetworkPolicy calls cilium.ciliumNetworkPolicies.Delete
+      #46: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls cilium.init
+      #47: test/internal/kubernetes/utils_create.go:13:2: kubernetes.init calls cilium.init
+      #48: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init
+      #49: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllEndpointAddresses
+      #50: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllHostAddresses
+      #51: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetPathConnectivityStatusType
+      #52: common/utils.go:300:19: common.PostCtx calls http.Client.Do, which eventually calls client.configureTransport
+      #53: nmagent/internal/wireserver.go:141:36: internal.WireserverTransport.RoundTrip calls http.Transport.RoundTrip, which eventually calls client.configureTransport
+      #54: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
+      #55: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
+      #56: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
+      #57: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
+      #58: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls collections.init
+      #59: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls command.init
+      #60: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls comparator.init
+      #61: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls connectivity.Client.GetStatus
+      #62: cns/restserver/ipam.go:1219:94: restserver.HTTPRestService.UpdateEndpointHandler calls connectivity.GetStatusOK.Error
+      #63: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls connectivity.GetStatusOK.String
+      #64: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls connectivity.GetStatusParams.WriteToRequest
+      #65: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls connectivity.GetStatusReader.ReadResponse
+      #66: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls connectivity.New
+      #67: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls connectivity.init
+      #68: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.Endpoints.DeepCopyObject
+      #69: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Endpoints.Marshal
+      #70: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Endpoints.MarshalTo
+      #71: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Endpoints.MarshalToSizedBuffer
+      #72: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Endpoints.Size
+      #73: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.Endpoints.String
+      #74: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.EndpointsList.DeepCopyObject
+      #75: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.EndpointsList.Marshal
+      #76: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.EndpointsList.MarshalTo
+      #77: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.EndpointsList.MarshalToSizedBuffer
+      #78: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.EndpointsList.Size
+      #79: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.EndpointsList.String
+      #80: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.Namespace.DeepCopyObject
+      #81: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Namespace.Marshal
+      #82: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Namespace.MarshalTo
+      #83: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Namespace.MarshalToSizedBuffer
+      #84: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Namespace.Size
+      #85: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.Namespace.String
+      #86: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.NamespaceList.DeepCopyObject
+      #87: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.NamespaceList.Marshal
+      #88: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.NamespaceList.MarshalTo
+      #89: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.NamespaceList.MarshalToSizedBuffer
+      #90: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.NamespaceList.Size
+      #91: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.NamespaceList.String
+      #92: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.Node.DeepCopyObject
+      #93: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Node.Marshal
+      #94: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Node.MarshalTo
+      #95: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Node.MarshalToSizedBuffer
+      #96: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Node.Size
+      #97: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.Node.String
+      #98: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.NodeList.DeepCopyObject
+      #99: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.NodeList.Marshal
+      #100: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.NodeList.MarshalTo
+      #101: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.NodeList.MarshalToSizedBuffer
+      #102: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.NodeList.Size
+      #103: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.NodeList.String
+      #104: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.Pod.DeepCopyObject
+      #105: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Pod.Marshal
+      #106: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Pod.MarshalTo
+      #107: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Pod.MarshalToSizedBuffer
+      #108: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Pod.Size
+      #109: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.Pod.String
+      #110: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.PodList.DeepCopyObject
+      #111: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.PodList.Marshal
+      #112: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.PodList.MarshalTo
+      #113: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.PodList.MarshalToSizedBuffer
+      #114: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.PodList.Size
+      #115: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.PodList.String
+      #116: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.Secret.DeepCopyObject
+      #117: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Secret.Marshal
+      #118: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Secret.MarshalTo
+      #119: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Secret.MarshalToSizedBuffer
+      #120: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Secret.Size
+      #121: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.Secret.String
+      #122: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.SecretList.DeepCopyObject
+      #123: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.SecretList.Marshal
+      #124: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.SecretList.MarshalTo
+      #125: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.SecretList.MarshalToSizedBuffer
+      #126: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.SecretList.Size
+      #127: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.SecretList.String
+      #128: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.Service.DeepCopyObject
+      #129: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Service.Marshal
+      #130: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Service.MarshalTo
+      #131: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Service.MarshalToSizedBuffer
+      #132: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.Service.Size
+      #133: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.Service.String
+      #134: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls core.ServiceList.DeepCopyObject
+      #135: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.ServiceList.Marshal
+      #136: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.ServiceList.MarshalTo
+      #137: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.ServiceList.MarshalToSizedBuffer
+      #138: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls core.ServiceList.Size
+      #139: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls core.ServiceList.String
+      #140: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:55:38: multitenantoperator.New calls runtime.SchemeBuilder.AddToScheme, which calls core.addKnownTypes
+      #141: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls core.init
+      #142: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls daemon.Client.GetHealthz
+      #143: cns/restserver/ipam.go:1219:94: restserver.HTTPRestService.UpdateEndpointHandler calls daemon.GetHealthzOK.Error
+      #144: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls daemon.GetHealthzOK.String
+      #145: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls daemon.GetHealthzParams.WriteToRequest
+      #146: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls daemon.GetHealthzReader.ReadResponse
+      #147: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls daemon.New
+      #148: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls daemon.init
+      #149: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls defaults.init
+      #150: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls defaults.init
+      #151: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls dns.init
+      #152: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls endpoint.New
+      #153: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls endpoint.init
+      #154: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls exec.init
+      #155: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.AgentEvent.MarshalJSON
+      #156: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.AgentEvent.ProtoReflect
+      #157: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.AgentEvent.String
+      #158: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.AgentEventType.Descriptor
+      #159: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.AgentEventType.String
+      #160: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.AgentEventUnknown.MarshalJSON
+      #161: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.AgentEventUnknown.ProtoReflect
+      #162: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.AgentEventUnknown.String
+      #163: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.AuthType.Descriptor
+      #164: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.AuthType.String
+      #165: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.CiliumEventType.MarshalJSON
+      #166: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.CiliumEventType.ProtoReflect
+      #167: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.CiliumEventType.String
+      #168: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.DNS.MarshalJSON
+      #169: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.DNS.ProtoReflect
+      #170: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.DNS.String
+      #171: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.DebugCapturePoint.Descriptor
+      #172: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.DebugCapturePoint.String
+      #173: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.DebugEvent.MarshalJSON
+      #174: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.DebugEvent.ProtoReflect
+      #175: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.DebugEvent.String
+      #176: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.DebugEventType.Descriptor
+      #177: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.DebugEventType.String
+      #178: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.DropReason.Descriptor
+      #179: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.DropReason.String
+      #180: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.Endpoint.MarshalJSON
+      #181: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.Endpoint.ProtoReflect
+      #182: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.Endpoint.String
+      #183: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.EndpointRegenNotification.MarshalJSON
+      #184: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.EndpointRegenNotification.ProtoReflect
+      #185: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.EndpointRegenNotification.String
+      #186: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.EndpointUpdateNotification.MarshalJSON
+      #187: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.EndpointUpdateNotification.ProtoReflect
+      #188: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.EndpointUpdateNotification.String
+      #189: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.Ethernet.MarshalJSON
+      #190: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.Ethernet.ProtoReflect
+      #191: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.Ethernet.String
+      #192: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.EventType.Descriptor
+      #193: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.EventType.String
+      #194: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.EventTypeFilter.MarshalJSON
+      #195: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.EventTypeFilter.ProtoReflect
+      #196: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.EventTypeFilter.String
+      #197: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.Flow.MarshalJSON
+      #198: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.Flow.ProtoReflect
+      #199: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.Flow.String
+      #200: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.FlowFilter.MarshalJSON
+      #201: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.FlowFilter.ProtoReflect
+      #202: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.FlowFilter.String
+      #203: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.FlowType.Descriptor
+      #204: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.FlowType.String
+      #205: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.HTTP.MarshalJSON
+      #206: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.HTTP.ProtoReflect
+      #207: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.HTTP.String
+      #208: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.HTTPHeader.MarshalJSON
+      #209: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.HTTPHeader.ProtoReflect
+      #210: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.HTTPHeader.String
+      #211: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.ICMPv4.MarshalJSON
+      #212: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.ICMPv4.ProtoReflect
+      #213: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.ICMPv4.String
+      #214: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.ICMPv6.MarshalJSON
+      #215: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.ICMPv6.ProtoReflect
+      #216: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.ICMPv6.String
+      #217: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.IP.MarshalJSON
+      #218: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.IP.ProtoReflect
+      #219: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.IP.String
+      #220: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.IPCacheNotification.MarshalJSON
+      #221: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.IPCacheNotification.ProtoReflect
+      #222: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.IPCacheNotification.String
+      #223: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.IPVersion.Descriptor
+      #224: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.IPVersion.String
+      #225: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.Kafka.MarshalJSON
+      #226: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.Kafka.ProtoReflect
+      #227: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.Kafka.String
+      #228: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.L7FlowType.Descriptor
+      #229: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.L7FlowType.String
+      #230: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.Layer4.MarshalJSON
+      #231: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.Layer4.ProtoReflect
+      #232: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.Layer4.String
+      #233: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.Layer7.MarshalJSON
+      #234: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.Layer7.ProtoReflect
+      #235: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.Layer7.String
+      #236: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.LostEvent.MarshalJSON
+      #237: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.LostEvent.ProtoReflect
+      #238: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.LostEvent.String
+      #239: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.LostEventSource.Descriptor
+      #240: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.LostEventSource.String
+      #241: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.NetworkInterface.MarshalJSON
+      #242: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.NetworkInterface.ProtoReflect
+      #243: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.NetworkInterface.String
+      #244: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.Policy.MarshalJSON
+      #245: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.Policy.ProtoReflect
+      #246: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.Policy.String
+      #247: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.PolicyUpdateNotification.MarshalJSON
+      #248: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.PolicyUpdateNotification.ProtoReflect
+      #249: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.PolicyUpdateNotification.String
+      #250: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.SCTP.MarshalJSON
+      #251: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.SCTP.ProtoReflect
+      #252: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.SCTP.String
+      #253: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.Service.MarshalJSON
+      #254: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.Service.ProtoReflect
+      #255: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.Service.String
+      #256: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.ServiceDeleteNotification.MarshalJSON
+      #257: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.ServiceDeleteNotification.ProtoReflect
+      #258: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.ServiceDeleteNotification.String
+      #259: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.ServiceUpsertNotification.MarshalJSON
+      #260: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.ServiceUpsertNotification.ProtoReflect
+      #261: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.ServiceUpsertNotification.String
+      #262: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.ServiceUpsertNotificationAddr.MarshalJSON
+      #263: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.ServiceUpsertNotificationAddr.ProtoReflect
+      #264: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.ServiceUpsertNotificationAddr.String
+      #265: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.SocketTranslationPoint.Descriptor
+      #266: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.SocketTranslationPoint.String
+      #267: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.TCP.MarshalJSON
+      #268: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.TCP.ProtoReflect
+      #269: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.TCP.String
+      #270: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.TCPFlags.MarshalJSON
+      #271: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.TCPFlags.ProtoReflect
+      #272: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.TCPFlags.String
+      #273: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.TimeNotification.MarshalJSON
+      #274: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.TimeNotification.ProtoReflect
+      #275: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.TimeNotification.String
+      #276: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.TraceContext.MarshalJSON
+      #277: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.TraceContext.ProtoReflect
+      #278: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.TraceContext.String
+      #279: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.TraceObservationPoint.Descriptor
+      #280: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.TraceObservationPoint.String
+      #281: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.TraceParent.MarshalJSON
+      #282: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.TraceParent.ProtoReflect
+      #283: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.TraceParent.String
+      #284: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.TrafficDirection.Descriptor
+      #285: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.TrafficDirection.String
+      #286: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.UDP.MarshalJSON
+      #287: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.UDP.ProtoReflect
+      #288: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.UDP.String
+      #289: npm/pkg/dataplane/pb/rule.pb.go:123:33: pb.Direction.String calls impl.Export.EnumStringOf, which eventually calls flow.Verdict.Descriptor
+      #290: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.Verdict.String
+      #291: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls flow.Workload.MarshalJSON
+      #292: proto/nodenetworkservice/3.302.0.744/NodeNetworkService.pb.go:462:36: 3.ContainerNetworkInterface.String calls impl.Export.MessageStringOf, which eventually calls flow.Workload.ProtoReflect
+      #293: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls flow.Workload.String
+      #294: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls flow.init
+      #295: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls hive.init
+      #296: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls iana.init
+      #297: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls id.init
+      #298: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls inctimer.init
+      #299: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls internal.FuncNameAndLocation
+      #300: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls internal.init
+      #301: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls ip.init
+      #302: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls ipam.New
+      #303: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls ipam.init
+      #304: npm/cmd/main.go:45:36: cmd.main calls cobra.Command.Commands, which eventually calls labels.ByKey.Len
+      #305: npm/cmd/main.go:45:36: cmd.main calls cobra.Command.Commands, which eventually calls labels.ByKey.Less
+      #306: npm/cmd/main.go:45:36: cmd.main calls cobra.Command.Commands, which eventually calls labels.ByKey.Swap
+      #307: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.Everything
+      #308: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.Label.GetExtendedKey
+      #309: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls labels.LabelArray.DeepCopy
+      #310: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.NewLabel
+      #311: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.NewRequirement
+      #312: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.NewSelector
+      #313: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.Nothing
+      #314: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls labels.Requirement.DeepCopyInto
+      #315: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls labels.init
+      #316: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.init
+      #317: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.internalSelector.Add
+      #318: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.internalSelector.Requirements
+      #319: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.nothingSelector.Requirements
+      #320: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls loadbalancer.init
+      #321: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls lock.init
+      #322: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls logfields.Repr
+      #323: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls logfields.init
+      #324: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls logging.init
+      #325: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls mac.init
+      #326: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls matchpattern.init
+      #327: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls meta.Condition.DeepCopyInto
+      #328: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.Condition.MarshalToSizedBuffer
+      #329: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.Condition.Size
+      #330: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls meta.LabelSelector.DeepCopyInto
+      #331: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.LabelSelector.Marshal
+      #332: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.LabelSelector.MarshalTo
+      #333: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.LabelSelector.MarshalToSizedBuffer
+      #334: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.LabelSelector.Size
+      #335: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls meta.LabelSelector.String
+      #336: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls meta.LabelSelectorAsSelector
+      #337: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls meta.ListMeta.DeepCopyInto
+      #338: npm/pkg/controlplane/controllers/v2/podController.go:197:2: controllers.PodController.Run calls wait.Until, which eventually calls meta.ListMeta.GetContinue
+      #339: crd/clustersubnetstate/client.go:109:19: clustersubnetstate.Client.List calls client.client.List, which eventually calls meta.ListMeta.GetListMeta
+      #340: crd/clustersubnetstate/client.go:109:19: clustersubnetstate.Client.List calls client.client.List, which eventually calls meta.ListMeta.GetResourceVersion
+      #341: npm/pkg/controlplane/controllers/v2/podController.go:197:2: controllers.PodController.Run calls wait.Until, which eventually calls meta.ListMeta.GetSelfLink
+      #342: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.ListMeta.MarshalToSizedBuffer
+      #343: crd/clustersubnetstate/client.go:109:19: clustersubnetstate.Client.List calls client.client.List, which eventually calls meta.ListMeta.SetResourceVersion
+      #344: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.ListMeta.Size
+      #345: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls meta.ObjectMeta.DeepCopyInto
+      #346: npm/pkg/controlplane/controllers/v2/podController.go:197:2: controllers.PodController.Run calls wait.Until, which eventually calls meta.ObjectMeta.GetAnnotations
+      #347: crd/clustersubnetstate/client.go:109:19: clustersubnetstate.Client.List calls client.client.List, which eventually calls meta.ObjectMeta.GetLabels
+      #348: cns/multitenantcontroller/multitenantoperator/multitenantcrdreconciler.go:81:41: multitenantoperator.multiTenantCrdReconciler.Reconcile calls client.subResourceClient.Update, which eventually calls meta.ObjectMeta.GetName
+      #349: npm/cacheencoder.go:20:42: npm.CacheEncoder calls fake.NewSimpleClientset, which eventually calls meta.ObjectMeta.GetNamespace
+      #350: npm/util/util.go:272:35: util.GetObjKeyFunc calls cache.MetaNamespaceKeyFunc, which eventually calls meta.ObjectMeta.GetObjectMeta
+      #351: crd/nodenetworkconfig/client.go:141:43: nodenetworkconfig.Client.SetControllerRef calls controllerutil.SetControllerReference, which eventually calls meta.ObjectMeta.GetOwnerReferences
+      #352: npm/pkg/controlplane/controllers/v2/podController.go:197:2: controllers.PodController.Run calls wait.Until, which eventually calls meta.ObjectMeta.GetResourceVersion
+      #353: npm/cmd/main.go:45:36: cmd.main calls cobra.Command.Commands, which eventually calls meta.ObjectMeta.GetUID
+      #354: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.ObjectMeta.MarshalToSizedBuffer
+      #355: npm/cacheencoder.go:20:42: npm.CacheEncoder calls fake.NewSimpleClientset, which eventually calls meta.ObjectMeta.SetNamespace
+      #356: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.ObjectMeta.Size
+      #357: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls meta.PartialObjectMetadata.DeepCopyObject
+      #358: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.PartialObjectMetadata.Marshal
+      #359: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.PartialObjectMetadata.MarshalTo
+      #360: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.PartialObjectMetadata.MarshalToSizedBuffer
+      #361: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.PartialObjectMetadata.Size
+      #362: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls meta.PartialObjectMetadata.String
+      #363: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls meta.PartialObjectMetadataList.DeepCopyObject
+      #364: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.PartialObjectMetadataList.Marshal
+      #365: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.PartialObjectMetadataList.MarshalTo
+      #366: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.PartialObjectMetadataList.MarshalToSizedBuffer
+      #367: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.PartialObjectMetadataList.Size
+      #368: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls meta.PartialObjectMetadataList.String
+      #369: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls meta.Time.DeepCopy
+      #370: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls meta.Time.DeepCopyInto
+      #371: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.Time.Marshal
+      #372: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls meta.Time.MarshalJSON
+      #373: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.Time.MarshalTo
+      #374: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.Time.MarshalToSizedBuffer
+      #375: test/internal/kubernetes/label.go:31:26: kubernetes.AddNodeLabels calls core.nodes.Patch, which eventually calls meta.Time.Size
+      #376: crd/nodenetworkconfig/client.go:141:43: nodenetworkconfig.Client.SetControllerRef calls controllerutil.SetControllerReference, which eventually calls meta.TypeMeta.GetObjectKind
+      #377: crd/nodenetworkconfig/client.go:141:43: nodenetworkconfig.Client.SetControllerRef calls controllerutil.SetControllerReference, which eventually calls meta.TypeMeta.GroupVersionKind
+      #378: test/e2e/framework/kubernetes/delete-resource.go:232:23: kubernetes.DeleteResource calls apps.statefulSets.Delete, which eventually calls meta.TypeMeta.SetGroupVersionKind
+      #379: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls meta.init
+      #380: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metric.NewCounterVec
+      #381: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metric.NewGaugeVec
+      #382: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metric.NewHistogramVec
+      #383: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metric.NewValues
+      #384: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metric.counter.Inc
+      #385: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metric.counterVec.WithLabelValues
+      #386: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metric.init
+      #387: cns/restserver/restserver.go:377:36: restserver.HTTPRestService.MustGenerateCNIConflistOnce calls sync.Once.Do, which eventually calls metrics.FlushLoggingMetrics
+      #388: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metrics.New
+      #389: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls metrics.bpfCollector.Collect
+      #390: npm/metrics/prometheus-metrics.go:399:43: metrics.register calls prometheus.Registry.Register, which eventually calls metrics.bpfCollector.Describe
+      #391: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metrics.counterVec.WithLabelValues
+      #392: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metrics.gauge.Inc
+      #393: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metrics.init
+      #394: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metrics.init
+      #395: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls metrics.init
+      #396: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls metrics.statusCollector.Collect
+      #397: npm/metrics/prometheus-metrics.go:399:43: metrics.register calls prometheus.Registry.Register, which eventually calls metrics.statusCollector.Describe
+      #398: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls models.HealthStatusResponse.UnmarshalBinary
+      #399: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls models.StatusResponse.UnmarshalBinary
+      #400: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls models.init
+      #401: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls models.init
+      #402: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls option.init
+      #403: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls option.init
+      #404: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls policy.New
+      #405: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls policy.init
+      #406: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls prefilter.New
+      #407: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls prefilter.init
+      #408: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls probes.init
+      #409: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls promise.New[*github.com/cilium/cilium/pkg/metrics.Registry]
+      #410: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls promise.init
+      #411: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls re.init
+      #412: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls recorder.New
+      #413: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls recorder.init
+      #414: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls restapi.New
+      #415: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls restapi.init
+      #416: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls safetime.init
+      #417: test/internal/kubernetes/utils_create.go:13:2: kubernetes.init calls cilium.init, which calls scheme.init
+      #418: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls selection.init
+      #419: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls service.New
+      #420: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls service.init
+      #421: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls slices.init
+      #422: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls source.init
+      #423: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls spanstat.init
+      #424: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls statedb.New
+      #425: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls statedb.init
+      #426: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls stream.init
+      #427: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls time.init
+      #428: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.AzureStatus.DeepCopyInto
+      #429: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.ENISpec.DeepCopyInto
+      #430: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.ENIStatus.DeepCopyInto
+      #431: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.ENIStatus.DeepCopyInto
+      #432: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.IPAMSpec.DeepCopyInto
+      #433: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.IPAMStatus.DeepCopyInto
+      #434: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.Spec.DeepCopyInto
+      #435: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
+      #436: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
+      #437: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
+      #438: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls types.init
+      #439: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
+      #440: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls utils.init
+      #441: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls utils.init
+      #442: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPAdvertisement.DeepCopyObject
+      #443: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPAdvertisementList.DeepCopyObject
+      #444: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPClusterConfig.DeepCopyObject
+      #445: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPClusterConfigList.DeepCopyObject
+      #446: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPNodeConfig.DeepCopyObject
+      #447: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPNodeConfigList.DeepCopyObject
+      #448: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPNodeConfigOverride.DeepCopyObject
+      #449: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPNodeConfigOverrideList.DeepCopyObject
+      #450: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPPeerConfig.DeepCopyObject
+      #451: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPPeerConfigList.DeepCopyObject
+      #452: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPPeeringPolicy.DeepCopyObject
+      #453: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumBGPPeeringPolicyList.DeepCopyObject
+      #454: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumCIDRGroup.DeepCopyObject
+      #455: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumCIDRGroupList.DeepCopyObject
+      #456: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumEndpointSlice.DeepCopyObject
+      #457: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumEndpointSliceList.DeepCopyObject
+      #458: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumL2AnnouncementPolicy.DeepCopyObject
+      #459: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumL2AnnouncementPolicyList.DeepCopyObject
+      #460: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumLoadBalancerIPPool.DeepCopyObject
+      #461: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumLoadBalancerIPPoolList.DeepCopyObject
+      #462: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumNodeConfig.DeepCopyObject
+      #463: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumNodeConfigList.DeepCopyObject
+      #464: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumPodIPPool.DeepCopyObject
+      #465: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumPodIPPoolList.DeepCopyObject
+      #466: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:55:38: multitenantoperator.New calls runtime.SchemeBuilder.AddToScheme, which calls v2alpha1.addKnownTypes
+      #467: test/internal/kubernetes/utils.go:17:2: kubernetes.init calls versioned.init, which eventually calls v2alpha1.init
+      #468: test/internal/kubernetes/utils.go:17:2: kubernetes.init calls versioned.init, which calls v2alpha1.init
+      #469: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls validation.init
+      #470: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls version.init
+      #471: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls versioncheck.init
+      #472: test/internal/kubernetes/utils.go:263:33: kubernetes.MustSetupCNP calls versioned.Clientset.CiliumV2
+      #473: test/internal/kubernetes/utils.go:17:2: kubernetes.init calls versioned.init
 
 === Package Results ===
 
-Vulnerability #1: GO-2025-3595
-    Incorrect Neutralization of Input During Web Page Generation in x/net in
-    golang.org/x/net
-  More info: https://pkg.go.dev/vuln/GO-2025-3595
-  Module: golang.org/x/net
-    Found in: golang.org/x/net@v0.35.0
-    Fixed in: golang.org/x/net@v0.38.0
-
-Vulnerability #2: GO-2025-3553
-    Excessive memory allocation during header parsing in
-    github.com/golang-jwt/jwt
-  More info: https://pkg.go.dev/vuln/GO-2025-3553
-  Module: github.com/golang-jwt/jwt/v5
-    Found in: github.com/golang-jwt/jwt/v5@v5.2.1
-    Fixed in: github.com/golang-jwt/jwt/v5@v5.2.2
-
-Vulnerability #3: GO-2025-3503
-    HTTP Proxy bypass using IPv6 Zone IDs in golang.org/x/net
-  More info: https://pkg.go.dev/vuln/GO-2025-3503
-  Module: golang.org/x/net
-    Found in: golang.org/x/net@v0.35.0
-    Fixed in: golang.org/x/net@v0.36.0
+No other vulnerabilities found.
 
 === Module Results ===
 
-Vulnerability #1: GO-2025-3488
-    Unexpected memory consumption during token parsing in golang.org/x/oauth2
-  More info: https://pkg.go.dev/vuln/GO-2025-3488
-  Module: golang.org/x/oauth2
-    Found in: golang.org/x/oauth2@v0.24.0
-    Fixed in: golang.org/x/oauth2@v0.27.0
+No other vulnerabilities found.
 
-Vulnerability #2: GO-2025-3487
-    Potential denial of service in golang.org/x/crypto
-  More info: https://pkg.go.dev/vuln/GO-2025-3487
-  Module: golang.org/x/crypto
-    Found in: golang.org/x/crypto@v0.33.0
-    Fixed in: golang.org/x/crypto@v0.35.0
-
-Your code is affected by 0 vulnerabilities.
-This scan also found 3 vulnerabilities in packages you import and 2
-vulnerabilities in modules you require, but your code doesn't appear to call
-these vulnerabilities.
+Your code is affected by 1 vulnerability from 1 module.
+This scan found no other vulnerabilities in packages you import or modules you
+require.
