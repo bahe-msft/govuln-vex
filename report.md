@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Thu Jun 19 02:24:45 UTC 2025
+Last updated time: Fri Jun 20 02:23:55 UTC 2025
 
 ## Azure/azure-container-networking
 
