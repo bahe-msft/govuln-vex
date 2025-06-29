@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Sat Jun 28 02:21:13 UTC 2025
+Last updated time: Sun Jun 29 02:35:55 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -207,6 +207,12 @@ Reports: [Azure/karpenter-provider-azure/v1.5.2](results/Azure/karpenter-provide
 No active affected vulnerabilities found in v1.5.3
 
 Reports: [Azure/karpenter-provider-azure/v1.5.3](results/Azure/karpenter-provider-azure/v1.5.3)
+
+### ✅ v1.5.4
+
+No active affected vulnerabilities found in v1.5.4
+
+Reports: [Azure/karpenter-provider-azure/v1.5.4](results/Azure/karpenter-provider-azure/v1.5.4)
 
 ## Azure/kubelogin
 
