@@ -166,7 +166,7 @@ The package pattern matched the following 163 root packages:
   github.com/Azure/azure-container-networking/tools/acncli/cmd/npm
   github.com/Azure/azure-container-networking/tools/acncli/cmd
   github.com/Azure/azure-container-networking/tools/acncli
-Govulncheck scanned the following 120 modules and the go1.24.4 standard library:
+Govulncheck scanned the following 120 modules and the go1.24.5 standard library:
   github.com/Azure/azure-container-networking
   code.cloudfoundry.org/clock@v1.0.0
   github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.17.0

@@ -170,7 +170,7 @@ The package pattern matched the following 167 root packages:
   github.com/Azure/azure-container-networking/tools/acncli/cmd/npm
   github.com/Azure/azure-container-networking/tools/acncli/cmd
   github.com/Azure/azure-container-networking/tools/acncli
-Govulncheck scanned the following 150 modules and the go1.24.4 standard library:
+Govulncheck scanned the following 150 modules and the go1.24.5 standard library:
   github.com/Azure/azure-container-networking
   code.cloudfoundry.org/clock@v1.0.0
   github.com/Azure/azure-container-networking/zapai@v0.0.3
@@ -377,14 +377,14 @@ Vulnerability #1: GO-2025-3635
       #43: test/internal/kubernetes/utils_delete.go:78:28: kubernetes.MustDeleteCiliumLocalRedirectPolicy calls cilium.ciliumLocalRedirectPolicies.Delete
       #44: test/internal/kubernetes/utils_create.go:190:31: kubernetes.mustCreateCiliumNetworkPolicy calls cilium.ciliumNetworkPolicies.Create
       #45: test/internal/kubernetes/utils_delete.go:86:28: kubernetes.MustDeleteCiliumNetworkPolicy calls cilium.ciliumNetworkPolicies.Delete
-      #46: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls cilium.init
-      #47: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init
-      #48: test/internal/kubernetes/utils_create.go:13:2: kubernetes.init calls cilium.init
+      #46: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init
+      #47: test/internal/kubernetes/utils_create.go:13:2: kubernetes.init calls cilium.init
+      #48: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls cilium.init
       #49: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllEndpointAddresses
       #50: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllHostAddresses
       #51: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetPathConnectivityStatusType
-      #52: common/utils.go:300:19: common.PostCtx calls http.Client.Do, which eventually calls client.configureTransport
-      #53: nmagent/internal/wireserver.go:141:36: internal.WireserverTransport.RoundTrip calls http.Transport.RoundTrip, which eventually calls client.configureTransport
+      #52: nmagent/internal/wireserver.go:141:36: internal.WireserverTransport.RoundTrip calls http.Transport.RoundTrip, which eventually calls client.configureTransport
+      #53: common/utils.go:300:19: common.PostCtx calls http.Client.Do, which eventually calls client.configureTransport
       #54: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
       #55: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
       #56: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
@@ -646,8 +646,8 @@ Vulnerability #1: GO-2025-3635
       #312: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.NewSelector
       #313: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.Nothing
       #314: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls labels.Requirement.DeepCopyInto
-      #315: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls labels.init
-      #316: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.init
+      #315: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.init
+      #316: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls labels.init
       #317: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.internalSelector.Add
       #318: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.internalSelector.Requirements
       #319: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.nothingSelector.Requirements
@@ -798,8 +798,8 @@ Vulnerability #1: GO-2025-3635
       #464: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumPodIPPool.DeepCopyObject
       #465: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls v2alpha1.CiliumPodIPPoolList.DeepCopyObject
       #466: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:55:38: multitenantoperator.New calls runtime.SchemeBuilder.AddToScheme, which calls v2alpha1.addKnownTypes
-      #467: test/internal/kubernetes/utils.go:17:2: kubernetes.init calls versioned.init, which eventually calls v2alpha1.init
-      #468: test/internal/kubernetes/utils.go:17:2: kubernetes.init calls versioned.init, which calls v2alpha1.init
+      #467: test/internal/kubernetes/utils.go:17:2: kubernetes.init calls versioned.init, which calls v2alpha1.init
+      #468: test/internal/kubernetes/utils.go:17:2: kubernetes.init calls versioned.init, which eventually calls v2alpha1.init
       #469: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls validation.init
       #470: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls version.init
       #471: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls versioncheck.init
