@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Mon Jul 28 02:33:46 UTC 2025
+Last updated time: Tue Jul 29 02:54:27 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -11,6 +11,7 @@ Active affected vulnerabilities:
 | name | @id | status | impact statement |
 |------|-----|--------|------------------|
 | GO-2025-3635 | https://pkg.go.dev/vuln/GO-2025-3635 | affected | N/A |
+| GO-2025-3787 | https://pkg.go.dev/vuln/GO-2025-3787 | affected | N/A |
 
 Reports: [Azure/azure-container-networking/master](results/Azure/azure-container-networking/master)
 
@@ -429,9 +430,13 @@ Reports: [aks-lts/kubernetes/release-1.31](results/aks-lts/kubernetes/release-1.
 
 ## cilium/cilium
 
-### ✅ main
+### ⚠️ main
 
-No active affected vulnerabilities found in main
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-3787 | https://pkg.go.dev/vuln/GO-2025-3787 | affected | N/A |
 
 Reports: [cilium/cilium/main](results/cilium/cilium/main)
 
@@ -532,9 +537,13 @@ No active affected vulnerabilities found in v1.18.0-pre.2
 
 Reports: [cilium/cilium/v1.18.0-pre.2](results/cilium/cilium/v1.18.0-pre.2)
 
-### ✅ v1.18.0-pre.3
+### ⚠️ v1.18.0-pre.3
 
-No active affected vulnerabilities found in v1.18.0-pre.3
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-3787 | https://pkg.go.dev/vuln/GO-2025-3787 | affected | N/A |
 
 Reports: [cilium/cilium/v1.18.0-pre.3](results/cilium/cilium/v1.18.0-pre.3)
 

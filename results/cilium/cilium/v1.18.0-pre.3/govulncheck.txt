@@ -1030,4 +1030,34 @@ Govulncheck scanned the following 287 modules and the go1.24.5 standard library:
   sigs.k8s.io/structured-merge-diff/v4@v4.7.0
   sigs.k8s.io/yaml@v1.4.0
 
-No vulnerabilities found.
+=== Symbol Results ===
+
+Vulnerability #1: GO-2025-3787
+    May leak sensitive information in logs when processing malformed data in
+    github.com/go-viper/mapstructure
+  More info: https://pkg.go.dev/vuln/GO-2025-3787
+  Module: github.com/go-viper/mapstructure/v2
+    Found in: github.com/go-viper/mapstructure/v2@v2.2.1
+    Fixed in: github.com/go-viper/mapstructure/v2@v2.3.0
+    Example traces found:
+      #1: test/controlplane/suite/operator.go:12:2: suite.init calls viper.init, which eventually calls errors.init
+      #2: test/controlplane/suite/operator.go:12:2: suite.init calls viper.init, which calls mapstructure.init
+
+=== Package Results ===
+
+Vulnerability #1: GO-2025-3802
+    Helm vulnerable to Code Injection through malicious chart.yaml content in
+    helm.sh/helm
+  More info: https://pkg.go.dev/vuln/GO-2025-3802
+  Module: helm.sh/helm/v3
+    Found in: helm.sh/helm/v3@v3.18.1
+    Fixed in: helm.sh/helm/v3@v3.18.4
+
+=== Module Results ===
+
+No other vulnerabilities found.
+
+Your code is affected by 1 vulnerability from 1 module.
+This scan also found 1 vulnerability in packages you import and 0
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.

@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:0d9d3c2a265e06598ea3175ef6779794d3c43a2295c0f3a4c3f381b45827dc39",
+  "@id": "govulncheck/vex:42937ed53bc33da2dc365cc57f9f529effb992459876561dbe46ef4ad9d33fa4",
   "author": "Unknown Author",
-  "timestamp": "2025-07-28T02:11:38.848511682Z",
+  "timestamp": "2025-07-29T02:22:44.283254188Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -22,6 +22,27 @@
           "subcomponents": [
             {
               "@id": "pkg:golang/github.com%2Fcilium%2Fcilium@v1.15.15"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3787",
+        "name": "GO-2025-3787",
+        "description": "May leak sensitive information in logs when processing malformed data in github.com/go-viper/mapstructure",
+        "aliases": [
+          "GHSA-fv92-fjc5-jj9h"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fgo-viper%2Fmapstructure%2Fv2@v2.2.1"
             }
           ]
         }
