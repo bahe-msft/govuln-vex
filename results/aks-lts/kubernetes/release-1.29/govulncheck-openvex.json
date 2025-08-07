@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:c5cf6905ec452f4dfaac34c898483332840c8718678394035384022821c63db2",
+  "@id": "govulncheck/vex:b60c338e84bfac3700e5ad18b84c193231d65679ed3d5f8f860fd85221e8eaeb",
   "author": "Unknown Author",
-  "timestamp": "2025-08-06T02:16:59.825340873Z",
+  "timestamp": "2025-08-07T02:17:41.570924065Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -102,7 +102,7 @@
       "vulnerability": {
         "@id": "https://pkg.go.dev/vuln/GO-2024-3110",
         "name": "GO-2024-3110",
-        "description": "runc can be confused to create empty files/directories on the host in github.com/opencontainers/runc",
+        "description": "Can be confused to create empty files/directories on the host in github.com/opencontainers/runc",
         "aliases": [
           "CVE-2024-45310",
           "GHSA-jfvp-7x6p-h2pv"
