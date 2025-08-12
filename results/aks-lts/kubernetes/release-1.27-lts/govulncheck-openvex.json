@@ -2,7 +2,7 @@
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "govulncheck/vex:02f89028f3fb0df226350fb9642d608b96229ce5306b97fe3b7f2b95d437b592",
   "author": "Unknown Author",
-  "timestamp": "2025-08-11T02:12:50.09126508Z",
+  "timestamp": "2025-08-12T02:01:02.801221695Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [

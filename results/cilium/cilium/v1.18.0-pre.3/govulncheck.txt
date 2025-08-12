@@ -1032,7 +1032,127 @@ Govulncheck scanned the following 287 modules and the go1.24.6 standard library:
 
 === Symbol Results ===
 
-Vulnerability #1: GO-2025-3787
+Vulnerability #1: GO-2025-3830
+    Moby firewalld reload makes published container ports accessible from remote
+    hosts in github.com/docker/docker
+  More info: https://pkg.go.dev/vuln/GO-2025-3830
+  Module: github.com/docker/docker
+    Found in: github.com/docker/docker@v28.2.2+incompatible
+    Fixed in: github.com/docker/docker@v28.3.3+incompatible
+    Example traces found:
+      #1: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls api.init
+      #2: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls blkiodev.init
+      #3: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls build.init
+      #4: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls checkpoint.init
+      #5: pkg/azure/api/api.go:71:30: api.httpClient.Do calls http.Client.Do, which eventually calls client.CheckRedirect
+      #6: plugins/cilium-docker/driver/driver.go:176:51: driver.driver.updateCiliumEP calls client.Client.ContainerInspect
+      #7: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events
+      #8: plugins/cilium-docker/driver/driver.go:195:56: driver.driver.updateCiliumEP calls client.Client.ImageInspectWithRaw
+      #9: pkg/azure/api/api.go:71:30: api.httpClient.Do calls http.Client.Do, which eventually calls client.NewClientWithOpts
+      #10: plugins/cilium-docker/driver/driver.go:99:50: driver.NewDriver calls client.NewClientWithOpts
+      #11: plugins/cilium-docker/driver/driver.go:101:41: driver.NewDriver calls client.WithAPIVersionNegotiation
+      #12: plugins/cilium-docker/driver/driver.go:100:24: driver.NewDriver calls client.WithHost
+      #13: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.emptyIDError.Error
+      #14: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.errConnectionFailed.Error
+      #15: pkg/endpoint/bpf.go:1655:14: endpoint.CheckHealth calls errors.As, which eventually calls client.errConnectionFailed.Unwrap
+      #16: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.httpError.Error
+      #17: pkg/endpoint/endpoint.go:2027:14: endpoint.Endpoint.InitWithNodeLabels calls errors.Is, which eventually calls client.httpError.Is
+      #18: pkg/endpoint/bpf.go:1655:14: endpoint.CheckHealth calls errors.As, which eventually calls client.httpError.Unwrap
+      #19: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init
+      #20: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.objectNotFoundError.Error
+      #21: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls common.init
+      #22: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls container.init
+      #23: plugins/cilium-docker/driver/driver.go:19:2: driver.init calls events.init
+      #24: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls filters.Args.Len
+      #25: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls filters.ToParamWithVersion
+      #26: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls filters.init
+      #27: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls homedir.init
+      #28: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls image.init
+      #29: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls ioutils.init
+      #30: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls lazyregexp.New
+      #31: pkg/endpoint/bpf.go:1644:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls lazyregexp.Regexp.build
+      #32: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls lazyregexp.init
+      #33: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls mount.init
+      #34: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls multierror.init
+      #35: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls network.init
+      #36: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls plugingetter.init
+      #37: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls plugins.init
+      #38: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls registry.init
+      #39: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls rootless.init
+      #40: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls runtime.init
+      #41: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls storage.init
+      #42: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls strslice.init
+      #43: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls swarm.init
+      #44: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls system.init
+      #45: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls time.GetTimestamp
+      #46: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls time.init
+      #47: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls transport.init
+      #48: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls types.init
+      #49: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls versions.LessThan
+      #50: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls versions.init
+      #51: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls volume.init
+
+Vulnerability #2: GO-2025-3829
+    Moby firewalld reload removes bridge network isolation in
+    github.com/docker/docker
+  More info: https://pkg.go.dev/vuln/GO-2025-3829
+  Module: github.com/docker/docker
+    Found in: github.com/docker/docker@v28.2.2+incompatible
+    Fixed in: N/A
+    Example traces found:
+      #1: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls api.init
+      #2: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls blkiodev.init
+      #3: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls build.init
+      #4: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls checkpoint.init
+      #5: pkg/azure/api/api.go:71:30: api.httpClient.Do calls http.Client.Do, which eventually calls client.CheckRedirect
+      #6: plugins/cilium-docker/driver/driver.go:176:51: driver.driver.updateCiliumEP calls client.Client.ContainerInspect
+      #7: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events
+      #8: plugins/cilium-docker/driver/driver.go:195:56: driver.driver.updateCiliumEP calls client.Client.ImageInspectWithRaw
+      #9: pkg/azure/api/api.go:71:30: api.httpClient.Do calls http.Client.Do, which eventually calls client.NewClientWithOpts
+      #10: plugins/cilium-docker/driver/driver.go:99:50: driver.NewDriver calls client.NewClientWithOpts
+      #11: plugins/cilium-docker/driver/driver.go:101:41: driver.NewDriver calls client.WithAPIVersionNegotiation
+      #12: plugins/cilium-docker/driver/driver.go:100:24: driver.NewDriver calls client.WithHost
+      #13: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.emptyIDError.Error
+      #14: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.errConnectionFailed.Error
+      #15: pkg/endpoint/bpf.go:1655:14: endpoint.CheckHealth calls errors.As, which eventually calls client.errConnectionFailed.Unwrap
+      #16: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.httpError.Error
+      #17: pkg/endpoint/endpoint.go:2027:14: endpoint.Endpoint.InitWithNodeLabels calls errors.Is, which eventually calls client.httpError.Is
+      #18: pkg/endpoint/bpf.go:1655:14: endpoint.CheckHealth calls errors.As, which eventually calls client.httpError.Unwrap
+      #19: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init
+      #20: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.objectNotFoundError.Error
+      #21: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls common.init
+      #22: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls container.init
+      #23: plugins/cilium-docker/driver/driver.go:19:2: driver.init calls events.init
+      #24: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls filters.Args.Len
+      #25: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls filters.ToParamWithVersion
+      #26: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls filters.init
+      #27: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls homedir.init
+      #28: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls image.init
+      #29: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls ioutils.init
+      #30: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls lazyregexp.New
+      #31: pkg/endpoint/bpf.go:1644:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls lazyregexp.Regexp.build
+      #32: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls lazyregexp.init
+      #33: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls mount.init
+      #34: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls multierror.init
+      #35: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls network.init
+      #36: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls plugingetter.init
+      #37: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls plugins.init
+      #38: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls registry.init
+      #39: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls rootless.init
+      #40: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls runtime.init
+      #41: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls storage.init
+      #42: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls strslice.init
+      #43: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls swarm.init
+      #44: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls system.init
+      #45: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls time.GetTimestamp
+      #46: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls time.init
+      #47: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls transport.init
+      #48: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls types.init
+      #49: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls versions.LessThan
+      #50: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls versions.init
+      #51: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls volume.init
+
+Vulnerability #3: GO-2025-3787
     May leak sensitive information in logs when processing malformed data in
     github.com/go-viper/mapstructure
   More info: https://pkg.go.dev/vuln/GO-2025-3787
@@ -1057,7 +1177,7 @@ Vulnerability #1: GO-2025-3802
 
 No other vulnerabilities found.
 
-Your code is affected by 1 vulnerability from 1 module.
+Your code is affected by 3 vulnerabilities from 2 modules.
 This scan also found 1 vulnerability in packages you import and 0
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.
