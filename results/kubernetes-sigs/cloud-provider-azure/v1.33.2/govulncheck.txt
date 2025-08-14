@@ -59,7 +59,7 @@ The package pattern matched the following 56 root packages:
   sigs.k8s.io/cloud-provider-azure/pkg/provider/storage
   sigs.k8s.io/cloud-provider-azure/pkg/provider/storage/fileservice/mock_fileservice
   sigs.k8s.io/cloud-provider-azure/pkg/util/controller/testutil
-Govulncheck scanned the following 126 modules and the go1.24.6 standard library:
+Govulncheck scanned the following 126 modules and the go1.25.0 standard library:
   sigs.k8s.io/cloud-provider-azure
   cel.dev/expr@v0.19.1
   github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.18.1

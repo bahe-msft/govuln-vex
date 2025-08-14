@@ -706,7 +706,7 @@ The package pattern matched the following 703 root packages:
   github.com/cilium/cilium/tools/sysctlfix
   github.com/cilium/cilium/tools/testowners/codeowners
   github.com/cilium/cilium/tools/testowners
-Govulncheck scanned the following 246 modules and the go1.24.6 standard library:
+Govulncheck scanned the following 246 modules and the go1.25.0 standard library:
   github.com/cilium/cilium
   cel.dev/expr@v0.23.1
   github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.18.0
@@ -1032,8 +1032,8 @@ Vulnerability #2: GO-2025-3829
       #6: plugins/cilium-docker/driver/driver.go:176:51: driver.driver.updateCiliumEP calls client.Client.ContainerInspect
       #7: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events
       #8: plugins/cilium-docker/driver/driver.go:195:56: driver.driver.updateCiliumEP calls client.Client.ImageInspectWithRaw
-      #9: pkg/azure/api/api.go:67:30: api.httpClient.Do calls http.Client.Do, which eventually calls client.NewClientWithOpts
-      #10: plugins/cilium-docker/driver/driver.go:99:50: driver.NewDriver calls client.NewClientWithOpts
+      #9: plugins/cilium-docker/driver/driver.go:99:50: driver.NewDriver calls client.NewClientWithOpts
+      #10: pkg/azure/api/api.go:67:30: api.httpClient.Do calls http.Client.Do, which eventually calls client.NewClientWithOpts
       #11: plugins/cilium-docker/driver/driver.go:101:41: driver.NewDriver calls client.WithAPIVersionNegotiation
       #12: plugins/cilium-docker/driver/driver.go:100:24: driver.NewDriver calls client.WithHost
       #13: pkg/loadbalancer/healthserver/healthserver.go:369:26: healthserver.httpHealthServer.ServeHTTP calls client.emptyIDError.Error

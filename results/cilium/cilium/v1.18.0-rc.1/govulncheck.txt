@@ -706,7 +706,7 @@ The package pattern matched the following 703 root packages:
   github.com/cilium/cilium/tools/sysctlfix
   github.com/cilium/cilium/tools/testowners/codeowners
   github.com/cilium/cilium/tools/testowners
-Govulncheck scanned the following 246 modules and the go1.24.6 standard library:
+Govulncheck scanned the following 246 modules and the go1.25.0 standard library:
   github.com/cilium/cilium
   cel.dev/expr@v0.23.1
   github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.18.0

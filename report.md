@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Wed Aug 13 02:45:18 UTC 2025
+Last updated time: Thu Aug 14 02:30:09 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -351,80 +351,33 @@ No active affected vulnerabilities found in master
 
 Reports: [aks-lts/kubernetes/master](results/aks-lts/kubernetes/master)
 
-### ⚠️ release-1.27-lts
+### ⚠️ release-1.27-lts (Skipped - Invalid JSON)
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2023-2331 | https://pkg.go.dev/vuln/GO-2023-2331 | affected | N/A |
-| GO-2024-2491 | https://pkg.go.dev/vuln/GO-2024-2491 | affected | N/A |
-| GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
-| GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
-| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3553 | https://pkg.go.dev/vuln/GO-2025-3553 | affected | N/A |
-| GO-2025-3595 | https://pkg.go.dev/vuln/GO-2025-3595 | affected | N/A |
+Unable to process JSON file: `results/aks-lts/kubernetes/release-1.27-lts/govulncheck-openvex.json`
 
 Reports: [aks-lts/kubernetes/release-1.27-lts](results/aks-lts/kubernetes/release-1.27-lts)
 
-### ⚠️ release-1.28-lts
+### ⚠️ release-1.28-lts (Skipped - Invalid JSON)
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2023-2331 | https://pkg.go.dev/vuln/GO-2023-2331 | affected | N/A |
-| GO-2024-2491 | https://pkg.go.dev/vuln/GO-2024-2491 | affected | N/A |
-| GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
-| GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
-| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3553 | https://pkg.go.dev/vuln/GO-2025-3553 | affected | N/A |
-| GO-2025-3595 | https://pkg.go.dev/vuln/GO-2025-3595 | affected | N/A |
+Unable to process JSON file: `results/aks-lts/kubernetes/release-1.28-lts/govulncheck-openvex.json`
 
 Reports: [aks-lts/kubernetes/release-1.28-lts](results/aks-lts/kubernetes/release-1.28-lts)
 
-### ⚠️ release-1.29
+### ⚠️ release-1.29 (Skipped - Invalid JSON)
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2023-2331 | https://pkg.go.dev/vuln/GO-2023-2331 | affected | N/A |
-| GO-2024-2491 | https://pkg.go.dev/vuln/GO-2024-2491 | affected | N/A |
-| GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
-| GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
-| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3553 | https://pkg.go.dev/vuln/GO-2025-3553 | affected | N/A |
-| GO-2025-3595 | https://pkg.go.dev/vuln/GO-2025-3595 | affected | N/A |
+Unable to process JSON file: `results/aks-lts/kubernetes/release-1.29/govulncheck-openvex.json`
 
 Reports: [aks-lts/kubernetes/release-1.29](results/aks-lts/kubernetes/release-1.29)
 
-### ⚠️ release-1.30
+### ⚠️ release-1.30 (Skipped - Invalid JSON)
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2023-2331 | https://pkg.go.dev/vuln/GO-2023-2331 | affected | N/A |
-| GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
-| GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
-| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3553 | https://pkg.go.dev/vuln/GO-2025-3553 | affected | N/A |
-| GO-2025-3595 | https://pkg.go.dev/vuln/GO-2025-3595 | affected | N/A |
+Unable to process JSON file: `results/aks-lts/kubernetes/release-1.30/govulncheck-openvex.json`
 
 Reports: [aks-lts/kubernetes/release-1.30](results/aks-lts/kubernetes/release-1.30)
 
-### ⚠️ release-1.31
+### ⚠️ release-1.31 (Skipped - Invalid JSON)
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
-| GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
-| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3553 | https://pkg.go.dev/vuln/GO-2025-3553 | affected | N/A |
-| GO-2025-3595 | https://pkg.go.dev/vuln/GO-2025-3595 | affected | N/A |
+Unable to process JSON file: `results/aks-lts/kubernetes/release-1.31/govulncheck-openvex.json`
 
 Reports: [aks-lts/kubernetes/release-1.31](results/aks-lts/kubernetes/release-1.31)
 
@@ -673,32 +626,15 @@ No active affected vulnerabilities found in master
 
 Reports: [kubernetes/kubernetes/master](results/kubernetes/kubernetes/master)
 
-### ⚠️ release-1.30
+### ⚠️ release-1.30 (Skipped - Invalid JSON)
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2023-2331 | https://pkg.go.dev/vuln/GO-2023-2331 | affected | N/A |
-| GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
-| GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
-| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3553 | https://pkg.go.dev/vuln/GO-2025-3553 | affected | N/A |
-| GO-2025-3595 | https://pkg.go.dev/vuln/GO-2025-3595 | affected | N/A |
+Unable to process JSON file: `results/kubernetes/kubernetes/release-1.30/govulncheck-openvex.json`
 
 Reports: [kubernetes/kubernetes/release-1.30](results/kubernetes/kubernetes/release-1.30)
 
-### ⚠️ release-1.31
+### ⚠️ release-1.31 (Skipped - Invalid JSON)
 
-Active affected vulnerabilities:
-
-| name | @id | status | impact statement |
-|------|-----|--------|------------------|
-| GO-2024-3110 | https://pkg.go.dev/vuln/GO-2024-3110 | affected | N/A |
-| GO-2024-3250 | https://pkg.go.dev/vuln/GO-2024-3250 | affected | N/A |
-| GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
-| GO-2025-3553 | https://pkg.go.dev/vuln/GO-2025-3553 | affected | N/A |
-| GO-2025-3595 | https://pkg.go.dev/vuln/GO-2025-3595 | affected | N/A |
+Unable to process JSON file: `results/kubernetes/kubernetes/release-1.31/govulncheck-openvex.json`
 
 Reports: [kubernetes/kubernetes/release-1.31](results/kubernetes/kubernetes/release-1.31)
 
