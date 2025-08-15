@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:814594e2ae2e6ccf0de9b216135fc376f2fc24714973c525dc5b6557661c9d76",
+  "@id": "govulncheck/vex:ba78e3fe92662fc907b76f4952d68bbc4e8c74bc436c0b672cd18063203f6b1a",
   "author": "Unknown Author",
-  "timestamp": "2025-08-14T02:28:04.076349833Z",
+  "timestamp": "2025-08-15T02:27:07.321889485Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -50,28 +50,6 @@
       "status": "not_affected",
       "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
-    },
-    {
-      "vulnerability": {
-        "@id": "https://pkg.go.dev/vuln/GO-2025-3829",
-        "name": "GO-2025-3829",
-        "description": "Moby firewalld reload removes bridge network isolation in github.com/docker/docker",
-        "aliases": [
-          "CVE-2025-54410",
-          "GHSA-4vq8-7jfc-9cvp"
-        ]
-      },
-      "products": [
-        {
-          "@id": "Unknown Product",
-          "subcomponents": [
-            {
-              "@id": "pkg:golang/github.com%2Fdocker%2Fdocker@v28.2.2+incompatible"
-            }
-          ]
-        }
-      ],
-      "status": "affected"
     },
     {
       "vulnerability": {
