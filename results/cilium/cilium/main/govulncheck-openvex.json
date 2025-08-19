@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:ba78e3fe92662fc907b76f4952d68bbc4e8c74bc436c0b672cd18063203f6b1a",
+  "@id": "govulncheck/vex:002182fb77f2e65f52c332b15bb0f2520a87af0d1c9e74b11a349f33d624ce5e",
   "author": "Unknown Author",
-  "timestamp": "2025-08-18T02:21:13.883437563Z",
+  "timestamp": "2025-08-19T02:07:21.768765182Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -67,6 +67,50 @@
           "subcomponents": [
             {
               "@id": "pkg:golang/github.com%2Fdocker%2Fdocker@v28.2.2+incompatible"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3887",
+        "name": "GO-2025-3887",
+        "description": "Helm Charts with Specific JSON Schema Values Can Cause Memory Exhaustion in helm.sh/helm",
+        "aliases": [
+          "CVE-2025-55199",
+          "GHSA-9h84-qmv7-982p"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/helm.sh%2Fhelm%2Fv3@v3.18.1"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3888",
+        "name": "GO-2025-3888",
+        "description": "Helm May Panic Due To Incorrect YAML Content in helm.sh/helm",
+        "aliases": [
+          "CVE-2025-55198",
+          "GHSA-f9f8-9pmf-xv68"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/helm.sh%2Fhelm%2Fv3@v3.18.1"
             }
           ]
         }

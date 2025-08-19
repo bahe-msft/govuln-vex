@@ -1033,7 +1033,27 @@ Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
 
 === Symbol Results ===
 
-Vulnerability #1: GO-2025-3830
+Vulnerability #1: GO-2025-3888
+    Helm May Panic Due To Incorrect YAML Content in helm.sh/helm
+  More info: https://pkg.go.dev/vuln/GO-2025-3888
+  Module: helm.sh/helm/v3
+    Found in: helm.sh/helm/v3@v3.18.1
+    Fixed in: helm.sh/helm/v3@v3.18.5
+    Example traces found:
+      #1: cilium-cli/install/install.go:265:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.processImportValues
+      #2: cilium-cli/internal/helm/helm.go:106:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.loadIndex
+
+Vulnerability #2: GO-2025-3887
+    Helm Charts with Specific JSON Schema Values Can Cause Memory Exhaustion in
+    helm.sh/helm
+  More info: https://pkg.go.dev/vuln/GO-2025-3887
+  Module: helm.sh/helm/v3
+    Found in: helm.sh/helm/v3@v3.18.1
+    Fixed in: helm.sh/helm/v3@v3.18.5
+    Example traces found:
+      #1: cilium-cli/install/install.go:265:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.ValidateAgainstSchema
+
+Vulnerability #3: GO-2025-3830
     Moby firewalld reload makes published container ports accessible from remote
     hosts in github.com/docker/docker
   More info: https://pkg.go.dev/vuln/GO-2025-3830
@@ -1093,7 +1113,7 @@ Vulnerability #1: GO-2025-3830
       #50: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls versions.init
       #51: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls volume.init
 
-Vulnerability #2: GO-2025-3787
+Vulnerability #4: GO-2025-3787
     May leak sensitive information in logs when processing malformed data in
     github.com/go-viper/mapstructure
   More info: https://pkg.go.dev/vuln/GO-2025-3787
@@ -1118,7 +1138,7 @@ Vulnerability #1: GO-2025-3802
 
 No other vulnerabilities found.
 
-Your code is affected by 2 vulnerabilities from 2 modules.
+Your code is affected by 4 vulnerabilities from 3 modules.
 This scan also found 1 vulnerability in packages you import and 0
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.
