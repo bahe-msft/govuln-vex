@@ -401,8 +401,8 @@ Vulnerability #2: GO-2025-3635
       #49: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllEndpointAddresses
       #50: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllHostAddresses
       #51: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetPathConnectivityStatusType
-      #52: nmagent/internal/wireserver.go:141:36: internal.WireserverTransport.RoundTrip calls http.Transport.RoundTrip, which eventually calls client.configureTransport
-      #53: common/utils.go:300:19: common.PostCtx calls http.Client.Do, which eventually calls client.configureTransport
+      #52: common/utils.go:300:19: common.PostCtx calls http.Client.Do, which eventually calls client.configureTransport
+      #53: nmagent/internal/wireserver.go:141:36: internal.WireserverTransport.RoundTrip calls http.Transport.RoundTrip, which eventually calls client.configureTransport
       #54: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
       #55: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
       #56: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
@@ -664,8 +664,8 @@ Vulnerability #2: GO-2025-3635
       #312: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.NewSelector
       #313: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.Nothing
       #314: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls labels.Requirement.DeepCopyInto
-      #315: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls labels.init
-      #316: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.init
+      #315: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.init
+      #316: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls labels.init
       #317: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.internalSelector.Add
       #318: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.internalSelector.Requirements
       #319: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls labels.nothingSelector.Requirements
