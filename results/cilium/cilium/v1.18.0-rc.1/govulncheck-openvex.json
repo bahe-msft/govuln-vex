@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:505b161d8570e5627cd56b1fc23e7a63f983a7cd09464f45ef659cdfb6a44388",
+  "@id": "govulncheck/vex:69876522f37945c026985e6e4b8aca9129db902980de7924d525e62e28792918",
   "author": "Unknown Author",
-  "timestamp": "2025-08-29T02:06:11.897900525Z",
+  "timestamp": "2025-08-30T02:07:02.882713179Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -27,6 +27,29 @@
         }
       ],
       "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-3900",
+        "name": "GO-2025-3900",
+        "description": "Go-viper's mapstructure May Leak Sensitive Information in Logs in github.com/go-viper/mapstructure",
+        "aliases": [
+          "GHSA-2464-8j7c-4cjm"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fgo-viper%2Fmapstructure%2Fv2@v2.3.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
     }
   ]
 }

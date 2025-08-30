@@ -1018,12 +1018,19 @@ Vulnerability #1: GO-2025-3830
 
 === Package Results ===
 
-No other vulnerabilities found.
+Vulnerability #1: GO-2025-3900
+    Go-viper's mapstructure May Leak Sensitive Information in Logs in
+    github.com/go-viper/mapstructure
+  More info: https://pkg.go.dev/vuln/GO-2025-3900
+  Module: github.com/go-viper/mapstructure/v2
+    Found in: github.com/go-viper/mapstructure/v2@v2.3.0
+    Fixed in: github.com/go-viper/mapstructure/v2@v2.4.0
 
 === Module Results ===
 
 No other vulnerabilities found.
 
 Your code is affected by 1 vulnerability from 1 module.
-This scan found no other vulnerabilities in packages you import or modules you
-require.
+This scan also found 1 vulnerability in packages you import and 0
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.

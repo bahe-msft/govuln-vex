@@ -955,4 +955,25 @@ Govulncheck scanned the following 247 modules and the go1.25.0 standard library:
   sigs.k8s.io/structured-merge-diff/v4@v4.7.0
   sigs.k8s.io/yaml@v1.5.0
 
+=== Symbol Results ===
+
 No vulnerabilities found.
+
+=== Package Results ===
+
+Vulnerability #1: GO-2025-3900
+    Go-viper's mapstructure May Leak Sensitive Information in Logs in
+    github.com/go-viper/mapstructure
+  More info: https://pkg.go.dev/vuln/GO-2025-3900
+  Module: github.com/go-viper/mapstructure/v2
+    Found in: github.com/go-viper/mapstructure/v2@v2.3.0
+    Fixed in: github.com/go-viper/mapstructure/v2@v2.4.0
+
+=== Module Results ===
+
+No other vulnerabilities found.
+
+Your code is affected by 0 vulnerabilities.
+This scan also found 1 vulnerability in packages you import and 0
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.

@@ -1126,7 +1126,15 @@ Vulnerability #4: GO-2025-3787
 
 === Package Results ===
 
-Vulnerability #1: GO-2025-3802
+Vulnerability #1: GO-2025-3900
+    Go-viper's mapstructure May Leak Sensitive Information in Logs in
+    github.com/go-viper/mapstructure
+  More info: https://pkg.go.dev/vuln/GO-2025-3900
+  Module: github.com/go-viper/mapstructure/v2
+    Found in: github.com/go-viper/mapstructure/v2@v2.2.1
+    Fixed in: github.com/go-viper/mapstructure/v2@v2.4.0
+
+Vulnerability #2: GO-2025-3802
     Helm vulnerable to Code Injection through malicious chart.yaml content in
     helm.sh/helm
   More info: https://pkg.go.dev/vuln/GO-2025-3802
@@ -1139,6 +1147,6 @@ Vulnerability #1: GO-2025-3802
 No other vulnerabilities found.
 
 Your code is affected by 4 vulnerabilities from 3 modules.
-This scan also found 1 vulnerability in packages you import and 0
+This scan also found 2 vulnerabilities in packages you import and 0
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.
