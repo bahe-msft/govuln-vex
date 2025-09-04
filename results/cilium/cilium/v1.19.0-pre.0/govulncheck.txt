@@ -2,7 +2,7 @@ Fetching vulnerabilities from the database...
 
 Checking the code against the vulnerabilities...
 
-The package pattern matched the following 739 root packages:
+The package pattern matched the following 744 root packages:
   github.com/cilium/cilium/api/v1/models
   github.com/cilium/cilium/api/v1/client/bgp
   github.com/cilium/cilium/api/v1/client/daemon
@@ -10,7 +10,6 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/api/v1/client/ipam
   github.com/cilium/cilium/api/v1/client/policy
   github.com/cilium/cilium/api/v1/client/prefilter
-  github.com/cilium/cilium/api/v1/client/recorder
   github.com/cilium/cilium/api/v1/client/service
   github.com/cilium/cilium/api/v1/client
   github.com/cilium/cilium/api/v1/flow
@@ -27,14 +26,15 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/hive/health/types
   github.com/cilium/cilium/pkg/health/client
   github.com/cilium/cilium/pkg/endpoint/id
-  github.com/cilium/cilium/pkg/container/cache
   github.com/cilium/cilium/pkg/lock
+  github.com/cilium/cilium/pkg/container/cache
   github.com/cilium/cilium/pkg/logging
   github.com/cilium/cilium/pkg/cidr
   github.com/cilium/cilium/pkg/ipam/option
   github.com/cilium/cilium/pkg/clustermesh/types
   github.com/cilium/cilium/pkg/command
   github.com/cilium/cilium/pkg/ip
+  github.com/cilium/cilium/pkg/kpr
   github.com/cilium/cilium/pkg/resiliency
   github.com/cilium/cilium/pkg/time
   github.com/cilium/cilium/pkg/datapath/linux/safenetlink
@@ -54,6 +54,8 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/metrics
   github.com/cilium/cilium/pkg/rate
   github.com/cilium/cilium/pkg/hive/health
+  github.com/cilium/cilium/pkg/k8s/metrics
+  github.com/cilium/cilium/pkg/k8s/watchers/metrics
   github.com/cilium/cilium/pkg/hive
   github.com/cilium/cilium/api/v1/health/server
   github.com/cilium/cilium/api/v1/kvstoremesh/client/cluster
@@ -75,14 +77,12 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/api/v1/operator/server/restapi
   github.com/cilium/cilium/api/v1/operator/server
   github.com/cilium/cilium/api/v1/peer
-  github.com/cilium/cilium/api/v1/recorder
   github.com/cilium/cilium/api/v1/server/restapi/bgp
   github.com/cilium/cilium/api/v1/server/restapi/daemon
   github.com/cilium/cilium/api/v1/server/restapi/endpoint
   github.com/cilium/cilium/api/v1/server/restapi/ipam
   github.com/cilium/cilium/api/v1/server/restapi/policy
   github.com/cilium/cilium/api/v1/server/restapi/prefilter
-  github.com/cilium/cilium/api/v1/server/restapi/recorder
   github.com/cilium/cilium/api/v1/server/restapi/service
   github.com/cilium/cilium/api/v1/server/restapi
   github.com/cilium/cilium/api/v1/server
@@ -134,21 +134,67 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/k8s/client/clientset/versioned/typed/cilium.io/v2alpha1
   github.com/cilium/cilium/pkg/k8s/client/clientset/versioned
   github.com/cilium/cilium/pkg/k8s/portforward
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/api/networking/v1
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/api/discovery/v1
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/scheme
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/typed/core/v1
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/typed/networking/v1
   github.com/cilium/cilium/cilium-cli/k8s
   github.com/cilium/cilium/cilium-cli/utils/features
   github.com/cilium/cilium/pkg/envoy/resource
   github.com/cilium/cilium/cilium-cli/sysdump
-  github.com/cilium/cilium/cilium-cli/utils/codeowners
   github.com/cilium/cilium/cilium-cli/utils/log
   github.com/cilium/cilium/cilium-cli/utils/wait
   github.com/cilium/cilium/pkg/identity
+  github.com/cilium/cilium/pkg/byteorder
+  github.com/cilium/cilium/pkg/cgroups
+  github.com/cilium/cilium/pkg/k8s/constants
+  github.com/cilium/cilium/pkg/controller
+  github.com/cilium/cilium/pkg/backoff
+  github.com/cilium/cilium/pkg/debug
+  github.com/cilium/cilium/pkg/rate/metrics
+  github.com/cilium/cilium/pkg/kvstore
+  github.com/cilium/cilium/pkg/kvstore/store
+  github.com/cilium/cilium/pkg/node/types
+  github.com/cilium/cilium/pkg/cgroups/manager
+  github.com/cilium/cilium/pkg/container/bitlpm
+  github.com/cilium/cilium/pkg/counter
+  github.com/cilium/cilium/pkg/idpool
+  github.com/cilium/cilium/pkg/allocator
+  github.com/cilium/cilium/pkg/labelsfilter
+  github.com/cilium/cilium/pkg/identity/key
+  github.com/cilium/cilium/pkg/identity/model
+  github.com/cilium/cilium/pkg/k8s/watchers/resources
+  github.com/cilium/cilium/pkg/k8s/informer
+  github.com/cilium/cilium/pkg/k8s/identitybackend
+  github.com/cilium/cilium/pkg/kvstore/allocator
+  github.com/cilium/cilium/pkg/kvstore/allocator/doublewrite
+  github.com/cilium/cilium/pkg/trigger
+  github.com/cilium/cilium/pkg/identity/cache
+  github.com/cilium/cilium/pkg/ipcache/types
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/apis/apiextensions/v1
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/apiextensions-client/clientset/versioned/scheme
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/apiextensions-client/clientset/versioned/typed/apiextensions/v1
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/apiextensions-clientset
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/apis/meta/v1beta1
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/typed/discovery/v1
+  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned
+  github.com/cilium/cilium/pkg/k8s/version
+  github.com/cilium/cilium/pkg/k8s/client
+  github.com/cilium/cilium/pkg/k8s/synced
+  github.com/cilium/cilium/pkg/types
+  github.com/cilium/cilium/pkg/ipcache
+  github.com/cilium/cilium/pkg/container/versioned
+  github.com/cilium/cilium/pkg/policy/trafficdirection
+  github.com/cilium/cilium/pkg/policy/types
+  github.com/cilium/cilium/pkg/hubble/parser/getters
   github.com/cilium/cilium/pkg/monitor/notifications
   github.com/cilium/cilium/pkg/monitor/api
   github.com/cilium/cilium/hubble/pkg/printer
+  github.com/cilium/cilium/tools/testowners/codeowners
   github.com/cilium/cilium/cilium-cli/connectivity/check
   github.com/cilium/cilium/cilium-cli/connectivity/perf/benchmarks/profiler
   github.com/cilium/cilium/cilium-cli/connectivity/perf/benchmarks/netperf
-  github.com/cilium/cilium/cilium-cli/utils/lock
   github.com/cilium/cilium/cilium-cli/connectivity/sniff
   github.com/cilium/cilium/cilium-cli/connectivity/tests
   github.com/cilium/cilium/cilium-cli/connectivity/builder
@@ -156,68 +202,29 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/cilium-cli/connectivity
   github.com/cilium/cilium/cilium-cli/api
   github.com/cilium/cilium/cilium-cli/status
-  github.com/cilium/cilium/pkg/backoff
-  github.com/cilium/cilium/pkg/controller
-  github.com/cilium/cilium/pkg/idpool
-  github.com/cilium/cilium/pkg/debug
-  github.com/cilium/cilium/pkg/rate/metrics
-  github.com/cilium/cilium/pkg/kvstore
-  github.com/cilium/cilium/pkg/allocator
-  github.com/cilium/cilium/pkg/kvstore/store
+  github.com/cilium/cilium/pkg/envoy/config
   github.com/cilium/cilium/pkg/clustermesh/store
   github.com/cilium/cilium/pkg/container
-  github.com/cilium/cilium/pkg/k8s/metrics
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/api/discovery/v1
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/api/discovery/v1beta1
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/api/networking/v1
-  github.com/cilium/cilium/pkg/fswatcher
   github.com/cilium/cilium/pkg/k8s/client/clientset/versioned/typed/cilium.io/v2/fake
   github.com/cilium/cilium/pkg/k8s/client/clientset/versioned/typed/cilium.io/v2alpha1/fake
   github.com/cilium/cilium/pkg/k8s/client/clientset/versioned/fake
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/apis/apiextensions/v1
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/apiextensions-client/clientset/versioned/scheme
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/apiextensions-client/clientset/versioned/typed/apiextensions/v1
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/apiextensions-clientset
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/apis/meta/v1beta1
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/scheme
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/typed/core/v1
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/typed/discovery/v1
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/typed/discovery/v1beta1
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/typed/networking/v1
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned
   github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/typed/core/v1/fake
   github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/typed/discovery/v1/fake
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/typed/discovery/v1beta1/fake
   github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/typed/networking/v1/fake
   github.com/cilium/cilium/pkg/k8s/slim/k8s/client/clientset/versioned/fake
   github.com/cilium/cilium/pkg/k8s/testutils
-  github.com/cilium/cilium/pkg/k8s/version
-  github.com/cilium/cilium/pkg/k8s/client
-  github.com/cilium/cilium/pkg/k8s/watchers/resources
-  github.com/cilium/cilium/pkg/k8s/informer
-  github.com/cilium/cilium/pkg/k8s/synced
   github.com/cilium/cilium/pkg/k8s/resource
-  github.com/cilium/cilium/pkg/byteorder
+  github.com/cilium/cilium/pkg/k8s/types
   github.com/cilium/cilium/pkg/common
-  github.com/cilium/cilium/pkg/k8s/constants
-  github.com/cilium/cilium/pkg/node/types
+  github.com/cilium/cilium/pkg/datapath/linux/config/defines
+  github.com/cilium/cilium/pkg/datapath/tunnel
   github.com/cilium/cilium/pkg/wireguard/types
   github.com/cilium/cilium/pkg/node
-  github.com/cilium/cilium/pkg/datapath/tables
-  github.com/cilium/cilium/pkg/labelsfilter
-  github.com/cilium/cilium/pkg/identity/key
-  github.com/cilium/cilium/pkg/k8s/types
-  github.com/cilium/cilium/pkg/container/bitlpm
   github.com/cilium/cilium/pkg/container/set
-  github.com/cilium/cilium/pkg/container/versioned
   github.com/cilium/cilium/pkg/crypto/certificatemanager
   github.com/cilium/cilium/pkg/endpoint/regeneration
   github.com/cilium/cilium/pkg/envoy/policy
-  github.com/cilium/cilium/pkg/identity/model
   github.com/cilium/cilium/pkg/identity/identitymanager
-  github.com/cilium/cilium/pkg/ipcache/types
-  github.com/cilium/cilium/pkg/policy/trafficdirection
-  github.com/cilium/cilium/pkg/policy/types
   github.com/cilium/cilium/pkg/policy
   github.com/cilium/cilium/pkg/k8s
   github.com/cilium/cilium/daemon/k8s
@@ -240,36 +247,35 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/cilium-cli/logging
   github.com/cilium/cilium/cilium-cli/cmd/cilium
   github.com/cilium/cilium/cilium-cli/utils/junit
-  github.com/cilium/cilium/pkg/clustermesh/utils
+  github.com/cilium/cilium/cilium-cli/utils/lock
+  github.com/cilium/cilium/pkg/clustermesh/clustercfg
   github.com/cilium/cilium/pkg/dial
   github.com/cilium/cilium/pkg/clustermesh/common
   github.com/cilium/cilium/cilium-dbg/cmd/troubleshoot
+  github.com/cilium/cilium/pkg/bpf/analyze
   github.com/cilium/cilium/pkg/datapath/config
-  github.com/cilium/cilium/pkg/counter
-  github.com/cilium/cilium/pkg/types
   github.com/cilium/cilium/pkg/bpf
   github.com/cilium/cilium/pkg/datapath/linux/linux_defaults
   github.com/cilium/cilium/pkg/common/ipsec
   github.com/cilium/cilium/pkg/datapath/link
   github.com/cilium/cilium/pkg/command/exec
   github.com/cilium/cilium/pkg/alignchecker
-  github.com/cilium/cilium/pkg/datapath/loader/metrics
-  github.com/cilium/cilium/pkg/datapath/linux/config/defines
-  github.com/cilium/cilium/pkg/datapath/tunnel
-  github.com/cilium/cilium/pkg/datapath/xdp
+  github.com/cilium/cilium/pkg/ebpf
   github.com/cilium/cilium/pkg/murmur3
   github.com/cilium/cilium/pkg/maglev
-  github.com/cilium/cilium/pkg/datapath/types
-  github.com/cilium/cilium/pkg/ebpf
   github.com/cilium/cilium/pkg/netns
-  github.com/cilium/cilium/pkg/loadbalancer/maps
   github.com/cilium/cilium/pkg/testutils
-  github.com/cilium/cilium/pkg/loadbalancer/legacy/lbmap
+  github.com/cilium/cilium/pkg/loadbalancer/maps
   github.com/cilium/cilium/pkg/maps/configmap
   github.com/cilium/cilium/pkg/datapath/linux/utime
   github.com/cilium/cilium/pkg/maps/authmap
+  github.com/cilium/cilium/pkg/datapath/loader/metrics
+  github.com/cilium/cilium/pkg/datapath/tables
+  github.com/cilium/cilium/pkg/datapath/xdp
+  github.com/cilium/cilium/pkg/datapath/types
   github.com/cilium/cilium/pkg/maps/lxcmap
   github.com/cilium/cilium/pkg/maps/bwmap
+  github.com/cilium/cilium/pkg/datapath/bpf
   github.com/cilium/cilium/pkg/datapath/linux/probes
   github.com/cilium/cilium/pkg/maps/timestamp
   github.com/cilium/cilium/pkg/tuple
@@ -283,7 +289,6 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/maps/neighborsmap
   github.com/cilium/cilium/pkg/maps/policymap
   github.com/cilium/cilium/pkg/maps/ratelimitmap
-  github.com/cilium/cilium/pkg/maps/recorder
   github.com/cilium/cilium/pkg/maps/signalmap
   github.com/cilium/cilium/pkg/maps/srv6map
   github.com/cilium/cilium/pkg/maps/vtep
@@ -298,28 +303,22 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/cleanup
   github.com/cilium/cilium/pkg/pidfile
   github.com/cilium/cilium/pkg/mtu
-  github.com/cilium/cilium/pkg/cgroups
+  github.com/cilium/cilium/pkg/datapath/iptables/ipset
+  github.com/cilium/cilium/pkg/node/manager
   github.com/cilium/cilium/pkg/socketlb
   github.com/cilium/cilium/pkg/datapath/loader
   github.com/cilium/cilium/pkg/datapath/linux/netdevice
-  github.com/cilium/cilium/pkg/k8s/identitybackend
-  github.com/cilium/cilium/pkg/kvstore/allocator
-  github.com/cilium/cilium/pkg/kvstore/allocator/doublewrite
-  github.com/cilium/cilium/pkg/trigger
-  github.com/cilium/cilium/pkg/identity/cache
   github.com/cilium/cilium/pkg/egressgateway
   github.com/cilium/cilium/pkg/fqdn
   github.com/cilium/cilium/pkg/k8s/apis/crdhelpers
   github.com/cilium/cilium/pkg/k8s/apis/cilium.io/client
   github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2/validator
+  github.com/cilium/cilium/pkg/k8s/hostfirewallbypass
   github.com/cilium/cilium/pkg/labels/model
   github.com/cilium/cilium/pkg/loadinfo
   github.com/cilium/cilium/pkg/maps/ipmasq
   github.com/cilium/cilium/pkg/maps/multicast
   github.com/cilium/cilium/pkg/maps/nodemap
-  github.com/cilium/cilium/pkg/cgroups/manager
-  github.com/cilium/cilium/pkg/ipcache
-  github.com/cilium/cilium/pkg/hubble/parser/getters
   github.com/cilium/cilium/pkg/flowdebug
   github.com/cilium/cilium/pkg/monitor/agent/consumer
   github.com/cilium/cilium/pkg/monitor/payload
@@ -341,10 +340,13 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/clustermesh/wait
   github.com/cilium/cilium/pkg/clustermesh/operator
   github.com/cilium/cilium/pkg/clustermesh/mcsapi
+  github.com/cilium/cilium/operator/k8s
   github.com/cilium/cilium/clustermesh-apiserver/clustermesh/k8s
   github.com/cilium/cilium/clustermesh-apiserver/health
   github.com/cilium/cilium/clustermesh-apiserver/syncstate
   github.com/cilium/cilium/operator/watchers
+  github.com/cilium/cilium/pkg/clustermesh/clustercfg/cell
+  github.com/cilium/cilium/pkg/fswatcher
   github.com/cilium/cilium/pkg/gops
   github.com/cilium/cilium/pkg/kvstore/heartbeat
   github.com/cilium/cilium/pkg/node/store
@@ -352,12 +354,14 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/clustermesh-apiserver/clustermesh
   github.com/cilium/cilium/clustermesh-apiserver/clustermesh-dbg
   github.com/cilium/cilium/clustermesh-apiserver/metrics
+  github.com/cilium/cilium/pkg/shell/server
   github.com/cilium/cilium/clustermesh-apiserver/common
   github.com/cilium/cilium/pkg/kvstore/etcdinit
   github.com/cilium/cilium/clustermesh-apiserver/etcdinit
   github.com/cilium/cilium/pkg/clustermesh/kvstoremesh
   github.com/cilium/cilium/clustermesh-apiserver/kvstoremesh
   github.com/cilium/cilium/clustermesh-apiserver/kvstoremesh-dbg
+  github.com/cilium/cilium/clustermesh-apiserver/mcsapi-coredns-cfg
   github.com/cilium/cilium/clustermesh-apiserver/version
   github.com/cilium/cilium/clustermesh-apiserver/cmd
   github.com/cilium/cilium/clustermesh-apiserver
@@ -366,13 +370,10 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/contrib/examples/statedb_k8s
   github.com/cilium/cilium/daemon/cmd/legacy
   github.com/cilium/cilium/pkg/datapath/sockets
-  github.com/cilium/cilium/pkg/loadbalancer/legacy/service/healthserver
-  github.com/cilium/cilium/pkg/loadbalancer/legacy/service
+  github.com/cilium/cilium/pkg/loadbalancer/writer
+  github.com/cilium/cilium/pkg/loadbalancer/reconciler
   github.com/cilium/cilium/pkg/auth/certs
   github.com/cilium/cilium/pkg/auth/spire
-  github.com/cilium/cilium/pkg/datapath/iptables/ipset
-  github.com/cilium/cilium/pkg/loadbalancer/writer
-  github.com/cilium/cilium/pkg/node/manager
   github.com/cilium/cilium/pkg/clustermesh
   github.com/cilium/cilium/pkg/completion
   github.com/cilium/cilium/pkg/datapath/linux/bandwidth
@@ -395,6 +396,7 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/envoy/xds
   github.com/cilium/cilium/pkg/shortener
   github.com/cilium/cilium/pkg/envoy
+  github.com/cilium/cilium/pkg/fqdn/lookup
   github.com/cilium/cilium/pkg/fqdn/proxy/ipfamily
   github.com/cilium/cilium/pkg/fqdn/dnsproxy
   github.com/cilium/cilium/pkg/fqdn/namemanager
@@ -407,13 +409,12 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/endpoint/creator
   github.com/cilium/cilium/pkg/health/probe
   github.com/cilium/cilium/pkg/health/server
-  github.com/cilium/cilium/operator/k8s
   github.com/cilium/cilium/pkg/alibabacloud/utils
-  github.com/cilium/cilium/operator/metrics
   github.com/cilium/cilium/pkg/ipam/metrics
   github.com/cilium/cilium/pkg/ipam/service/allocator
   github.com/cilium/cilium/pkg/ipam/service/ipallocator
   github.com/cilium/cilium/pkg/ipam/stats
+  github.com/cilium/cilium/pkg/ipmasq
   github.com/cilium/cilium/pkg/ipam
   github.com/cilium/cilium/pkg/launcher
   github.com/cilium/cilium/pkg/health
@@ -438,8 +439,6 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/hubble/container
   github.com/cilium/cilium/pkg/hubble/defaults
   github.com/cilium/cilium/pkg/k8s/watchers/subscriber
-  github.com/cilium/cilium/pkg/k8s/watchers/utils
-  github.com/cilium/cilium/pkg/loadbalancer/legacy/redirectpolicy
   github.com/cilium/cilium/pkg/k8s/watchers
   github.com/cilium/cilium/pkg/hubble/dropeventemitter
   github.com/cilium/cilium/pkg/hubble/parser/fieldmask
@@ -463,24 +462,18 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/hubble/parser/threefour
   github.com/cilium/cilium/pkg/hubble/parser
   github.com/cilium/cilium/pkg/hubble/observer
+  github.com/cilium/cilium/pkg/policy/cell
   github.com/cilium/cilium/pkg/identity/cache/cell
   github.com/cilium/cilium/pkg/hubble/parser/cell
   github.com/cilium/cilium/pkg/hubble/peer/serviceoption
   github.com/cilium/cilium/pkg/hubble/peer
-  github.com/cilium/cilium/pkg/hubble/recorder/pcap
-  github.com/cilium/cilium/pkg/hubble/recorder/recorderoption
-  github.com/cilium/cilium/pkg/hubble/recorder/sink
-  github.com/cilium/cilium/pkg/recorder
-  github.com/cilium/cilium/pkg/hubble/recorder
   github.com/cilium/cilium/pkg/hubble/server
   github.com/cilium/cilium/pkg/hubble/cell
   github.com/cilium/cilium/pkg/alibabacloud/metadata
   github.com/cilium/cilium/pkg/aws/metadata
   github.com/cilium/cilium/pkg/nodediscovery
-  github.com/cilium/cilium/pkg/wireguard/agent
   github.com/cilium/cilium/pkg/status
   github.com/cilium/cilium/daemon/healthz
-  github.com/cilium/cilium/pkg/policy/cell
   github.com/cilium/cilium/daemon/restapi
   github.com/cilium/cilium/pkg/api/helpers
   github.com/cilium/cilium/pkg/aws/types
@@ -491,22 +484,24 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/bgpv1/manager/instance
   github.com/cilium/cilium/pkg/bgpv1/manager/reconciler
   github.com/cilium/cilium/pkg/bgpv1/manager/tables
+  github.com/cilium/cilium/pkg/bgpv1/option
   github.com/cilium/cilium/pkg/bgpv1/manager/reconcilerv2
   github.com/cilium/cilium/pkg/bgpv1/manager
   github.com/cilium/cilium/pkg/bgpv1/metrics
   github.com/cilium/cilium/pkg/bgpv1
   github.com/cilium/cilium/pkg/ciliumenvoyconfig
-  github.com/cilium/cilium/pkg/ciliumenvoyconfig/legacy
   github.com/cilium/cilium/pkg/maps/act
   github.com/cilium/cilium/pkg/act
   github.com/cilium/cilium/pkg/datapath/agentliveness
-  github.com/cilium/cilium/pkg/datapath/garp
+  github.com/cilium/cilium/pkg/datapath/gneigh
   github.com/cilium/cilium/pkg/datapath/ipcache
   github.com/cilium/cilium/pkg/datapath/iptables
   github.com/cilium/cilium/pkg/maps/l2respondermap
+  github.com/cilium/cilium/pkg/maps/l2v6respondermap
   github.com/cilium/cilium/pkg/datapath/l2responder
   github.com/cilium/cilium/pkg/maps/encrypt
   github.com/cilium/cilium/pkg/datapath/linux/ipsec
+  github.com/cilium/cilium/pkg/datapath/neighbor
   github.com/cilium/cilium/pkg/datapath/linux
   github.com/cilium/cilium/pkg/datapath/linux/config
   github.com/cilium/cilium/pkg/datapath/node
@@ -515,6 +510,7 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/datapath/prefilter
   github.com/cilium/cilium/pkg/maps/ctmap/gc
   github.com/cilium/cilium/pkg/maps
+  github.com/cilium/cilium/pkg/wireguard/agent
   github.com/cilium/cilium/pkg/datapath
   github.com/cilium/cilium/pkg/datapath/maps
   github.com/cilium/cilium/pkg/debug/api
@@ -537,20 +533,18 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/ipam/cell
   github.com/cilium/cilium/pkg/ipcache/api
   github.com/cilium/cilium/pkg/ipcache/cell
-  github.com/cilium/cilium/pkg/ipmasq
+  github.com/cilium/cilium/pkg/ipmasq/cell
   github.com/cilium/cilium/pkg/l2announcer
   github.com/cilium/cilium/pkg/loadbalancer/healthserver
-  github.com/cilium/cilium/pkg/loadbalancer/reconciler
   github.com/cilium/cilium/pkg/loadbalancer/redirectpolicy
   github.com/cilium/cilium/pkg/loadbalancer/reflectors
   github.com/cilium/cilium/pkg/loadbalancer/cell
-  github.com/cilium/cilium/pkg/loadbalancer/legacy
   github.com/cilium/cilium/pkg/maps/nat/stats
   github.com/cilium/cilium/pkg/maps/tunnel
   github.com/cilium/cilium/pkg/policy/k8s
   github.com/cilium/cilium/pkg/metrics/features
+  github.com/cilium/cilium/pkg/node/neighbordiscovery
   github.com/cilium/cilium/pkg/policy/directory
-  github.com/cilium/cilium/pkg/shell/server
   github.com/cilium/cilium/daemon/cmd
   github.com/cilium/cilium/daemon
   github.com/cilium/cilium/daemon/cmd/cni/fake
@@ -566,7 +560,6 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/hubble/cmd/list
   github.com/cilium/cilium/hubble/pkg/time
   github.com/cilium/cilium/hubble/cmd/observe
-  github.com/cilium/cilium/hubble/cmd/record
   github.com/cilium/cilium/hubble/cmd/reflect
   github.com/cilium/cilium/hubble/cmd/status
   github.com/cilium/cilium/hubble/cmd/version
@@ -586,6 +579,7 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/hubble-relay/cmd
   github.com/cilium/cilium/hubble-relay
   github.com/cilium/cilium/images/builder
+  github.com/cilium/cilium/operator/metrics
   github.com/cilium/cilium/operator/api
   github.com/cilium/cilium/operator/auth/identity
   github.com/cilium/cilium/operator/auth/spire
@@ -603,6 +597,7 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/operator/pkg/ciliumidentity
   github.com/cilium/cilium/operator/pkg/client
   github.com/cilium/cilium/operator/pkg/gateway-api/helpers
+  github.com/cilium/cilium/operator/pkg/gateway-api/indexers
   github.com/cilium/cilium/operator/pkg/model
   github.com/cilium/cilium/operator/pkg/gateway-api/routechecks
   github.com/cilium/cilium/operator/pkg/ingress/annotations
@@ -613,6 +608,7 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/operator/pkg/gateway-api
   github.com/cilium/cilium/operator/pkg/model/translation/ingress
   github.com/cilium/cilium/operator/pkg/ingress
+  github.com/cilium/cilium/operator/pkg/kvstore/locksweeper
   github.com/cilium/cilium/operator/pkg/networkpolicy/helpers
   github.com/cilium/cilium/operator/pkg/networkpolicy
   github.com/cilium/cilium/operator/pkg/nodeipam
@@ -624,6 +620,8 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/operator/cmd
   github.com/cilium/cilium/operator
   github.com/cilium/cilium/operator/pkg/ciliumendpointslice/testutils
+  github.com/cilium/cilium/operator/pkg/ciliumidentity/testutils
+  github.com/cilium/cilium/operator/pkg/workqueuemetrics
   github.com/cilium/cilium/pkg/alibabacloud/types
   github.com/cilium/cilium/pkg/alibabacloud/api
   github.com/cilium/cilium/pkg/alibabacloud/api/mock
@@ -637,12 +635,12 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/azure/api/mock
   github.com/cilium/cilium/pkg/azure/ipam
   github.com/cilium/cilium/pkg/bgpv1/mock
+  github.com/cilium/cilium/pkg/k8s/client/testutils
   github.com/cilium/cilium/pkg/bgpv1/test
   github.com/cilium/cilium/pkg/bgpv1/test/commands
   github.com/cilium/cilium/pkg/datapath/fake/types
   github.com/cilium/cilium/pkg/maps/authmap/fake
   github.com/cilium/cilium/pkg/maps/signalmap/fake
-  github.com/cilium/cilium/pkg/testutils/mockmaps
   github.com/cilium/cilium/pkg/datapath/fake
   github.com/cilium/cilium/pkg/datapath/loader/tools
   github.com/cilium/cilium/pkg/hubble/testutils
@@ -678,8 +676,6 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/k8s/slim/k8s/client/informers/externalversions/core
   github.com/cilium/cilium/pkg/k8s/slim/k8s/client/listers/discovery/v1
   github.com/cilium/cilium/pkg/k8s/slim/k8s/client/informers/externalversions/discovery/v1
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/listers/discovery/v1beta1
-  github.com/cilium/cilium/pkg/k8s/slim/k8s/client/informers/externalversions/discovery/v1beta1
   github.com/cilium/cilium/pkg/k8s/slim/k8s/client/informers/externalversions/discovery
   github.com/cilium/cilium/pkg/k8s/slim/k8s/client/listers/networking/v1
   github.com/cilium/cilium/pkg/k8s/slim/k8s/client/informers/externalversions/networking/v1
@@ -700,8 +696,10 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/pkg/testutils/identity
   github.com/cilium/cilium/pkg/testutils/ipam
   github.com/cilium/cilium/pkg/testutils/ipcache
+  github.com/cilium/cilium/pkg/testutils/mockmaps
   github.com/cilium/cilium/pkg/testutils/netns
   github.com/cilium/cilium/pkg/testutils/policy
+  github.com/cilium/cilium/pkg/testutils/scriptnet
   github.com/cilium/cilium/pkg/testutils/sockets
   github.com/cilium/cilium/pkg/xds/experimental/client
   github.com/cilium/cilium/plugins/cilium-cni/lib
@@ -714,6 +712,11 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/plugins/cilium-cni
   github.com/cilium/cilium/plugins/cilium-docker/driver
   github.com/cilium/cilium/plugins/cilium-docker
+  github.com/cilium/cilium/standalone-dns-proxy/pkg/client
+  github.com/cilium/cilium/standalone-dns-proxy/pkg/lookup
+  github.com/cilium/cilium/standalone-dns-proxy/pkg/messagehandler
+  github.com/cilium/cilium/standalone-dns-proxy/cmd
+  github.com/cilium/cilium/standalone-dns-proxy
   github.com/cilium/cilium/test
   github.com/cilium/cilium/test/config
   github.com/cilium/cilium/test/controlplane
@@ -727,7 +730,6 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/test/helpers
   github.com/cilium/cilium/test/k8s
   github.com/cilium/cilium/test/runtime
-  github.com/cilium/cilium/test/verifier
   github.com/cilium/cilium/tools/alignchecker
   github.com/cilium/cilium/tools/api-flaggen
   github.com/cilium/cilium/tools/crdcheck
@@ -738,18 +740,21 @@ The package pattern matched the following 739 root packages:
   github.com/cilium/cilium/tools/legacyhguardcheck
   github.com/cilium/cilium/tools/licensecheck
   github.com/cilium/cilium/tools/licensegen
+  github.com/cilium/cilium/tools/metricslint/pkg/analyzer
+  github.com/cilium/cilium/tools/metricslint
   github.com/cilium/cilium/tools/mount
+  github.com/cilium/cilium/tools/slogloggercheck
   github.com/cilium/cilium/tools/spdxconv
   github.com/cilium/cilium/tools/sysctlfix
   github.com/cilium/cilium/tools/testowners
-Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
+Govulncheck scanned the following 290 modules and the go1.25.0 standard library:
   github.com/cilium/cilium
-  cel.dev/expr@v0.23.1
+  cel.dev/expr@v0.24.0
   dario.cat/mergo@v1.0.1
-  github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.18.0
-  github.com/Azure/azure-sdk-for-go/sdk/azidentity@v1.10.0
-  github.com/Azure/azure-sdk-for-go/sdk/internal@v1.11.1
-  github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/compute/armcompute/v6@v6.4.0
+  github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.19.0
+  github.com/Azure/azure-sdk-for-go/sdk/azidentity@v1.11.0
+  github.com/Azure/azure-sdk-for-go/sdk/internal@v1.11.2
+  github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/compute/armcompute/v7@v7.0.0
   github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/network/armnetwork/v7@v7.0.0
   github.com/AzureAD/microsoft-authentication-library-for-go@v1.4.2
   github.com/BurntSushi/toml@v1.5.0
@@ -761,33 +766,35 @@ Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
   github.com/aliyun/alibaba-cloud-sdk-go@v1.63.107
   github.com/antlr4-go/antlr/v4@v4.13.0
   github.com/asaskevich/govalidator@v0.0.0-20230301143203-a9d515a09cc2
-  github.com/aws/aws-sdk-go-v2@v1.36.3
-  github.com/aws/aws-sdk-go-v2/config@v1.29.14
-  github.com/aws/aws-sdk-go-v2/credentials@v1.17.67
-  github.com/aws/aws-sdk-go-v2/feature/ec2/imds@v1.16.30
-  github.com/aws/aws-sdk-go-v2/internal/configsources@v1.3.34
-  github.com/aws/aws-sdk-go-v2/internal/endpoints/v2@v2.6.34
+  github.com/aws/aws-sdk-go-v2@v1.38.1
+  github.com/aws/aws-sdk-go-v2/config@v1.31.2
+  github.com/aws/aws-sdk-go-v2/credentials@v1.18.6
+  github.com/aws/aws-sdk-go-v2/feature/ec2/imds@v1.18.4
+  github.com/aws/aws-sdk-go-v2/internal/configsources@v1.4.4
+  github.com/aws/aws-sdk-go-v2/internal/endpoints/v2@v2.7.4
   github.com/aws/aws-sdk-go-v2/internal/ini@v1.8.3
-  github.com/aws/aws-sdk-go-v2/service/ec2@v1.224.0
-  github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding@v1.12.3
-  github.com/aws/aws-sdk-go-v2/service/internal/presigned-url@v1.12.15
-  github.com/aws/aws-sdk-go-v2/service/sso@v1.25.3
-  github.com/aws/aws-sdk-go-v2/service/ssooidc@v1.30.1
-  github.com/aws/aws-sdk-go-v2/service/sts@v1.33.19
-  github.com/aws/smithy-go@v1.22.3
+  github.com/aws/aws-sdk-go-v2/service/ec2@v1.245.2
+  github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding@v1.13.0
+  github.com/aws/aws-sdk-go-v2/service/internal/presigned-url@v1.13.4
+  github.com/aws/aws-sdk-go-v2/service/sso@v1.28.2
+  github.com/aws/aws-sdk-go-v2/service/ssooidc@v1.33.2
+  github.com/aws/aws-sdk-go-v2/service/sts@v1.38.0
+  github.com/aws/smithy-go@v1.22.5
   github.com/beorn7/perks@v1.0.1
   github.com/blang/semver/v4@v4.0.0
   github.com/cespare/xxhash/v2@v2.3.0
   github.com/chai2010/gettext-go@v1.0.2
-  github.com/cilium/charts@v0.0.0-20250515220554-50a217da63ae
+  github.com/cilium/charts@v0.0.0-20250815135331-8443b5068217
   github.com/cilium/dns@v1.1.51-0.20240603182237-af788769786a
-  github.com/cilium/ebpf@v0.18.1-0.20250603151700-df9ebe841740
+  github.com/cilium/ebpf@v0.19.1-0.20250818092626-ae226118949d
   github.com/cilium/endpointslice@v0.29.4-0.20240409195643-982ad68ab7ba
   github.com/cilium/endpointslice-controller@v0.0.0-20250410163339-ffb33e27879c
-  github.com/cilium/hive@v0.0.0-20250523125409-7cbbf5e0d9f5
+  github.com/cilium/gobgp/v3@v3.0.0-20250717193620-26a4abb75464
+  github.com/cilium/gobgp/v3@v3.0.0-20250717193620-26a4abb75464
+  github.com/cilium/hive@v0.0.0-20250731144630-28e7a35ed227
   github.com/cilium/lumberjack/v2@v2.4.1
-  github.com/cilium/proxy@v0.0.0-20250526114940-b80199397e8a
-  github.com/cilium/statedb@v0.4.0
+  github.com/cilium/proxy@v0.0.0-20250623105955-2136f59a4ea1
+  github.com/cilium/statedb@v0.5.0
   github.com/cilium/stream@v0.0.1
   github.com/cilium/workerpool@v1.3.0
   github.com/cloudflare/cfssl@v1.6.5
@@ -805,15 +812,15 @@ Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
   github.com/davecgh/go-spew@v1.1.2-0.20180830191138-d8f796af33cc
   github.com/dgryski/go-farm@v0.0.0-20200201041132-a6ae2369ad13
   github.com/distribution/reference@v0.6.0
-  github.com/docker/docker@v28.2.2+incompatible
+  github.com/docker/docker@v28.3.3+incompatible
   github.com/docker/go-connections@v0.5.0
   github.com/docker/go-units@v0.5.0
   github.com/docker/libnetwork@v0.8.0-dev.2.0.20210525090646-64b7a4574d14
   github.com/eapache/channels@v1.1.0
   github.com/eapache/queue@v1.1.0
   github.com/emicklei/go-restful/v3@v3.12.0
-  github.com/envoyproxy/go-control-plane/contrib@v1.32.4
-  github.com/envoyproxy/go-control-plane/envoy@v1.32.4
+  github.com/envoyproxy/go-control-plane/contrib@v1.32.5-0.20250809052208-d8ab4c219945
+  github.com/envoyproxy/go-control-plane/envoy@v1.32.5-0.20250809052208-d8ab4c219945
   github.com/envoyproxy/protoc-gen-validate@v1.2.1
   github.com/evanphx/json-patch@v5.9.11+incompatible
   github.com/evanphx/json-patch/v5@v5.9.11
@@ -828,7 +835,7 @@ Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
   github.com/go-logr/logr@v1.4.3
   github.com/go-logr/stdr@v1.2.2
   github.com/go-openapi/analysis@v0.23.0
-  github.com/go-openapi/errors@v0.22.1
+  github.com/go-openapi/errors@v0.22.2
   github.com/go-openapi/jsonpointer@v0.21.0
   github.com/go-openapi/jsonreference@v0.21.0
   github.com/go-openapi/loads@v0.22.0
@@ -837,19 +844,19 @@ Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
   github.com/go-openapi/strfmt@v0.23.0
   github.com/go-openapi/swag@v0.23.1
   github.com/go-openapi/validate@v0.24.0
-  github.com/go-viper/mapstructure/v2@v2.2.1
+  github.com/go-viper/mapstructure/v2@v2.4.0
   github.com/gobwas/glob@v0.2.3
   github.com/godbus/dbus/v5@v5.1.0
   github.com/gogo/protobuf@v1.3.2
-  github.com/golang-jwt/jwt/v5@v5.2.2
+  github.com/golang-jwt/jwt/v5@v5.3.0
   github.com/golang/groupcache@v0.0.0-20241129210726-2c02b8208cf8
   github.com/golang/protobuf@v1.5.4
   github.com/google/btree@v1.1.3
-  github.com/google/cel-go@v0.25.0
+  github.com/google/cel-go@v0.26.0
   github.com/google/certificate-transparency-go@v1.1.7
   github.com/google/gnostic-models@v0.6.9
   github.com/google/go-cmp@v0.7.0
-  github.com/google/go-github/v71@v71.0.0
+  github.com/google/go-github/v74@v74.0.0
   github.com/google/go-licenses@v1.6.1-0.20230903011517-706b9c60edd4
   github.com/google/go-querystring@v1.1.0
   github.com/google/gops@v0.3.28
@@ -857,14 +864,14 @@ Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
   github.com/google/renameio/v2@v2.0.0
   github.com/google/shlex@v0.0.0-20191202100458-e7afc7fbc510
   github.com/google/uuid@v1.6.0
-  github.com/gopacket/gopacket@v1.3.1
+  github.com/gopacket/gopacket@v1.4.0
   github.com/gorilla/mux@v1.8.1
   github.com/gorilla/websocket@v1.5.4-0.20250319132907-e064f32e3674
   github.com/gosuri/uitable@v0.0.4
   github.com/gregjones/httpcache@v0.0.0-20190611155906-901d90724c79
   github.com/grpc-ecosystem/go-grpc-middleware/v2@v2.3.2
   github.com/grpc-ecosystem/go-grpc-prometheus@v1.2.0
-  github.com/grpc-ecosystem/grpc-gateway/v2@v2.26.3
+  github.com/grpc-ecosystem/grpc-gateway/v2@v2.27.1
   github.com/hashicorp/errwrap@v1.1.0
   github.com/hashicorp/go-hclog@v1.6.3
   github.com/hashicorp/go-immutable-radix/v2@v2.1.0
@@ -888,7 +895,7 @@ Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
   github.com/lib/pq@v1.10.9
   github.com/liggitt/tabwriter@v0.0.0-20181228230101-89fcab3d43de
   github.com/lthibault/jitterbug/v2@v2.2.2
-  github.com/mackerelio/go-osstat@v0.2.5
+  github.com/mackerelio/go-osstat@v0.2.6
   github.com/mailru/easyjson@v0.9.0
   github.com/mattn/go-colorable@v0.1.13
   github.com/mattn/go-isatty@v0.0.20
@@ -897,6 +904,7 @@ Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
   github.com/mdlayher/arp@v0.0.0-20220512170110-6706a2966875
   github.com/mdlayher/ethernet@v0.0.0-20220221185849-529eae5b6118
   github.com/mdlayher/genetlink@v1.3.2
+  github.com/mdlayher/ndp@v1.1.0
   github.com/mdlayher/netlink@v1.7.2
   github.com/mdlayher/packet@v1.1.2
   github.com/mdlayher/socket@v0.5.1
@@ -922,7 +930,6 @@ Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
   github.com/opencontainers/go-digest@v1.0.0
   github.com/opencontainers/image-spec@v1.1.1
   github.com/opentracing/opentracing-go@v1.2.1-0.20220228012449-10b1cf09e00b
-  github.com/osrg/gobgp/v3@v3.37.0
   github.com/pelletier/go-toml@v1.9.5
   github.com/pelletier/go-toml/v2@v2.2.3
   github.com/peterbourgon/diskv@v2.0.1+incompatible
@@ -931,26 +938,27 @@ Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
   github.com/pkg/errors@v0.9.1
   github.com/pmezard/go-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2
   github.com/prometheus-community/pro-bing@v0.7.0
-  github.com/prometheus/client_golang@v1.22.0
+  github.com/prometheus/client_golang@v1.23.0
   github.com/prometheus/client_model@v0.6.2
-  github.com/prometheus/common@v0.64.0
-  github.com/prometheus/procfs@v0.16.1
+  github.com/prometheus/common@v0.65.0
+  github.com/prometheus/procfs@v0.17.0
   github.com/rivo/uniseg@v0.4.4
   github.com/rubenv/sql-migrate@v1.8.0
   github.com/russross/blackfriday/v2@v2.1.0
   github.com/sagikazarmark/locafero@v0.7.0
+  github.com/santhosh-tekuri/jsonschema/v6@v6.0.2
   github.com/sasha-s/go-deadlock@v0.3.5
   github.com/sergi/go-diff@v1.3.1
   github.com/shopspring/decimal@v1.4.0
   github.com/sirupsen/logrus@v1.9.3
   github.com/sourcegraph/conc@v0.3.0
   github.com/spf13/afero@v1.14.0
-  github.com/spf13/cast@v1.8.0
+  github.com/spf13/cast@v1.9.2
   github.com/spf13/cobra@v1.9.1
-  github.com/spf13/pflag@v1.0.6
+  github.com/spf13/pflag@v1.0.7
   github.com/spf13/viper@v1.20.1
   github.com/spiffe/go-spiffe/v2@v2.5.0
-  github.com/spiffe/spire-api-sdk@v1.12.0
+  github.com/spiffe/spire-api-sdk@v1.12.4
   github.com/stoewer/go-strcase@v1.3.0
   github.com/stretchr/testify@v1.10.0
   github.com/subosito/gotenv@v1.6.0
@@ -962,191 +970,73 @@ Govulncheck scanned the following 287 modules and the go1.25.0 standard library:
   github.com/vishvananda/netns@v0.0.5
   github.com/weppos/publicsuffix-go@v0.30.0
   github.com/x448/float16@v0.8.4
-  github.com/xeipuuv/gojsonpointer@v0.0.0-20190905194746-02993c407bfb
-  github.com/xeipuuv/gojsonreference@v0.0.0-20180127040603-bd5ef7bd5415
-  github.com/xeipuuv/gojsonschema@v1.2.0
   github.com/xlab/treeprint@v1.2.0
   github.com/zeebo/errs@v1.4.0
   github.com/zmap/zcrypto@v0.0.0-20230310154051-c8b263fd8300
   github.com/zmap/zlint/v3@v3.5.0
-  go.etcd.io/etcd/api/v3@v3.6.0
-  go.etcd.io/etcd/client/pkg/v3@v3.6.0
-  go.etcd.io/etcd/client/v3@v3.6.0
+  go.etcd.io/etcd/api/v3@v3.6.4
+  go.etcd.io/etcd/client/pkg/v3@v3.6.4
+  go.etcd.io/etcd/client/v3@v3.6.4
   go.mongodb.org/mongo-driver@v1.14.0
   go.opencensus.io@v0.24.0
   go.opentelemetry.io/auto/sdk@v1.1.0
   go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.58.0
-  go.opentelemetry.io/otel@v1.36.0
-  go.opentelemetry.io/otel/metric@v1.36.0
-  go.opentelemetry.io/otel/trace@v1.36.0
-  go.opentelemetry.io/proto/otlp@v1.5.0
+  go.opentelemetry.io/otel@v1.37.0
+  go.opentelemetry.io/otel/metric@v1.37.0
+  go.opentelemetry.io/otel/trace@v1.37.0
+  go.opentelemetry.io/proto/otlp@v1.7.1
   go.uber.org/dig@v1.17.1
+  go.uber.org/goleak@v1.3.0
   go.uber.org/multierr@v1.11.0
   go.uber.org/zap@v1.27.0
+  go.yaml.in/yaml/v2@v2.4.2
+  go.yaml.in/yaml/v3@v3.0.4
   go4.org/netipx@v0.0.0-20231129151722-fdeea329fbba
-  golang.org/x/crypto@v0.38.0
+  golang.org/x/crypto@v0.41.0
   golang.org/x/exp@v0.0.0-20240808152545-0cdaa3abc0fa
-  golang.org/x/mod@v0.24.0
-  golang.org/x/net@v0.40.0
+  golang.org/x/mod@v0.27.0
+  golang.org/x/net@v0.43.0
   golang.org/x/oauth2@v0.30.0
-  golang.org/x/sync@v0.14.0
-  golang.org/x/sys@v0.33.0
-  golang.org/x/term@v0.32.0
-  golang.org/x/text@v0.25.0
-  golang.org/x/time@v0.11.0
-  golang.org/x/tools@v0.33.0
+  golang.org/x/sync@v0.16.0
+  golang.org/x/sys@v0.35.0
+  golang.org/x/term@v0.34.0
+  golang.org/x/text@v0.28.0
+  golang.org/x/time@v0.12.0
+  golang.org/x/tools@v0.36.0
   golang.zx2c4.com/wireguard/wgctrl@v0.0.0-20241231184526-a9ab2273dd10
   gomodules.xyz/jsonpatch/v2@v2.4.0
-  google.golang.org/genproto/googleapis/api@v0.0.0-20250519155744-55703ea1f237
-  google.golang.org/genproto/googleapis/rpc@v0.0.0-20250528174236-200df99c418a
-  google.golang.org/grpc@v1.72.2
-  google.golang.org/protobuf@v1.36.6
+  google.golang.org/genproto/googleapis/api@v0.0.0-20250728155136-f173205681a0
+  google.golang.org/genproto/googleapis/rpc@v0.0.0-20250818200422-3122310a409c
+  google.golang.org/grpc@v1.74.2
+  google.golang.org/protobuf@v1.36.7
   gopkg.in/evanphx/json-patch.v4@v4.12.0
   gopkg.in/inf.v0@v0.9.1
   gopkg.in/ini.v1@v1.67.0
   gopkg.in/tomb.v1@v1.0.0-20141024135613-dd632973f1e7
   gopkg.in/yaml.v3@v3.0.1
-  helm.sh/helm/v3@v3.18.1
-  k8s.io/api@v0.33.1
-  k8s.io/apiextensions-apiserver@v0.33.1
-  k8s.io/apimachinery@v0.33.1
-  k8s.io/apiserver@v0.33.1
-  k8s.io/cli-runtime@v0.33.1
-  k8s.io/client-go@v0.33.1
-  k8s.io/component-base@v0.33.1
-  k8s.io/endpointslice@v0.33.1
+  helm.sh/helm/v3@v3.18.5
+  k8s.io/api@v0.33.4
+  k8s.io/apiextensions-apiserver@v0.33.4
+  k8s.io/apimachinery@v0.33.4
+  k8s.io/apiserver@v0.33.4
+  k8s.io/cli-runtime@v0.33.4
+  k8s.io/client-go@v0.33.4
+  k8s.io/component-base@v0.33.4
+  k8s.io/endpointslice@v0.33.3
   k8s.io/klog/v2@v2.130.1
   k8s.io/kube-openapi@v0.0.0-20250318190949-c8a335a9a2ff
-  k8s.io/kubectl@v0.33.1
-  k8s.io/utils@v0.0.0-20250502105355-0f33e8f1c979
-  oras.land/oras-go/v2@v2.5.0
+  k8s.io/kubectl@v0.33.4
+  k8s.io/utils@v0.0.0-20250604170112-4c0f3b243397
+  oras.land/oras-go/v2@v2.6.0
   sigs.k8s.io/controller-runtime@v0.20.4
-  sigs.k8s.io/gateway-api@v1.3.0
+  sigs.k8s.io/gateway-api@v1.3.1-0.20250611112659-17a60f668a0d
   sigs.k8s.io/json@v0.0.0-20241010143419-9aa6b5e7a4b3
   sigs.k8s.io/kustomize/api@v0.19.0
   sigs.k8s.io/kustomize/kyaml@v0.19.0
-  sigs.k8s.io/mcs-api@v0.1.1-0.20250513123917-5e5359a979c7
-  sigs.k8s.io/mcs-api/controllers@v0.0.0-20250513123917-5e5359a979c7
+  sigs.k8s.io/mcs-api@v0.1.1-0.20250610011024-38bab5ba476b
+  sigs.k8s.io/mcs-api/controllers@v0.0.0-20250731081715-a807ec696257
   sigs.k8s.io/randfill@v1.0.0
   sigs.k8s.io/structured-merge-diff/v4@v4.7.0
-  sigs.k8s.io/yaml@v1.4.0
+  sigs.k8s.io/yaml@v1.5.0
 
-=== Symbol Results ===
-
-Vulnerability #1: GO-2025-3888
-    Helm May Panic Due To Incorrect YAML Content in helm.sh/helm
-  More info: https://pkg.go.dev/vuln/GO-2025-3888
-  Module: helm.sh/helm/v3
-    Found in: helm.sh/helm/v3@v3.18.1
-    Fixed in: helm.sh/helm/v3@v3.18.5
-    Example traces found:
-      #1: cilium-cli/install/install.go:265:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.processImportValues
-      #2: cilium-cli/internal/helm/helm.go:106:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.loadIndex
-
-Vulnerability #2: GO-2025-3887
-    Helm Charts with Specific JSON Schema Values Can Cause Memory Exhaustion in
-    helm.sh/helm
-  More info: https://pkg.go.dev/vuln/GO-2025-3887
-  Module: helm.sh/helm/v3
-    Found in: helm.sh/helm/v3@v3.18.1
-    Fixed in: helm.sh/helm/v3@v3.18.5
-    Example traces found:
-      #1: cilium-cli/install/install.go:265:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.ValidateAgainstSchema
-
-Vulnerability #3: GO-2025-3830
-    Moby firewalld reload makes published container ports accessible from remote
-    hosts in github.com/docker/docker
-  More info: https://pkg.go.dev/vuln/GO-2025-3830
-  Module: github.com/docker/docker
-    Found in: github.com/docker/docker@v28.2.2+incompatible
-    Fixed in: github.com/docker/docker@v28.3.3+incompatible
-    Example traces found:
-      #1: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls api.init
-      #2: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls blkiodev.init
-      #3: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls build.init
-      #4: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls checkpoint.init
-      #5: pkg/azure/api/api.go:71:30: api.httpClient.Do calls http.Client.Do, which eventually calls client.CheckRedirect
-      #6: plugins/cilium-docker/driver/driver.go:176:51: driver.driver.updateCiliumEP calls client.Client.ContainerInspect
-      #7: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events
-      #8: plugins/cilium-docker/driver/driver.go:195:56: driver.driver.updateCiliumEP calls client.Client.ImageInspectWithRaw
-      #9: plugins/cilium-docker/driver/driver.go:99:50: driver.NewDriver calls client.NewClientWithOpts
-      #10: pkg/azure/api/api.go:71:30: api.httpClient.Do calls http.Client.Do, which eventually calls client.NewClientWithOpts
-      #11: plugins/cilium-docker/driver/driver.go:101:41: driver.NewDriver calls client.WithAPIVersionNegotiation
-      #12: plugins/cilium-docker/driver/driver.go:100:24: driver.NewDriver calls client.WithHost
-      #13: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.emptyIDError.Error
-      #14: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.errConnectionFailed.Error
-      #15: pkg/endpoint/bpf.go:1655:14: endpoint.CheckHealth calls errors.As, which eventually calls client.errConnectionFailed.Unwrap
-      #16: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.httpError.Error
-      #17: pkg/endpoint/endpoint.go:2027:14: endpoint.Endpoint.InitWithNodeLabels calls errors.Is, which eventually calls client.httpError.Is
-      #18: pkg/endpoint/bpf.go:1655:14: endpoint.CheckHealth calls errors.As, which eventually calls client.httpError.Unwrap
-      #19: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init
-      #20: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.objectNotFoundError.Error
-      #21: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls common.init
-      #22: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls container.init
-      #23: plugins/cilium-docker/driver/driver.go:19:2: driver.init calls events.init
-      #24: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls filters.Args.Len
-      #25: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls filters.ToParamWithVersion
-      #26: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls filters.init
-      #27: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls homedir.init
-      #28: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls image.init
-      #29: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls ioutils.init
-      #30: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls lazyregexp.New
-      #31: pkg/endpoint/bpf.go:1644:31: endpoint.CheckHealth calls sync.Once.Do, which eventually calls lazyregexp.Regexp.build
-      #32: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls lazyregexp.init
-      #33: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls mount.init
-      #34: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls multierror.init
-      #35: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls network.init
-      #36: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls plugingetter.init
-      #37: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls plugins.init
-      #38: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls registry.init
-      #39: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls rootless.init
-      #40: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls runtime.init
-      #41: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls storage.init
-      #42: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which eventually calls strslice.init
-      #43: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls swarm.init
-      #44: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls system.init
-      #45: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls time.GetTimestamp
-      #46: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls time.init
-      #47: plugins/cilium-docker/driver/ipam.go:11:2: driver.init calls api.init, which eventually calls transport.init
-      #48: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls types.init
-      #49: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events, which eventually calls versions.LessThan
-      #50: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls versions.init
-      #51: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls volume.init
-
-Vulnerability #4: GO-2025-3787
-    May leak sensitive information in logs when processing malformed data in
-    github.com/go-viper/mapstructure
-  More info: https://pkg.go.dev/vuln/GO-2025-3787
-  Module: github.com/go-viper/mapstructure/v2
-    Found in: github.com/go-viper/mapstructure/v2@v2.2.1
-    Fixed in: github.com/go-viper/mapstructure/v2@v2.3.0
-    Example traces found:
-      #1: test/controlplane/suite/operator.go:12:2: suite.init calls viper.init, which eventually calls errors.init
-      #2: test/controlplane/suite/operator.go:12:2: suite.init calls viper.init, which calls mapstructure.init
-
-=== Package Results ===
-
-Vulnerability #1: GO-2025-3900
-    Go-viper's mapstructure May Leak Sensitive Information in Logs in
-    github.com/go-viper/mapstructure
-  More info: https://pkg.go.dev/vuln/GO-2025-3900
-  Module: github.com/go-viper/mapstructure/v2
-    Found in: github.com/go-viper/mapstructure/v2@v2.2.1
-    Fixed in: github.com/go-viper/mapstructure/v2@v2.4.0
-
-Vulnerability #2: GO-2025-3802
-    Helm vulnerable to Code Injection through malicious chart.yaml content in
-    helm.sh/helm
-  More info: https://pkg.go.dev/vuln/GO-2025-3802
-  Module: helm.sh/helm/v3
-    Found in: helm.sh/helm/v3@v3.18.1
-    Fixed in: helm.sh/helm/v3@v3.18.4
-
-=== Module Results ===
-
-No other vulnerabilities found.
-
-Your code is affected by 4 vulnerabilities from 3 modules.
-This scan also found 2 vulnerabilities in packages you import and 0
-vulnerabilities in modules you require, but your code doesn't appear to call
-these vulnerabilities.
+No vulnerabilities found.
