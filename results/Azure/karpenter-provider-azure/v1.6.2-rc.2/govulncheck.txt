@@ -66,7 +66,7 @@ The package pattern matched the following 63 root packages:
   github.com/Azure/karpenter-provider-azure/test/suites/spot
   github.com/Azure/karpenter-provider-azure/test/suites/subnet
   github.com/Azure/karpenter-provider-azure/test/suites/utilization
-Govulncheck scanned the following 156 modules and the go1.25.0 standard library:
+Govulncheck scanned the following 156 modules and the go1.25.1 standard library:
   github.com/Azure/karpenter-provider-azure
   github.com/Azure/aks-middleware@v0.0.41
   github.com/Azure/azure-kusto-go@v0.16.1

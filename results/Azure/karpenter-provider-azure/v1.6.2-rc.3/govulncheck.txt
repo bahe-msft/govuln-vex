@@ -2,7 +2,7 @@ Fetching vulnerabilities from the database...
 
 Checking the code against the vulnerabilities...
 
-The package pattern matched the following 63 root packages:
+The package pattern matched the following 64 root packages:
   github.com/Azure/karpenter-provider-azure/pkg/apis
   github.com/Azure/karpenter-provider-azure/pkg/apis/v1beta1
   github.com/Azure/karpenter-provider-azure/pkg/cloudprovider/events
@@ -10,6 +10,7 @@ The package pattern matched the following 63 root packages:
   github.com/Azure/karpenter-provider-azure/pkg/utils
   github.com/Azure/karpenter-provider-azure/pkg/operator/options
   github.com/Azure/karpenter-provider-azure/pkg/auth
+  github.com/Azure/karpenter-provider-azure/pkg/logging
   github.com/Azure/karpenter-provider-azure/pkg/cache
   github.com/Azure/karpenter-provider-azure/pkg/metrics
   github.com/Azure/karpenter-provider-azure/pkg/providers/imagefamily/labels

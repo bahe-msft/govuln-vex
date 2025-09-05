@@ -1296,7 +1296,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/utils/ktesting/examples/without_ktesting
   k8s.io/kubernetes/test/utils/oidc/handlers
   k8s.io/kubernetes/test/utils/oidc
-Govulncheck scanned the following 197 modules and the go1.25.0 standard library:
+Govulncheck scanned the following 197 modules and the go1.25.1 standard library:
   k8s.io/kubernetes
   bitbucket.org/bertimus9/systemstat@v0.5.0
   cel.dev/expr@v0.23.1
