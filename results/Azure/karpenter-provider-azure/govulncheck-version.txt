@@ -1,4 +1,4 @@
-Go: go1.25.1
+Go: go1.25.2
 Scanner: govulncheck@v1.1.4
 DB: https://vuln.go.dev
 DB updated: 2025-09-24 19:21:41 +0000 UTC

@@ -170,7 +170,7 @@ The package pattern matched the following 167 root packages:
   github.com/Azure/azure-container-networking/tools/acncli/cmd/npm
   github.com/Azure/azure-container-networking/tools/acncli/cmd
   github.com/Azure/azure-container-networking/tools/acncli
-Govulncheck scanned the following 150 modules and the go1.25.1 standard library:
+Govulncheck scanned the following 150 modules and the go1.25.2 standard library:
   github.com/Azure/azure-container-networking
   code.cloudfoundry.org/clock@v1.0.0
   github.com/Azure/azure-container-networking/zapai@v0.0.3
@@ -368,8 +368,8 @@ Vulnerability #3: GO-2025-3635
       #2: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls api.Rule.DeepCopyInto
       #3: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls api.Rule.MarshalJSON
       #4: network/networkutils/networkutils_linux.go:222:19: networkutils.NetworkUtils.EnableIPV6Forwarding calls fmt.Sprint, which eventually calls api.Rules.String
-      #5: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls api.init
-      #6: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls api.init
+      #5: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls api.init
+      #6: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls api.init
       #7: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls bgp.New
       #8: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls bgp.init
       #9: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls cell.Config[github.com/cilium/cilium/pkg/metrics.RegistryConfig]
@@ -409,9 +409,9 @@ Vulnerability #3: GO-2025-3635
       #43: test/internal/kubernetes/utils_delete.go:78:28: kubernetes.MustDeleteCiliumLocalRedirectPolicy calls cilium.ciliumLocalRedirectPolicies.Delete
       #44: test/internal/kubernetes/utils_create.go:190:31: kubernetes.mustCreateCiliumNetworkPolicy calls cilium.ciliumNetworkPolicies.Create
       #45: test/internal/kubernetes/utils_delete.go:86:28: kubernetes.MustDeleteCiliumNetworkPolicy calls cilium.ciliumNetworkPolicies.Delete
-      #46: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init
+      #46: test/internal/kubernetes/utils_create.go:13:2: kubernetes.init calls cilium.init
       #47: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls cilium.init
-      #48: test/internal/kubernetes/utils_create.go:13:2: kubernetes.init calls cilium.init
+      #48: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init
       #49: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllEndpointAddresses
       #50: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllHostAddresses
       #51: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetPathConnectivityStatusType
@@ -765,8 +765,8 @@ Vulnerability #3: GO-2025-3635
       #399: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls models.StatusResponse.UnmarshalBinary
       #400: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls models.init
       #401: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls models.init
-      #402: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls option.init
-      #403: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls option.init
+      #402: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls option.init
+      #403: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls option.init
       #404: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls policy.New
       #405: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls policy.init
       #406: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls prefilter.New
@@ -798,8 +798,8 @@ Vulnerability #3: GO-2025-3635
       #432: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.IPAMSpec.DeepCopyInto
       #433: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.IPAMStatus.DeepCopyInto
       #434: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.Spec.DeepCopyInto
-      #435: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls types.init
-      #436: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
+      #435: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
+      #436: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls types.init
       #437: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
       #438: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
       #439: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
