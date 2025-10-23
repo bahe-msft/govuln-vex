@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Wed Oct 22 02:09:15 UTC 2025
+Last updated time: Thu Oct 23 02:06:02 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -590,6 +590,12 @@ Reports: [cilium/cilium/v1.18.1](results/cilium/cilium/v1.18.1)
 No active affected vulnerabilities found in v1.18.2
 
 Reports: [cilium/cilium/v1.18.2](results/cilium/cilium/v1.18.2)
+
+### ✅ v1.18.3
+
+No active affected vulnerabilities found in v1.18.3
+
+Reports: [cilium/cilium/v1.18.3](results/cilium/cilium/v1.18.3)
 
 ### ✅ v1.19.0-pre.0
 
