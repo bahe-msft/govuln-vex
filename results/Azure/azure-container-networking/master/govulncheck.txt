@@ -409,14 +409,14 @@ Vulnerability #3: GO-2025-3635
       #43: test/internal/kubernetes/utils_delete.go:78:28: kubernetes.MustDeleteCiliumLocalRedirectPolicy calls cilium.ciliumLocalRedirectPolicies.Delete
       #44: test/internal/kubernetes/utils_create.go:190:31: kubernetes.mustCreateCiliumNetworkPolicy calls cilium.ciliumNetworkPolicies.Create
       #45: test/internal/kubernetes/utils_delete.go:86:28: kubernetes.MustDeleteCiliumNetworkPolicy calls cilium.ciliumNetworkPolicies.Delete
-      #46: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls cilium.init
+      #46: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init
       #47: test/internal/kubernetes/utils_create.go:13:2: kubernetes.init calls cilium.init
-      #48: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init
+      #48: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls cilium.init
       #49: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllEndpointAddresses
       #50: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllHostAddresses
       #51: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetPathConnectivityStatusType
-      #52: nmagent/internal/wireserver.go:141:36: internal.WireserverTransport.RoundTrip calls http.Transport.RoundTrip, which eventually calls client.configureTransport
-      #53: common/utils.go:300:19: common.PostCtx calls http.Client.Do, which eventually calls client.configureTransport
+      #52: common/utils.go:300:19: common.PostCtx calls http.Client.Do, which eventually calls client.configureTransport
+      #53: nmagent/internal/wireserver.go:141:36: internal.WireserverTransport.RoundTrip calls http.Transport.RoundTrip, which eventually calls client.configureTransport
       #54: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
       #55: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
       #56: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls client.init
@@ -763,10 +763,10 @@ Vulnerability #3: GO-2025-3635
       #397: npm/metrics/prometheus-metrics.go:399:43: metrics.register calls prometheus.Registry.Register, which eventually calls metrics.statusCollector.Describe
       #398: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls models.HealthStatusResponse.UnmarshalBinary
       #399: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls models.StatusResponse.UnmarshalBinary
-      #400: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls models.init
-      #401: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls models.init
-      #402: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls option.init
-      #403: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls option.init
+      #400: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls models.init
+      #401: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls models.init
+      #402: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls option.init
+      #403: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls option.init
       #404: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls policy.New
       #405: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls policy.init
       #406: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls prefilter.New
