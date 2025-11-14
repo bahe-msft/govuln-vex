@@ -1033,7 +1033,18 @@ Govulncheck scanned the following 287 modules and the go1.25.4 standard library:
 
 === Symbol Results ===
 
-Vulnerability #1: GO-2025-3888
+Vulnerability #1: GO-2025-4116
+    Potential denial of service in golang.org/x/crypto/ssh/agent
+  More info: https://pkg.go.dev/vuln/GO-2025-4116
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.38.0
+    Fixed in: golang.org/x/crypto@v0.43.0
+    Example traces found:
+      #1: test/helpers/ssh_command.go:286:29: helpers.SSHClient.newSession calls ssh.Dial, which eventually calls agent.agentKeyringSigner.Sign
+      #2: test/helpers/ssh_command.go:286:29: helpers.SSHClient.newSession calls ssh.Dial, which eventually calls agent.agentKeyringSigner.SignWithAlgorithm
+      #3: test/helpers/ssh_command.go:286:29: helpers.SSHClient.newSession calls ssh.Dial, which eventually calls agent.client.Signers
+
+Vulnerability #2: GO-2025-3888
     Helm May Panic Due To Incorrect YAML Content in helm.sh/helm
   More info: https://pkg.go.dev/vuln/GO-2025-3888
   Module: helm.sh/helm/v3
@@ -1043,7 +1054,7 @@ Vulnerability #1: GO-2025-3888
       #1: cilium-cli/install/install.go:265:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.processImportValues
       #2: cilium-cli/internal/helm/helm.go:106:23: helm.newChartFromRemoteWithCache calls action.Pull.Run, which eventually calls repo.loadIndex
 
-Vulnerability #2: GO-2025-3887
+Vulnerability #3: GO-2025-3887
     Helm Charts with Specific JSON Schema Values Can Cause Memory Exhaustion in
     helm.sh/helm
   More info: https://pkg.go.dev/vuln/GO-2025-3887
@@ -1053,7 +1064,7 @@ Vulnerability #2: GO-2025-3887
     Example traces found:
       #1: cilium-cli/install/install.go:265:43: install.K8sInstaller.InstallWithHelm calls action.Install.RunWithContext, which eventually calls chartutil.ValidateAgainstSchema
 
-Vulnerability #3: GO-2025-3830
+Vulnerability #4: GO-2025-3830
     Moby firewalld reload makes published container ports accessible from remote
     hosts in github.com/docker/docker
   More info: https://pkg.go.dev/vuln/GO-2025-3830
@@ -1113,7 +1124,7 @@ Vulnerability #3: GO-2025-3830
       #50: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls versions.init
       #51: plugins/cilium-docker/driver/driver.go:20:2: driver.init calls client.init, which calls volume.init
 
-Vulnerability #4: GO-2025-3787
+Vulnerability #5: GO-2025-3787
     May leak sensitive information in logs when processing malformed data in
     github.com/go-viper/mapstructure
   More info: https://pkg.go.dev/vuln/GO-2025-3787
@@ -1146,7 +1157,7 @@ Vulnerability #2: GO-2025-3802
 
 No other vulnerabilities found.
 
-Your code is affected by 4 vulnerabilities from 3 modules.
+Your code is affected by 5 vulnerabilities from 4 modules.
 This scan also found 2 vulnerabilities in packages you import and 0
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.

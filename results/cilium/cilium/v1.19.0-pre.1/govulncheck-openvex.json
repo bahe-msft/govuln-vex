@@ -1,8 +1,31 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:dbe7160a7e784903e7018529dca9791796885b4a0bad84a321cecbf1dc0473a5",
+  "@id": "govulncheck/vex:53b7ac88ff4203f9a28d5fd2612c11769be656a066c62e1ed40e128e93c34a68",
   "author": "Unknown Author",
-  "timestamp": "2025-11-13T02:10:29.738068752Z",
+  "timestamp": "2025-11-14T02:14:33.907243401Z",
   "version": 1,
-  "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck"
+  "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
+  "statements": [
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4116",
+        "name": "GO-2025-4116",
+        "description": "Potential denial of service in golang.org/x/crypto/ssh/agent",
+        "aliases": [
+          "CVE-2025-47913"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.42.0"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    }
+  ]
 }

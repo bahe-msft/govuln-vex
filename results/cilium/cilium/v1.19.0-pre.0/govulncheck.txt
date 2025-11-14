@@ -1039,4 +1039,27 @@ Govulncheck scanned the following 290 modules and the go1.25.4 standard library:
   sigs.k8s.io/structured-merge-diff/v4@v4.7.0
   sigs.k8s.io/yaml@v1.5.0
 
-No vulnerabilities found.
+=== Symbol Results ===
+
+Vulnerability #1: GO-2025-4116
+    Potential denial of service in golang.org/x/crypto/ssh/agent
+  More info: https://pkg.go.dev/vuln/GO-2025-4116
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.41.0
+    Fixed in: golang.org/x/crypto@v0.43.0
+    Example traces found:
+      #1: test/helpers/ssh_command.go:286:29: helpers.SSHClient.newSession calls ssh.Dial, which eventually calls agent.agentKeyringSigner.Sign
+      #2: test/helpers/ssh_command.go:286:29: helpers.SSHClient.newSession calls ssh.Dial, which eventually calls agent.agentKeyringSigner.SignWithAlgorithm
+      #3: test/helpers/ssh_command.go:286:29: helpers.SSHClient.newSession calls ssh.Dial, which eventually calls agent.client.Signers
+
+=== Package Results ===
+
+No other vulnerabilities found.
+
+=== Module Results ===
+
+No other vulnerabilities found.
+
+Your code is affected by 1 vulnerability from 1 module.
+This scan found no other vulnerabilities in packages you import or modules you
+require.
