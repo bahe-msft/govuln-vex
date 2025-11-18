@@ -1,11 +1,55 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:53b7ac88ff4203f9a28d5fd2612c11769be656a066c62e1ed40e128e93c34a68",
+  "@id": "govulncheck/vex:19bcaf150dd51f82756a333720c54c78955fb3e97d664065fab747bc35ab97e3",
   "author": "Unknown Author",
-  "timestamp": "2025-11-17T02:16:41.467600727Z",
+  "timestamp": "2025-11-18T02:21:57.900653177Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4100",
+        "name": "GO-2025-4100",
+        "description": "containerd affected by a local privilege escalation via wide permissions on CRI directory in github.com/containerd/containerd",
+        "aliases": [
+          "CVE-2024-25621",
+          "GHSA-pwhc-rpq9-4c8w"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fcontainerd%2Fcontainerd@v1.7.28"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4108",
+        "name": "GO-2025-4108",
+        "description": "containerd CRI server: Host memory exhaustion through Attach goroutine leak in github.com/containerd/containerd",
+        "aliases": [
+          "CVE-2025-64329",
+          "GHSA-m6hq-p25p-ffr2"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fcontainerd%2Fcontainerd@v1.7.28"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
     {
       "vulnerability": {
         "@id": "https://pkg.go.dev/vuln/GO-2025-4116",

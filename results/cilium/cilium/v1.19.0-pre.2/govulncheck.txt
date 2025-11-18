@@ -1062,4 +1062,56 @@ Govulncheck scanned the following 298 modules and the go1.25.4 standard library:
   sigs.k8s.io/structured-merge-diff/v6@v6.3.0
   sigs.k8s.io/yaml@v1.6.0
 
-No vulnerabilities found.
+=== Symbol Results ===
+
+Vulnerability #1: GO-2025-4108
+    containerd CRI server: Host memory exhaustion through Attach goroutine leak
+    in github.com/containerd/containerd
+  More info: https://pkg.go.dev/vuln/GO-2025-4108
+  Module: github.com/containerd/containerd
+    Found in: github.com/containerd/containerd@v1.7.28
+    Fixed in: github.com/containerd/containerd@v1.7.29
+    Example traces found:
+      #1: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
+      #2: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
+      #3: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
+      #4: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
+      #5: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls errdefs.init
+      #6: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls filters.init
+      #7: test/helpers/kubectl.go:1859:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
+      #8: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls images.init
+      #9: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls labels.init
+      #10: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls randutil.init
+      #11: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which calls remotes.init
+
+Vulnerability #2: GO-2025-4100
+    containerd affected by a local privilege escalation via wide permissions on
+    CRI directory in github.com/containerd/containerd
+  More info: https://pkg.go.dev/vuln/GO-2025-4100
+  Module: github.com/containerd/containerd
+    Found in: github.com/containerd/containerd@v1.7.28
+    Fixed in: github.com/containerd/containerd@v1.7.29
+    Example traces found:
+      #1: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
+      #2: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
+      #3: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
+      #4: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
+      #5: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls errdefs.init
+      #6: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls filters.init
+      #7: test/helpers/kubectl.go:1859:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
+      #8: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls images.init
+      #9: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls labels.init
+      #10: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls randutil.init
+      #11: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which calls remotes.init
+
+=== Package Results ===
+
+No other vulnerabilities found.
+
+=== Module Results ===
+
+No other vulnerabilities found.
+
+Your code is affected by 2 vulnerabilities from 1 module.
+This scan found no other vulnerabilities in packages you import or modules you
+require.

@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Mon Nov 17 02:25:06 UTC 2025
+Last updated time: Tue Nov 18 02:30:35 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -448,6 +448,8 @@ Active affected vulnerabilities:
 | GO-2025-3830 | https://pkg.go.dev/vuln/GO-2025-3830 | affected | N/A |
 | GO-2025-3887 | https://pkg.go.dev/vuln/GO-2025-3887 | affected | N/A |
 | GO-2025-3888 | https://pkg.go.dev/vuln/GO-2025-3888 | affected | N/A |
+| GO-2025-4100 | https://pkg.go.dev/vuln/GO-2025-4100 | affected | N/A |
+| GO-2025-4108 | https://pkg.go.dev/vuln/GO-2025-4108 | affected | N/A |
 | GO-2025-4116 | https://pkg.go.dev/vuln/GO-2025-4116 | affected | N/A |
 
 Reports: [cilium/cilium/main](results/cilium/cilium/main)
@@ -604,6 +606,8 @@ Active affected vulnerabilities:
 
 | name | @id | status | impact statement |
 |------|-----|--------|------------------|
+| GO-2025-4100 | https://pkg.go.dev/vuln/GO-2025-4100 | affected | N/A |
+| GO-2025-4108 | https://pkg.go.dev/vuln/GO-2025-4108 | affected | N/A |
 | GO-2025-4116 | https://pkg.go.dev/vuln/GO-2025-4116 | affected | N/A |
 
 Reports: [cilium/cilium/v1.19.0-pre.0](results/cilium/cilium/v1.19.0-pre.0)
@@ -614,13 +618,20 @@ Active affected vulnerabilities:
 
 | name | @id | status | impact statement |
 |------|-----|--------|------------------|
+| GO-2025-4100 | https://pkg.go.dev/vuln/GO-2025-4100 | affected | N/A |
+| GO-2025-4108 | https://pkg.go.dev/vuln/GO-2025-4108 | affected | N/A |
 | GO-2025-4116 | https://pkg.go.dev/vuln/GO-2025-4116 | affected | N/A |
 
 Reports: [cilium/cilium/v1.19.0-pre.1](results/cilium/cilium/v1.19.0-pre.1)
 
-### ✅ v1.19.0-pre.2
+### ⚠️ v1.19.0-pre.2
 
-No active affected vulnerabilities found in v1.19.0-pre.2
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-4100 | https://pkg.go.dev/vuln/GO-2025-4100 | affected | N/A |
+| GO-2025-4108 | https://pkg.go.dev/vuln/GO-2025-4108 | affected | N/A |
 
 Reports: [cilium/cilium/v1.19.0-pre.2](results/cilium/cilium/v1.19.0-pre.2)
 

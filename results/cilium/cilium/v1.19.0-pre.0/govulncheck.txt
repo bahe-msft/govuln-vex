@@ -1052,6 +1052,46 @@ Vulnerability #1: GO-2025-4116
       #2: test/helpers/ssh_command.go:286:29: helpers.SSHClient.newSession calls ssh.Dial, which eventually calls agent.agentKeyringSigner.SignWithAlgorithm
       #3: test/helpers/ssh_command.go:286:29: helpers.SSHClient.newSession calls ssh.Dial, which eventually calls agent.client.Signers
 
+Vulnerability #2: GO-2025-4108
+    containerd CRI server: Host memory exhaustion through Attach goroutine leak
+    in github.com/containerd/containerd
+  More info: https://pkg.go.dev/vuln/GO-2025-4108
+  Module: github.com/containerd/containerd
+    Found in: github.com/containerd/containerd@v1.7.27
+    Fixed in: github.com/containerd/containerd@v1.7.29
+    Example traces found:
+      #1: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
+      #2: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
+      #3: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
+      #4: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
+      #5: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls errdefs.init
+      #6: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls filters.init
+      #7: test/helpers/kubectl.go:1927:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
+      #8: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls images.init
+      #9: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls labels.init
+      #10: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls randutil.init
+      #11: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which calls remotes.init
+
+Vulnerability #3: GO-2025-4100
+    containerd affected by a local privilege escalation via wide permissions on
+    CRI directory in github.com/containerd/containerd
+  More info: https://pkg.go.dev/vuln/GO-2025-4100
+  Module: github.com/containerd/containerd
+    Found in: github.com/containerd/containerd@v1.7.27
+    Fixed in: github.com/containerd/containerd@v1.7.29
+    Example traces found:
+      #1: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
+      #2: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
+      #3: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
+      #4: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
+      #5: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls errdefs.init
+      #6: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls filters.init
+      #7: test/helpers/kubectl.go:1927:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
+      #8: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls images.init
+      #9: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls labels.init
+      #10: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls randutil.init
+      #11: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which calls remotes.init
+
 === Package Results ===
 
 No other vulnerabilities found.
@@ -1060,6 +1100,6 @@ No other vulnerabilities found.
 
 No other vulnerabilities found.
 
-Your code is affected by 1 vulnerability from 1 module.
+Your code is affected by 3 vulnerabilities from 2 modules.
 This scan found no other vulnerabilities in packages you import or modules you
 require.
