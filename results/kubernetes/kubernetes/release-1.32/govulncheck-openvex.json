@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:5f8193a7fcb785121937d9c37ff05c03424a42e4849373ee937a4e2b692db424",
+  "@id": "govulncheck/vex:a1603590b28beaf29d10812144198a0632021551041f304266e6bb9e809e9921",
   "author": "Unknown Author",
-  "timestamp": "2025-11-18T02:01:13.536154115Z",
+  "timestamp": "2025-11-19T02:04:31.879365686Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -228,6 +228,79 @@
           "subcomponents": [
             {
               "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.30.0"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4096",
+        "name": "GO-2025-4096",
+        "description": "Container escape via \"masked path\" abuse due to mount race conditions in github.com/opencontainers/runc",
+        "aliases": [
+          "CVE-2025-31133",
+          "GHSA-9493-h29p-rfm2"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.2.1"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_present",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4097",
+        "name": "GO-2025-4097",
+        "description": "Container escape with malicious config due to /dev/console mount and related races in github.com/opencontainers/runc",
+        "aliases": [
+          "CVE-2025-52565",
+          "GHSA-qw9x-cqr3-wc7r"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.2.1"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_present",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4098",
+        "name": "GO-2025-4098",
+        "description": "Container escape and DDoS due to arbitrary write gadgets and procfs write redirects in github.com/opencontainers/runc",
+        "aliases": [
+          "CVE-2025-52881",
+          "GHSA-cgrx-mc8f-2prm"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.2.1"
+            },
+            {
+              "@id": "pkg:golang/github.com%2Fopencontainers%2Fselinux@v1.11.1"
             }
           ]
         }

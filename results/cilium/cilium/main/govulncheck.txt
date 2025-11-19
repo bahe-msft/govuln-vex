@@ -1072,8 +1072,8 @@ Vulnerability #3: GO-2025-4100
     Found in: github.com/containerd/containerd@v1.7.27
     Fixed in: github.com/containerd/containerd@v1.7.29
     Example traces found:
-      #1: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
-      #2: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
+      #1: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
+      #2: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
       #3: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
       #4: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
       #5: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls errdefs.init

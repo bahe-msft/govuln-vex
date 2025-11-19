@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Tue Nov 18 02:30:35 UTC 2025
+Last updated time: Wed Nov 19 02:37:34 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -400,9 +400,13 @@ Reports: [Azure/kubelogin/v0.2.9](results/Azure/kubelogin/v0.2.9)
 
 ## aks-lts/kubernetes
 
-### ✅ master
+### ⚠️ master
 
-No active affected vulnerabilities found in master
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-4098 | https://pkg.go.dev/vuln/GO-2025-4098 | affected | N/A |
 
 Reports: [aks-lts/kubernetes/master](results/aks-lts/kubernetes/master)
 
@@ -753,9 +757,13 @@ Reports: [kubernetes-sigs/cloud-provider-azure/v1.34.2](results/kubernetes-sigs/
 
 ## kubernetes/kubernetes
 
-### ✅ master
+### ⚠️ master
 
-No active affected vulnerabilities found in master
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2025-4098 | https://pkg.go.dev/vuln/GO-2025-4098 | affected | N/A |
 
 Reports: [kubernetes/kubernetes/master](results/kubernetes/kubernetes/master)
 
@@ -781,6 +789,7 @@ Active affected vulnerabilities:
 | GO-2025-3487 | https://pkg.go.dev/vuln/GO-2025-3487 | affected | N/A |
 | GO-2025-3553 | https://pkg.go.dev/vuln/GO-2025-3553 | affected | N/A |
 | GO-2025-3595 | https://pkg.go.dev/vuln/GO-2025-3595 | affected | N/A |
+| GO-2025-4098 | https://pkg.go.dev/vuln/GO-2025-4098 | affected | N/A |
 
 Reports: [kubernetes/kubernetes/release-1.32](results/kubernetes/kubernetes/release-1.32)
 

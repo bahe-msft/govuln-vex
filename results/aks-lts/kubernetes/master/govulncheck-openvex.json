@@ -1,11 +1,33 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:581a253de3c0f07986402a2f3b031cfe65727ea372f811bd394c9f0ffd238226",
+  "@id": "govulncheck/vex:08151c780b3fc092ea28cd9065bd77aeea459b64079d1b9c07a11c15491ede6f",
   "author": "Unknown Author",
-  "timestamp": "2025-11-18T01:55:40.588079306Z",
+  "timestamp": "2025-11-19T01:56:57.732367231Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4098",
+        "name": "GO-2025-4098",
+        "description": "Container escape and DDoS due to arbitrary write gadgets and procfs write redirects in github.com/opencontainers/runc",
+        "aliases": [
+          "CVE-2025-52881",
+          "GHSA-cgrx-mc8f-2prm"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fopencontainers%2Fselinux@v1.11.1"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
+    },
     {
       "vulnerability": {
         "@id": "https://pkg.go.dev/vuln/GO-2025-4116",

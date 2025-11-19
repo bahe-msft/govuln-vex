@@ -1497,7 +1497,30 @@ Govulncheck scanned the following 197 modules and the go1.25.4 standard library:
 
 === Symbol Results ===
 
-No vulnerabilities found.
+Vulnerability #1: GO-2025-4098
+    Container escape and DDoS due to arbitrary write gadgets and procfs write
+    redirects in github.com/opencontainers/runc
+  More info: https://pkg.go.dev/vuln/GO-2025-4098
+  Module: github.com/opencontainers/selinux
+    Found in: github.com/opencontainers/selinux@v1.11.1
+    Fixed in: github.com/opencontainers/selinux@v1.13.0
+    Example traces found:
+      #1: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels
+      #2: pkg/volume/util/selinux.go:25:2: util.init calls label.init
+      #3: test/e2e_node/image_volume.go:28:2: e2e_node.init calls selinux.init, which calls pwalkdir.init
+      #4: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels, which calls selinux.ContainerLabels
+      #5: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels, which calls selinux.Context.Get
+      #6: pkg/volume/hostpath/host_path.go:328:23: hostpath.hostPathProvisioner.Provision calls selinux.GetEnabled
+      #7: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels, which calls selinux.NewContext
+      #8: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels, which calls selinux.PrivContainerMountLabel
+      #9: pkg/volume/util/selinux.go:82:22: util.translator.SELinuxOptionsToFileLabel calls selinux.ReleaseLabel
+      #10: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels, which calls selinux.ReserveLabel
+      #11: pkg/volume/hostpath/host_path.go:329:30: hostpath.hostPathProvisioner.Provision calls selinux.SetFileLabel
+      #12: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls selinux.attrPath
+      #13: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls selinux.getSELinuxfs
+      #14: test/e2e_node/image_volume.go:28:2: e2e_node.init calls selinux.init
+      #15: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls selinux.label
+      #16: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls selinux.policyRoot
 
 === Package Results ===
 
@@ -1512,7 +1535,7 @@ Vulnerability #1: GO-2025-4116
     Found in: golang.org/x/crypto@v0.36.0
     Fixed in: golang.org/x/crypto@v0.43.0
 
-Your code is affected by 0 vulnerabilities.
+Your code is affected by 1 vulnerability from 1 module.
 This scan also found 0 vulnerabilities in packages you import and 1
 vulnerability in modules you require, but your code doesn't appear to call these
 vulnerabilities.
