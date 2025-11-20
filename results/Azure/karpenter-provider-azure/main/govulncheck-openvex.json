@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:1c1d72d707d6779a7af8451373f2633713e84fdf8b64d529f9aa0665feeed0f7",
+  "@id": "govulncheck/vex:8976ca28e209ca4a61fd029c29843030156aa916a568450614257df7c20c1714",
   "author": "Unknown Author",
-  "timestamp": "2025-11-19T02:35:46.560429409Z",
+  "timestamp": "2025-11-20T02:27:45.981334459Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -36,6 +36,52 @@
         "description": "Potential denial of service in golang.org/x/crypto/ssh/agent",
         "aliases": [
           "CVE-2025-47913"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.38.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_present",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4134",
+        "name": "GO-2025-4134",
+        "description": "CVE-2025-58181 in golang.org/x/crypto/ssh",
+        "aliases": [
+          "CVE-2025-58181"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.38.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_present",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4135",
+        "name": "GO-2025-4135",
+        "description": "CVE-2025-47914 in golang.org/x/crypto/ssh/agent",
+        "aliases": [
+          "CVE-2025-47914"
         ]
       },
       "products": [

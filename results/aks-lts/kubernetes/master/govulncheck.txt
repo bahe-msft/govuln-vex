@@ -1524,11 +1524,23 @@ Vulnerability #1: GO-2025-4098
 
 === Package Results ===
 
-No other vulnerabilities found.
+Vulnerability #1: GO-2025-4134
+    CVE-2025-58181 in golang.org/x/crypto/ssh
+  More info: https://pkg.go.dev/vuln/GO-2025-4134
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.36.0
+    Fixed in: N/A
 
 === Module Results ===
 
-Vulnerability #1: GO-2025-4116
+Vulnerability #1: GO-2025-4135
+    CVE-2025-47914 in golang.org/x/crypto/ssh/agent
+  More info: https://pkg.go.dev/vuln/GO-2025-4135
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.36.0
+    Fixed in: N/A
+
+Vulnerability #2: GO-2025-4116
     Potential denial of service in golang.org/x/crypto/ssh/agent
   More info: https://pkg.go.dev/vuln/GO-2025-4116
   Module: golang.org/x/crypto
@@ -1536,6 +1548,6 @@ Vulnerability #1: GO-2025-4116
     Fixed in: golang.org/x/crypto@v0.43.0
 
 Your code is affected by 1 vulnerability from 1 module.
-This scan also found 0 vulnerabilities in packages you import and 1
-vulnerability in modules you require, but your code doesn't appear to call these
-vulnerabilities.
+This scan also found 1 vulnerability in packages you import and 2
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.

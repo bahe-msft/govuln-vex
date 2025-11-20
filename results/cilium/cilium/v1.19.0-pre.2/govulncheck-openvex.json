@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:47691ac1f7c7f35d7e2a18b044e7d450236deec4ec16c5690a93b8b54a612a61",
+  "@id": "govulncheck/vex:cf0aeb5a62d6387356241da9222be5d220795fa5fee4d7771897898c050e98bd",
   "author": "Unknown Author",
-  "timestamp": "2025-11-19T02:19:58.414927884Z",
+  "timestamp": "2025-11-20T02:15:50.071780493Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -49,6 +49,52 @@
         }
       ],
       "status": "affected"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4134",
+        "name": "GO-2025-4134",
+        "description": "CVE-2025-58181 in golang.org/x/crypto/ssh",
+        "aliases": [
+          "CVE-2025-58181"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.43.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4135",
+        "name": "GO-2025-4135",
+        "description": "CVE-2025-47914 in golang.org/x/crypto/ssh/agent",
+        "aliases": [
+          "CVE-2025-47914"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.43.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
     }
   ]
 }

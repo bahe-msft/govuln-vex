@@ -1054,8 +1054,8 @@ Vulnerability #2: GO-2025-4108
     Example traces found:
       #1: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
       #2: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
-      #3: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
-      #4: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
+      #3: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
+      #4: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
       #5: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls errdefs.init
       #6: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls filters.init
       #7: test/helpers/kubectl.go:1918:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
@@ -1074,8 +1074,8 @@ Vulnerability #3: GO-2025-4100
     Example traces found:
       #1: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
       #2: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
-      #3: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
-      #4: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
+      #3: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
+      #4: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
       #5: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls errdefs.init
       #6: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls filters.init
       #7: test/helpers/kubectl.go:1918:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
@@ -1177,7 +1177,21 @@ Vulnerability #7: GO-2025-3787
 
 === Package Results ===
 
-Vulnerability #1: GO-2025-3900
+Vulnerability #1: GO-2025-4135
+    CVE-2025-47914 in golang.org/x/crypto/ssh/agent
+  More info: https://pkg.go.dev/vuln/GO-2025-4135
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.38.0
+    Fixed in: N/A
+
+Vulnerability #2: GO-2025-4134
+    CVE-2025-58181 in golang.org/x/crypto/ssh
+  More info: https://pkg.go.dev/vuln/GO-2025-4134
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.38.0
+    Fixed in: N/A
+
+Vulnerability #3: GO-2025-3900
     Go-viper's mapstructure May Leak Sensitive Information in Logs in
     github.com/go-viper/mapstructure
   More info: https://pkg.go.dev/vuln/GO-2025-3900
@@ -1185,7 +1199,7 @@ Vulnerability #1: GO-2025-3900
     Found in: github.com/go-viper/mapstructure/v2@v2.2.1
     Fixed in: github.com/go-viper/mapstructure/v2@v2.4.0
 
-Vulnerability #2: GO-2025-3802
+Vulnerability #4: GO-2025-3802
     Helm vulnerable to Code Injection through malicious chart.yaml content in
     helm.sh/helm
   More info: https://pkg.go.dev/vuln/GO-2025-3802
@@ -1198,6 +1212,6 @@ Vulnerability #2: GO-2025-3802
 No other vulnerabilities found.
 
 Your code is affected by 7 vulnerabilities from 5 modules.
-This scan also found 2 vulnerabilities in packages you import and 0
+This scan also found 4 vulnerabilities in packages you import and 0
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.

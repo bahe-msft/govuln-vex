@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:08151c780b3fc092ea28cd9065bd77aeea459b64079d1b9c07a11c15491ede6f",
+  "@id": "govulncheck/vex:bc68578df25680bfd98f6d3b2868961dc20cb3f26da00dc605f8111b1cac8870",
   "author": "Unknown Author",
-  "timestamp": "2025-11-19T01:56:57.732367231Z",
+  "timestamp": "2025-11-20T01:55:36.990637686Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -35,6 +35,52 @@
         "description": "Potential denial of service in golang.org/x/crypto/ssh/agent",
         "aliases": [
           "CVE-2025-47913"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.36.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_present",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4134",
+        "name": "GO-2025-4134",
+        "description": "CVE-2025-58181 in golang.org/x/crypto/ssh",
+        "aliases": [
+          "CVE-2025-58181"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.36.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4135",
+        "name": "GO-2025-4135",
+        "description": "CVE-2025-47914 in golang.org/x/crypto/ssh/agent",
+        "aliases": [
+          "CVE-2025-47914"
         ]
       },
       "products": [

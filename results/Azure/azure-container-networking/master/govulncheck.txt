@@ -410,8 +410,8 @@ Vulnerability #3: GO-2025-3635
       #44: test/internal/kubernetes/utils_create.go:190:31: kubernetes.mustCreateCiliumNetworkPolicy calls cilium.ciliumNetworkPolicies.Create
       #45: test/internal/kubernetes/utils_delete.go:86:28: kubernetes.MustDeleteCiliumNetworkPolicy calls cilium.ciliumNetworkPolicies.Delete
       #46: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init
-      #47: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls cilium.init
-      #48: test/internal/kubernetes/utils_create.go:13:2: kubernetes.init calls cilium.init
+      #47: test/internal/kubernetes/utils_create.go:13:2: kubernetes.init calls cilium.init
+      #48: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls cilium.init
       #49: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllEndpointAddresses
       #50: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetAllHostAddresses
       #51: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls client.GetPathConnectivityStatusType
@@ -763,8 +763,8 @@ Vulnerability #3: GO-2025-3635
       #397: npm/metrics/prometheus-metrics.go:399:43: metrics.register calls prometheus.Registry.Register, which eventually calls metrics.statusCollector.Describe
       #398: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls models.HealthStatusResponse.UnmarshalBinary
       #399: npm/http/server/server.go:61:83: server.NPMRestServerListenAndServe calls http.Server.ListenAndServe, which eventually calls models.StatusResponse.UnmarshalBinary
-      #400: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls models.init
-      #401: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls models.init
+      #400: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls models.init
+      #401: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls models.init
       #402: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls option.init
       #403: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls option.init
       #404: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls policy.New
@@ -799,8 +799,8 @@ Vulnerability #3: GO-2025-3635
       #433: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.IPAMStatus.DeepCopyInto
       #434: cns/multitenantcontroller/multitenantoperator/multitenantcrdcontroller.go:65:29: multitenantoperator.New calls manager.New, which eventually calls types.Spec.DeepCopyInto
       #435: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
-      #436: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls types.init
-      #437: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
+      #436: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
+      #437: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which eventually calls types.init
       #438: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
       #439: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls types.init
       #440: test/internal/kubernetes/utils.go:16:2: kubernetes.init calls cilium.init, which calls utils.init
@@ -844,7 +844,21 @@ No other vulnerabilities found.
 
 === Module Results ===
 
-Vulnerability #1: GO-2025-4116
+Vulnerability #1: GO-2025-4135
+    CVE-2025-47914 in golang.org/x/crypto/ssh/agent
+  More info: https://pkg.go.dev/vuln/GO-2025-4135
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.38.0
+    Fixed in: N/A
+
+Vulnerability #2: GO-2025-4134
+    CVE-2025-58181 in golang.org/x/crypto/ssh
+  More info: https://pkg.go.dev/vuln/GO-2025-4134
+  Module: golang.org/x/crypto
+    Found in: golang.org/x/crypto@v0.38.0
+    Fixed in: N/A
+
+Vulnerability #3: GO-2025-4116
     Potential denial of service in golang.org/x/crypto/ssh/agent
   More info: https://pkg.go.dev/vuln/GO-2025-4116
   Module: golang.org/x/crypto
@@ -852,6 +866,6 @@ Vulnerability #1: GO-2025-4116
     Fixed in: golang.org/x/crypto@v0.43.0
 
 Your code is affected by 3 vulnerabilities from 2 modules.
-This scan also found 0 vulnerabilities in packages you import and 1
-vulnerability in modules you require, but your code doesn't appear to call these
-vulnerabilities.
+This scan also found 0 vulnerabilities in packages you import and 3
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.
