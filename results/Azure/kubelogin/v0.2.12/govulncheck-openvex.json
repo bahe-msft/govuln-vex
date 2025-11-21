@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:daa07bc2595b2d224ea200fcceb4f564aa611b29277e80fb40443d9775c74f6d",
+  "@id": "govulncheck/vex:6aa5936555b8118b02bb4f5128ea3ca51c9cd54b0bfeb5e1b7dc119ad5ef1acd",
   "author": "Unknown Author",
-  "timestamp": "2025-11-20T01:50:23.348101282Z",
+  "timestamp": "2025-11-21T01:51:14.736560662Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -33,9 +33,10 @@
       "vulnerability": {
         "@id": "https://pkg.go.dev/vuln/GO-2025-4134",
         "name": "GO-2025-4134",
-        "description": "CVE-2025-58181 in golang.org/x/crypto/ssh",
+        "description": "Unbounded memory consumption in golang.org/x/crypto/ssh",
         "aliases": [
-          "CVE-2025-58181"
+          "CVE-2025-58181",
+          "GHSA-j5w8-q4qc-rx2x"
         ]
       },
       "products": [
@@ -56,9 +57,10 @@
       "vulnerability": {
         "@id": "https://pkg.go.dev/vuln/GO-2025-4135",
         "name": "GO-2025-4135",
-        "description": "CVE-2025-47914 in golang.org/x/crypto/ssh/agent",
+        "description": "Malformed constraint may cause denial of service in golang.org/x/crypto/ssh/agent",
         "aliases": [
-          "CVE-2025-47914"
+          "CVE-2025-47914",
+          "GHSA-f6x5-jh6r-wrfv"
         ]
       },
       "products": [

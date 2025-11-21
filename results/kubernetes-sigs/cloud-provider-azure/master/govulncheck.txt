@@ -197,18 +197,19 @@ No other vulnerabilities found.
 === Module Results ===
 
 Vulnerability #1: GO-2025-4135
-    CVE-2025-47914 in golang.org/x/crypto/ssh/agent
+    Malformed constraint may cause denial of service in
+    golang.org/x/crypto/ssh/agent
   More info: https://pkg.go.dev/vuln/GO-2025-4135
   Module: golang.org/x/crypto
     Found in: golang.org/x/crypto@v0.36.0
-    Fixed in: N/A
+    Fixed in: golang.org/x/crypto@v0.45.0
 
 Vulnerability #2: GO-2025-4134
-    CVE-2025-58181 in golang.org/x/crypto/ssh
+    Unbounded memory consumption in golang.org/x/crypto/ssh
   More info: https://pkg.go.dev/vuln/GO-2025-4134
   Module: golang.org/x/crypto
     Found in: golang.org/x/crypto@v0.36.0
-    Fixed in: N/A
+    Fixed in: golang.org/x/crypto@v0.45.0
 
 Vulnerability #3: GO-2025-4116
     Potential denial of service in golang.org/x/crypto/ssh/agent
