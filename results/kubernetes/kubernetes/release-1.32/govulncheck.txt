@@ -1497,8 +1497,8 @@ Vulnerability #1: GO-2025-4098
       #2: pkg/kubelet/cm/cgroup_manager_linux.go:405:23: cm.cgroupCommon.Create calls systemd.UnifiedManager.Set, which eventually calls cgroups.ConvertMemorySwapToCgroupV2Value
       #3: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls cgroups.FindCgroupMountpoint
       #4: pkg/kubelet/cm/util/cgroups_linux.go:58:67: util.getCgroupV1Path calls cgroups.FindCgroupMountpointAndRoot
-      #5: cmd/kubeadm/app/util/users/users_linux.go:652:25: users.UpdatePathOwner calls filepath.WalkDir, which calls cgroups.GetAllPids
-      #6: pkg/kubelet/cadvisor/cadvisor_linux.go:130:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls cgroups.GetAllPids
+      #5: pkg/kubelet/cadvisor/cadvisor_linux.go:130:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls cgroups.GetAllPids
+      #6: cmd/kubeadm/app/util/users/users_linux.go:652:25: users.UpdatePathOwner calls filepath.WalkDir, which calls cgroups.GetAllPids
       #7: pkg/kubelet/cm/helpers_linux.go:255:58: cm.getCgroupSubsystemsV2 calls cgroups.GetAllSubsystems
       #8: pkg/kubelet/cm/helpers_linux.go:226:56: cm.getCgroupSubsystemsV1 calls cgroups.GetCgroupMounts
       #9: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which calls cgroups.GetOwnCgroup
@@ -1508,8 +1508,8 @@ Vulnerability #1: GO-2025-4098
       #13: pkg/kubelet/kuberuntime/kuberuntime_container_linux.go:299:60: kuberuntime.GetHugepageLimitsFromResources calls cgroups.HugePageSizes
       #14: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
       #15: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
-      #16: pkg/kubelet/cm/qos_container_manager_linux.go:344:43: cm.qosContainerManagerImpl.UpdateCgroups calls cgroups.IsCgroup2UnifiedMode
-      #17: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2UnifiedMode
+      #16: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2UnifiedMode
+      #17: pkg/kubelet/cm/qos_container_manager_linux.go:344:43: cm.qosContainerManagerImpl.UpdateCgroups calls cgroups.IsCgroup2UnifiedMode
       #18: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls cgroups.IsNotFound
       #19: pkg/kubelet/cm/container_manager_linux.go:790:39: cm.getContainer calls cgroups.NewNotFoundError
       #20: pkg/kubelet/cadvisor/cadvisor_linux.go:130:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls cgroups.NewStats
@@ -1600,8 +1600,8 @@ Vulnerability #1: GO-2025-4098
       #105: pkg/kubelet/cm/cgroup_manager_linux.go:29:2: cm.init calls fscommon.init
       #106: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which eventually calls intelrdt.IsCMTEnabled
       #107: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which eventually calls intelrdt.IsMBMEnabled
-      #108: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.Root
-      #109: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which eventually calls intelrdt.Root
+      #108: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which eventually calls intelrdt.Root
+      #109: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.Root
       #110: pkg/kubelet/cadvisor/cadvisor_linux.go:130:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls intelrdt.WriteIntelRdtTasks
       #111: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.featuresInit
       #112: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which eventually calls intelrdt.findIntelRdtMountpointDir

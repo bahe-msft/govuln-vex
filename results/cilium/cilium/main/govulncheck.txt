@@ -1052,10 +1052,10 @@ Vulnerability #2: GO-2025-4108
     Found in: github.com/containerd/containerd@v1.7.27
     Fixed in: github.com/containerd/containerd@v1.7.29
     Example traces found:
-      #1: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
-      #2: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
-      #3: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
-      #4: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
+      #1: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
+      #2: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
+      #3: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
+      #4: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
       #5: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls errdefs.init
       #6: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls filters.init
       #7: test/helpers/kubectl.go:1918:7: helpers.Kubectl.ValidateServicePlumbing calls errgroup.Group.Go, which eventually calls images.Dispatch
@@ -1072,8 +1072,8 @@ Vulnerability #3: GO-2025-4100
     Found in: github.com/containerd/containerd@v1.7.27
     Fixed in: github.com/containerd/containerd@v1.7.29
     Example traces found:
-      #1: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
-      #2: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
+      #1: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls compression.init
+      #2: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls compression.init
       #3: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls content.init
       #4: pkg/fqdn/dnsproxy/udp.go:162:20: dnsproxy.sessionUDPFactory.ReadRequest calls sync.Pool.Get, which calls content.init
       #5: cilium-cli/internal/helm/helm.go:30:2: helm.init calls registry.init, which eventually calls errdefs.init
@@ -1120,8 +1120,8 @@ Vulnerability #6: GO-2025-3830
       #6: plugins/cilium-docker/driver/driver.go:176:51: driver.driver.updateCiliumEP calls client.Client.ContainerInspect
       #7: plugins/cilium-docker/driver/driver.go:153:38: driver.NewDriver calls client.Client.Events
       #8: plugins/cilium-docker/driver/driver.go:195:56: driver.driver.updateCiliumEP calls client.Client.ImageInspectWithRaw
-      #9: plugins/cilium-docker/driver/driver.go:99:50: driver.NewDriver calls client.NewClientWithOpts
-      #10: pkg/azure/api/api.go:71:30: api.httpClient.Do calls http.Client.Do, which eventually calls client.NewClientWithOpts
+      #9: pkg/azure/api/api.go:71:30: api.httpClient.Do calls http.Client.Do, which eventually calls client.NewClientWithOpts
+      #10: plugins/cilium-docker/driver/driver.go:99:50: driver.NewDriver calls client.NewClientWithOpts
       #11: plugins/cilium-docker/driver/driver.go:101:41: driver.NewDriver calls client.WithAPIVersionNegotiation
       #12: plugins/cilium-docker/driver/driver.go:100:24: driver.NewDriver calls client.WithHost
       #13: pkg/loadbalancer/healthserver/healthserver.go:373:26: healthserver.httpHealthServer.ServeHTTP calls client.emptyIDError.Error
