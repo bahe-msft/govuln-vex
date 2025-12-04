@@ -1286,7 +1286,7 @@ The package pattern matched the following 1283 root packages:
   k8s.io/kubernetes/test/utils/ktesting/examples/without_ktesting
   k8s.io/kubernetes/test/utils/oidc/handlers
   k8s.io/kubernetes/test/utils/oidc
-Govulncheck scanned the following 195 modules and the go1.25.4 standard library:
+Govulncheck scanned the following 195 modules and the go1.25.5 standard library:
   k8s.io/kubernetes
   bitbucket.org/bertimus9/systemstat@v0.5.0
   cel.dev/expr@v0.18.0
@@ -1506,8 +1506,8 @@ Vulnerability #1: GO-2025-4098
       #11: pkg/kubelet/cm/util/cgroups_linux.go:50:36: util.GetPids calls cgroups.GetPids
       #12: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.HugePageSizes
       #13: pkg/kubelet/kuberuntime/kuberuntime_container_linux.go:299:60: kuberuntime.GetHugepageLimitsFromResources calls cgroups.HugePageSizes
-      #14: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
-      #15: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
+      #14: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
+      #15: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
       #16: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2UnifiedMode
       #17: pkg/kubelet/cm/qos_container_manager_linux.go:344:43: cm.qosContainerManagerImpl.UpdateCgroups calls cgroups.IsCgroup2UnifiedMode
       #18: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls cgroups.IsNotFound
@@ -1609,8 +1609,8 @@ Vulnerability #1: GO-2025-4098
       #114: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New
       #115: pkg/kubelet/cm/cgroup_manager_linux.go:30:2: cm.init calls manager.init
       #116: pkg/kubelet/cm/cgroup_manager_linux.go:92:42: cm.CgroupName.ToSystemd calls systemd.ExpandSlice
-      #117: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
-      #118: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
+      #117: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
+      #118: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
       #119: pkg/kubelet/cm/cgroup_manager_linux.go:399:25: cm.cgroupCommon.Create calls systemd.LegacyManager.Apply
       #120: pkg/kubelet/cm/cgroup_manager_linux.go:250:26: cm.cgroupCommon.Destroy calls systemd.LegacyManager.Destroy
       #121: pkg/kubelet/cm/container_manager_linux.go:753:37: cm.ensureProcessInContainerWithOOMScore calls systemd.LegacyManager.GetCgroups

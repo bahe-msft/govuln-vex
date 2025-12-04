@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Sat Nov 29 02:32:00 UTC 2025
+Last updated time: Thu Dec  4 02:31:28 UTC 2025
 
 ## Azure/azure-container-networking
 
@@ -275,6 +275,12 @@ Reports: [Azure/karpenter-provider-azure/v1.6.4](results/Azure/karpenter-provide
 No active affected vulnerabilities found in v1.6.5
 
 Reports: [Azure/karpenter-provider-azure/v1.6.5](results/Azure/karpenter-provider-azure/v1.6.5)
+
+### ✅ v1.6.6
+
+No active affected vulnerabilities found in v1.6.6
+
+Reports: [Azure/karpenter-provider-azure/v1.6.6](results/Azure/karpenter-provider-azure/v1.6.6)
 
 ## Azure/kubelogin
 
@@ -644,6 +650,12 @@ Active affected vulnerabilities:
 | GO-2025-4108 | https://pkg.go.dev/vuln/GO-2025-4108 | affected | N/A |
 
 Reports: [cilium/cilium/v1.19.0-pre.2](results/cilium/cilium/v1.19.0-pre.2)
+
+### ✅ v1.19.0-pre.3
+
+No active affected vulnerabilities found in v1.19.0-pre.3
+
+Reports: [cilium/cilium/v1.19.0-pre.3](results/cilium/cilium/v1.19.0-pre.3)
 
 ## kubernetes-sigs/cloud-provider-azure
 
