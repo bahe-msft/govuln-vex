@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:b94ef7783312cfbf3279fd3f9131b0327e0488e6a345e585055e5df639f90c2b",
+  "@id": "govulncheck/vex:8ac5ea1497f23ca2fc26ffd4a77dfe6efad89f3a2e63deb8174e7320de9bff7a",
   "author": "Unknown Author",
-  "timestamp": "2025-12-06T02:02:00.669924491Z",
+  "timestamp": "2025-12-08T02:09:28.760255151Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -297,10 +297,10 @@
           "@id": "Unknown Product",
           "subcomponents": [
             {
-              "@id": "pkg:golang/github.com%2Fopencontainers%2Fselinux@v1.11.1"
+              "@id": "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.2.1"
             },
             {
-              "@id": "pkg:golang/github.com%2Fopencontainers%2Frunc@v1.2.1"
+              "@id": "pkg:golang/github.com%2Fopencontainers%2Fselinux@v1.11.1"
             }
           ]
         }
