@@ -1600,8 +1600,8 @@ Vulnerability #1: GO-2025-4098
       #105: pkg/kubelet/cm/cgroup_manager_linux.go:29:2: cm.init calls fscommon.init
       #106: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which eventually calls intelrdt.IsCMTEnabled
       #107: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which eventually calls intelrdt.IsMBMEnabled
-      #108: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which eventually calls intelrdt.Root
-      #109: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.Root
+      #108: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.Root
+      #109: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which eventually calls intelrdt.Root
       #110: pkg/kubelet/cadvisor/cadvisor_linux.go:130:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls intelrdt.WriteIntelRdtTasks
       #111: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls intelrdt.featuresInit
       #112: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which eventually calls intelrdt.findIntelRdtMountpointDir

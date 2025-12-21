@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:af220a323978b3945ce0372adb89ddf9b3a10b32194bfb787fae6f97cf789387",
+  "@id": "govulncheck/vex:456ea06e43c5bbbe19d051341ee12d926f0d4174e496300d9a32799bc6579a3c",
   "author": "Unknown Author",
-  "timestamp": "2025-12-11T02:00:43.412933061Z",
+  "timestamp": "2025-12-21T01:52:49.220104835Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -140,6 +140,28 @@
       "status": "not_affected",
       "justification": "vulnerable_code_not_present",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2025-4167",
+        "name": "GO-2025-4167",
+        "description": "Cilium with misconfigured toGroups in policies can lead to unrestricted egress traffic in Ciliumgithub.com/cilium/cilium",
+        "aliases": [
+          "CVE-2025-64715",
+          "GHSA-38pp-6gcp-rqvm"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com%2Fcilium%2Fcilium@v1.15.15"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
     }
   ]
 }
