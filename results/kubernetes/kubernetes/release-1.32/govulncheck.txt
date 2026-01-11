@@ -1504,10 +1504,10 @@ Vulnerability #1: GO-2025-4098
       #9: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which calls cgroups.GetOwnCgroup
       #10: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls cgroups.GetOwnCgroupPath
       #11: pkg/kubelet/cm/util/cgroups_linux.go:50:36: util.GetPids calls cgroups.GetPids
-      #12: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.HugePageSizes
-      #13: pkg/kubelet/kuberuntime/kuberuntime_container_linux.go:299:60: kuberuntime.GetHugepageLimitsFromResources calls cgroups.HugePageSizes
-      #14: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
-      #15: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
+      #12: pkg/kubelet/kuberuntime/kuberuntime_container_linux.go:299:60: kuberuntime.GetHugepageLimitsFromResources calls cgroups.HugePageSizes
+      #13: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.HugePageSizes
+      #14: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
+      #15: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
       #16: pkg/kubelet/cm/qos_container_manager_linux.go:344:43: cm.qosContainerManagerImpl.UpdateCgroups calls cgroups.IsCgroup2UnifiedMode
       #17: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2UnifiedMode
       #18: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls cgroups.IsNotFound

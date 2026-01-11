@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Sun Jan  4 02:33:48 UTC 2026
+Last updated time: Sun Jan 11 02:24:34 UTC 2026
 
 ## Azure/azure-container-networking
 
@@ -289,6 +289,18 @@ No active affected vulnerabilities found in v1.6.7
 
 Reports: [Azure/karpenter-provider-azure/v1.6.7](results/Azure/karpenter-provider-azure/v1.6.7)
 
+### ✅ v1.6.8-rc.1
+
+No active affected vulnerabilities found in v1.6.8-rc.1
+
+Reports: [Azure/karpenter-provider-azure/v1.6.8-rc.1](results/Azure/karpenter-provider-azure/v1.6.8-rc.1)
+
+### ✅ v1.6.8
+
+No active affected vulnerabilities found in v1.6.8
+
+Reports: [Azure/karpenter-provider-azure/v1.6.8](results/Azure/karpenter-provider-azure/v1.6.8)
+
 ## Azure/kubelogin
 
 ### ✅ main
@@ -368,6 +380,12 @@ Reports: [Azure/kubelogin/v0.2.12](results/Azure/kubelogin/v0.2.12)
 No active affected vulnerabilities found in v0.2.13
 
 Reports: [Azure/kubelogin/v0.2.13](results/Azure/kubelogin/v0.2.13)
+
+### ✅ v0.2.14
+
+No active affected vulnerabilities found in v0.2.14
+
+Reports: [Azure/kubelogin/v0.2.14](results/Azure/kubelogin/v0.2.14)
 
 ### ✅ v0.2.2
 
@@ -663,6 +681,12 @@ Reports: [cilium/cilium/v1.19.0-pre.2](results/cilium/cilium/v1.19.0-pre.2)
 No active affected vulnerabilities found in v1.19.0-pre.3
 
 Reports: [cilium/cilium/v1.19.0-pre.3](results/cilium/cilium/v1.19.0-pre.3)
+
+### ✅ v1.19.0-pre.4
+
+No active affected vulnerabilities found in v1.19.0-pre.4
+
+Reports: [cilium/cilium/v1.19.0-pre.4](results/cilium/cilium/v1.19.0-pre.4)
 
 ## kubernetes-sigs/cloud-provider-azure
 
