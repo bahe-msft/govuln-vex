@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:87830b34ce47c9c2fd5888bccf07cedc7c0d04c52bb34ce9fbe355e8c2cd932c",
+  "@id": "govulncheck/vex:abc44b18ab4eb45f4fc0b06c0819ac531cfc01912677c97a9fb7b01915208290",
   "author": "Unknown Author",
-  "timestamp": "2026-01-25T02:20:20.071506097Z",
+  "timestamp": "2026-02-08T02:55:47.090576853Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -245,6 +245,52 @@
           "subcomponents": [
             {
               "@id": "pkg:golang/golang.org%2Fx%2Fcrypto@v0.38.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2026-4440",
+        "name": "GO-2026-4440",
+        "description": "Quadratic parsing complexity in golang.org/x/net/html",
+        "aliases": [
+          "CVE-2025-47911"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.40.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2026-4441",
+        "name": "GO-2026-4441",
+        "description": "Infinite parsing loop in golang.org/x/net",
+        "aliases": [
+          "CVE-2025-58190"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/golang.org%2Fx%2Fnet@v0.40.0"
             }
           ]
         }

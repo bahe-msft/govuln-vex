@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Sun Jan 25 02:24:05 UTC 2026
+Last updated time: Sun Feb  8 03:00:20 UTC 2026
 
 ## Azure/azure-container-networking
 
@@ -300,6 +300,18 @@ Reports: [Azure/karpenter-provider-azure/v1.6.8-rc.1](results/Azure/karpenter-pr
 No active affected vulnerabilities found in v1.6.8
 
 Reports: [Azure/karpenter-provider-azure/v1.6.8](results/Azure/karpenter-provider-azure/v1.6.8)
+
+### ✅ v1.7.0-rc.1
+
+No active affected vulnerabilities found in v1.7.0-rc.1
+
+Reports: [Azure/karpenter-provider-azure/v1.7.0-rc.1](results/Azure/karpenter-provider-azure/v1.7.0-rc.1)
+
+### ✅ v1.7.0-rc.2
+
+No active affected vulnerabilities found in v1.7.0-rc.2
+
+Reports: [Azure/karpenter-provider-azure/v1.7.0-rc.2](results/Azure/karpenter-provider-azure/v1.7.0-rc.2)
 
 ## Azure/kubelogin
 
@@ -694,6 +706,12 @@ No active affected vulnerabilities found in v1.19.0-rc.0
 
 Reports: [cilium/cilium/v1.19.0-rc.0](results/cilium/cilium/v1.19.0-rc.0)
 
+### ✅ v1.19.0-rc.1
+
+No active affected vulnerabilities found in v1.19.0-rc.1
+
+Reports: [cilium/cilium/v1.19.0-rc.1](results/cilium/cilium/v1.19.0-rc.1)
+
 ## kubernetes-sigs/cloud-provider-azure
 
 ### ✅ master
@@ -815,6 +833,18 @@ Reports: [kubernetes-sigs/cloud-provider-azure/v1.34.2](results/kubernetes-sigs/
 No active affected vulnerabilities found in v1.34.3
 
 Reports: [kubernetes-sigs/cloud-provider-azure/v1.34.3](results/kubernetes-sigs/cloud-provider-azure/v1.34.3)
+
+### ✅ v1.34.4
+
+No active affected vulnerabilities found in v1.34.4
+
+Reports: [kubernetes-sigs/cloud-provider-azure/v1.34.4](results/kubernetes-sigs/cloud-provider-azure/v1.34.4)
+
+### ✅ v1.35.0
+
+No active affected vulnerabilities found in v1.35.0
+
+Reports: [kubernetes-sigs/cloud-provider-azure/v1.35.0](results/kubernetes-sigs/cloud-provider-azure/v1.35.0)
 
 ## kubernetes/kubernetes
 

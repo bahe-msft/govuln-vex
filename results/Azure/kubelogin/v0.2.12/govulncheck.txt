@@ -16,7 +16,7 @@ The package pattern matched the following 13 root packages:
   github.com/Azure/kubelogin/pkg/internal/token/mock_token
   github.com/Azure/kubelogin/pkg/pop
   github.com/Azure/kubelogin/pkg/token
-Govulncheck scanned the following 74 modules and the go1.25.6 standard library:
+Govulncheck scanned the following 74 modules and the go1.25.7 standard library:
   github.com/Azure/kubelogin
   github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.14.0
   github.com/Azure/azure-sdk-for-go/sdk/azidentity@v1.8.0
@@ -102,7 +102,21 @@ No other vulnerabilities found.
 
 === Module Results ===
 
-Vulnerability #1: GO-2025-4135
+Vulnerability #1: GO-2026-4441
+    Infinite parsing loop in golang.org/x/net
+  More info: https://pkg.go.dev/vuln/GO-2026-4441
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.41.0
+    Fixed in: golang.org/x/net@v0.45.0
+
+Vulnerability #2: GO-2026-4440
+    Quadratic parsing complexity in golang.org/x/net/html
+  More info: https://pkg.go.dev/vuln/GO-2026-4440
+  Module: golang.org/x/net
+    Found in: golang.org/x/net@v0.41.0
+    Fixed in: golang.org/x/net@v0.45.0
+
+Vulnerability #3: GO-2025-4135
     Malformed constraint may cause denial of service in
     golang.org/x/crypto/ssh/agent
   More info: https://pkg.go.dev/vuln/GO-2025-4135
@@ -110,14 +124,14 @@ Vulnerability #1: GO-2025-4135
     Found in: golang.org/x/crypto@v0.40.0
     Fixed in: golang.org/x/crypto@v0.45.0
 
-Vulnerability #2: GO-2025-4134
+Vulnerability #4: GO-2025-4134
     Unbounded memory consumption in golang.org/x/crypto/ssh
   More info: https://pkg.go.dev/vuln/GO-2025-4134
   Module: golang.org/x/crypto
     Found in: golang.org/x/crypto@v0.40.0
     Fixed in: golang.org/x/crypto@v0.45.0
 
-Vulnerability #3: GO-2025-4116
+Vulnerability #5: GO-2025-4116
     Potential denial of service in golang.org/x/crypto/ssh/agent
   More info: https://pkg.go.dev/vuln/GO-2025-4116
   Module: golang.org/x/crypto
@@ -125,6 +139,6 @@ Vulnerability #3: GO-2025-4116
     Fixed in: golang.org/x/crypto@v0.43.0
 
 Your code is affected by 0 vulnerabilities.
-This scan also found 0 vulnerabilities in packages you import and 3
+This scan also found 0 vulnerabilities in packages you import and 5
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.
