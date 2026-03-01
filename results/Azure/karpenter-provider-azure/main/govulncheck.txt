@@ -218,7 +218,41 @@ Govulncheck scanned the following 153 modules and the go1.26.0 standard library:
 
 === Symbol Results ===
 
-No vulnerabilities found.
+Vulnerability #1: GO-2026-4394
+    OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution via PATH
+    Hijacking in go.opentelemetry.io/otel/sdk
+  More info: https://pkg.go.dev/vuln/GO-2026-4394
+  Module: go.opentelemetry.io/otel/sdk
+    Found in: go.opentelemetry.io/otel/sdk@v1.35.0
+    Fixed in: go.opentelemetry.io/otel/sdk@v1.40.0
+    Example traces found:
+      #1: pkg/utils/utils.go:35:2: utils.init calls provider.init, which eventually calls env.init
+      #2: pkg/utils/utils.go:35:2: utils.init calls provider.init, which eventually calls instrumentation.init
+      #3: pkg/utils/utils.go:35:2: utils.init calls provider.init, which eventually calls resource.init
+      #4: pkg/utils/utils.go:35:2: utils.init calls provider.init, which eventually calls sdk.init
+      #5: pkg/utils/opts/init_http_client.go:22:2: opts.init calls middleware.init, which eventually calls trace.TracerProvider.Tracer
+      #6: pkg/providers/imagefamily/nodeimageversionsclient.go:67:2: imagefamily.NodeImageVersionsClient.List calls http.http2requestBody.Close, which eventually calls trace.init
+      #7: pkg/utils/utils.go:35:2: utils.init calls provider.init, which eventually calls trace.init
+      #8: pkg/providers/imagefamily/nodeimageversionsclient.go:67:2: imagefamily.NodeImageVersionsClient.List calls http.http2requestBody.Close, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Event]
+      #9: pkg/providers/imagefamily/nodeimageversionsclient.go:67:2: imagefamily.NodeImageVersionsClient.List calls http.http2requestBody.Close, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Link]
+      #10: pkg/providers/pricing/client/pricingapi.go:68:29: client.pricingAPI.GetProductsPricePages calls io.ReadAll, which eventually calls trace.nonRecordingSpan.AddEvent
+      #11: pkg/providers/imagefamily/nodeimageversionsclient.go:67:2: imagefamily.NodeImageVersionsClient.List calls otelhttp.wrappedBody.Close, which calls trace.nonRecordingSpan.End
+      #12: pkg/providers/imagefamily/nodeimageversionsclient.go:63:24: imagefamily.NodeImageVersionsClient.List calls http.Client.Do, which eventually calls trace.nonRecordingSpan.IsRecording
+      #13: pkg/providers/pricing/client/pricingapi.go:68:29: client.pricingAPI.GetProductsPricePages calls io.ReadAll, which eventually calls trace.nonRecordingSpan.RecordError
+      #14: pkg/providers/imagefamily/nodeimageversionsclient.go:63:24: imagefamily.NodeImageVersionsClient.List calls http.Client.Do, which eventually calls trace.nonRecordingSpan.SetAttributes
+      #15: pkg/providers/pricing/client/pricingapi.go:68:29: client.pricingAPI.GetProductsPricePages calls io.ReadAll, which eventually calls trace.nonRecordingSpan.SetStatus
+      #16: pkg/providers/imagefamily/nodeimageversionsclient.go:63:24: imagefamily.NodeImageVersionsClient.List calls http.Client.Do, which eventually calls trace.nonRecordingSpan.SpanContext
+      #17: pkg/providers/imagefamily/nodeimageversionsclient.go:63:24: imagefamily.NodeImageVersionsClient.List calls http.Client.Do, which eventually calls trace.nonRecordingSpan.TracerProvider
+      #18: pkg/providers/pricing/client/pricingapi.go:68:29: client.pricingAPI.GetProductsPricePages calls io.ReadAll, which eventually calls trace.recordingSpan.AddEvent
+      #19: pkg/providers/imagefamily/nodeimageversionsclient.go:67:2: imagefamily.NodeImageVersionsClient.List calls otelhttp.wrappedBody.Close, which calls trace.recordingSpan.End
+      #20: pkg/providers/imagefamily/nodeimageversionsclient.go:63:24: imagefamily.NodeImageVersionsClient.List calls http.Client.Do, which eventually calls trace.recordingSpan.IsRecording
+      #21: pkg/providers/pricing/client/pricingapi.go:68:29: client.pricingAPI.GetProductsPricePages calls io.ReadAll, which eventually calls trace.recordingSpan.RecordError
+      #22: pkg/providers/imagefamily/nodeimageversionsclient.go:63:24: imagefamily.NodeImageVersionsClient.List calls http.Client.Do, which eventually calls trace.recordingSpan.SetAttributes
+      #23: pkg/providers/pricing/client/pricingapi.go:68:29: client.pricingAPI.GetProductsPricePages calls io.ReadAll, which eventually calls trace.recordingSpan.SetStatus
+      #24: pkg/providers/imagefamily/nodeimageversionsclient.go:63:24: imagefamily.NodeImageVersionsClient.List calls http.Client.Do, which eventually calls trace.recordingSpan.SpanContext
+      #25: pkg/providers/imagefamily/nodeimageversionsclient.go:63:24: imagefamily.NodeImageVersionsClient.List calls http.Client.Do, which eventually calls trace.recordingSpan.TracerProvider
+      #26: pkg/providers/imagefamily/nodeimageversionsclient.go:63:24: imagefamily.NodeImageVersionsClient.List calls http.Client.Do, which eventually calls trace.tracer.Start
+      #27: pkg/utils/utils.go:35:2: utils.init calls provider.init, which eventually calls x.init
 
 === Package Results ===
 
@@ -267,7 +301,7 @@ Vulnerability #4: GO-2025-3488
     Found in: golang.org/x/oauth2@v0.24.0
     Fixed in: golang.org/x/oauth2@v0.27.0
 
-Your code is affected by 0 vulnerabilities.
+Your code is affected by 1 vulnerability from 1 module.
 This scan also found 2 vulnerabilities in packages you import and 4
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.

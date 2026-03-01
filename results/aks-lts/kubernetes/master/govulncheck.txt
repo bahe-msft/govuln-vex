@@ -1497,7 +1497,82 @@ Govulncheck scanned the following 197 modules and the go1.26.0 standard library:
 
 === Symbol Results ===
 
-Vulnerability #1: GO-2025-4098
+Vulnerability #1: GO-2026-4394
+    OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution via PATH
+    Hijacking in go.opentelemetry.io/otel/sdk
+  More info: https://pkg.go.dev/vuln/GO-2026-4394
+  Module: go.opentelemetry.io/otel/sdk
+    Found in: go.opentelemetry.io/otel/sdk@v1.34.0
+    Fixed in: go.opentelemetry.io/otel/sdk@v1.40.0
+    Example traces found:
+      #1: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorExportTimeout
+      #2: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorMaxExportBatchSize
+      #3: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorMaxQueueSize
+      #4: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorScheduleDelay
+      #5: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanAttributeCount
+      #6: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanAttributeValueLength
+      #7: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanEventAttributeCount
+      #8: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanEventCount
+      #9: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanLinkAttributeCount
+      #10: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanLinkCount
+      #11: cmd/kubelet/app/server.go:85:2: app.init calls tracing.init, which eventually calls env.init
+      #12: cmd/kubelet/app/server.go:85:2: app.init calls tracing.init, which eventually calls instrumentation.init
+      #13: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Default
+      #14: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls resource.Default
+      #15: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Environment
+      #16: test/utils/apiserver/testapiserver.go:51:34: apiserver.StartAPITestServer calls testserver.RunEtcd, which eventually calls resource.Merge
+      #17: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls resource.New
+      #18: test/utils/apiserver/testapiserver.go:51:34: apiserver.StartAPITestServer calls testserver.RunEtcd, which eventually calls resource.NewSchemaless
+      #19: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which eventually calls resource.NewSchemaless
+      #20: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Resource.Equivalent
+      #21: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Resource.Iter
+      #22: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Resource.SchemaURL
+      #23: cmd/kubelet/app/server.go:1347:33: app.newTracerProvider calls resource.WithAttributes
+      #24: cmd/kubelet/app/server.go:51:2: app.init calls resource.init
+      #25: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls sdk.Version
+      #26: cmd/kubelet/app/server.go:51:2: app.init calls resource.init, which calls sdk.init
+      #27: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.NeverSample
+      #28: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.NewBatchSpanProcessor
+      #29: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.NewTracerProvider
+      #30: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.ParentBased
+      #31: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.Shutdown
+      #32: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.Shutdown
+      #33: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.TraceIDRatioBased
+      #34: pkg/scheduler/util/assumecache/assume_cache.go:523:11: assumecache.emitEvents calls server.New, which calls trace.TracerProvider.Shutdown
+      #35: pkg/kubelet/kubelet.go:593:42: kubelet.NewMainKubelet calls trace.TracerProvider.Tracer
+      #36: test/utils/apiserver/testapiserver.go:51:34: apiserver.StartAPITestServer calls testserver.RunEtcd, which eventually calls trace.WithBatcher
+      #37: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithResource
+      #38: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithSampler
+      #39: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithSpanProcessor
+      #40: pkg/kubelet/kuberuntime/kuberuntime_manager.go:1687:56: kuberuntime.kubeGenericRuntimeManager.GetPodStatus calls trace.errUnsupportedSampler.Error
+      #41: cmd/kubelet/app/server.go:85:2: app.init calls tracing.init, which calls trace.init
+      #42: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.init
+      #43: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Event]
+      #44: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Link]
+      #45: pkg/registry/core/service/allocator/storage/storage.go:197:35: storage.Etcd.CreateOrUpdate calls etcd3.store.GuaranteedUpdate, which eventually calls trace.nonRecordingSpan.AddEvent
+      #46: pkg/kubelet/kubelet.go:2226:2: kubelet.Kubelet.SyncTerminatedPod calls trace.nonRecordingSpan.End
+      #47: pkg/kubelet/kubelet.go:2219:34: kubelet.Kubelet.SyncTerminatedPod calls noop.Tracer.Start, which calls trace.nonRecordingSpan.IsRecording
+      #48: pkg/kubelet/kubelet.go:1864:24: kubelet.SyncPod calls trace.nonRecordingSpan.RecordError
+      #49: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.nonRecordingSpan.SetAttributes
+      #50: pkg/kubelet/kubelet.go:1865:22: kubelet.SyncPod calls trace.nonRecordingSpan.SetStatus
+      #51: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.nonRecordingSpan.SpanContext
+      #52: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.nonRecordingSpan.TracerProvider
+      #53: pkg/registry/core/service/allocator/storage/storage.go:197:35: storage.Etcd.CreateOrUpdate calls etcd3.store.GuaranteedUpdate, which eventually calls trace.recordingSpan.AddEvent
+      #54: pkg/kubelet/kubelet.go:2226:2: kubelet.Kubelet.SyncTerminatedPod calls trace.recordingSpan.End
+      #55: pkg/kubelet/kubelet.go:2219:34: kubelet.Kubelet.SyncTerminatedPod calls noop.Tracer.Start, which calls trace.recordingSpan.IsRecording
+      #56: pkg/kubelet/kubelet.go:1864:24: kubelet.SyncPod calls trace.recordingSpan.RecordError
+      #57: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.recordingSpan.SetAttributes
+      #58: pkg/kubelet/kubelet.go:1865:22: kubelet.SyncPod calls trace.recordingSpan.SetStatus
+      #59: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.recordingSpan.SpanContext
+      #60: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.recordingSpan.TracerProvider
+      #61: pkg/kubelet/kuberuntime/kuberuntime_manager.go:1687:56: kuberuntime.kubeGenericRuntimeManager.GetPodStatus calls trace.samplerArgParseError.Error
+      #62: test/e2e/framework/test_context.go:571:33: framework.AfterReadingAllFlags calls errors.Unwrap, which calls trace.samplerArgParseError.Unwrap
+      #63: pkg/kubelet/kubelet.go:2219:34: kubelet.Kubelet.SyncTerminatedPod calls trace.tracer.Start
+      #64: pkg/scheduler/framework/runtime/framework.go:1540:15: runtime.frameworkImpl.WaitOnPermit calls logr.Logger.Error, which eventually calls trace.tracerProviderConfig.MarshalLog
+      #65: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls x.Feature[string].Enabled[string]
+      #66: cmd/kubelet/app/server.go:51:2: app.init calls resource.init, which calls x.init
+
+Vulnerability #2: GO-2025-4098
     Container escape and DDoS due to arbitrary write gadgets and procfs write
     redirects in github.com/opencontainers/runc
   More info: https://pkg.go.dev/vuln/GO-2025-4098
@@ -1562,7 +1637,7 @@ Vulnerability #2: GO-2025-4116
     Found in: golang.org/x/crypto@v0.36.0
     Fixed in: golang.org/x/crypto@v0.43.0
 
-Your code is affected by 1 vulnerability from 1 module.
+Your code is affected by 2 vulnerabilities from 2 modules.
 This scan also found 3 vulnerabilities in packages you import and 2
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.

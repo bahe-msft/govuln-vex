@@ -1485,7 +1485,85 @@ Govulncheck scanned the following 195 modules and the go1.26.0 standard library:
 
 === Symbol Results ===
 
-Vulnerability #1: GO-2025-4098
+Vulnerability #1: GO-2026-4394
+    OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution via PATH
+    Hijacking in go.opentelemetry.io/otel/sdk
+  More info: https://pkg.go.dev/vuln/GO-2026-4394
+  Module: go.opentelemetry.io/otel/sdk
+    Found in: go.opentelemetry.io/otel/sdk@v1.28.0
+    Fixed in: go.opentelemetry.io/otel/sdk@v1.40.0
+    Example traces found:
+      #1: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorExportTimeout
+      #2: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorMaxExportBatchSize
+      #3: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorMaxQueueSize
+      #4: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorScheduleDelay
+      #5: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanAttributeCount
+      #6: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanAttributeValueLength
+      #7: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanEventAttributeCount
+      #8: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanEventCount
+      #9: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanLinkAttributeCount
+      #10: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanLinkCount
+      #11: cmd/kubelet/app/server.go:86:2: app.init calls tracing.init, which eventually calls env.init
+      #12: cmd/kubelet/app/server.go:86:2: app.init calls tracing.init, which eventually calls instrumentation.init
+      #13: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls resource.Default
+      #14: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Default
+      #15: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Environment
+      #16: test/utils/apiserver/testapiserver.go:51:34: apiserver.StartAPITestServer calls testserver.RunEtcd, which eventually calls resource.Merge
+      #17: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which calls resource.New
+      #18: test/utils/apiserver/testapiserver.go:51:34: apiserver.StartAPITestServer calls testserver.RunEtcd, which eventually calls resource.NewSchemaless
+      #19: test/integration/util/util.go:294:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which eventually calls resource.NewSchemaless
+      #20: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Resource.Equivalent
+      #21: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Resource.Iter
+      #22: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Resource.SchemaURL
+      #23: cmd/kubelet/app/server.go:1388:33: app.newTracerProvider calls resource.WithAttributes
+      #24: pkg/kubelet/kuberuntime/kuberuntime_manager.go:1644:56: kuberuntime.kubeGenericRuntimeManager.GetPodStatus calls resource.detectErrs.Error
+      #25: pkg/volume/plugins.go:870:15: volume.VolumePluginMgr.FindExpandablePluginBySpec calls errors.Is, which eventually calls resource.detectErrs.Is
+      #26: test/e2e/framework/test_context.go:571:33: framework.AfterReadingAllFlags calls errors.Unwrap, which calls resource.detectErrs.Unwrap
+      #27: cmd/kubelet/app/server.go:51:2: app.init calls resource.init
+      #28: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls sdk.Version
+      #29: cmd/kubelet/app/server.go:51:2: app.init calls resource.init, which calls sdk.init
+      #30: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.NeverSample
+      #31: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.NewBatchSpanProcessor
+      #32: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.NewTracerProvider
+      #33: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.ParentBased
+      #34: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls trace.Shutdown
+      #35: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls trace.Shutdown
+      #36: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.TraceIDRatioBased
+      #37: test/e2e/dra/deploy.go:570:4: dra.Driver.TearDown calls server.New, which calls trace.TracerProvider.Shutdown
+      #38: pkg/kubelet/kubelet.go:566:42: kubelet.NewMainKubelet calls trace.TracerProvider.Tracer
+      #39: test/utils/apiserver/testapiserver.go:51:34: apiserver.StartAPITestServer calls testserver.RunEtcd, which eventually calls trace.WithBatcher
+      #40: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithResource
+      #41: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithSampler
+      #42: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithSpanProcessor
+      #43: pkg/kubelet/kuberuntime/kuberuntime_manager.go:1644:56: kuberuntime.kubeGenericRuntimeManager.GetPodStatus calls trace.errUnsupportedSampler.Error
+      #44: cmd/kubelet/app/server.go:86:2: app.init calls tracing.init, which calls trace.init
+      #45: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls trace.init
+      #46: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls trace.newEvictedQueueEvent
+      #47: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls trace.newEvictedQueueLink
+      #48: pkg/registry/core/service/allocator/storage/storage.go:197:35: storage.Etcd.CreateOrUpdate calls etcd3.store.GuaranteedUpdate, which eventually calls trace.nonRecordingSpan.AddEvent
+      #49: pkg/kubelet/kubelet.go:2204:2: kubelet.Kubelet.SyncTerminatedPod calls trace.nonRecordingSpan.End
+      #50: pkg/kubelet/kubelet.go:2198:34: kubelet.Kubelet.SyncTerminatedPod calls noop.Tracer.Start, which calls trace.nonRecordingSpan.IsRecording
+      #51: pkg/kubelet/kubelet.go:1850:24: kubelet.SyncPod calls trace.nonRecordingSpan.RecordError
+      #52: test/integration/util/util.go:294:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.nonRecordingSpan.SetAttributes
+      #53: pkg/kubelet/kubelet.go:1851:22: kubelet.SyncPod calls trace.nonRecordingSpan.SetStatus
+      #54: test/integration/util/util.go:294:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.nonRecordingSpan.SpanContext
+      #55: test/integration/util/util.go:294:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.nonRecordingSpan.TracerProvider
+      #56: pkg/registry/core/service/allocator/storage/storage.go:197:35: storage.Etcd.CreateOrUpdate calls etcd3.store.GuaranteedUpdate, which eventually calls trace.recordingSpan.AddEvent
+      #57: pkg/kubelet/kubelet.go:2204:2: kubelet.Kubelet.SyncTerminatedPod calls trace.recordingSpan.End
+      #58: pkg/kubelet/kubelet.go:2198:34: kubelet.Kubelet.SyncTerminatedPod calls noop.Tracer.Start, which calls trace.recordingSpan.IsRecording
+      #59: pkg/kubelet/kubelet.go:1850:24: kubelet.SyncPod calls trace.recordingSpan.RecordError
+      #60: test/integration/util/util.go:294:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.recordingSpan.SetAttributes
+      #61: pkg/kubelet/kubelet.go:1851:22: kubelet.SyncPod calls trace.recordingSpan.SetStatus
+      #62: test/integration/util/util.go:294:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.recordingSpan.SpanContext
+      #63: test/integration/util/util.go:294:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.recordingSpan.TracerProvider
+      #64: pkg/kubelet/kuberuntime/kuberuntime_manager.go:1644:56: kuberuntime.kubeGenericRuntimeManager.GetPodStatus calls trace.samplerArgParseError.Error
+      #65: test/e2e/framework/test_context.go:571:33: framework.AfterReadingAllFlags calls errors.Unwrap, which calls trace.samplerArgParseError.Unwrap
+      #66: pkg/kubelet/kubelet.go:2198:34: kubelet.Kubelet.SyncTerminatedPod calls trace.tracer.Start
+      #67: pkg/scheduler/framework/runtime/framework.go:1534:15: runtime.frameworkImpl.WaitOnPermit calls logr.Logger.Error, which eventually calls trace.tracerProviderConfig.MarshalLog
+      #68: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls x.Feature[string].Enabled[string]
+      #69: cmd/kubelet/app/server.go:51:2: app.init calls resource.init, which calls x.init
+
+Vulnerability #2: GO-2025-4098
     Container escape and DDoS due to arbitrary write gadgets and procfs write
     redirects in github.com/opencontainers/runc
   More info: https://pkg.go.dev/vuln/GO-2025-4098
@@ -1506,8 +1584,8 @@ Vulnerability #1: GO-2025-4098
       #11: pkg/kubelet/cm/util/cgroups_linux.go:50:36: util.GetPids calls cgroups.GetPids
       #12: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.HugePageSizes
       #13: pkg/kubelet/kuberuntime/kuberuntime_container_linux.go:299:60: kuberuntime.GetHugepageLimitsFromResources calls cgroups.HugePageSizes
-      #14: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
-      #15: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
+      #14: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
+      #15: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
       #16: pkg/kubelet/cm/qos_container_manager_linux.go:344:43: cm.qosContainerManagerImpl.UpdateCgroups calls cgroups.IsCgroup2UnifiedMode
       #17: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2UnifiedMode
       #18: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls cgroups.IsNotFound
@@ -1624,8 +1702,8 @@ Vulnerability #1: GO-2025-4098
       #129: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls systemd.init
       #130: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.systemdVersion
       #131: pkg/kubelet/cm/util/cgroups_linux.go:50:36: util.GetPids calls cgroups.GetPids, which eventually calls utils.CleanPath
-      #132: pkg/kubelet/cm/util/cgroups_linux.go:50:36: util.GetPids calls cgroups.GetPids, which eventually calls utils.ProcThreadSelf
-      #133: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls utils.ProcThreadSelf
+      #132: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls utils.ProcThreadSelf
+      #133: pkg/kubelet/cm/util/cgroups_linux.go:50:36: util.GetPids calls cgroups.GetPids, which eventually calls utils.ProcThreadSelf
       #134: test/e2e_node/resource_collector.go:35:2: e2e_node.init calls cgroups.init, which calls utils.init
 
   Module: github.com/opencontainers/selinux
@@ -1649,7 +1727,7 @@ Vulnerability #1: GO-2025-4098
       #15: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls selinux.label
       #16: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls selinux.policyRoot
 
-Vulnerability #2: GO-2025-3595
+Vulnerability #3: GO-2025-3595
     Incorrect Neutralization of Input During Web Page Generation in x/net in
     golang.org/x/net
   More info: https://pkg.go.dev/vuln/GO-2025-3595
@@ -1659,7 +1737,7 @@ Vulnerability #2: GO-2025-3595
     Example traces found:
       #1: pkg/kubelet/kubelet_pods.go:2421:24: kubelet.Kubelet.ServeLogs calls http.HandlerFunc.ServeHTTP, which eventually calls html.Tokenizer.Next
 
-Vulnerability #3: GO-2025-3553
+Vulnerability #4: GO-2025-3553
     Excessive memory allocation during header parsing in
     github.com/golang-jwt/jwt
   More info: https://pkg.go.dev/vuln/GO-2025-3553
@@ -1669,7 +1747,7 @@ Vulnerability #3: GO-2025-3553
     Example traces found:
       #1: pkg/kubelet/kubelet_pods.go:2421:24: kubelet.Kubelet.ServeLogs calls http.HandlerFunc.ServeHTTP, which eventually calls jwt.Parser.ParseUnverified
 
-Vulnerability #4: GO-2025-3487
+Vulnerability #5: GO-2025-3487
     Potential denial of service in golang.org/x/crypto
   More info: https://pkg.go.dev/vuln/GO-2025-3487
   Module: golang.org/x/crypto
@@ -1689,7 +1767,7 @@ Vulnerability #4: GO-2025-3487
       #11: cmd/kubeadm/app/preflight/checks.go:542:13: preflight.SystemVerificationCheck.Check calls bufio.Writer.Flush, which calls ssh.channel.Write
       #12: cmd/kubeadm/app/preflight/checks.go:337:18: preflight.FileContentCheck.Check calls io.Copy, which eventually calls ssh.extChannel.Read
 
-Vulnerability #5: GO-2024-3250
+Vulnerability #6: GO-2024-3250
     Improper error handling in ParseWithClaims and bad documentation may cause
     dangerous situations in github.com/golang-jwt/jwt
   More info: https://pkg.go.dev/vuln/GO-2024-3250
@@ -1798,7 +1876,7 @@ Vulnerability #6: GO-2023-2113
     Found in: go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful@v0.42.0
     Fixed in: go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful@v0.44.0
 
-Your code is affected by 5 vulnerabilities from 4 modules.
+Your code is affected by 6 vulnerabilities from 5 modules.
 This scan also found 7 vulnerabilities in packages you import and 6
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.

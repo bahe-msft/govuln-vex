@@ -188,7 +188,65 @@ Govulncheck scanned the following 125 modules and the go1.26.0 standard library:
 
 === Symbol Results ===
 
-No vulnerabilities found.
+Vulnerability #1: GO-2026-4394
+    OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution via PATH
+    Hijacking in go.opentelemetry.io/otel/sdk
+  More info: https://pkg.go.dev/vuln/GO-2026-4394
+  Module: go.opentelemetry.io/otel/sdk
+    Found in: go.opentelemetry.io/otel/sdk@v1.35.0
+    Fixed in: go.opentelemetry.io/otel/sdk@v1.40.0
+    Example traces found:
+      #1: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls env.SpanAttributeCount
+      #2: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls env.SpanAttributeValueLength
+      #3: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls env.SpanEventAttributeCount
+      #4: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls env.SpanEventCount
+      #5: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls env.SpanLinkAttributeCount
+      #6: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls env.SpanLinkCount
+      #7: pkg/trace/provider.go:31:2: trace.init calls trace.init, which calls env.init
+      #8: pkg/trace/provider.go:31:2: trace.init calls trace.init, which calls instrumentation.init
+      #9: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls resource.Default
+      #10: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls resource.Default
+      #11: pkg/trace/provider.go:93:45: trace.New calls metric.NewMeterProvider, which eventually calls resource.Empty
+      #12: pkg/trace/reconcile.go:81:64: trace.ReconcileSpan.Errored calls metric.WithAttributes, which eventually calls resource.NewSchemaless
+      #13: pkg/provider/azure.go:421:13: provider.Cloud.InitializeCloudFromConfig calls klog.InfoS, which eventually calls resource.Resource.MarshalLog
+      #14: cmd/cloud-controller-manager/app/controllermanager.go:333:40: app.StartHTTPServer calls server.SecureServingInfo.Serve, which eventually calls resource.Resource.Set
+      #15: pkg/provider/azure_mock_vmsets.go:1005:20: provider.MockVMSet.UpdateVM calls gomock.Controller.Call, which eventually calls resource.Resource.String
+      #16: cmd/cloud-node-manager/app/options/options.go:30:2: options.init calls options.init, which calls resource.init
+      #17: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls sdk.Version
+      #18: cmd/cloud-node-manager/app/options/options.go:30:2: options.init calls options.init, which eventually calls sdk.init
+      #19: pkg/trace/provider.go:77:45: trace.New calls trace.NeverSample
+      #20: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider
+      #21: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls trace.Shutdown
+      #22: pkg/trace/provider.go:142:35: trace.Stop calls trace.TracerProvider.Shutdown
+      #23: pkg/trace/provider.go:79:39: trace.New calls trace.TracerProvider.Tracer
+      #24: pkg/trace/provider.go:77:24: trace.New calls trace.WithSampler
+      #25: pkg/provider/azure_loadbalancer_backendpool.go:649:132: provider.backendPoolTypeNodeIP.ReconcileBackendPools calls trace.errUnsupportedSampler.Error
+      #26: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls trace.init
+      #27: pkg/trace/provider.go:31:2: trace.init calls trace.init
+      #28: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Event]
+      #29: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Link]
+      #30: pkg/provider/config/env.go:34:35: config.ParseConfig calls io.ReadAll, which eventually calls trace.nonRecordingSpan.AddEvent
+      #31: pkg/trace/reconcile.go:85:12: trace.ReconcileSpan.Errored calls trace.nonRecordingSpan.End
+      #32: pkg/trace/reconcile.go:40:27: trace.BeginReconcile calls noop.Tracer.Start, which calls trace.nonRecordingSpan.IsRecording
+      #33: pkg/trace/reconcile.go:83:20: trace.ReconcileSpan.Errored calls trace.nonRecordingSpan.RecordError
+      #34: pkg/credentialprovider/azure_acr_helper.go:99:31: credentialprovider.receiveChallengeFromLoginServer calls http.Client.Do, which eventually calls trace.nonRecordingSpan.SetAttributes
+      #35: pkg/trace/reconcile.go:84:18: trace.ReconcileSpan.Errored calls trace.nonRecordingSpan.SetStatus
+      #36: pkg/trace/reconcile.go:40:27: trace.BeginReconcile calls noop.Tracer.Start, which calls trace.nonRecordingSpan.SpanContext
+      #37: pkg/credentialprovider/azure_acr_helper.go:99:31: credentialprovider.receiveChallengeFromLoginServer calls http.Client.Do, which eventually calls trace.nonRecordingSpan.TracerProvider
+      #38: pkg/provider/config/env.go:34:35: config.ParseConfig calls io.ReadAll, which eventually calls trace.recordingSpan.AddEvent
+      #39: pkg/trace/reconcile.go:85:12: trace.ReconcileSpan.Errored calls trace.recordingSpan.End
+      #40: pkg/trace/reconcile.go:40:27: trace.BeginReconcile calls noop.Tracer.Start, which calls trace.recordingSpan.IsRecording
+      #41: pkg/trace/reconcile.go:83:20: trace.ReconcileSpan.Errored calls trace.recordingSpan.RecordError
+      #42: pkg/credentialprovider/azure_acr_helper.go:99:31: credentialprovider.receiveChallengeFromLoginServer calls http.Client.Do, which eventually calls trace.recordingSpan.SetAttributes
+      #43: pkg/trace/reconcile.go:84:18: trace.ReconcileSpan.Errored calls trace.recordingSpan.SetStatus
+      #44: pkg/trace/reconcile.go:40:27: trace.BeginReconcile calls noop.Tracer.Start, which calls trace.recordingSpan.SpanContext
+      #45: pkg/credentialprovider/azure_acr_helper.go:99:31: credentialprovider.receiveChallengeFromLoginServer calls http.Client.Do, which eventually calls trace.recordingSpan.TracerProvider
+      #46: pkg/provider/azure_loadbalancer_backendpool.go:649:132: provider.backendPoolTypeNodeIP.ReconcileBackendPools calls trace.samplerArgParseError.Error
+      #47: pkg/provider/azure_loadbalancer_repo.go:228:15: provider.Cloud.DeleteLBBackendPool calls errors.As, which eventually calls trace.samplerArgParseError.Unwrap
+      #48: pkg/trace/reconcile.go:40:27: trace.BeginReconcile calls trace.tracer.Start
+      #49: pkg/provider/azure.go:421:13: provider.Cloud.InitializeCloudFromConfig calls klog.InfoS, which eventually calls trace.tracerProviderConfig.MarshalLog
+      #50: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls x.Feature[string].Enabled[string]
+      #51: cmd/cloud-node-manager/app/options/options.go:30:2: options.init calls options.init, which eventually calls x.init
 
 === Package Results ===
 
@@ -232,7 +290,7 @@ Vulnerability #5: GO-2025-4116
     Found in: golang.org/x/crypto@v0.36.0
     Fixed in: golang.org/x/crypto@v0.43.0
 
-Your code is affected by 0 vulnerabilities.
+Your code is affected by 1 vulnerability from 1 module.
 This scan also found 0 vulnerabilities in packages you import and 5
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.

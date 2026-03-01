@@ -1,8 +1,8 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
-  "@id": "govulncheck/vex:e78babf6003abd8c3f9e755afb4af7cd49be1c2bcd92404e1f08821d94fd5002",
+  "@id": "govulncheck/vex:84b2462da2709d75a20c9a91aaa8ff421a881016e34311fcd86848a5cc041747",
   "author": "Unknown Author",
-  "timestamp": "2026-02-15T02:33:47.06229069Z",
+  "timestamp": "2026-03-01T02:35:32.251634865Z",
   "version": 1,
   "tooling": "https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck",
   "statements": [
@@ -98,6 +98,28 @@
       "status": "not_affected",
       "justification": "vulnerable_code_not_present",
       "impact_statement": "Govulncheck determined that the vulnerable code isn't called"
+    },
+    {
+      "vulnerability": {
+        "@id": "https://pkg.go.dev/vuln/GO-2026-4394",
+        "name": "GO-2026-4394",
+        "description": "OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution via PATH Hijacking in go.opentelemetry.io/otel/sdk",
+        "aliases": [
+          "CVE-2026-24051",
+          "GHSA-9h8m-3fm2-qjrq"
+        ]
+      },
+      "products": [
+        {
+          "@id": "Unknown Product",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/go.opentelemetry.io%2Fotel%2Fsdk@v1.34.0"
+            }
+          ]
+        }
+      ],
+      "status": "affected"
     },
     {
       "vulnerability": {
