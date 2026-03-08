@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Sun Mar  1 02:51:37 UTC 2026
+Last updated time: Sun Mar  8 02:35:09 UTC 2026
 
 ## Azure/azure-container-networking
 
@@ -747,6 +747,12 @@ No active affected vulnerabilities found in v1.19.1
 
 Reports: [cilium/cilium/v1.19.1](results/cilium/cilium/v1.19.1)
 
+### ✅ v1.20.0-pre.0
+
+No active affected vulnerabilities found in v1.20.0-pre.0
+
+Reports: [cilium/cilium/v1.20.0-pre.0](results/cilium/cilium/v1.20.0-pre.0)
+
 ## kubernetes-sigs/cloud-provider-azure
 
 ### ⚠️ master
@@ -893,6 +899,16 @@ Active affected vulnerabilities:
 
 Reports: [kubernetes-sigs/cloud-provider-azure/v1.34.5](results/kubernetes-sigs/cloud-provider-azure/v1.34.5)
 
+### ⚠️ v1.34.6
+
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2026-4394 | https://pkg.go.dev/vuln/GO-2026-4394 | affected | N/A |
+
+Reports: [kubernetes-sigs/cloud-provider-azure/v1.34.6](results/kubernetes-sigs/cloud-provider-azure/v1.34.6)
+
 ### ⚠️ v1.35.0
 
 Active affected vulnerabilities:
@@ -902,6 +918,16 @@ Active affected vulnerabilities:
 | GO-2026-4394 | https://pkg.go.dev/vuln/GO-2026-4394 | affected | N/A |
 
 Reports: [kubernetes-sigs/cloud-provider-azure/v1.35.0](results/kubernetes-sigs/cloud-provider-azure/v1.35.0)
+
+### ⚠️ v1.35.1
+
+Active affected vulnerabilities:
+
+| name | @id | status | impact statement |
+|------|-----|--------|------------------|
+| GO-2026-4394 | https://pkg.go.dev/vuln/GO-2026-4394 | affected | N/A |
+
+Reports: [kubernetes-sigs/cloud-provider-azure/v1.35.1](results/kubernetes-sigs/cloud-provider-azure/v1.35.1)
 
 ## kubernetes/kubernetes
 

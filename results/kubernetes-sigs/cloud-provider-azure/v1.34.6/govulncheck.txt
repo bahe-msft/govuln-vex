@@ -62,7 +62,7 @@ The package pattern matched the following 56 root packages:
 Govulncheck scanned the following 126 modules and the go1.26.1 standard library:
   sigs.k8s.io/cloud-provider-azure
   cel.dev/expr@v0.24.0
-  github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.20.0
+  github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.21.0
   github.com/Azure/azure-sdk-for-go/sdk/azidentity@v1.13.1
   github.com/Azure/azure-sdk-for-go/sdk/internal@v1.11.2
   github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/authorization/armauthorization/v2@v2.2.0
@@ -128,9 +128,9 @@ Govulncheck scanned the following 126 modules and the go1.26.1 standard library:
   github.com/stoewer/go-strcase@v1.3.1
   github.com/stretchr/testify@v1.11.1
   github.com/x448/float16@v0.8.4
-  go.etcd.io/etcd/api/v3@v3.6.5
-  go.etcd.io/etcd/client/pkg/v3@v3.6.5
-  go.etcd.io/etcd/client/v3@v3.6.5
+  go.etcd.io/etcd/api/v3@v3.6.4
+  go.etcd.io/etcd/client/pkg/v3@v3.6.4
+  go.etcd.io/etcd/client/v3@v3.6.4
   go.opentelemetry.io/auto/sdk@v1.2.1
   go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc@v0.62.0
   go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.62.0
@@ -148,14 +148,14 @@ Govulncheck scanned the following 126 modules and the go1.26.1 standard library:
   go.uber.org/zap@v1.27.0
   go.yaml.in/yaml/v2@v2.4.3
   go.yaml.in/yaml/v3@v3.0.4
-  golang.org/x/crypto@v0.46.0
-  golang.org/x/exp@v0.0.0-20250911091902-df9299821621
-  golang.org/x/net@v0.48.0
+  golang.org/x/crypto@v0.47.0
+  golang.org/x/exp@v0.0.0-20250819193227-8b4c13bb791b
+  golang.org/x/net@v0.49.0
   golang.org/x/oauth2@v0.32.0
   golang.org/x/sync@v0.19.0
-  golang.org/x/sys@v0.39.0
-  golang.org/x/term@v0.38.0
-  golang.org/x/text@v0.32.0
+  golang.org/x/sys@v0.40.0
+  golang.org/x/term@v0.39.0
+  golang.org/x/text@v0.33.0
   golang.org/x/time@v0.14.0
   google.golang.org/genproto/googleapis/api@v0.0.0-20250826171959-ef028d996bc1
   google.golang.org/genproto/googleapis/rpc@v0.0.0-20250826171959-ef028d996bc1
@@ -165,21 +165,21 @@ Govulncheck scanned the following 126 modules and the go1.26.1 standard library:
   gopkg.in/inf.v0@v0.9.1
   gopkg.in/natefinch/lumberjack.v2@v2.2.1
   gopkg.in/yaml.v3@v3.0.1
-  k8s.io/api@v0.35.0
-  k8s.io/apimachinery@v0.35.0
-  k8s.io/apiserver@v0.35.0
-  k8s.io/client-go@v0.35.0
-  k8s.io/cloud-provider@v0.35.0
-  k8s.io/component-base@v0.35.0
-  k8s.io/component-helpers@v0.35.0
-  k8s.io/controller-manager@v0.35.0
+  k8s.io/api@v0.34.3
+  k8s.io/apimachinery@v0.34.3
+  k8s.io/apiserver@v0.34.3
+  k8s.io/client-go@v0.34.3
+  k8s.io/cloud-provider@v0.34.3
+  k8s.io/component-base@v0.34.3
+  k8s.io/component-helpers@v0.34.3
+  k8s.io/controller-manager@v0.34.3
   k8s.io/klog/v2@v2.130.1
-  k8s.io/kms@v0.35.0
+  k8s.io/kms@v0.34.3
   k8s.io/kube-openapi@v0.0.0-20250910181357-589584f1c912
-  k8s.io/kubelet@v0.35.0
+  k8s.io/kubelet@v0.34.3
   k8s.io/utils@v0.0.0-20251002143259-bc988d571ff4
   sigs.k8s.io/apiserver-network-proxy/konnectivity-client@v0.33.0
-  sigs.k8s.io/cloud-provider-azure/pkg/azclient@v0.13.0
+  sigs.k8s.io/cloud-provider-azure/pkg/azclient@v0.14.0
   sigs.k8s.io/cloud-provider-azure/pkg/azclient/cache@v0.10.0
   sigs.k8s.io/cloud-provider-azure/pkg/azclient/configloader@v0.11.0
   sigs.k8s.io/json@v0.0.0-20250730193827-2d320260d730
@@ -210,10 +210,10 @@ Vulnerability #1: GO-2026-4394
       #11: pkg/trace/reconcile.go:85:12: trace.ReconcileSpan.Errored calls trace.recordingSpan.End, which calls observ.Tracer.SpanEnded
       #12: pkg/trace/reconcile.go:40:27: trace.BeginReconcile calls trace.tracer.Start, which eventually calls observ.Tracer.SpanLive
       #13: pkg/trace/reconcile.go:40:27: trace.BeginReconcile calls trace.tracer.Start, which calls observ.Tracer.SpanStarted
-      #14: pkg/trace/provider.go:31:2: trace.init calls trace.init, which calls observ.init
-      #15: pkg/provider/storage/azure_storageaccount.go:470:33: storage.AccountRepo.EnsureStorageAccount calls multierr.multiError.Error, which eventually calls observ.init
-      #16: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls resource.Default
-      #17: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls resource.Default
+      #14: pkg/provider/storage/azure_storageaccount.go:483:33: storage.AccountRepo.EnsureStorageAccount calls multierr.multiError.Error, which eventually calls observ.init
+      #15: pkg/trace/provider.go:31:2: trace.init calls trace.init, which calls observ.init
+      #16: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls resource.Default
+      #17: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls resource.Default
       #18: pkg/trace/provider.go:93:45: trace.New calls metric.NewMeterProvider, which eventually calls resource.Empty
       #19: pkg/trace/reconcile.go:81:64: trace.ReconcileSpan.Errored calls metric.WithAttributes, which eventually calls resource.NewSchemaless
       #20: pkg/provider/azure_vmss.go:1075:13: provider.ScaleSet.EnsureHostInPool calls logr.Logger.WithValues, which eventually calls resource.Resource.MarshalLog
@@ -228,7 +228,7 @@ Vulnerability #1: GO-2026-4394
       #29: pkg/trace/provider.go:142:35: trace.Stop calls trace.TracerProvider.Shutdown
       #30: pkg/trace/provider.go:79:39: trace.New calls trace.TracerProvider.Tracer
       #31: pkg/trace/provider.go:77:24: trace.New calls trace.WithSampler
-      #32: pkg/provider/storage/azure_storageaccount.go:470:33: storage.AccountRepo.EnsureStorageAccount calls trace.errUnsupportedSampler.Error
+      #32: pkg/provider/storage/azure_storageaccount.go:483:33: storage.AccountRepo.EnsureStorageAccount calls trace.errUnsupportedSampler.Error
       #33: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls trace.init
       #34: pkg/trace/provider.go:31:2: trace.init calls trace.init
       #35: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Event]
@@ -249,7 +249,7 @@ Vulnerability #1: GO-2026-4394
       #50: pkg/trace/reconcile.go:84:18: trace.ReconcileSpan.Errored calls trace.recordingSpan.SetStatus
       #51: pkg/trace/reconcile.go:40:27: trace.BeginReconcile calls noop.Tracer.Start, which calls trace.recordingSpan.SpanContext
       #52: pkg/credentialprovider/azure_acr_helper.go:100:31: credentialprovider.receiveChallengeFromLoginServer calls http.Client.Do, which eventually calls trace.recordingSpan.TracerProvider
-      #53: pkg/provider/storage/azure_storageaccount.go:470:33: storage.AccountRepo.EnsureStorageAccount calls trace.samplerArgParseError.Error
+      #53: pkg/provider/storage/azure_storageaccount.go:483:33: storage.AccountRepo.EnsureStorageAccount calls trace.samplerArgParseError.Error
       #54: pkg/provider/azure_loadbalancer_repo.go:235:15: provider.Cloud.DeleteLBBackendPool calls errors.As, which eventually calls trace.samplerArgParseError.Unwrap
       #55: pkg/trace/reconcile.go:40:27: trace.BeginReconcile calls trace.tracer.Start
       #56: pkg/provider/azure_vmss.go:1075:13: provider.ScaleSet.EnsureHostInPool calls logr.Logger.WithValues, which eventually calls trace.tracerProviderConfig.MarshalLog

@@ -59,7 +59,7 @@ The package pattern matched the following 56 root packages:
   sigs.k8s.io/cloud-provider-azure/pkg/provider/storage
   sigs.k8s.io/cloud-provider-azure/pkg/provider/storage/fileservice/mock_fileservice
   sigs.k8s.io/cloud-provider-azure/pkg/util/controller/testutil
-Govulncheck scanned the following 125 modules and the go1.26.0 standard library:
+Govulncheck scanned the following 125 modules and the go1.26.1 standard library:
   sigs.k8s.io/cloud-provider-azure
   cel.dev/expr@v0.19.1
   github.com/Azure/azure-sdk-for-go/sdk/azcore@v1.18.0
@@ -204,8 +204,8 @@ Vulnerability #1: GO-2026-4394
       #6: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls env.SpanLinkCount
       #7: pkg/trace/provider.go:31:2: trace.init calls trace.init, which calls env.init
       #8: pkg/trace/provider.go:31:2: trace.init calls trace.init, which calls instrumentation.init
-      #9: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls resource.Default
-      #10: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls resource.Default
+      #9: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls resource.Default
+      #10: pkg/trace/provider.go:76:45: trace.New calls trace.NewTracerProvider, which eventually calls resource.Default
       #11: pkg/trace/provider.go:93:45: trace.New calls metric.NewMeterProvider, which eventually calls resource.Empty
       #12: pkg/trace/reconcile.go:81:64: trace.ReconcileSpan.Errored calls metric.WithAttributes, which eventually calls resource.NewSchemaless
       #13: pkg/provider/azure.go:421:13: provider.Cloud.InitializeCloudFromConfig calls klog.InfoS, which eventually calls resource.Resource.MarshalLog

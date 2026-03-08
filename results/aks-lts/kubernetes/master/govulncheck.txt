@@ -1296,7 +1296,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/utils/ktesting/examples/without_ktesting
   k8s.io/kubernetes/test/utils/oidc/handlers
   k8s.io/kubernetes/test/utils/oidc
-Govulncheck scanned the following 197 modules and the go1.26.0 standard library:
+Govulncheck scanned the following 197 modules and the go1.26.1 standard library:
   k8s.io/kubernetes
   bitbucket.org/bertimus9/systemstat@v0.5.0
   cel.dev/expr@v0.23.1
@@ -1517,8 +1517,8 @@ Vulnerability #1: GO-2026-4394
       #10: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanLinkCount
       #11: cmd/kubelet/app/server.go:85:2: app.init calls tracing.init, which eventually calls env.init
       #12: cmd/kubelet/app/server.go:85:2: app.init calls tracing.init, which eventually calls instrumentation.init
-      #13: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Default
-      #14: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls resource.Default
+      #13: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls resource.Default
+      #14: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Default
       #15: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Environment
       #16: test/utils/apiserver/testapiserver.go:51:34: apiserver.StartAPITestServer calls testserver.RunEtcd, which eventually calls resource.Merge
       #17: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls resource.New
@@ -1545,8 +1545,8 @@ Vulnerability #1: GO-2026-4394
       #38: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithSampler
       #39: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithSpanProcessor
       #40: pkg/kubelet/kuberuntime/kuberuntime_manager.go:1687:56: kuberuntime.kubeGenericRuntimeManager.GetPodStatus calls trace.errUnsupportedSampler.Error
-      #41: cmd/kubelet/app/server.go:85:2: app.init calls tracing.init, which calls trace.init
-      #42: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.init
+      #41: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.init
+      #42: cmd/kubelet/app/server.go:85:2: app.init calls tracing.init, which calls trace.init
       #43: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Event]
       #44: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Link]
       #45: pkg/registry/core/service/allocator/storage/storage.go:197:35: storage.Etcd.CreateOrUpdate calls etcd3.store.GuaranteedUpdate, which eventually calls trace.nonRecordingSpan.AddEvent

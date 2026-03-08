@@ -61,7 +61,7 @@ The package pattern matched the following 58 root packages:
   github.com/Azure/karpenter-provider-azure/test/suites/scheduling
   github.com/Azure/karpenter-provider-azure/test/suites/spot
   github.com/Azure/karpenter-provider-azure/test/suites/utilization
-Govulncheck scanned the following 153 modules and the go1.26.0 standard library:
+Govulncheck scanned the following 153 modules and the go1.26.1 standard library:
   github.com/Azure/karpenter-provider-azure
   github.com/Azure/aks-middleware@v0.0.35
   github.com/Azure/azure-kusto-go@v0.16.1
@@ -231,8 +231,8 @@ Vulnerability #1: GO-2026-4394
       #3: pkg/utils/utils.go:35:2: utils.init calls provider.init, which eventually calls resource.init
       #4: pkg/utils/utils.go:35:2: utils.init calls provider.init, which eventually calls sdk.init
       #5: pkg/utils/opts/init_http_client.go:22:2: opts.init calls middleware.init, which eventually calls trace.TracerProvider.Tracer
-      #6: pkg/providers/imagefamily/nodeimageversionsclient.go:67:2: imagefamily.NodeImageVersionsClient.List calls http.http2requestBody.Close, which eventually calls trace.init
-      #7: pkg/utils/utils.go:35:2: utils.init calls provider.init, which eventually calls trace.init
+      #6: pkg/utils/utils.go:35:2: utils.init calls provider.init, which eventually calls trace.init
+      #7: pkg/providers/imagefamily/nodeimageversionsclient.go:67:2: imagefamily.NodeImageVersionsClient.List calls http.http2requestBody.Close, which eventually calls trace.init
       #8: pkg/providers/imagefamily/nodeimageversionsclient.go:67:2: imagefamily.NodeImageVersionsClient.List calls http.http2requestBody.Close, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Event]
       #9: pkg/providers/imagefamily/nodeimageversionsclient.go:67:2: imagefamily.NodeImageVersionsClient.List calls http.http2requestBody.Close, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Link]
       #10: pkg/providers/pricing/client/pricingapi.go:68:29: client.pricingAPI.GetProductsPricePages calls io.ReadAll, which eventually calls trace.nonRecordingSpan.AddEvent
