@@ -2,7 +2,7 @@ Fetching vulnerabilities from the database...
 
 Checking the code against the vulnerabilities...
 
-The package pattern matched the following 68 root packages:
+The package pattern matched the following 69 root packages:
   github.com/Azure/karpenter-provider-azure/pkg/apis
   github.com/Azure/karpenter-provider-azure/pkg/apis/v1beta1
   github.com/Azure/karpenter-provider-azure/pkg/cloudprovider/events
@@ -30,6 +30,7 @@ The package pattern matched the following 68 root packages:
   github.com/Azure/karpenter-provider-azure/pkg/providers/zone
   github.com/Azure/karpenter-provider-azure/pkg/utils/clientopts
   github.com/Azure/karpenter-provider-azure/pkg/providers/azclient
+  github.com/Azure/karpenter-provider-azure/pkg/providers/instance/aksmachinepoller
   github.com/Azure/karpenter-provider-azure/pkg/providers/instance/offerings
   github.com/Azure/karpenter-provider-azure/pkg/providers/labels
   github.com/Azure/karpenter-provider-azure/pkg/providers/launchtemplate
@@ -43,6 +44,7 @@ The package pattern matched the following 68 root packages:
   github.com/Azure/karpenter-provider-azure/pkg/controllers/nodeclass/status
   github.com/Azure/karpenter-provider-azure/pkg/controllers/nodeclass/termination
   github.com/Azure/karpenter-provider-azure/pkg/controllers
+  github.com/Azure/karpenter-provider-azure/pkg/providers/instance/batch
   github.com/Azure/karpenter-provider-azure/pkg/operator
   github.com/Azure/karpenter-provider-azure/cmd/controller
   github.com/Azure/karpenter-provider-azure/hack/code/instancetype_testdata_gen
@@ -50,7 +52,6 @@ The package pattern matched the following 68 root packages:
   github.com/Azure/karpenter-provider-azure/hack/code/prices_gen
   github.com/Azure/karpenter-provider-azure/pkg/apis/v1alpha2
   github.com/Azure/karpenter-provider-azure/pkg/fake
-  github.com/Azure/karpenter-provider-azure/pkg/providers/instance/aksmachinepoller
   github.com/Azure/karpenter-provider-azure/pkg/test
   github.com/Azure/karpenter-provider-azure/pkg/test/azure
   github.com/Azure/karpenter-provider-azure/pkg/test/expectations

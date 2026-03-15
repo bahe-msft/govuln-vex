@@ -229,8 +229,8 @@ Vulnerability #1: GO-2026-4394
       #30: pkg/trace/provider.go:79:39: trace.New calls trace.TracerProvider.Tracer
       #31: pkg/trace/provider.go:77:24: trace.New calls trace.WithSampler
       #32: pkg/provider/storage/azure_storageaccount.go:483:33: storage.AccountRepo.EnsureStorageAccount calls trace.errUnsupportedSampler.Error
-      #33: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls trace.init
-      #34: pkg/trace/provider.go:31:2: trace.init calls trace.init
+      #33: pkg/trace/provider.go:31:2: trace.init calls trace.init
+      #34: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls trace.init
       #35: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Event]
       #36: pkg/nodeipam/ipam/cidrset/cidr_set.go:379:38: cidrset.CidrSet.Occupy calls metrics.CounterVec.WithLabelValues, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Link]
       #37: pkg/provider/config/env.go:34:35: config.ParseConfig calls io.ReadAll, which eventually calls trace.nonRecordingSpan.AddEvent

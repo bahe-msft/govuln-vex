@@ -1472,7 +1472,7 @@ Govulncheck scanned the following 195 modules and the go1.26.1 standard library:
   k8s.io/mount-utils
   k8s.io/pod-security-admission
   k8s.io/sample-apiserver
-  k8s.io/system-validators@v1.9.1
+  k8s.io/system-validators@v1.9.2
   k8s.io/utils@v0.0.0-20241104100929-3ea5e8cea738
   sigs.k8s.io/apiserver-network-proxy/konnectivity-client@v0.31.0
   sigs.k8s.io/json@v0.0.0-20241010143419-9aa6b5e7a4b3
@@ -1517,7 +1517,7 @@ Vulnerability #1: GO-2026-4394
       #22: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Resource.SchemaURL
       #23: cmd/kubelet/app/server.go:1388:33: app.newTracerProvider calls resource.WithAttributes
       #24: pkg/kubelet/kuberuntime/kuberuntime_manager.go:1644:56: kuberuntime.kubeGenericRuntimeManager.GetPodStatus calls resource.detectErrs.Error
-      #25: pkg/volume/plugins.go:870:15: volume.VolumePluginMgr.FindExpandablePluginBySpec calls errors.Is, which eventually calls resource.detectErrs.Is
+      #25: pkg/volume/plugins.go:869:15: volume.VolumePluginMgr.FindExpandablePluginBySpec calls errors.Is, which eventually calls resource.detectErrs.Is
       #26: test/e2e/framework/test_context.go:571:33: framework.AfterReadingAllFlags calls errors.Unwrap, which calls resource.detectErrs.Unwrap
       #27: cmd/kubelet/app/server.go:51:2: app.init calls resource.init
       #28: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls sdk.Version
@@ -1536,8 +1536,8 @@ Vulnerability #1: GO-2026-4394
       #41: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithSampler
       #42: cmd/kubelet/app/server.go:1393:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithSpanProcessor
       #43: pkg/kubelet/kuberuntime/kuberuntime_manager.go:1644:56: kuberuntime.kubeGenericRuntimeManager.GetPodStatus calls trace.errUnsupportedSampler.Error
-      #44: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls trace.init
-      #45: cmd/kubelet/app/server.go:86:2: app.init calls tracing.init, which calls trace.init
+      #44: cmd/kubelet/app/server.go:86:2: app.init calls tracing.init, which calls trace.init
+      #45: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls trace.init
       #46: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls trace.newEvictedQueueEvent
       #47: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls trace.newEvictedQueueLink
       #48: pkg/registry/core/service/allocator/storage/storage.go:197:35: storage.Etcd.CreateOrUpdate calls etcd3.store.GuaranteedUpdate, which eventually calls trace.nonRecordingSpan.AddEvent
@@ -1575,19 +1575,19 @@ Vulnerability #2: GO-2025-4098
       #2: pkg/kubelet/cm/cgroup_manager_linux.go:405:23: cm.cgroupCommon.Create calls systemd.UnifiedManager.Set, which eventually calls cgroups.ConvertMemorySwapToCgroupV2Value
       #3: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls cgroups.FindCgroupMountpoint
       #4: pkg/kubelet/cm/util/cgroups_linux.go:58:67: util.getCgroupV1Path calls cgroups.FindCgroupMountpointAndRoot
-      #5: pkg/kubelet/cadvisor/cadvisor_linux.go:130:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls cgroups.GetAllPids
-      #6: cmd/kubeadm/app/util/users/users_linux.go:652:25: users.UpdatePathOwner calls filepath.WalkDir, which calls cgroups.GetAllPids
+      #5: cmd/kubeadm/app/util/users/users_linux.go:652:25: users.UpdatePathOwner calls filepath.WalkDir, which calls cgroups.GetAllPids
+      #6: pkg/kubelet/cadvisor/cadvisor_linux.go:130:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls cgroups.GetAllPids
       #7: pkg/kubelet/cm/helpers_linux.go:255:58: cm.getCgroupSubsystemsV2 calls cgroups.GetAllSubsystems
       #8: pkg/kubelet/cm/helpers_linux.go:226:56: cm.getCgroupSubsystemsV1 calls cgroups.GetCgroupMounts
       #9: pkg/kubelet/cadvisor/cadvisor_linux.go:107:23: cadvisor.New calls manager.New, which calls cgroups.GetOwnCgroup
       #10: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls cgroups.GetOwnCgroupPath
       #11: pkg/kubelet/cm/util/cgroups_linux.go:50:36: util.GetPids calls cgroups.GetPids
-      #12: pkg/kubelet/kuberuntime/kuberuntime_container_linux.go:299:60: kuberuntime.GetHugepageLimitsFromResources calls cgroups.HugePageSizes
-      #13: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.HugePageSizes
-      #14: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
-      #15: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
-      #16: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2UnifiedMode
-      #17: pkg/kubelet/cm/qos_container_manager_linux.go:344:43: cm.qosContainerManagerImpl.UpdateCgroups calls cgroups.IsCgroup2UnifiedMode
+      #12: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.HugePageSizes
+      #13: pkg/kubelet/kuberuntime/kuberuntime_container_linux.go:299:60: kuberuntime.GetHugepageLimitsFromResources calls cgroups.HugePageSizes
+      #14: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2HybridMode
+      #15: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls systemd.init, which eventually calls cgroups.IsCgroup2HybridMode
+      #16: pkg/kubelet/cm/qos_container_manager_linux.go:344:43: cm.qosContainerManagerImpl.UpdateCgroups calls cgroups.IsCgroup2UnifiedMode
+      #17: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls cgroups.IsCgroup2UnifiedMode
       #18: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls cgroups.IsNotFound
       #19: pkg/kubelet/cm/container_manager_linux.go:790:39: cm.getContainer calls cgroups.NewNotFoundError
       #20: pkg/kubelet/cadvisor/cadvisor_linux.go:130:25: cadvisor.cadvisorClient.Start calls manager.manager.Start, which eventually calls cgroups.NewStats
@@ -1687,8 +1687,8 @@ Vulnerability #2: GO-2025-4098
       #114: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New
       #115: pkg/kubelet/cm/cgroup_manager_linux.go:30:2: cm.init calls manager.init
       #116: pkg/kubelet/cm/cgroup_manager_linux.go:92:42: cm.CgroupName.ToSystemd calls systemd.ExpandSlice
-      #117: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
-      #118: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
+      #117: pkg/kubelet/cm/cgroup_manager_linux.go:388:47: cm.cgroupCommon.Create calls manager.New, which eventually calls systemd.IsRunningSystemd
+      #118: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.IsRunningSystemd
       #119: pkg/kubelet/cm/cgroup_manager_linux.go:399:25: cm.cgroupCommon.Create calls systemd.LegacyManager.Apply
       #120: pkg/kubelet/cm/cgroup_manager_linux.go:250:26: cm.cgroupCommon.Destroy calls systemd.LegacyManager.Destroy
       #121: pkg/kubelet/cm/container_manager_linux.go:753:37: cm.ensureProcessInContainerWithOOMScore calls systemd.LegacyManager.GetCgroups
@@ -1702,8 +1702,8 @@ Vulnerability #2: GO-2025-4098
       #129: pkg/kubelet/cm/cgroup_manager_linux.go:31:2: cm.init calls systemd.init
       #130: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls systemd.systemdVersion
       #131: pkg/kubelet/cm/util/cgroups_linux.go:50:36: util.GetPids calls cgroups.GetPids, which eventually calls utils.CleanPath
-      #132: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls utils.ProcThreadSelf
-      #133: pkg/kubelet/cm/util/cgroups_linux.go:50:36: util.GetPids calls cgroups.GetPids, which eventually calls utils.ProcThreadSelf
+      #132: pkg/kubelet/cm/util/cgroups_linux.go:50:36: util.GetPids calls cgroups.GetPids, which eventually calls utils.ProcThreadSelf
+      #133: pkg/kubelet/metrics/metrics.go:1018:20: metrics.Register calls sync.Once.Do, which eventually calls utils.ProcThreadSelf
       #134: test/e2e_node/resource_collector.go:35:2: e2e_node.init calls cgroups.init, which calls utils.init
 
   Module: github.com/opencontainers/selinux
@@ -1764,7 +1764,7 @@ Vulnerability #5: GO-2025-3487
       #8: test/e2e/framework/ssh/ssh.go:323:2: ssh.runSSHCommandViaBastion calls ssh.channel.Close
       #9: test/utils/harness/harness.go:54:14: harness.Harness.Close calls ssh.stdin, which calls ssh.channel.CloseWrite
       #10: cmd/kubeadm/app/preflight/checks.go:337:18: preflight.FileContentCheck.Check calls io.Copy, which eventually calls ssh.channel.Read
-      #11: cmd/kubeadm/app/preflight/checks.go:542:13: preflight.SystemVerificationCheck.Check calls bufio.Writer.Flush, which calls ssh.channel.Write
+      #11: cmd/kubeadm/app/preflight/checks.go:539:13: preflight.SystemVerificationCheck.Check calls bufio.Writer.Flush, which calls ssh.channel.Write
       #12: cmd/kubeadm/app/preflight/checks.go:337:18: preflight.FileContentCheck.Check calls io.Copy, which eventually calls ssh.extChannel.Read
 
 Vulnerability #6: GO-2024-3250

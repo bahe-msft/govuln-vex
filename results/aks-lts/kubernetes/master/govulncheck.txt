@@ -2,17 +2,17 @@ Fetching vulnerabilities from the database...
 
 Checking the code against the vulnerabilities...
 
-The package pattern matched the following 1293 root packages:
+The package pattern matched the following 1349 root packages:
   k8s.io/kubernetes/build/pause/windows/wincat
   k8s.io/kubernetes/cluster/gce/gci
   k8s.io/kubernetes/cluster/gce/gci/mounter
-  k8s.io/kubernetes/cluster/images/etcd/migrate
   k8s.io/kubernetes/cluster/images/etcd-version-monitor
   k8s.io/kubernetes/cmd/clicheck
   k8s.io/kubernetes/pkg/controller/certificates/signer/config
   k8s.io/kubernetes/pkg/controller/cronjob/config
   k8s.io/kubernetes/pkg/controller/daemon/config
   k8s.io/kubernetes/pkg/controller/deployment/config
+  k8s.io/kubernetes/pkg/controller/devicetainteviction/config
   k8s.io/kubernetes/pkg/controller/endpoint/config
   k8s.io/kubernetes/pkg/controller/endpointslice/config
   k8s.io/kubernetes/pkg/controller/endpointslicemirroring/config
@@ -25,6 +25,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/controller/podgc/config
   k8s.io/kubernetes/pkg/controller/replicaset/config
   k8s.io/kubernetes/pkg/controller/replication/config
+  k8s.io/kubernetes/pkg/controller/resourceclaim/config
   k8s.io/kubernetes/pkg/controller/resourcequota/config
   k8s.io/kubernetes/pkg/controller/serviceaccount/config
   k8s.io/kubernetes/pkg/controller/statefulset/config
@@ -41,6 +42,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/controller/cronjob/config/v1alpha1
   k8s.io/kubernetes/pkg/controller/daemon/config/v1alpha1
   k8s.io/kubernetes/pkg/controller/deployment/config/v1alpha1
+  k8s.io/kubernetes/pkg/controller/devicetainteviction/config/v1alpha1
   k8s.io/kubernetes/pkg/controller/endpoint/config/v1alpha1
   k8s.io/kubernetes/pkg/controller/endpointslice/config/v1alpha1
   k8s.io/kubernetes/pkg/controller/endpointslicemirroring/config/v1alpha1
@@ -53,6 +55,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/controller/podgc/config/v1alpha1
   k8s.io/kubernetes/pkg/controller/replicaset/config/v1alpha1
   k8s.io/kubernetes/pkg/controller/replication/config/v1alpha1
+  k8s.io/kubernetes/pkg/controller/resourceclaim/config/v1alpha1
   k8s.io/kubernetes/pkg/controller/resourcequota/config/v1alpha1
   k8s.io/kubernetes/pkg/controller/serviceaccount/config/v1alpha1
   k8s.io/kubernetes/pkg/controller/statefulset/config/v1alpha1
@@ -76,6 +79,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/apis/core/v1
   k8s.io/kubernetes/pkg/apis/core/install
   k8s.io/kubernetes/pkg/api/service
+  k8s.io/kubernetes/pkg/apis/certificates
   k8s.io/kubernetes/pkg/apis/core/helper/qos
   k8s.io/kubernetes/pkg/fieldpath
   k8s.io/kubernetes/pkg/apis/core/pods
@@ -100,6 +104,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/cmd/fieldnamedocscheck
   k8s.io/kubernetes/cmd/genutils
   k8s.io/kubernetes/cmd/gendocs
+  k8s.io/kubernetes/cmd/genfeaturegates
   k8s.io/kubernetes/pkg/apis/authentication
   k8s.io/kubernetes/pkg/apis/authentication/validation
   k8s.io/kubernetes/pkg/controlplane/controller/legacytokentracking
@@ -132,8 +137,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/plugin/pkg/admission/admit
   k8s.io/kubernetes/plugin/pkg/admission/alwayspullimages
   k8s.io/kubernetes/plugin/pkg/admission/antiaffinity
-  k8s.io/kubernetes/pkg/apis/certificates
-  k8s.io/kubernetes/plugin/pkg/admission/certificates
+  k8s.io/kubernetes/pkg/certauthorization
   k8s.io/kubernetes/plugin/pkg/admission/certificates/approval
   k8s.io/kubernetes/pkg/registry/rbac
   k8s.io/kubernetes/plugin/pkg/admission/certificates/ctbattest
@@ -158,6 +162,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/apis/networking
   k8s.io/kubernetes/plugin/pkg/admission/network/defaultingressclass
   k8s.io/kubernetes/plugin/pkg/admission/network/denyserviceexternalips
+  k8s.io/kubernetes/plugin/pkg/admission/nodedeclaredfeatures
   k8s.io/kubernetes/pkg/apis/node
   k8s.io/kubernetes/pkg/api/node
   k8s.io/kubernetes/pkg/api/persistentvolumeclaim
@@ -210,7 +215,6 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/controlplane/apiserver/options
   k8s.io/kubernetes/pkg/api/v1/endpoints
   k8s.io/kubernetes/pkg/controlplane/reconcilers
-  k8s.io/kubernetes/pkg/apis/admissionregistration
   k8s.io/kubernetes/pkg/apis/events
   k8s.io/kubernetes/pkg/apis/extensions
   k8s.io/kubernetes/pkg/apis/storagemigration
@@ -222,6 +226,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/apis/admission/v1
   k8s.io/kubernetes/pkg/apis/admission/v1beta1
   k8s.io/kubernetes/pkg/apis/admission/install
+  k8s.io/kubernetes/pkg/apis/admissionregistration
   k8s.io/kubernetes/pkg/apis/admissionregistration/v1
   k8s.io/kubernetes/pkg/apis/admissionregistration/v1alpha1
   k8s.io/kubernetes/pkg/apis/admissionregistration/v1beta1
@@ -238,8 +243,6 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/apis/authorization/install
   k8s.io/kubernetes/pkg/apis/autoscaling/v1
   k8s.io/kubernetes/pkg/apis/autoscaling/v2
-  k8s.io/kubernetes/pkg/apis/autoscaling/v2beta1
-  k8s.io/kubernetes/pkg/apis/autoscaling/v2beta2
   k8s.io/kubernetes/pkg/apis/autoscaling/install
   k8s.io/kubernetes/pkg/apis/certificates/v1
   k8s.io/kubernetes/pkg/apis/certificates/v1alpha1
@@ -276,22 +279,24 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/apis/rbac/v1alpha1
   k8s.io/kubernetes/pkg/apis/rbac/v1beta1
   k8s.io/kubernetes/pkg/apis/rbac/install
+  k8s.io/kubernetes/pkg/apis/resource/v1
   k8s.io/kubernetes/pkg/apis/resource/v1alpha3
   k8s.io/kubernetes/pkg/apis/resource/v1beta1
   k8s.io/kubernetes/pkg/apis/resource/v1beta2
   k8s.io/kubernetes/pkg/apis/resource/install
   k8s.io/kubernetes/pkg/apis/scheduling/v1
-  k8s.io/kubernetes/pkg/apis/scheduling/v1alpha1
+  k8s.io/kubernetes/pkg/apis/scheduling/v1alpha2
   k8s.io/kubernetes/pkg/apis/scheduling/v1beta1
   k8s.io/kubernetes/pkg/apis/scheduling/install
   k8s.io/kubernetes/pkg/apis/storage/v1
   k8s.io/kubernetes/pkg/apis/storage/v1alpha1
   k8s.io/kubernetes/pkg/apis/storage/v1beta1
   k8s.io/kubernetes/pkg/apis/storage/install
-  k8s.io/kubernetes/pkg/apis/storagemigration/v1alpha1
+  k8s.io/kubernetes/pkg/apis/storagemigration/v1beta1
   k8s.io/kubernetes/pkg/apis/storagemigration/install
   k8s.io/kubernetes/pkg/kubeapiserver/admission/exclusion
   k8s.io/kubernetes/pkg/apis/core/v1/helper/qos
+  k8s.io/kubernetes/pkg/scheduler/util
   k8s.io/kubernetes/pkg/quota/v1/evaluator/core
   k8s.io/kubernetes/pkg/quota/v1/install
   k8s.io/kubernetes/pkg/controlplane/apiserver/admission
@@ -302,6 +307,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/controlplane/controller/systemnamespaces
   k8s.io/kubernetes/pkg/printers
   k8s.io/kubernetes/pkg/apis/flowcontrol/util
+  k8s.io/kubernetes/pkg/apis/networking/util
   k8s.io/kubernetes/pkg/apis/storage/util
   k8s.io/kubernetes/pkg/printers/internalversion
   k8s.io/kubernetes/pkg/printers/storage
@@ -339,6 +345,8 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/registry/certificates/certificates/storage
   k8s.io/kubernetes/pkg/registry/certificates/clustertrustbundle
   k8s.io/kubernetes/pkg/registry/certificates/clustertrustbundle/storage
+  k8s.io/kubernetes/pkg/registry/certificates/podcertificaterequest
+  k8s.io/kubernetes/pkg/registry/certificates/podcertificaterequest/storage
   k8s.io/kubernetes/pkg/registry/certificates/rest
   k8s.io/kubernetes/pkg/apis/coordination/validation
   k8s.io/kubernetes/pkg/registry/coordination/lease
@@ -484,6 +492,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/registry/resource/deviceclass/storage
   k8s.io/kubernetes/pkg/registry/resource/devicetaintrule
   k8s.io/kubernetes/pkg/registry/resource/devicetaintrule/storage
+  k8s.io/kubernetes/pkg/api/resourceclaimspec
   k8s.io/kubernetes/pkg/registry/resource
   k8s.io/kubernetes/pkg/registry/resource/resourceclaim
   k8s.io/kubernetes/pkg/registry/resource/resourceclaim/storage
@@ -493,8 +502,12 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/registry/resource/resourceslice/storage
   k8s.io/kubernetes/pkg/registry/resource/rest
   k8s.io/kubernetes/pkg/apis/scheduling/validation
+  k8s.io/kubernetes/pkg/registry/scheduling/podgroup
+  k8s.io/kubernetes/pkg/registry/scheduling/podgroup/storage
   k8s.io/kubernetes/pkg/registry/scheduling/priorityclass
   k8s.io/kubernetes/pkg/registry/scheduling/priorityclass/storage
+  k8s.io/kubernetes/pkg/registry/scheduling/workload
+  k8s.io/kubernetes/pkg/registry/scheduling/workload/storage
   k8s.io/kubernetes/pkg/registry/scheduling/rest
   k8s.io/kubernetes/pkg/apis/storage/validation
   k8s.io/kubernetes/pkg/registry/storage/csidriver
@@ -527,7 +540,9 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/controller/cronjob/metrics
   k8s.io/kubernetes/pkg/controller/job/util
   k8s.io/kubernetes/pkg/controller/cronjob
+  k8s.io/kubernetes/pkg/controller/daemon/metrics
   k8s.io/kubernetes/pkg/controller/daemon/util
+  k8s.io/kubernetes/pkg/controller/util/consistency
   k8s.io/kubernetes/pkg/controller/daemon
   k8s.io/kubernetes/pkg/controller/deployment/util
   k8s.io/kubernetes/pkg/controller/deployment
@@ -567,27 +582,32 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/names
   k8s.io/kubernetes/pkg/scheduler/apis/config/v1
   k8s.io/kubernetes/pkg/scheduler/apis/config/scheme
+  k8s.io/kubernetes/pkg/scheduler/framework
+  k8s.io/kubernetes/pkg/scheduler/framework/api_calls
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/volumebinding/metrics
   k8s.io/kubernetes/pkg/scheduler/metrics
-  k8s.io/kubernetes/pkg/scheduler/framework/parallelize
-  k8s.io/kubernetes/pkg/scheduler/util
-  k8s.io/kubernetes/pkg/scheduler/framework
   k8s.io/kubernetes/pkg/scheduler/backend/cache
   k8s.io/kubernetes/pkg/scheduler/backend/heap
-  k8s.io/kubernetes/pkg/scheduler/apis/config/validation
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/feature
+  k8s.io/kubernetes/pkg/scheduler/apis/config/validation
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/interpodaffinity
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/helper
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/podtopologyspread
   k8s.io/kubernetes/pkg/scheduler/backend/queue
+  k8s.io/kubernetes/pkg/scheduler/backend/api_cache
+  k8s.io/kubernetes/pkg/scheduler/backend/api_dispatcher
   k8s.io/kubernetes/pkg/scheduler/backend/cache/debugger
+  k8s.io/kubernetes/pkg/scheduler/backend/podgroupmanager
+  k8s.io/kubernetes/pkg/scheduler/framework/parallelize
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/defaultbinder
   k8s.io/kubernetes/pkg/scheduler/framework/preemption
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/defaultpreemption
   k8s.io/kubernetes/pkg/scheduler/util/assumecache
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/dynamicresources
+  k8s.io/kubernetes/pkg/scheduler/framework/plugins/gangscheduling
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/imagelocality
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/nodeaffinity
+  k8s.io/kubernetes/pkg/scheduler/framework/plugins/nodedeclaredfeatures
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/nodename
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/nodeports
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/noderesources
@@ -599,7 +619,6 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/volumebinding
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/volumerestrictions
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/volumezone
-  k8s.io/kubernetes/pkg/util/slice
   k8s.io/kubernetes/pkg/scheduler/framework/runtime
   k8s.io/kubernetes/pkg/scheduler/framework/plugins
   k8s.io/kubernetes/pkg/scheduler/profile
@@ -616,6 +635,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/kubelet/status
   k8s.io/kubernetes/pkg/kubelet/cm/cpumanager
   k8s.io/kubernetes/pkg/kubelet/cm/devicemanager/checkpoint
+  k8s.io/kubernetes/pkg/kubelet/kubeletconfig
   k8s.io/kubernetes/pkg/kubelet/pluginmanager/cache
   k8s.io/kubernetes/pkg/kubelet/cm/devicemanager/plugin/v1beta1
   k8s.io/kubernetes/pkg/kubelet/cm/resourceupdates
@@ -644,6 +664,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/controller/resourcequota
   k8s.io/kubernetes/pkg/controller/servicecidrs
   k8s.io/kubernetes/pkg/controller/history
+  k8s.io/kubernetes/pkg/controller/statefulset/metrics
   k8s.io/kubernetes/pkg/controller/statefulset
   k8s.io/kubernetes/pkg/controller/storageversiongc
   k8s.io/kubernetes/pkg/controller/storageversionmigrator
@@ -672,10 +693,12 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/controller/volume/expand
   k8s.io/kubernetes/pkg/controller/volume/persistentvolume/metrics
   k8s.io/kubernetes/pkg/util/goroutinemap
+  k8s.io/kubernetes/pkg/util/slice
   k8s.io/kubernetes/pkg/controller/volume/persistentvolume
   k8s.io/kubernetes/pkg/controller/volume/protectionutil
   k8s.io/kubernetes/pkg/controller/volume/pvcprotection
   k8s.io/kubernetes/pkg/controller/volume/pvprotection
+  k8s.io/kubernetes/pkg/controller/volume/selinuxwarning/internal/parse
   k8s.io/kubernetes/pkg/controller/volume/selinuxwarning/translator
   k8s.io/kubernetes/pkg/controller/volume/selinuxwarning/cache
   k8s.io/kubernetes/pkg/controller/volume/selinuxwarning
@@ -685,7 +708,6 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/volume/hostpath
   k8s.io/kubernetes/pkg/volume/iscsi
   k8s.io/kubernetes/pkg/volume/nfs
-  k8s.io/kubernetes/pkg/volume/portworx
   k8s.io/kubernetes/cmd/kube-controller-manager/app
   k8s.io/kubernetes/pkg/kubelet/qos
   k8s.io/kubernetes/pkg/proxy/config
@@ -693,14 +715,15 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/proxy/util
   k8s.io/kubernetes/pkg/proxy/util/nfacct
   k8s.io/kubernetes/pkg/proxy/metrics
-  k8s.io/kubernetes/pkg/proxy/healthcheck
   k8s.io/kubernetes/pkg/proxy
   k8s.io/kubernetes/pkg/proxy/apis
   k8s.io/kubernetes/pkg/proxy/apis/config/v1alpha1
   k8s.io/kubernetes/pkg/proxy/apis/config/scheme
   k8s.io/kubernetes/pkg/proxy/apis/config/validation
   k8s.io/kubernetes/pkg/proxy/conntrack
+  k8s.io/kubernetes/pkg/proxy/healthcheck
   k8s.io/kubernetes/pkg/proxy/metaproxier
+  k8s.io/kubernetes/pkg/proxy/runner
   k8s.io/kubernetes/pkg/util/iptables
   k8s.io/kubernetes/pkg/proxy/iptables
   k8s.io/kubernetes/pkg/proxy/ipvs/ipset
@@ -757,7 +780,6 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/cmd/kubeadm/app/phases/kubeconfig
   k8s.io/kubernetes/cmd/kubeadm/app/phases/kubelet
   k8s.io/kubernetes/cmd/kubeadm/app/phases/markcontrolplane
-  k8s.io/kubernetes/cmd/kubeadm/app/phases/patchnode
   k8s.io/kubernetes/cmd/kubeadm/app/util/output
   k8s.io/kubernetes/cmd/kubeadm/app/util/runtime
   k8s.io/kubernetes/cmd/kubeadm/app/util/config
@@ -766,6 +788,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/init
   k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/join
   k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/reset
+  k8s.io/kubernetes/cmd/kubeadm/app/phases/patchnode
   k8s.io/kubernetes/cmd/kubeadm/app/phases/certs/renewal
   k8s.io/kubernetes/cmd/kubeadm/app/phases/upgrade
   k8s.io/kubernetes/cmd/kubeadm/app/cmd/phases/upgrade
@@ -803,14 +826,10 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/kubelet/util/cache
   k8s.io/kubernetes/pkg/util/tail
   k8s.io/kubernetes/pkg/kubelet/kuberuntime
+  k8s.io/kubernetes/pkg/kubelet/podcertificate
   k8s.io/kubernetes/pkg/kubelet/metrics/collectors
   k8s.io/kubernetes/pkg/kubelet/network/dns
   k8s.io/kubernetes/pkg/kubelet/nodeshutdown/systemd
-  k8s.io/kubernetes/pkg/kubelet/util/ioutils
-  k8s.io/kubernetes/pkg/probe/exec
-  k8s.io/kubernetes/pkg/probe/grpc
-  k8s.io/kubernetes/pkg/probe/tcp
-  k8s.io/kubernetes/pkg/kubelet/prober
   k8s.io/kubernetes/pkg/kubelet/volumemanager/cache
   k8s.io/kubernetes/pkg/kubelet/volumemanager/metrics
   k8s.io/kubernetes/pkg/kubelet/volumemanager/populator
@@ -829,11 +848,17 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/kubelet/pluginmanager
   k8s.io/kubernetes/pkg/kubelet/pod
   k8s.io/kubernetes/pkg/kubelet/preemption
+  k8s.io/kubernetes/pkg/kubelet/util/ioutils
+  k8s.io/kubernetes/pkg/probe/exec
+  k8s.io/kubernetes/pkg/probe/grpc
+  k8s.io/kubernetes/pkg/probe/tcp
+  k8s.io/kubernetes/pkg/kubelet/prober
   k8s.io/kubernetes/pkg/kubelet/secret
   k8s.io/kubernetes/pkg/kubelet/apis/grpc
   k8s.io/kubernetes/pkg/kubelet/server
   k8s.io/kubernetes/pkg/kubelet/stats
   k8s.io/kubernetes/pkg/kubelet/userns
+  k8s.io/kubernetes/pkg/kubelet/util/env
   k8s.io/kubernetes/pkg/kubelet/util/queue
   k8s.io/kubernetes/pkg/kubelet/watchdog
   k8s.io/kubernetes/pkg/kubelet
@@ -900,7 +925,6 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/cmd/prune-junit-xml/logparse
   k8s.io/kubernetes/third_party/forked/gotestsum/junitxml
   k8s.io/kubernetes/cmd/prune-junit-xml
-  k8s.io/kubernetes/cmd/yamlfmt
   k8s.io/kubernetes/hack/boilerplate/test
   k8s.io/kubernetes/hack/conformance
   k8s.io/kubernetes/pkg/api/endpoints/testing
@@ -945,7 +969,6 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/controlplane/apiserver/samples/generic/server
   k8s.io/kubernetes/pkg/controlplane/apiserver/samples/generic
   k8s.io/kubernetes/pkg/controlplane/apiserver/samples/generic/server/testing
-  k8s.io/kubernetes/pkg/controlplane/storageversionhashdata
   k8s.io/kubernetes/pkg/generated
   k8s.io/kubernetes/pkg/generated/openapi/cmd/models-schema
   k8s.io/kubernetes/pkg/kubectl
@@ -955,7 +978,6 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/kubelet/checkpointmanager/testing/example_checkpoint_formats/v1
   k8s.io/kubernetes/pkg/kubelet/cm/cpumanager/state/testing
   k8s.io/kubernetes/pkg/kubelet/cm/testing
-  k8s.io/kubernetes/pkg/kubelet/kubeletconfig/util/files
   k8s.io/kubernetes/pkg/kubelet/kubeletconfig/util/test
   k8s.io/kubernetes/pkg/kubelet/pod/testing
   k8s.io/kubernetes/pkg/kubelet/runtimeclass/testing
@@ -972,18 +994,18 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/pkg/registry/core/service/ipallocator/storage
   k8s.io/kubernetes/pkg/registry/core/service/portallocator/storage
   k8s.io/kubernetes/pkg/registry/registrytest
+  k8s.io/kubernetes/pkg/registry/testapigroup/carp
+  k8s.io/kubernetes/pkg/registry/testapigroup/carp/storage
+  k8s.io/kubernetes/pkg/registry/testapigroup/rest
   k8s.io/kubernetes/pkg/scheduler/apis/config/testing
   k8s.io/kubernetes/pkg/scheduler/apis/config/testing/defaults
   k8s.io/kubernetes/pkg/scheduler/backend/cache/fake
   k8s.io/kubernetes/pkg/scheduler/framework/autoscaler_contract
-  k8s.io/kubernetes/pkg/scheduler/framework/plugins/examples/multipoint
-  k8s.io/kubernetes/pkg/scheduler/framework/plugins/examples/prebind
-  k8s.io/kubernetes/pkg/scheduler/framework/plugins/examples/stateful
   k8s.io/kubernetes/pkg/scheduler/framework/plugins/testing
   k8s.io/kubernetes/pkg/scheduler/testing
   k8s.io/kubernetes/pkg/scheduler/testing/framework
   k8s.io/kubernetes/pkg/security
-  k8s.io/kubernetes/pkg/serviceaccount/externaljwt/plugin/testing/v1alpha1
+  k8s.io/kubernetes/pkg/serviceaccount/externaljwt/plugin/testing/v1
   k8s.io/kubernetes/pkg/util/bandwidth
   k8s.io/kubernetes/pkg/util/coverage
   k8s.io/kubernetes/pkg/util/env
@@ -1005,32 +1027,35 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/utils/kubeconfig
   k8s.io/kubernetes/test/e2e/framework
   k8s.io/kubernetes/test/e2e/feature
+  k8s.io/kubernetes/test/e2e/framework/endpointslice
   k8s.io/kubernetes/test/e2e/framework/pod
   k8s.io/kubernetes/test/e2e/framework/kubectl
-  k8s.io/kubernetes/test/e2e/framework/ssh
   k8s.io/kubernetes/test/e2e/framework/node
   k8s.io/kubernetes/test/e2e/framework/pod/output
+  k8s.io/kubernetes/test/e2e/framework/ssh
   k8s.io/kubernetes/test/e2e/framework/skipper
   k8s.io/kubernetes/test/e2e/framework/network
   k8s.io/kubernetes/test/e2e/common/network
+  k8s.io/kubernetes/test/e2e/common/apimachinery
   k8s.io/kubernetes/test/e2e/common/node/framework/cgroups
   k8s.io/kubernetes/test/e2e/common/node/framework/podresize
   k8s.io/kubernetes/test/e2e/environment
   k8s.io/kubernetes/test/e2e/framework/events
+  k8s.io/kubernetes/test/e2e/perftype
+  k8s.io/kubernetes/test/e2e/framework/metrics
   k8s.io/kubernetes/test/e2e/framework/volume
   k8s.io/kubernetes/test/e2e/storage/podlogs
   k8s.io/kubernetes/test/e2e/storage/utils
   k8s.io/kubernetes/test/e2e/framework/node/runtimeclass
+  k8s.io/kubernetes/test/e2e/framework/daemonset
+  k8s.io/kubernetes/test/e2e/framework/registry
   k8s.io/kubernetes/test/e2e/framework/websocket
   k8s.io/kubernetes/test/e2e/common/node
   k8s.io/kubernetes/test/e2e/common/storage
-  k8s.io/kubernetes/test/e2e/perftype
-  k8s.io/kubernetes/test/e2e/framework/metrics
   k8s.io/kubernetes/test/e2e/framework/debug
   k8s.io/kubernetes/test/e2e/framework/resource
   k8s.io/kubernetes/test/e2e/framework/rc
   k8s.io/kubernetes/test/e2e/common
-  k8s.io/kubernetes/test/e2e/framework/daemonset
   k8s.io/kubernetes/test/e2e/framework/providers/aws
   k8s.io/kubernetes/test/e2e/framework/providers/azure
   k8s.io/kubernetes/test/e2e/framework/providers/gce
@@ -1046,12 +1071,14 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/e2e/framework/service
   k8s.io/kubernetes/test/e2e/framework/manifest
   k8s.io/kubernetes/test/e2e/framework/statefulset
+  k8s.io/kubernetes/test/e2e/framework/conformance
   k8s.io/kubernetes/test/e2e/scheduling
   k8s.io/kubernetes/test/e2e/apps
   k8s.io/kubernetes/test/e2e/framework/auth
   k8s.io/kubernetes/test/utils/crd
   k8s.io/kubernetes/test/e2e/apimachinery
   k8s.io/kubernetes/test/e2e/architecture
+  k8s.io/kubernetes/test/utils/hermeticpodcertificatesigner
   k8s.io/kubernetes/test/e2e/auth
   k8s.io/kubernetes/test/e2e/framework/autoscaling
   k8s.io/kubernetes/test/e2e/autoscaling
@@ -1076,16 +1103,17 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/e2e/cloud/gcp
   k8s.io/kubernetes/test/e2e/cloud
   k8s.io/kubernetes/test/e2e/dra/test-driver/app
+  k8s.io/kubernetes/test/e2e/dra/test-driver/deploy/example
   k8s.io/kubernetes/test/e2e/dra/test-driver/gomega
   k8s.io/kubernetes/test/e2e/storage/drivers/csi-test/mock/cache
   k8s.io/kubernetes/test/e2e/storage/drivers/csi-test/mock/service
   k8s.io/kubernetes/test/e2e/storage/drivers/proxy
+  k8s.io/kubernetes/test/e2e/dra/utils
+  k8s.io/kubernetes/test/integration/dra
   k8s.io/kubernetes/test/e2e/dra
   k8s.io/kubernetes/test/e2e/dra/test-driver
   k8s.io/kubernetes/test/e2e/framework/debug/init
-  k8s.io/kubernetes/test/e2e/framework/endpointslice
   k8s.io/kubernetes/test/e2e/framework/gpu
-  k8s.io/kubernetes/test/e2e/framework/ingress
   k8s.io/kubernetes/test/e2e/framework/internal/output
   k8s.io/kubernetes/test/e2e/framework/internal/unittests
   k8s.io/kubernetes/test/e2e/framework/internal/unittests/bugs/features
@@ -1103,6 +1131,8 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/e2e/instrumentation/logging
   k8s.io/kubernetes/test/e2e/instrumentation/monitoring
   k8s.io/kubernetes/test/e2e/instrumentation
+  k8s.io/kubernetes/test/e2e/invariants
+  k8s.io/kubernetes/test/e2e/invariants/logcheck
   k8s.io/kubernetes/test/e2e/kubectl
   k8s.io/kubernetes/test/e2e/lifecycle
   k8s.io/kubernetes/test/e2e/lifecycle/bootstrap
@@ -1119,6 +1149,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/e2e/storage/csimock
   k8s.io/kubernetes/test/e2e/storage/external
   k8s.io/kubernetes/test/e2e/windows
+  k8s.io/kubernetes/test/e2e_dra
   k8s.io/kubernetes/test/e2e_kubeadm
   k8s.io/kubernetes/test/e2e_node/criproxy
   k8s.io/kubernetes/test/e2e_node/kubeletconfig
@@ -1146,13 +1177,17 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/images/agnhost/crd-conversion-webhook
   k8s.io/kubernetes/test/images/agnhost/dns
   k8s.io/kubernetes/test/images/agnhost/entrypoint-tester
+  k8s.io/kubernetes/test/images/agnhost/external-metrics
   k8s.io/kubernetes/test/images/agnhost/fakegitserver
+  k8s.io/kubernetes/test/images/agnhost/fakeregistryserver
   k8s.io/kubernetes/test/images/agnhost/grpc-health-checking
   k8s.io/kubernetes/test/images/agnhost/guestbook
   k8s.io/kubernetes/test/images/agnhost/inclusterclient
   k8s.io/kubernetes/test/images/agnhost/liveness
   k8s.io/kubernetes/test/images/agnhost/logs-generator
   k8s.io/kubernetes/test/images/agnhost/mounttest
+  k8s.io/kubernetes/test/images/agnhost/mtlsclient
+  k8s.io/kubernetes/test/images/agnhost/mtlsserver
   k8s.io/kubernetes/test/images/agnhost/net/common
   k8s.io/kubernetes/test/images/agnhost/net/nat
   k8s.io/kubernetes/test/images/agnhost/net
@@ -1160,8 +1195,10 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/images/agnhost/nettest
   k8s.io/kubernetes/test/images/agnhost/no-snat-test
   k8s.io/kubernetes/test/images/agnhost/no-snat-test-proxy
+  k8s.io/kubernetes/test/images/agnhost/nonewprivs
   k8s.io/kubernetes/test/images/agnhost/openidmetadata
   k8s.io/kubernetes/test/images/agnhost/pause
+  k8s.io/kubernetes/test/images/agnhost/podcertificatesigner
   k8s.io/kubernetes/test/images/agnhost/port-forward-tester
   k8s.io/kubernetes/test/images/agnhost/porter
   k8s.io/kubernetes/test/images/resource-consumer/common
@@ -1180,11 +1217,13 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/images/resource-consumer
   k8s.io/kubernetes/test/images/resource-consumer/consume-cpu
   k8s.io/kubernetes/test/images/sample-device-plugin
+  k8s.io/kubernetes/test/instrumentation/internal/metric
   k8s.io/kubernetes/test/instrumentation
   k8s.io/kubernetes/test/instrumentation/documentation
   k8s.io/kubernetes/test/instrumentation/sort
   k8s.io/kubernetes/test/integration
   k8s.io/kubernetes/test/integration/apimachinery
+  k8s.io/kubernetes/test/integration/apimachinery/apply
   k8s.io/kubernetes/test/integration/apiserver
   k8s.io/kubernetes/test/integration/apiserver/admissionwebhook
   k8s.io/kubernetes/test/integration/apiserver/anonymous
@@ -1199,6 +1238,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/integration/apiserver/coordinatedleaderelection
   k8s.io/kubernetes/test/integration/apiserver/discovery
   k8s.io/kubernetes/test/integration/apiserver/flowcontrol
+  k8s.io/kubernetes/test/integration/apiserver/httpproxy
   k8s.io/kubernetes/test/integration/apiserver/oidc
   k8s.io/kubernetes/test/integration/apiserver/openapi
   k8s.io/kubernetes/test/integration/apiserver/peerproxy
@@ -1223,7 +1263,6 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/integration/defaulttolerationseconds
   k8s.io/kubernetes/test/integration/deployment
   k8s.io/kubernetes/test/integration/disruption
-  k8s.io/kubernetes/test/integration/dra
   k8s.io/kubernetes/test/integration/dryrun
   k8s.io/kubernetes/test/integration/dualstack
   k8s.io/kubernetes/test/integration/endpoints
@@ -1239,11 +1278,13 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/integration/logs/benchmark/contextual-logging
   k8s.io/kubernetes/test/integration/logs/functional/json
   k8s.io/kubernetes/test/integration/metrics
+  k8s.io/kubernetes/test/integration/metrics/nativehistograms
   k8s.io/kubernetes/test/integration/namespace
   k8s.io/kubernetes/test/integration/network
   k8s.io/kubernetes/test/integration/node
   k8s.io/kubernetes/test/integration/objectmeta
   k8s.io/kubernetes/test/integration/openshift
+  k8s.io/kubernetes/test/integration/podcertificaterequests
   k8s.io/kubernetes/test/integration/podgc
   k8s.io/kubernetes/test/integration/pods
   k8s.io/kubernetes/test/integration/pvc
@@ -1253,12 +1294,17 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/integration/scale
   k8s.io/kubernetes/test/integration/util
   k8s.io/kubernetes/test/integration/scheduler
+  k8s.io/kubernetes/test/integration/scheduler/batch
   k8s.io/kubernetes/test/integration/scheduler/bind
   k8s.io/kubernetes/test/integration/scheduler/eventhandler
   k8s.io/kubernetes/test/integration/scheduler/extender
   k8s.io/kubernetes/test/integration/scheduler/filters
+  k8s.io/kubernetes/test/integration/scheduler/nominated_node_name
   k8s.io/kubernetes/test/integration/scheduler/plugins
+  k8s.io/kubernetes/test/integration/scheduler/podgroup
   k8s.io/kubernetes/test/integration/scheduler/preemption
+  k8s.io/kubernetes/test/integration/scheduler/preemption/misc
+  k8s.io/kubernetes/test/integration/scheduler/preemption/nominatednodename
   k8s.io/kubernetes/test/integration/scheduler/queueing
   k8s.io/kubernetes/test/integration/scheduler/queueing/former
   k8s.io/kubernetes/test/integration/scheduler/queueing/queueinghint
@@ -1268,6 +1314,12 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/integration/scheduler_perf
   k8s.io/kubernetes/test/integration/scheduler_perf/affinity
   k8s.io/kubernetes/test/integration/scheduler_perf/dra
+  k8s.io/kubernetes/test/integration/scheduler_perf/dra/consumablecapacity
+  k8s.io/kubernetes/test/integration/scheduler_perf/dra/devicetaints
+  k8s.io/kubernetes/test/integration/scheduler_perf/dra/extendedresource
+  k8s.io/kubernetes/test/integration/scheduler_perf/dra/extendedresource/scoring
+  k8s.io/kubernetes/test/integration/scheduler_perf/dra/partitionabledevices
+  k8s.io/kubernetes/test/integration/scheduler_perf/dra/prioritizedlist
   k8s.io/kubernetes/test/integration/scheduler_perf/event_handling
   k8s.io/kubernetes/test/integration/scheduler_perf/misc
   k8s.io/kubernetes/test/integration/scheduler_perf/topology_spreading
@@ -1277,6 +1329,7 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/integration/serviceaccount
   k8s.io/kubernetes/test/integration/servicecidr
   k8s.io/kubernetes/test/integration/serving
+  k8s.io/kubernetes/test/integration/staleness
   k8s.io/kubernetes/test/integration/statefulset
   k8s.io/kubernetes/test/integration/storageclasses
   k8s.io/kubernetes/test/integration/storageversion
@@ -1289,86 +1342,83 @@ The package pattern matched the following 1293 root packages:
   k8s.io/kubernetes/test/soak/serve_hostnames
   k8s.io/kubernetes/test/typecheck
   k8s.io/kubernetes/test/utils/apiserver
+  k8s.io/kubernetes/third_party/forked/golang/net/testing
+  k8s.io/kubernetes/test/utils/fakedns
   k8s.io/kubernetes/test/utils/harness
   k8s.io/kubernetes/test/utils/ktesting/examples/gomega
   k8s.io/kubernetes/test/utils/ktesting/examples/logging
   k8s.io/kubernetes/test/utils/ktesting/examples/with_ktesting
   k8s.io/kubernetes/test/utils/ktesting/examples/without_ktesting
+  k8s.io/kubernetes/test/utils/localupcluster
   k8s.io/kubernetes/test/utils/oidc/handlers
   k8s.io/kubernetes/test/utils/oidc
-Govulncheck scanned the following 197 modules and the go1.26.1 standard library:
+Govulncheck scanned the following 190 modules and the go1.26.1 standard library:
   k8s.io/kubernetes
   bitbucket.org/bertimus9/systemstat@v0.5.0
-  cel.dev/expr@v0.23.1
+  cel.dev/expr@v0.24.0
   github.com/MakeNowJust/heredoc@v1.0.0
+  github.com/Masterminds/semver/v3@v3.4.0
   github.com/NYTimes/gziphandler@v1.1.1
   github.com/antlr4-go/antlr/v4@v4.13.0
-  github.com/armon/circbuf@v0.0.0-20190214190532-5111143e8da2
   github.com/beorn7/perks@v1.0.1
   github.com/blang/semver/v4@v4.0.0
-  github.com/cenkalti/backoff/v4@v4.3.0
+  github.com/cenkalti/backoff/v5@v5.0.3
   github.com/cespare/xxhash/v2@v2.3.0
   github.com/chai2010/gettext-go@v1.0.2
   github.com/container-storage-interface/spec@v1.9.0
-  github.com/containerd/containerd/api@v1.8.0
+  github.com/containerd/containerd/api@v1.10.0
   github.com/containerd/errdefs@v1.0.0
   github.com/containerd/errdefs/pkg@v0.3.0
   github.com/containerd/log@v0.1.0
-  github.com/containerd/ttrpc@v1.2.6
-  github.com/containerd/typeurl/v2@v2.2.2
+  github.com/containerd/ttrpc@v1.2.7
+  github.com/containerd/typeurl/v2@v2.2.3
   github.com/coredns/caddy@v1.1.1
-  github.com/coredns/corefile-migration@v1.0.26
-  github.com/coreos/go-oidc@v2.3.0+incompatible
+  github.com/coredns/corefile-migration@v1.0.30
+  github.com/coreos/go-oidc@v2.5.0+incompatible
   github.com/coreos/go-semver@v0.3.1
-  github.com/coreos/go-systemd/v22@v22.5.0
-  github.com/cpuguy83/go-md2man/v2@v2.0.4
-  github.com/cyphar/filepath-securejoin@v0.4.1
-  github.com/davecgh/go-spew@v1.1.1
+  github.com/coreos/go-systemd/v22@v22.7.0
+  github.com/cpuguy83/go-md2man/v2@v2.0.6
+  github.com/cyphar/filepath-securejoin@v0.6.1
+  github.com/davecgh/go-spew@v1.1.2-0.20180830191138-d8f796af33cc
   github.com/distribution/reference@v0.6.0
   github.com/docker/go-units@v0.5.0
   github.com/dustin/go-humanize@v1.0.1
-  github.com/emicklei/go-restful/v3@v3.11.0
+  github.com/emicklei/go-restful/v3@v3.13.0
   github.com/euank/go-kmsg-parser@v2.0.0+incompatible
   github.com/exponent-io/jsonpath@v0.0.0-20210407135951-1de76d718b3f
   github.com/fatih/camelcase@v1.0.0
   github.com/felixge/httpsnoop@v1.0.4
   github.com/fsnotify/fsnotify@v1.9.0
-  github.com/fxamacker/cbor/v2@v2.8.0
+  github.com/fxamacker/cbor/v2@v2.9.0
   github.com/go-errors/errors@v1.4.2
-  github.com/go-logr/logr@v1.4.2
+  github.com/go-logr/logr@v1.4.3
   github.com/go-logr/stdr@v1.2.2
   github.com/go-logr/zapr@v1.3.0
   github.com/go-openapi/jsonpointer@v0.21.0
   github.com/go-openapi/jsonreference@v0.20.2
   github.com/go-openapi/swag@v0.23.0
-  github.com/godbus/dbus/v5@v5.1.0
+  github.com/godbus/dbus/v5@v5.2.2
   github.com/gogo/protobuf@v1.3.2
-  github.com/golang-jwt/jwt/v5@v5.2.2
+  github.com/golang-jwt/jwt/v5@v5.3.0
   github.com/golang/protobuf@v1.5.4
   github.com/google/btree@v1.1.3
-  github.com/google/cadvisor@v0.52.1
-  github.com/google/cel-go@v0.25.0
-  github.com/google/gnostic-models@v0.6.9
+  github.com/google/cadvisor@v0.56.2
+  github.com/google/cel-go@v0.26.0
+  github.com/google/gnostic-models@v0.7.0
   github.com/google/go-cmp@v0.7.0
-  github.com/google/shlex@v0.0.0-20191202100458-e7afc7fbc510
   github.com/google/uuid@v1.6.0
   github.com/gorilla/websocket@v1.5.4-0.20250319132907-e064f32e3674
-  github.com/gregjones/httpcache@v0.0.0-20190611155906-901d90724c79
-  github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus@v1.0.1
-  github.com/grpc-ecosystem/go-grpc-middleware/v2@v2.3.0
-  github.com/grpc-ecosystem/go-grpc-prometheus@v1.2.0
-  github.com/grpc-ecosystem/grpc-gateway/v2@v2.26.3
+  github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus@v1.1.0
+  github.com/grpc-ecosystem/go-grpc-middleware/v2@v2.3.3
+  github.com/grpc-ecosystem/grpc-gateway/v2@v2.27.7
   github.com/ishidawataru/sctp@v0.0.0-20250521072954-ae8eb7fa7995
   github.com/jonboulle/clockwork@v0.5.0
   github.com/josharian/intern@v1.0.0
   github.com/json-iterator/go@v1.1.12
-  github.com/karrick/godirwalk@v1.17.0
   github.com/kylelemons/godebug@v1.1.0
-  github.com/libopenstorage/openstorage@v1.0.0
   github.com/liggitt/tabwriter@v0.0.0-20181228230101-89fcab3d43de
   github.com/lithammer/dedent@v1.1.0
   github.com/mailru/easyjson@v0.7.7
-  github.com/mistifyio/go-zfs@v2.1.2-0.20190413222219-f784269be439+incompatible
   github.com/mitchellh/go-wordwrap@v1.0.1
   github.com/moby/ipvs@v1.1.0
   github.com/moby/spdystream@v0.5.0
@@ -1376,79 +1426,78 @@ Govulncheck scanned the following 197 modules and the go1.26.1 standard library:
   github.com/moby/sys/userns@v0.1.0
   github.com/moby/term@v0.5.0
   github.com/modern-go/concurrent@v0.0.0-20180306012644-bacd9c7ef1dd
-  github.com/modern-go/reflect2@v1.0.2
-  github.com/mohae/deepcopy@v0.0.0-20170929034955-c48cc78d4826
+  github.com/modern-go/reflect2@v1.0.3-0.20250322232337-35a7c28c31ee
   github.com/monochromegane/go-gitignore@v0.0.0-20200626010858-205db1a8cc00
-  github.com/mrunalp/fileutils@v0.5.1
   github.com/munnerz/goautoneg@v0.0.0-20191010083416-a7dc8b61c822
   github.com/mxk/go-flowrate@v0.0.0-20140419014527-cca7078d478f
-  github.com/onsi/ginkgo/v2@v2.21.0
-  github.com/onsi/gomega@v1.35.1
-  github.com/opencontainers/cgroups@v0.0.1
+  github.com/onsi/ginkgo/v2@v2.28.1
+  github.com/onsi/gomega@v1.39.1
+  github.com/opencontainers/cgroups@v0.0.6
   github.com/opencontainers/go-digest@v1.0.0
   github.com/opencontainers/image-spec@v1.1.1
-  github.com/opencontainers/runtime-spec@v1.2.0
-  github.com/opencontainers/selinux@v1.11.1
+  github.com/opencontainers/runtime-spec@v1.3.0
+  github.com/opencontainers/selinux@v1.13.1
   github.com/peterbourgon/diskv@v2.0.1+incompatible
-  github.com/pkg/errors@v0.9.1
-  github.com/pmezard/go-difflib@v1.0.0
+  github.com/pmezard/go-difflib@v1.0.1-0.20181226105442-5d4384ee4fb2
   github.com/pquerna/cachecontrol@v0.1.0
-  github.com/prometheus/client_golang@v1.22.0
-  github.com/prometheus/client_model@v0.6.1
-  github.com/prometheus/common@v0.62.0
-  github.com/prometheus/procfs@v0.15.1
+  github.com/prometheus/client_golang@v1.23.2
+  github.com/prometheus/client_model@v0.6.2
+  github.com/prometheus/common@v0.67.5
+  github.com/prometheus/procfs@v0.19.2
   github.com/robfig/cron/v3@v3.0.1
   github.com/russross/blackfriday/v2@v2.1.0
   github.com/sirupsen/logrus@v1.9.3
   github.com/soheilhy/cmux@v0.1.5
-  github.com/spf13/cobra@v1.8.1
-  github.com/spf13/pflag@v1.0.6
+  github.com/spf13/cobra@v1.10.0
+  github.com/spf13/pflag@v1.0.9
   github.com/stoewer/go-strcase@v1.3.0
   github.com/stretchr/objx@v0.5.2
-  github.com/stretchr/testify@v1.10.0
+  github.com/stretchr/testify@v1.11.1
   github.com/tmc/grpc-websocket-proxy@v0.0.0-20220101234140-673ab2c3ae75
   github.com/vishvananda/netlink@v1.3.1
   github.com/vishvananda/netns@v0.0.5
   github.com/x448/float16@v0.8.4
   github.com/xiang90/probing@v0.0.0-20221125231312-a49e3df8f510
   github.com/xlab/treeprint@v1.2.0
-  go.etcd.io/bbolt@v1.4.0
-  go.etcd.io/etcd/api/v3@v3.6.0
-  go.etcd.io/etcd/client/pkg/v3@v3.6.0
-  go.etcd.io/etcd/client/v3@v3.6.0
-  go.etcd.io/etcd/pkg/v3@v3.6.0
-  go.etcd.io/etcd/server/v3@v3.6.0
+  go.etcd.io/bbolt@v1.4.3
+  go.etcd.io/etcd/api/v3@v3.6.8
+  go.etcd.io/etcd/client/pkg/v3@v3.6.8
+  go.etcd.io/etcd/client/v3@v3.6.8
+  go.etcd.io/etcd/pkg/v3@v3.6.8
+  go.etcd.io/etcd/server/v3@v3.6.8
   go.etcd.io/raft/v3@v3.6.0
-  go.opentelemetry.io/auto/sdk@v1.1.0
-  go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful@v0.44.0
-  go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc@v0.60.0
-  go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.58.0
-  go.opentelemetry.io/otel@v1.35.0
-  go.opentelemetry.io/otel/exporters/otlp/otlptrace@v1.34.0
-  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc@v1.34.0
-  go.opentelemetry.io/otel/metric@v1.35.0
-  go.opentelemetry.io/otel/sdk@v1.34.0
-  go.opentelemetry.io/otel/trace@v1.35.0
-  go.opentelemetry.io/proto/otlp@v1.5.0
+  go.opentelemetry.io/auto/sdk@v1.2.1
+  go.opentelemetry.io/contrib/instrumentation/github.com/emicklei/go-restful/otelrestful@v0.65.0
+  go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc@v0.65.0
+  go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.65.0
+  go.opentelemetry.io/otel@v1.40.0
+  go.opentelemetry.io/otel/exporters/otlp/otlptrace@v1.40.0
+  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc@v1.40.0
+  go.opentelemetry.io/otel/metric@v1.40.0
+  go.opentelemetry.io/otel/sdk@v1.40.0
+  go.opentelemetry.io/otel/trace@v1.40.0
+  go.opentelemetry.io/proto/otlp@v1.9.0
   go.uber.org/goleak@v1.3.0
   go.uber.org/multierr@v1.11.0
-  go.uber.org/zap@v1.27.0
-  golang.org/x/crypto@v0.36.0
-  golang.org/x/exp@v0.0.0-20240719175910-8a7402abbf56
-  golang.org/x/mod@v0.21.0
-  golang.org/x/net@v0.38.0
-  golang.org/x/oauth2@v0.27.0
-  golang.org/x/sync@v0.12.0
-  golang.org/x/sys@v0.31.0
-  golang.org/x/term@v0.30.0
-  golang.org/x/text@v0.23.0
-  golang.org/x/time@v0.9.0
-  golang.org/x/tools@v0.26.0
-  google.golang.org/genproto/googleapis/api@v0.0.0-20250303144028-a0af3efb3deb
-  google.golang.org/genproto/googleapis/rpc@v0.0.0-20250303144028-a0af3efb3deb
-  google.golang.org/grpc@v1.72.1
-  google.golang.org/protobuf@v1.36.5
-  gopkg.in/evanphx/json-patch.v4@v4.12.0
+  go.uber.org/zap@v1.27.1
+  go.yaml.in/yaml/v2@v2.4.3
+  go.yaml.in/yaml/v3@v3.0.4
+  golang.org/x/crypto@v0.47.0
+  golang.org/x/exp@v0.0.0-20251219203646-944ab1f22d93
+  golang.org/x/mod@v0.32.0
+  golang.org/x/net@v0.49.0
+  golang.org/x/oauth2@v0.34.0
+  golang.org/x/sync@v0.19.0
+  golang.org/x/sys@v0.40.0
+  golang.org/x/term@v0.39.0
+  golang.org/x/text@v0.33.0
+  golang.org/x/time@v0.14.0
+  golang.org/x/tools@v0.41.0
+  google.golang.org/genproto/googleapis/api@v0.0.0-20260128011058-8636f8732409
+  google.golang.org/genproto/googleapis/rpc@v0.0.0-20260128011058-8636f8732409
+  google.golang.org/grpc@v1.78.0
+  google.golang.org/protobuf@v1.36.12-0.20260120151049-f2248ac996af
+  gopkg.in/evanphx/json-patch.v4@v4.13.0
   gopkg.in/go-jose/go-jose.v2@v2.6.3
   gopkg.in/inf.v0@v0.9.1
   gopkg.in/natefinch/lumberjack.v2@v2.2.1
@@ -1470,11 +1519,11 @@ Govulncheck scanned the following 197 modules and the go1.26.1 standard library:
   k8s.io/dynamic-resource-allocation
   k8s.io/endpointslice
   k8s.io/externaljwt
-  k8s.io/klog/v2@v2.130.1
+  k8s.io/klog/v2@v2.140.0
   k8s.io/kms
   k8s.io/kube-aggregator
   k8s.io/kube-controller-manager
-  k8s.io/kube-openapi@v0.0.0-20250318190949-c8a335a9a2ff
+  k8s.io/kube-openapi@v0.0.0-20260304202019-5b3e3fdb0acf
   k8s.io/kube-proxy
   k8s.io/kube-scheduler
   k8s.io/kubectl
@@ -1483,161 +1532,16 @@ Govulncheck scanned the following 197 modules and the go1.26.1 standard library:
   k8s.io/mount-utils
   k8s.io/pod-security-admission
   k8s.io/sample-apiserver
-  k8s.io/system-validators@v1.10.1
-  k8s.io/utils@v0.0.0-20250604170112-4c0f3b243397
-  sigs.k8s.io/apiserver-network-proxy/konnectivity-client@v0.31.2
-  sigs.k8s.io/json@v0.0.0-20241010143419-9aa6b5e7a4b3
+  k8s.io/system-validators@v1.12.1
+  k8s.io/utils@v0.0.0-20260210185600-b8788abfbbc2
+  sigs.k8s.io/apiserver-network-proxy/konnectivity-client@v0.34.0
+  sigs.k8s.io/json@v0.0.0-20250730193827-2d320260d730
   sigs.k8s.io/knftables@v0.0.17
-  sigs.k8s.io/kustomize/api@v0.19.0
-  sigs.k8s.io/kustomize/kustomize/v5@v5.6.0
-  sigs.k8s.io/kustomize/kyaml@v0.19.0
+  sigs.k8s.io/kustomize/api@v0.21.1
+  sigs.k8s.io/kustomize/kustomize/v5@v5.8.1
+  sigs.k8s.io/kustomize/kyaml@v0.21.1
   sigs.k8s.io/randfill@v1.0.0
-  sigs.k8s.io/structured-merge-diff/v4@v4.7.0
-  sigs.k8s.io/yaml@v1.4.0
+  sigs.k8s.io/structured-merge-diff/v6@v6.3.2
+  sigs.k8s.io/yaml@v1.6.0
 
-=== Symbol Results ===
-
-Vulnerability #1: GO-2026-4394
-    OpenTelemetry Go SDK Vulnerable to Arbitrary Code Execution via PATH
-    Hijacking in go.opentelemetry.io/otel/sdk
-  More info: https://pkg.go.dev/vuln/GO-2026-4394
-  Module: go.opentelemetry.io/otel/sdk
-    Found in: go.opentelemetry.io/otel/sdk@v1.34.0
-    Fixed in: go.opentelemetry.io/otel/sdk@v1.40.0
-    Example traces found:
-      #1: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorExportTimeout
-      #2: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorMaxExportBatchSize
-      #3: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorMaxQueueSize
-      #4: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.BatchSpanProcessorScheduleDelay
-      #5: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanAttributeCount
-      #6: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanAttributeValueLength
-      #7: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanEventAttributeCount
-      #8: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanEventCount
-      #9: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanLinkAttributeCount
-      #10: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls env.SpanLinkCount
-      #11: cmd/kubelet/app/server.go:85:2: app.init calls tracing.init, which eventually calls env.init
-      #12: cmd/kubelet/app/server.go:85:2: app.init calls tracing.init, which eventually calls instrumentation.init
-      #13: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls resource.Default
-      #14: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Default
-      #15: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Environment
-      #16: test/utils/apiserver/testapiserver.go:51:34: apiserver.StartAPITestServer calls testserver.RunEtcd, which eventually calls resource.Merge
-      #17: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls resource.New
-      #18: test/utils/apiserver/testapiserver.go:51:34: apiserver.StartAPITestServer calls testserver.RunEtcd, which eventually calls resource.NewSchemaless
-      #19: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which eventually calls resource.NewSchemaless
-      #20: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Resource.Equivalent
-      #21: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Resource.Iter
-      #22: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls resource.Resource.SchemaURL
-      #23: cmd/kubelet/app/server.go:1347:33: app.newTracerProvider calls resource.WithAttributes
-      #24: cmd/kubelet/app/server.go:51:2: app.init calls resource.init
-      #25: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which eventually calls sdk.Version
-      #26: cmd/kubelet/app/server.go:51:2: app.init calls resource.init, which calls sdk.init
-      #27: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.NeverSample
-      #28: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.NewBatchSpanProcessor
-      #29: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.NewTracerProvider
-      #30: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.ParentBased
-      #31: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.Shutdown
-      #32: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.Shutdown
-      #33: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.TraceIDRatioBased
-      #34: pkg/scheduler/util/assumecache/assume_cache.go:523:11: assumecache.emitEvents calls server.New, which calls trace.TracerProvider.Shutdown
-      #35: pkg/kubelet/kubelet.go:593:42: kubelet.NewMainKubelet calls trace.TracerProvider.Tracer
-      #36: test/utils/apiserver/testapiserver.go:51:34: apiserver.StartAPITestServer calls testserver.RunEtcd, which eventually calls trace.WithBatcher
-      #37: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithResource
-      #38: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithSampler
-      #39: cmd/kubelet/app/server.go:1352:32: app.newTracerProvider calls tracing.NewProvider, which calls trace.WithSpanProcessor
-      #40: pkg/kubelet/kuberuntime/kuberuntime_manager.go:1687:56: kuberuntime.kubeGenericRuntimeManager.GetPodStatus calls trace.errUnsupportedSampler.Error
-      #41: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.init
-      #42: cmd/kubelet/app/server.go:85:2: app.init calls tracing.init, which calls trace.init
-      #43: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Event]
-      #44: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls trace.logDropped[go.opentelemetry.io/otel/sdk/trace.Link]
-      #45: pkg/registry/core/service/allocator/storage/storage.go:197:35: storage.Etcd.CreateOrUpdate calls etcd3.store.GuaranteedUpdate, which eventually calls trace.nonRecordingSpan.AddEvent
-      #46: pkg/kubelet/kubelet.go:2226:2: kubelet.Kubelet.SyncTerminatedPod calls trace.nonRecordingSpan.End
-      #47: pkg/kubelet/kubelet.go:2219:34: kubelet.Kubelet.SyncTerminatedPod calls noop.Tracer.Start, which calls trace.nonRecordingSpan.IsRecording
-      #48: pkg/kubelet/kubelet.go:1864:24: kubelet.SyncPod calls trace.nonRecordingSpan.RecordError
-      #49: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.nonRecordingSpan.SetAttributes
-      #50: pkg/kubelet/kubelet.go:1865:22: kubelet.SyncPod calls trace.nonRecordingSpan.SetStatus
-      #51: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.nonRecordingSpan.SpanContext
-      #52: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.nonRecordingSpan.TracerProvider
-      #53: pkg/registry/core/service/allocator/storage/storage.go:197:35: storage.Etcd.CreateOrUpdate calls etcd3.store.GuaranteedUpdate, which eventually calls trace.recordingSpan.AddEvent
-      #54: pkg/kubelet/kubelet.go:2226:2: kubelet.Kubelet.SyncTerminatedPod calls trace.recordingSpan.End
-      #55: pkg/kubelet/kubelet.go:2219:34: kubelet.Kubelet.SyncTerminatedPod calls noop.Tracer.Start, which calls trace.recordingSpan.IsRecording
-      #56: pkg/kubelet/kubelet.go:1864:24: kubelet.SyncPod calls trace.recordingSpan.RecordError
-      #57: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.recordingSpan.SetAttributes
-      #58: pkg/kubelet/kubelet.go:1865:22: kubelet.SyncPod calls trace.recordingSpan.SetStatus
-      #59: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.recordingSpan.SpanContext
-      #60: test/integration/util/util.go:298:30: util.roundTripWrapper.RoundTrip calls otelhttp.Transport.RoundTrip, which calls trace.recordingSpan.TracerProvider
-      #61: pkg/kubelet/kuberuntime/kuberuntime_manager.go:1687:56: kuberuntime.kubeGenericRuntimeManager.GetPodStatus calls trace.samplerArgParseError.Error
-      #62: test/e2e/framework/test_context.go:571:33: framework.AfterReadingAllFlags calls errors.Unwrap, which calls trace.samplerArgParseError.Unwrap
-      #63: pkg/kubelet/kubelet.go:2219:34: kubelet.Kubelet.SyncTerminatedPod calls trace.tracer.Start
-      #64: pkg/scheduler/framework/runtime/framework.go:1540:15: runtime.frameworkImpl.WaitOnPermit calls logr.Logger.Error, which eventually calls trace.tracerProviderConfig.MarshalLog
-      #65: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls x.Feature[string].Enabled[string]
-      #66: cmd/kubelet/app/server.go:51:2: app.init calls resource.init, which calls x.init
-
-Vulnerability #2: GO-2025-4098
-    Container escape and DDoS due to arbitrary write gadgets and procfs write
-    redirects in github.com/opencontainers/runc
-  More info: https://pkg.go.dev/vuln/GO-2025-4098
-  Module: github.com/opencontainers/selinux
-    Found in: github.com/opencontainers/selinux@v1.11.1
-    Fixed in: github.com/opencontainers/selinux@v1.13.0
-    Example traces found:
-      #1: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels
-      #2: pkg/volume/util/selinux.go:25:2: util.init calls label.init
-      #3: test/e2e_node/image_volume.go:28:2: e2e_node.init calls selinux.init, which calls pwalkdir.init
-      #4: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels, which calls selinux.ContainerLabels
-      #5: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels, which calls selinux.Context.Get
-      #6: pkg/volume/hostpath/host_path.go:328:23: hostpath.hostPathProvisioner.Provision calls selinux.GetEnabled
-      #7: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels, which calls selinux.NewContext
-      #8: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels, which calls selinux.PrivContainerMountLabel
-      #9: pkg/volume/util/selinux.go:82:22: util.translator.SELinuxOptionsToFileLabel calls selinux.ReleaseLabel
-      #10: pkg/volume/util/selinux.go:73:50: util.translator.SELinuxOptionsToFileLabel calls label.InitLabels, which calls selinux.ReserveLabel
-      #11: pkg/volume/hostpath/host_path.go:329:30: hostpath.hostPathProvisioner.Provision calls selinux.SetFileLabel
-      #12: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls selinux.attrPath
-      #13: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls selinux.getSELinuxfs
-      #14: test/e2e_node/image_volume.go:28:2: e2e_node.init calls selinux.init
-      #15: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls selinux.label
-      #16: pkg/kubelet/metrics/metrics.go:1078:20: metrics.Register calls sync.Once.Do, which eventually calls selinux.policyRoot
-
-=== Package Results ===
-
-Vulnerability #1: GO-2026-4441
-    Infinite parsing loop in golang.org/x/net
-  More info: https://pkg.go.dev/vuln/GO-2026-4441
-  Module: golang.org/x/net
-    Found in: golang.org/x/net@v0.38.0
-    Fixed in: golang.org/x/net@v0.45.0
-
-Vulnerability #2: GO-2026-4440
-    Quadratic parsing complexity in golang.org/x/net/html
-  More info: https://pkg.go.dev/vuln/GO-2026-4440
-  Module: golang.org/x/net
-    Found in: golang.org/x/net@v0.38.0
-    Fixed in: golang.org/x/net@v0.45.0
-
-Vulnerability #3: GO-2025-4134
-    Unbounded memory consumption in golang.org/x/crypto/ssh
-  More info: https://pkg.go.dev/vuln/GO-2025-4134
-  Module: golang.org/x/crypto
-    Found in: golang.org/x/crypto@v0.36.0
-    Fixed in: golang.org/x/crypto@v0.45.0
-
-=== Module Results ===
-
-Vulnerability #1: GO-2025-4135
-    Malformed constraint may cause denial of service in
-    golang.org/x/crypto/ssh/agent
-  More info: https://pkg.go.dev/vuln/GO-2025-4135
-  Module: golang.org/x/crypto
-    Found in: golang.org/x/crypto@v0.36.0
-    Fixed in: golang.org/x/crypto@v0.45.0
-
-Vulnerability #2: GO-2025-4116
-    Potential denial of service in golang.org/x/crypto/ssh/agent
-  More info: https://pkg.go.dev/vuln/GO-2025-4116
-  Module: golang.org/x/crypto
-    Found in: golang.org/x/crypto@v0.36.0
-    Fixed in: golang.org/x/crypto@v0.43.0
-
-Your code is affected by 2 vulnerabilities from 2 modules.
-This scan also found 3 vulnerabilities in packages you import and 2
-vulnerabilities in modules you require, but your code doesn't appear to call
-these vulnerabilities.
+No vulnerabilities found.
