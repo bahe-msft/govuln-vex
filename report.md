@@ -1,6 +1,6 @@
 # OpenVEX Report
 
-Last updated time: Sun Mar 15 02:47:33 UTC 2026
+Last updated time: Sun Mar 22 02:38:11 UTC 2026
 
 ## Azure/azure-container-networking
 
@@ -317,6 +317,12 @@ Reports: [Azure/karpenter-provider-azure/v1.7.0-test.batchtrue](results/Azure/ka
 No active affected vulnerabilities found in v1.7.0-test.batchv8
 
 Reports: [Azure/karpenter-provider-azure/v1.7.0-test.batchv8](results/Azure/karpenter-provider-azure/v1.7.0-test.batchv8)
+
+### ✅ v1.7.0-test.limitedget3
+
+No active affected vulnerabilities found in v1.7.0-test.limitedget3
+
+Reports: [Azure/karpenter-provider-azure/v1.7.0-test.limitedget3](results/Azure/karpenter-provider-azure/v1.7.0-test.limitedget3)
 
 ### ✅ v1.7.1
 
@@ -732,6 +738,12 @@ Reports: [cilium/cilium/v1.19.0-rc.1](results/cilium/cilium/v1.19.0-rc.1)
 No active affected vulnerabilities found in v1.19.1
 
 Reports: [cilium/cilium/v1.19.1](results/cilium/cilium/v1.19.1)
+
+### ✅ v1.19.2
+
+No active affected vulnerabilities found in v1.19.2
+
+Reports: [cilium/cilium/v1.19.2](results/cilium/cilium/v1.19.2)
 
 ### ✅ v1.20.0-pre.0
 
